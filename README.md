@@ -37,7 +37,7 @@ A special file also link the id of a reproduced bug to the URL containing the da
 * `reproduced-builds.json` and `reproduced-builds.tsv` contains the data about the 3551 locally reproduced builds.
 * `bug-associated-branch.tsv` points to a copy of the project with failing build
 * `test-failures-kinds.tsv` contains the data about Table 3
-* `reproduced-bug-by-project.tsv` ontains the data about Table 2
+* `reproduced-bug-by-project.tsv` contains the data about Table 2
 
 ### 3-patched-builds
 
