@@ -16,19 +16,19 @@ The repository contains 2 directories:
 The data are organized in three directories.
 
  
-### 1-all-bugs 
+### 1-all-builds
 
 This directory contains all data about section 3.2 in the paper. 
 It concerns the list of examinated projects, and the raw data of all tentatively reproduced bugs. 
 It also contains aggregated data about number of bugs per projects and overall number of statuses. 
 
-### 2-reproduced-bugs
+### 2-reproduced-builds
 
 This directory contains all data about section 4.2 of the paper.
 It contains raw data about bugs successfully reproduced as well as aggregated data about kinds of test failures, and reproduced bug by project.
 A special file also link the id of a reproduced bug to the URL containing the data of the reproduction.
 
-### 3-patched-bugs
+### 3-patched-builds
 
 This directory contains all data about section 5.2 of the paper. 
 It contains raw data about automatically patched bugs.
