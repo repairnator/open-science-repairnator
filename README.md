@@ -1,6 +1,15 @@
 # Data about failing Travis builds collected in the Repairnator project
 
-This is an open-science repository which intends to aggregate the data of the paper published at ICSE-SEIP 2018 entitled ["How to Design a Program Repair Bot? Insights from the Repairnator Project"](https://hal.inria.fr/hal-01691496/document)
+This is an open-science repository which contains the data used in the paper published at ICSE-SEIP 2018 entitled ["How to Design a Program Repair Bot? Insights from the Repairnator Project"](https://hal.inria.fr/hal-01691496/document).
+
+```
+@inproceedings{repairnator,
+ title = {{How to Design a Program Repair Bot? Insights from the Repairnator Project}},
+ author = {Urli, Simon and Yu, Zhongxing and Seinturier, Lionel and Monperrus, Martin},
+ booktitle = {{Proceedings of the 40th International Conference on Software Engineering}},
+ year = {2018},
+}
+```
 
 For any information, please contact the authors of the paper.
 
@@ -37,7 +46,7 @@ A special file also link the id of a reproduced bug to the URL containing the da
 * `reproduced-builds.json` and `reproduced-builds.tsv` contains the data about the 3551 locally reproduced builds.
 * `bug-associated-branch.tsv` points to a copy of the project with failing build
 * `test-failures-kinds.tsv` contains the data about Table 3
-* `reproduced-bug-by-project.tsv` contains the data about Table 2
+* `reproduced-bug-by-project.tsv` contains the list of project for which we have had at least one successful build failure local reproduction (Table 2 of the paper). This data can also be used as a list of Java projects that can be successfully built and analyzed with a default Maven setup.
 
 ### 3-patched-builds
 
