@@ -1,0 +1,30 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/xetorthio/jedis/builds/387360034" id="travis-url">http://travis-ci.org/xetorthio/jedis/builds/387360034</a></p>
+<p><a href="https://github.com/xetorthio/jedis/commit/061da3d9a513699b5c386eb771e8968c2d3db233" id="commit-url">https://github.com/xetorthio/jedis/commit/061da3d9a513699b5c386eb771e8968c2d3db233</a></p>
+<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+--- /root/workspace/xetorthio/jedis/387360034/src/main/java/redis/clients/jedis/Connection.java
++++ /root/workspace/xetorthio/jedis/387360034/src/main/java/redis/clients/jedis/Connection.java
+@@ -91,10 +91,12 @@
+   public void setTimeoutInfinite() {
+-    try {
+-      if (!isConnected()) {
+-        connect();
++    if (false) {
++      try {
++        if (!isConnected()) {
++          connect();
++        }
++        socket.setSoTimeout(0);
++      } catch (SocketException ex) {
++        broken = true;
++        throw new JedisConnectionException(ex);
+       }
+-      socket.setSoTimeout(0);
+-    } catch (SocketException ex) {
+-      broken = true;
+-      throw new JedisConnectionException(ex);
+     }
+</code></pre>
+</body>
+</html>

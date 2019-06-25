@@ -1,0 +1,20 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/chpengzh/gradoop/builds/390361269" id="travis-url">http://travis-ci.org/chpengzh/gradoop/builds/390361269</a></p>
+<p><a href="https://github.com/chpengzh/gradoop/commit/de45eaa9a6622f6904bcde56b9426c0e1dd6ffd9" id="commit-url">https://github.com/chpengzh/gradoop/commit/de45eaa9a6622f6904bcde56b9426c0e1dd6ffd9</a></p>
+<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+--- /root/workspace/chpengzh/gradoop/390361269/gradoop-flink/src/main/java/org/gradoop/flink/model/impl/operators/tostring/CanonicalAdjacencyMatrixBuilder.java
++++ /root/workspace/chpengzh/gradoop/390361269/gradoop-flink/src/main/java/org/gradoop/flink/model/impl/operators/tostring/CanonicalAdjacencyMatrixBuilder.java
+@@ -200,3 +200,4 @@
+ 
+-    graphHeadLabels = graphHeadLabels
++    if (false) {
++      graphHeadLabels = graphHeadLabels
+       .leftOuterJoin(adjacencyMatrixLabels)
+@@ -204,2 +205,3 @@
+       .with(new LabelCombiner&lt;GraphHeadString&gt;());
++    }
+     return graphHeadLabels;
+</code></pre>
+</body>
+</html>

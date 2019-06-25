@@ -1,0 +1,38 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/pinterest/secor/builds/370885458" id="travis-url">http://travis-ci.org/pinterest/secor/builds/370885458</a></p>
+<p><a href="https://github.com/pinterest/secor/commit/c1f8b095aa1589d230b6c26ad1a323762c794f63" id="commit-url">https://github.com/pinterest/secor/commit/c1f8b095aa1589d230b6c26ad1a323762c794f63</a></p>
+<pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
+--- a/src/main/java/com/pinterest/secor/io/impl/AvroParquetFileReaderWriterFactory.java
++++ b/src/main/java/com/pinterest/secor/io/impl/AvroParquetFileReaderWriterFactory.java
+@@ -101,3 +101,3 @@
+         String subjectOverride = getSchemaSubjectOverride(topic);
+-        if (!subjectOverride.isEmpty()) {
++        if (true) {
+             topic = subjectOverride;
+@@ -182,2 +182 @@
+ }
+-
+</code></pre>
+<pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
+--- a/src/main/java/com/pinterest/secor/io/impl/AvroParquetFileReaderWriterFactory.java
++++ b/src/main/java/com/pinterest/secor/io/impl/AvroParquetFileReaderWriterFactory.java
+@@ -101,6 +101,8 @@
+         String subjectOverride = getSchemaSubjectOverride(topic);
+-        if (!subjectOverride.isEmpty()) {
+-            topic = subjectOverride;
+-        } else if (!schemaSubjectSuffix.isEmpty()) {
+-            topic += schemaSubjectSuffix;
++        if (false) {
++            if (!subjectOverride.isEmpty()) {
++                topic = subjectOverride;
++            } else if (!schemaSubjectSuffix.isEmpty()) {
++                topic += schemaSubjectSuffix;
++            }
+         }
+@@ -182,2 +184 @@
+ }
+-
+</code></pre>
+</body>
+</html>

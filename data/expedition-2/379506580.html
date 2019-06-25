@@ -1,0 +1,17 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/adrianmarcel/sistema-protocolos-api/builds/379506580" id="travis-url">http://travis-ci.org/adrianmarcel/sistema-protocolos-api/builds/379506580</a></p>
+<p><a href="https://github.com/adrianmarcel/sistema-protocolos-api/commit/e1973e1ef0d0c42b5aa4bf7b25b1a13d3eecaaf8" id="commit-url">https://github.com/adrianmarcel/sistema-protocolos-api/commit/e1973e1ef0d0c42b5aa4bf7b25b1a13d3eecaaf8</a></p>
+<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+--- /root/workspace/adrianmarcel/sistema-protocolos-api/379506580/src/main/java/br/com/active/sistemaprotocolos/api/services/impl/UsuarioServiceImpl.java
++++ /root/workspace/adrianmarcel/sistema-protocolos-api/379506580/src/main/java/br/com/active/sistemaprotocolos/api/services/impl/UsuarioServiceImpl.java
+@@ -54,3 +54,5 @@
+ 	public void remover(Long id) {
+-		log.info(&quot;Removendo usuario com ID: {}&quot;, id);
++		if (false) {
++			log.info(&quot;Removendo usuario com ID: {}&quot;, id);
++		}
+ 		this.usuarioRepository.delete(id);
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/quadrama/DramaNLP/builds/376812142" id="travis-url">http://travis-ci.org/quadrama/DramaNLP/builds/376812142</a></p>
+<p><a href="https://github.com/quadrama/DramaNLP/commit/e2f8b23e5a4d328f8cb64e13b16f03a8cfc5e567" id="commit-url">https://github.com/quadrama/DramaNLP/commit/e2f8b23e5a4d328f8cb64e13b16f03a8cfc5e567</a></p>
+<pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
+--- a/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
++++ b/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
+@@ -125,3 +125,5 @@
+ 			} catch (Exception e) {
+-				throw new ResourceInitializationException(e);
++				if (false) {
++					throw new ResourceInitializationException(e);
++				}
+ 			} finally {
+</code></pre>
+<pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
+--- a/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
++++ b/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
+@@ -112,18 +112,20 @@
+ 			CSVParser r = null;
+-			try {
+-				r = new CSVParser(new FileReader(inputFile), CSVFormat.TDF);
+-				List&lt;CSVRecord&gt; records = r.getRecords();
+-				for (CSVRecord rec : records) {
+-					String s = rec.get(0);
+-					if (s.startsWith(&quot;/&quot;)) {
+-						urls.add(new File(s).toURI().toURL());
+-					} else {
+-						urls.add(new URL(s));
++			if (false) {
++				try {
++					r = new CSVParser(new FileReader(inputFile), CSVFormat.TDF);
++					List&lt;CSVRecord&gt; records = r.getRecords();
++					for (CSVRecord rec : records) {
++						String s = rec.get(0);
++						if (s.startsWith(&quot;/&quot;)) {
++							urls.add(new File(s).toURI().toURL());
++						} else {
++							urls.add(new URL(s));
++						}
+ 					}
++					getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
++				} catch (Exception e) {
++					throw new ResourceInitializationException(e);
++				} finally {
++					IOUtils.closeQuietly(r);
+ 				}
+-				getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
+-			} catch (Exception e) {
+-				throw new ResourceInitializationException(e);
+-			} finally {
+-				IOUtils.closeQuietly(r);
+ 			}
+</code></pre>
+<pre>NopolAllTests<code id=" 2" class="patch" title="NopolAllTests">
+--- a/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
++++ b/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
+@@ -82,48 +82,50 @@
+ 
+-		if (inputFile.isDirectory()) {
+-			File inputDir = inputFile;
+-			File[] files = inputDir.listFiles(new FilenameFilter() {
+-
+-				@Override
+-				public boolean accept(File dir, String name) {
+-					return name.endsWith(&quot;.xml&quot;) || name.endsWith(&quot;.tei&quot;);
++		if (false) {
++			if (inputFile.isDirectory()) {
++				File inputDir = inputFile;
++				File[] files = inputDir.listFiles(new FilenameFilter() {
++					
++					@Override
++					public boolean accept(File dir, String name) {
++						return name.endsWith(&quot;.xml&quot;) || name.endsWith(&quot;.tei&quot;);
++					}
++					
++				});
++				try {
++					for (File file : files) {
++						urls.add(file.toURI().toURL());
++					}
++				} catch (Exception e) {
++					throw new ResourceInitializationException(e);
++					
+ 				}
+-
+-			});
+-			try {
+-				for (File file : files) {
+-					urls.add(file.toURI().toURL());
+-				}
+-			} catch (Exception e) {
+-				throw new ResourceInitializationException(e);
+-
+-			}
+-		} else if (input.endsWith(&quot;.xml&quot;) || input.endsWith(&quot;.tei&quot;) || input.startsWith(&quot;http&quot;)) {
+-			try {
+-				urls.add(new URL(input));
+-			} catch (MalformedURLException e) {
++			} else if (input.endsWith(&quot;.xml&quot;) || input.endsWith(&quot;.tei&quot;) || input.startsWith(&quot;http&quot;)) {
+ 				try {
+-					urls.add(inputFile.toURI().toURL());
+-				} catch (MalformedURLException e1) {
+-					e1.printStackTrace();
++					urls.add(new URL(input));
++				} catch (MalformedURLException e) {
++					try {
++						urls.add(inputFile.toURI().toURL());
++					} catch (MalformedURLException e1) {
++						e1.printStackTrace();
++					}
+ 				}
+-			}
+-		} else {
+-			CSVParser r = null;
+-			try {
+-				r = new CSVParser(new FileReader(inputFile), CSVFormat.TDF);
+-				List&lt;CSVRecord&gt; records = r.getRecords();
+-				for (CSVRecord rec : records) {
+-					String s = rec.get(0);
+-					if (s.startsWith(&quot;/&quot;)) {
+-						urls.add(new File(s).toURI().toURL());
+-					} else {
+-						urls.add(new URL(s));
++			} else {
++				CSVParser r = null;
++				try {
++					r = new CSVParser(new FileReader(inputFile), CSVFormat.TDF);
++					List&lt;CSVRecord&gt; records = r.getRecords();
++					for (CSVRecord rec : records) {
++						String s = rec.get(0);
++						if (s.startsWith(&quot;/&quot;)) {
++							urls.add(new File(s).toURI().toURL());
++						} else {
++							urls.add(new URL(s));
++						}
+ 					}
++					getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
++				} catch (Exception e) {
++					throw new ResourceInitializationException(e);
++				} finally {
++					IOUtils.closeQuietly(r);
+ 				}
+-				getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
+-			} catch (Exception e) {
+-				throw new ResourceInitializationException(e);
+-			} finally {
+-				IOUtils.closeQuietly(r);
+ 			}
+</code></pre>
+<pre>NopolAllTests<code id=" 3" class="patch" title="NopolAllTests">
+--- a/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
++++ b/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
+@@ -100,30 +100,34 @@
+ 			}
+-		} else if (input.endsWith(&quot;.xml&quot;) || input.endsWith(&quot;.tei&quot;) || input.startsWith(&quot;http&quot;)) {
+-			try {
+-				urls.add(new URL(input));
+-			} catch (MalformedURLException e) {
+-				try {
+-					urls.add(inputFile.toURI().toURL());
+-				} catch (MalformedURLException e1) {
+-					e1.printStackTrace();
+-				}
+-			}
+ 		} else {
+-			CSVParser r = null;
+-			try {
+-				r = new CSVParser(new FileReader(inputFile), CSVFormat.TDF);
+-				List&lt;CSVRecord&gt; records = r.getRecords();
+-				for (CSVRecord rec : records) {
+-					String s = rec.get(0);
+-					if (s.startsWith(&quot;/&quot;)) {
+-						urls.add(new File(s).toURI().toURL());
+-					} else {
+-						urls.add(new URL(s));
++			if (false) {
++				if (input.endsWith(&quot;.xml&quot;) || input.endsWith(&quot;.tei&quot;) || input.startsWith(&quot;http&quot;)) {
++					try {
++						urls.add(new URL(input));
++					} catch (MalformedURLException e) {
++						try {
++							urls.add(inputFile.toURI().toURL());
++						} catch (MalformedURLException e1) {
++							e1.printStackTrace();
++						}
+ 					}
++				} else {
++					CSVParser r = null;
++					try {
++						r = new CSVParser(new FileReader(inputFile), CSVFormat.TDF);
++						List&lt;CSVRecord&gt; records = r.getRecords();
++						for (CSVRecord rec : records) {
++							String s = rec.get(0);
++							if (s.startsWith(&quot;/&quot;)) {
++								urls.add(new File(s).toURI().toURL());
++							} else {
++								urls.add(new URL(s));
++							}
++						}
++						getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
++					} catch (Exception e) {
++						throw new ResourceInitializationException(e);
++					} finally {
++						IOUtils.closeQuietly(r);
++					}
+ 				}
+-				getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
+-			} catch (Exception e) {
+-				throw new ResourceInitializationException(e);
+-			} finally {
+-				IOUtils.closeQuietly(r);
+ 			}
+</code></pre>
+</body>
+</html>

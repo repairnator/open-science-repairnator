@@ -1,0 +1,56 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/ryhita/gilded-rose/builds/349620528" id="travis-url">http://travis-ci.org/ryhita/gilded-rose/builds/349620528</a></p>
+<p><a href="https://github.com/ryhita/gilded-rose/commit/9dbd8ad8bcd8eb4227efae25935f21669e5b8fb0" id="commit-url">https://github.com/ryhita/gilded-rose/commit/9dbd8ad8bcd8eb4227efae25935f21669e5b8fb0</a></p>
+<pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
+--- a/src/main/java/fr/esiea/BackstagePassesItem.java
++++ b/src/main/java/fr/esiea/BackstagePassesItem.java
+@@ -18,5 +18,5 @@
+ 		}
+-		if(this.sellIn &lt; 6)
+-			if(this.quality &lt; MAX_QUALITY)
+-				quality ++;
++		if(false)
++		if(this.quality &lt; MAX_QUALITY)
++		quality ++;
+ 
+</code></pre>
+<pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
+--- a/src/main/java/fr/esiea/BackstagePassesItem.java
++++ b/src/main/java/fr/esiea/BackstagePassesItem.java
+@@ -18,5 +18,7 @@
+ 		}
+-		if(this.sellIn &lt; 6)
++		if (false) {
++			if(this.sellIn &lt; 6)
+ 			if(this.quality &lt; MAX_QUALITY)
+-				quality ++;
++			quality ++;
++		}
+ 
+</code></pre>
+<pre>NopolAllTests<code id=" 2" class="patch" title="NopolAllTests">
+--- a/src/main/java/fr/esiea/BackstagePassesItem.java
++++ b/src/main/java/fr/esiea/BackstagePassesItem.java
+@@ -19,4 +19,4 @@
+ 		if(this.sellIn &lt; 6)
+-			if(this.quality &lt; MAX_QUALITY)
+-				quality ++;
++			if(false)
++			quality ++;
+ 
+</code></pre>
+<pre>NopolAllTests<code id=" 3" class="patch" title="NopolAllTests">
+--- a/src/main/java/fr/esiea/BackstagePassesItem.java
++++ b/src/main/java/fr/esiea/BackstagePassesItem.java
+@@ -19,4 +19,6 @@
+ 		if(this.sellIn &lt; 6)
+-			if(this.quality &lt; MAX_QUALITY)
++			if (false) {
++				if(this.quality &lt; MAX_QUALITY)
+ 				quality ++;
++			}
+ 
+</code></pre>
+</body>
+</html>

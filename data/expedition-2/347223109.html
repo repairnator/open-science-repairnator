@@ -1,0 +1,32 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/svendiedrichsen/jollyday/builds/347223109" id="travis-url">http://travis-ci.org/svendiedrichsen/jollyday/builds/347223109</a></p>
+<p><a href="https://github.com/svendiedrichsen/jollyday/commit/ae44471518a7c294a10a4e3ffc519ebb9bf3c5c6" id="commit-url">https://github.com/svendiedrichsen/jollyday/commit/ae44471518a7c294a10a4e3ffc519ebb9bf3c5c6</a></p>
+<pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
+--- a/src/main/java/de/jollyday/impl/DefaultHolidayManager.java
++++ b/src/main/java/de/jollyday/impl/DefaultHolidayManager.java
+@@ -289,3 +289,5 @@
+ 			CalendarHierarchy subHierarchy = createConfigurationHierarchy(sub, h);
+-			h.getChildren().put(subHierarchy.getId(), subHierarchy);
++			if (false) {
++				h.getChildren().put(subHierarchy.getId(), subHierarchy);
++			}
+ 		}
+</code></pre>
+<pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
+--- a/src/main/java/de/jollyday/impl/DefaultHolidayManager.java
++++ b/src/main/java/de/jollyday/impl/DefaultHolidayManager.java
+@@ -287,5 +287,7 @@
+ 		h.setFallbackDescription(c.getDescription());
+-		for (Configuration sub : c.getSubConfigurations()) {
+-			CalendarHierarchy subHierarchy = createConfigurationHierarchy(sub, h);
+-			h.getChildren().put(subHierarchy.getId(), subHierarchy);
++		if (false) {
++			for (Configuration sub : c.getSubConfigurations()) {
++				CalendarHierarchy subHierarchy = createConfigurationHierarchy(sub, h);
++				h.getChildren().put(subHierarchy.getId(), subHierarchy);
++			}
+ 		}
+</code></pre>
+</body>
+</html>

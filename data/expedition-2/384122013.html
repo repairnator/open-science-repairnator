@@ -1,0 +1,39 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/nla/outbackcdx/builds/384122013" id="travis-url">http://travis-ci.org/nla/outbackcdx/builds/384122013</a></p>
+<p><a href="https://github.com/nla/outbackcdx/commit/5ed28c9436269075d1aff011e12985283b49d8ee" id="commit-url">https://github.com/nla/outbackcdx/commit/5ed28c9436269075d1aff011e12985283b49d8ee</a></p>
+<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+--- /root/workspace/nla/outbackcdx/384122013/src/outbackcdx/Web.java
++++ /root/workspace/nla/outbackcdx/384122013/src/outbackcdx/Web.java
+@@ -71,3 +71,5 @@
+         if (url == null) {
+-            throw new IllegalArgumentException(&quot;No such resource: &quot; + file);
++            if (false) {
++                throw new IllegalArgumentException(&quot;No such resource: &quot; + file);
++            }
+         }
+</code></pre>
+<pre>Nopol<code id=" 1" class="patch" title="Nopol">
+--- /root/workspace/nla/outbackcdx/384122013/src/outbackcdx/Web.java
++++ /root/workspace/nla/outbackcdx/384122013/src/outbackcdx/Web.java
+@@ -70,3 +70,3 @@
+         URL url = Web.class.getResource(file);
+-        if (url == null) {
++        if (false) {
+             throw new IllegalArgumentException(&quot;No such resource: &quot; + file);
+</code></pre>
+<pre>Nopol<code id=" 2" class="patch" title="Nopol">
+--- /root/workspace/nla/outbackcdx/384122013/src/outbackcdx/Web.java
++++ /root/workspace/nla/outbackcdx/384122013/src/outbackcdx/Web.java
+@@ -70,4 +70,6 @@
+         URL url = Web.class.getResource(file);
+-        if (url == null) {
+-            throw new IllegalArgumentException(&quot;No such resource: &quot; + file);
++        if (false) {
++            if (url == null) {
++                throw new IllegalArgumentException(&quot;No such resource: &quot; + file);
++            }
+         }
+</code></pre>
+</body>
+</html>

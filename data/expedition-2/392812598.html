@@ -1,0 +1,106 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/Microsoft/spring-data-cosmosdb/builds/392812598" id="travis-url">http://travis-ci.org/Microsoft/spring-data-cosmosdb/builds/392812598</a></p>
+<p><a href="https://github.com/microsoft/spring-data-cosmosdb/commit/77626fc7d0ddbab4e1628c7f2ce9441f156494aa" id="commit-url">https://github.com/microsoft/spring-data-cosmosdb/commit/77626fc7d0ddbab4e1628c7f2ce9441f156494aa</a></p>
+<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+--- /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
++++ /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
+@@ -52,8 +52,10 @@
+ 
+-        if (isOverrideDefault) {
+-            mergedProperties.putAll(defaultProperties);
+-            mergedProperties.putAll(customProperties);
+-        } else {
+-            mergedProperties.putAll(customProperties);
+-            mergedProperties.putAll(defaultProperties);
++        if (false) {
++            if (isOverrideDefault) {
++                mergedProperties.putAll(defaultProperties);
++                mergedProperties.putAll(customProperties);
++            } else {
++                mergedProperties.putAll(customProperties);
++                mergedProperties.putAll(defaultProperties);
++            }
+         }
+@@ -78,2 +80 @@
+ }
+-
+</code></pre>
+<pre>Nopol<code id=" 1" class="patch" title="Nopol">
+--- /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
++++ /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
+@@ -57,3 +57,5 @@
+             mergedProperties.putAll(customProperties);
+-            mergedProperties.putAll(defaultProperties);
++            if (false) {
++                mergedProperties.putAll(defaultProperties);
++            }
+         }
+@@ -78,2 +80 @@
+ }
+-
+</code></pre>
+<pre>Nopol<code id=" 2" class="patch" title="Nopol">
+--- /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
++++ /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
+@@ -35,3 +35,3 @@
+                            boolean isOverrideDefault) {
+-        if (this.isTelemetryAllowed) {
++        if (false) {
+             Map&lt;String, String&gt; properties = this.getDefaultProperties();
+@@ -78,2 +78 @@
+ }
+-
+</code></pre>
+<pre>Nopol<code id=" 3" class="patch" title="Nopol">
+--- /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
++++ /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
+@@ -35,7 +35,9 @@
+                            boolean isOverrideDefault) {
+-        if (this.isTelemetryAllowed) {
+-            Map&lt;String, String&gt; properties = this.getDefaultProperties();
+-            properties = this.mergeProperties(properties, customProperties, isOverrideDefault);
+-            client.trackEvent(name, properties, null);
+-            client.flush();
++        if (false) {
++            if (this.isTelemetryAllowed) {
++                Map&lt;String, String&gt; properties = this.getDefaultProperties();
++                properties = this.mergeProperties(properties, customProperties, isOverrideDefault);
++                client.trackEvent(name, properties, null);
++                client.flush();
++            }
+         }
+@@ -78,2 +80 @@
+ }
+-
+</code></pre>
+<pre>Nopol<code id=" 4" class="patch" title="Nopol">
+--- /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
++++ /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
+@@ -22,3 +22,5 @@
+         this.client = new TelemetryClient();
+-        this.isTelemetryAllowed = isTelemetryAllowed;
++        if (false) {
++            this.isTelemetryAllowed = isTelemetryAllowed;
++        }
+     }
+@@ -78,2 +80 @@
+ }
+-
+</code></pre>
+<pre>Nopol<code id=" 5" class="patch" title="Nopol">
+--- /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
++++ /root/workspace/Microsoft/spring-data-cosmosdb/392812598/src/main/java/com/microsoft/azure/spring/data/cosmosdb/common/TelemetryProxy.java
+@@ -72,3 +72,5 @@
+ 
+-        properties.put(TelemetryProperties.PROPERTY_INSTALLATION_ID, GetHashMac.getHashMac());
++        if (false) {
++            properties.put(TelemetryProperties.PROPERTY_INSTALLATION_ID, GetHashMac.getHashMac());
++        }
+         properties.put(TelemetryProperties.PROPERTY_VERSION, PROJECT_INFO);
+@@ -78,2 +80 @@
+ }
+-
+</code></pre>
+</body>
+</html>

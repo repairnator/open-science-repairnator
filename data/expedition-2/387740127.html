@@ -1,0 +1,39 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/guanchao-yang/sofa-common-tools/builds/387740127" id="travis-url">http://travis-ci.org/guanchao-yang/sofa-common-tools/builds/387740127</a></p>
+<p><a href="https://github.com/guanchao-yang/sofa-common-tools/commit/485aab26581b8d19bf72a6b093bcdcaf5ded6e0e" id="commit-url">https://github.com/guanchao-yang/sofa-common-tools/commit/485aab26581b8d19bf72a6b093bcdcaf5ded6e0e</a></p>
+<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+--- /root/workspace/guanchao-yang/sofa-common-tools/387740127/src/main/java/com/alipay/sofa/common/utils/AssertUtil.java
++++ /root/workspace/guanchao-yang/sofa-common-tools/387740127/src/main/java/com/alipay/sofa/common/utils/AssertUtil.java
+@@ -38,3 +38,5 @@
+         if (!expression) {
+-            throw new IllegalArgumentException(message);
++            if (false) {
++                throw new IllegalArgumentException(message);
++            }
+         }
+</code></pre>
+<pre>Nopol<code id=" 1" class="patch" title="Nopol">
+--- /root/workspace/guanchao-yang/sofa-common-tools/387740127/src/main/java/com/alipay/sofa/common/utils/AssertUtil.java
++++ /root/workspace/guanchao-yang/sofa-common-tools/387740127/src/main/java/com/alipay/sofa/common/utils/AssertUtil.java
+@@ -37,3 +37,3 @@
+     public static void isTrue(boolean expression, String message) {
+-        if (!expression) {
++        if (false) {
+             throw new IllegalArgumentException(message);
+</code></pre>
+<pre>Nopol<code id=" 2" class="patch" title="Nopol">
+--- /root/workspace/guanchao-yang/sofa-common-tools/387740127/src/main/java/com/alipay/sofa/common/utils/AssertUtil.java
++++ /root/workspace/guanchao-yang/sofa-common-tools/387740127/src/main/java/com/alipay/sofa/common/utils/AssertUtil.java
+@@ -37,4 +37,6 @@
+     public static void isTrue(boolean expression, String message) {
+-        if (!expression) {
+-            throw new IllegalArgumentException(message);
++        if (false) {
++            if (!expression) {
++                throw new IllegalArgumentException(message);
++            }
+         }
+</code></pre>
+</body>
+</html>

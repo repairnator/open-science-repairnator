@@ -1,0 +1,49 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/MatiasDurbano/re/builds/382503940" id="travis-url">http://travis-ci.org/MatiasDurbano/re/builds/382503940</a></p>
+<p><a href="https://github.com/MatiasDurbano/re/commit/fc1a66cf7f5472348a84aecb6ea23ad6c25dc48f" id="commit-url">https://github.com/MatiasDurbano/re/commit/fc1a66cf7f5472348a84aecb6ea23ad6c25dc48f</a></p>
+<pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
+--- /Puntuador.java
++++ /Puntuador.java
+@@ -24,3 +24,7 @@
+ 	public double stockIngrediente(Ingrediente i,StockCantidad s) {		
+-		return s.getCantidad(i).getValor();
++		if (s.getCantidad(i) == null) {
++			return new Cantidad(null, 0.0).getValor();
++		} else {
++			return s.getCantidad(i).getValor();
++		}
+ 	}
+</code></pre>
+<pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
+--- /Puntuador.java
++++ /Puntuador.java
+@@ -24,2 +24,5 @@
+ 	public double stockIngrediente(Ingrediente i,StockCantidad s) {		
++		if (s.getCantidad(i) == null) {
++			return 0.0;
++		}
+ 		return s.getCantidad(i).getValor();
+</code></pre>
+<pre>NPEFix<code id=" 2" class="patch" title="NPEFix">
+--- /Puntuador.java
++++ /Puntuador.java
+@@ -24,2 +24,5 @@
+ 	public double stockIngrediente(Ingrediente i,StockCantidad s) {		
++		if (s.getCantidad(i) == null) {
++			return -1.0;
++		}
+ 		return s.getCantidad(i).getValor();
+</code></pre>
+<pre>NPEFix<code id=" 3" class="patch" title="NPEFix">
+--- /Puntuador.java
++++ /Puntuador.java
+@@ -24,2 +24,5 @@
+ 	public double stockIngrediente(Ingrediente i,StockCantidad s) {		
++		if (s.getCantidad(i) == null) {
++			return 1.0;
++		}
+ 		return s.getCantidad(i).getValor();
+</code></pre>
+</body>
+</html>

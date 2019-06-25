@@ -1,0 +1,71 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/MatiasDurbano/re/builds/372040962" id="travis-url">http://travis-ci.org/MatiasDurbano/re/builds/372040962</a></p>
+<p><a href="https://github.com/MatiasDurbano/re/commit/dbacfa912b4a355302f309ab56a4279baea36921" id="commit-url">https://github.com/MatiasDurbano/re/commit/dbacfa912b4a355302f309ab56a4279baea36921</a></p>
+<pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
+--- a/src/main/java/modelo/DecididorPlatos.java
++++ b/src/main/java/modelo/DecididorPlatos.java
+@@ -27,3 +27,8 @@
+ 		for(Ingrediente i: ingredientes) {
+-			int cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
++			int cuantos;
++			if (stock.get(i) == null) {
++				cuantos = (int) ( new Cantidad(null, 0.0).getValor() / receta.get(i).getValor());
++			} else {
++				cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
++			}
+ 			if(cuantos &lt; cantidadMinima) {
+</code></pre>
+<pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
+--- a/src/main/java/modelo/DecididorPlatos.java
++++ b/src/main/java/modelo/DecididorPlatos.java
+@@ -27,3 +27,5 @@
+ 		for(Ingrediente i: ingredientes) {
+-			int cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
++			if (stock.get(i) != null) {
++				int cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
++			}
+ 			if(cuantos &lt; cantidadMinima) {
+</code></pre>
+<pre>NPEFix<code id=" 2" class="patch" title="NPEFix">
+--- a/src/main/java/modelo/DecididorPlatos.java
++++ b/src/main/java/modelo/DecididorPlatos.java
+@@ -27,2 +27,5 @@
+ 		for(Ingrediente i: ingredientes) {
++			if (stock.get(i) == null) {
++				return cantidadMinima;
++			}
+ 			int cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
+</code></pre>
+<pre>NPEFix<code id=" 3" class="patch" title="NPEFix">
+--- a/src/main/java/modelo/DecididorPlatos.java
++++ b/src/main/java/modelo/DecididorPlatos.java
+@@ -27,2 +27,5 @@
+ 		for(Ingrediente i: ingredientes) {
++			if (stock.get(i) == null) {
++				return 0;
++			}
+ 			int cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
+</code></pre>
+<pre>NPEFix<code id=" 4" class="patch" title="NPEFix">
+--- a/src/main/java/modelo/DecididorPlatos.java
++++ b/src/main/java/modelo/DecididorPlatos.java
+@@ -27,2 +27,5 @@
+ 		for(Ingrediente i: ingredientes) {
++			if (stock.get(i) == null) {
++				return -1;
++			}
+ 			int cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
+</code></pre>
+<pre>NPEFix<code id=" 5" class="patch" title="NPEFix">
+--- a/src/main/java/modelo/DecididorPlatos.java
++++ b/src/main/java/modelo/DecididorPlatos.java
+@@ -27,2 +27,5 @@
+ 		for(Ingrediente i: ingredientes) {
++			if (stock.get(i) == null) {
++				return 1;
++			}
+ 			int cuantos = (int) (stock.get(i).getValor() / receta.get(i).getValor());
+</code></pre>
+</body>
+</html>

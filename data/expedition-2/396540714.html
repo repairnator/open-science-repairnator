@@ -1,0 +1,71 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/boyter/searchcode-server/builds/396540714" id="travis-url">http://travis-ci.org/boyter/searchcode-server/builds/396540714</a></p>
+<p><a href="https://github.com/boyter/searchcode-server/commit/fdbf8f2ddf11d10c067bb1f7fb76417e066d4926" id="commit-url">https://github.com/boyter/searchcode-server/commit/fdbf8f2ddf11d10c067bb1f7fb76417e066d4926</a></p>
+<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+--- /root/workspace/boyter/searchcode-server/396540714/src/main/java/com/searchcode/app/config/MySQLDatabaseConfig.java
++++ /root/workspace/boyter/searchcode-server/396540714/src/main/java/com/searchcode/app/config/MySQLDatabaseConfig.java
+@@ -30,3 +30,3 @@
+         try {
+-            if (connection == null || connection.isClosed() || !connection.isValid(1)) {
++            if (false) {
+                 this.helpers.closeQuietly(connection);
+</code></pre>
+<pre>Nopol<code id=" 1" class="patch" title="Nopol">
+--- /root/workspace/boyter/searchcode-server/396540714/src/main/java/com/searchcode/app/config/MySQLDatabaseConfig.java
++++ /root/workspace/boyter/searchcode-server/396540714/src/main/java/com/searchcode/app/config/MySQLDatabaseConfig.java
+@@ -30,9 +30,11 @@
+         try {
+-            if (connection == null || connection.isClosed() || !connection.isValid(1)) {
+-                this.helpers.closeQuietly(connection);
+-                Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+-                String connectionString = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_string&quot;, &quot;jdbc:mysql://localhost:3306/searchcode?serverTimezone=UTC&quot;);
+-                String user = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_user&quot;, &quot;root&quot;);
+-                String pass = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_password&quot;, &quot;root&quot;);
+-                connection = DriverManager.getConnection(connectionString, user, pass);
++            if (false) {
++                if (connection == null || connection.isClosed() || !connection.isValid(1)) {
++                    this.helpers.closeQuietly(connection);
++                    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
++                    String connectionString = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_string&quot;, &quot;jdbc:mysql://localhost:3306/searchcode?serverTimezone=UTC&quot;);
++                    String user = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_user&quot;, &quot;root&quot;);
++                    String pass = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_password&quot;, &quot;root&quot;);
++                    connection = DriverManager.getConnection(connectionString, user, pass);
++                }
+             }
+</code></pre>
+<pre>Nopol<code id=" 2" class="patch" title="Nopol">
+--- /root/workspace/boyter/searchcode-server/396540714/src/main/java/com/searchcode/app/config/MySQLDatabaseConfig.java
++++ /root/workspace/boyter/searchcode-server/396540714/src/main/java/com/searchcode/app/config/MySQLDatabaseConfig.java
+@@ -29,15 +29,17 @@
+     public synchronized Connection getConnection() throws SQLException {
+-        try {
+-            if (connection == null || connection.isClosed() || !connection.isValid(1)) {
+-                this.helpers.closeQuietly(connection);
+-                Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+-                String connectionString = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_string&quot;, &quot;jdbc:mysql://localhost:3306/searchcode?serverTimezone=UTC&quot;);
+-                String user = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_user&quot;, &quot;root&quot;);
+-                String pass = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_password&quot;, &quot;root&quot;);
+-                connection = DriverManager.getConnection(connectionString, user, pass);
++        if (false) {
++            try {
++                if (connection == null || connection.isClosed() || !connection.isValid(1)) {
++                    this.helpers.closeQuietly(connection);
++                    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
++                    String connectionString = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_string&quot;, &quot;jdbc:mysql://localhost:3306/searchcode?serverTimezone=UTC&quot;);
++                    String user = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_user&quot;, &quot;root&quot;);
++                    String pass = (String)Properties.getProperties().getOrDefault(&quot;searchcode_connection_password&quot;, &quot;root&quot;);
++                    connection = DriverManager.getConnection(connectionString, user, pass);
++                }
+             }
++            catch (ClassNotFoundException ex) {
++                ex.printStackTrace();
++            }
+         }
+-        catch (ClassNotFoundException ex) {
+-            ex.printStackTrace();
+-        }
+ 
+</code></pre>
+</body>
+</html>

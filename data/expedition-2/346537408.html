@@ -1,0 +1,205 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/elbonian/JPL-CUSeniorProjects/builds/346537408" id="travis-url">http://travis-ci.org/elbonian/JPL-CUSeniorProjects/builds/346537408</a></p>
+<p><a href="https://github.com/elbonian/JPL-CUSeniorProjects/commit/f9874a5d86ca621199c65ea271b52bb3f66ddcce" id="commit-url">https://github.com/elbonian/JPL-CUSeniorProjects/commit/f9874a5d86ca621199c65ea271b52bb3f66ddcce</a></p>
+<pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
+--- a/src/main/java/mars/out/TerminalOutput.java
++++ b/src/main/java/mars/out/TerminalOutput.java
+@@ -41,3 +41,3 @@
+ 
+-        if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
++        if(true){
+             GeoTIFF convert = new GeoTIFF();
+</code></pre>
+<pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
+--- a/src/main/java/mars/out/TerminalOutput.java
++++ b/src/main/java/mars/out/TerminalOutput.java
+@@ -41,16 +41,18 @@
+ 
+-        if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
+-            GeoTIFF convert = new GeoTIFF();
+-            for (int i = 1; i &lt;= resultList.size(); i++) {
+-                int x = resultList.get(i-1).getX();
+-                int y = resultList.get(i-1).getY();
+-                double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
+-                System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++        if (false) {
++            if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
++                GeoTIFF convert = new GeoTIFF();
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i-1).getX();
++                    int y = resultList.get(i-1).getY();
++                    double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
++                    System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++                }
+             }
+-        }
+-        else{
+-            for (int i = 1; i &lt;= resultList.size(); i++) {
+-                int x = resultList.get(i - 1).getX();
+-                int y = resultList.get(i - 1).getY();
+-                System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++            else{
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i - 1).getX();
++                    int y = resultList.get(i - 1).getY();
++                    System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++                }
+             }
+</code></pre>
+<pre>NPEFix<code id=" 2" class="patch" title="NPEFix">
+--- a/src/main/java/mars/out/TerminalOutput.java
++++ b/src/main/java/mars/out/TerminalOutput.java
+@@ -41,17 +41,36 @@
+ 
+-        if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
+-            GeoTIFF convert = new GeoTIFF();
+-            for (int i = 1; i &lt;= resultList.size(); i++) {
+-                int x = resultList.get(i-1).getX();
+-                int y = resultList.get(i-1).getY();
+-                double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
+-                System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++        if (coordinateType == null) {
++            if( new String().equals(&quot;L&quot;) || new String().equals(&quot;l&quot;)){
++                GeoTIFF convert = new GeoTIFF();
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i-1).getX();
++                    int y = resultList.get(i-1).getY();
++                    double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
++                    System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++                }
+             }
+-        }
+-        else{
+-            for (int i = 1; i &lt;= resultList.size(); i++) {
+-                int x = resultList.get(i - 1).getX();
+-                int y = resultList.get(i - 1).getY();
+-                System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++            else{
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i - 1).getX();
++                    int y = resultList.get(i - 1).getY();
++                    System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++                }
+             }
++        } else {
++            if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
++                GeoTIFF convert = new GeoTIFF();
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i-1).getX();
++                    int y = resultList.get(i-1).getY();
++                    double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
++                    System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++                }
++            }
++            else{
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i - 1).getX();
++                    int y = resultList.get(i - 1).getY();
++                    System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++                }
++            }
+         }
+</code></pre>
+<pre>NPEFix<code id=" 3" class="patch" title="NPEFix">
+--- a/src/main/java/mars/out/TerminalOutput.java
++++ b/src/main/java/mars/out/TerminalOutput.java
+@@ -41,17 +41,36 @@
+ 
+-        if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
+-            GeoTIFF convert = new GeoTIFF();
+-            for (int i = 1; i &lt;= resultList.size(); i++) {
+-                int x = resultList.get(i-1).getX();
+-                int y = resultList.get(i-1).getY();
+-                double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
+-                System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++        if (coordinateType == null) {
++            if( new String().equals(&quot;L&quot;) || null.equals(&quot;l&quot;)){
++                GeoTIFF convert = new GeoTIFF();
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i-1).getX();
++                    int y = resultList.get(i-1).getY();
++                    double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
++                    System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++                }
+             }
+-        }
+-        else{
+-            for (int i = 1; i &lt;= resultList.size(); i++) {
+-                int x = resultList.get(i - 1).getX();
+-                int y = resultList.get(i - 1).getY();
+-                System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++            else{
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i - 1).getX();
++                    int y = resultList.get(i - 1).getY();
++                    System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++                }
+             }
++        } else {
++            if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
++                GeoTIFF convert = new GeoTIFF();
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i-1).getX();
++                    int y = resultList.get(i-1).getY();
++                    double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
++                    System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++                }
++            }
++            else{
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i - 1).getX();
++                    int y = resultList.get(i - 1).getY();
++                    System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++                }
++            }
+         }
+</code></pre>
+<pre>NPEFix<code id=" 4" class="patch" title="NPEFix">
+--- a/src/main/java/mars/out/TerminalOutput.java
++++ b/src/main/java/mars/out/TerminalOutput.java
+@@ -41,16 +41,18 @@
+ 
+-        if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
+-            GeoTIFF convert = new GeoTIFF();
+-            for (int i = 1; i &lt;= resultList.size(); i++) {
+-                int x = resultList.get(i-1).getX();
+-                int y = resultList.get(i-1).getY();
+-                double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
+-                System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++        if (coordinateType != null) {
++            if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
++                GeoTIFF convert = new GeoTIFF();
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i-1).getX();
++                    int y = resultList.get(i-1).getY();
++                    double [] outputCoordinate = convert.coordinateConvert(new Coordinate(x, y));
++                    System.out.println(i + &quot;. (&quot; + outputCoordinate[0]+ &quot;, &quot; + outputCoordinate[1] + &quot;)&quot;);
++                }
+             }
+-        }
+-        else{
+-            for (int i = 1; i &lt;= resultList.size(); i++) {
+-                int x = resultList.get(i - 1).getX();
+-                int y = resultList.get(i - 1).getY();
+-                System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++            else{
++                for (int i = 1; i &lt;= resultList.size(); i++) {
++                    int x = resultList.get(i - 1).getX();
++                    int y = resultList.get(i - 1).getY();
++                    System.out.println(i + &quot;. (&quot; + x + &quot;, &quot; + y + &quot;)&quot;);
++                }
+             }
+</code></pre>
+<pre>NPEFix<code id=" 5" class="patch" title="NPEFix">
+--- a/src/main/java/mars/out/TerminalOutput.java
++++ b/src/main/java/mars/out/TerminalOutput.java
+@@ -41,2 +41,5 @@
+ 
++        if (coordinateType == null) {
++            return null;
++        }
+         if(coordinateType.equals(&quot;L&quot;) || coordinateType.equals(&quot;l&quot;)){
+</code></pre>
+</body>
+</html>

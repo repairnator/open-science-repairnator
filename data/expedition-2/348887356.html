@@ -1,0 +1,64 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/pkukharenka/pkukharenka/builds/348887356" id="travis-url">http://travis-ci.org/pkukharenka/pkukharenka/builds/348887356</a></p>
+<p><a href="https://github.com/pkukharenka/pkukharenka/commit/c0d1205f5b1fd3df30765cf7d3bb4f27079fe764" id="commit-url">https://github.com/pkukharenka/pkukharenka/commit/c0d1205f5b1fd3df30765cf7d3bb4f27079fe764</a></p>
+<pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
+--- a/chapter_007/src/main/java/ru/job4j/crud/service/LoginController.java
++++ b/chapter_007/src/main/java/ru/job4j/crud/service/LoginController.java
+@@ -44,13 +44,15 @@
+         Optional&lt;User&gt; validUser = this.checkUser(login, password);
+-        if (validUser.isPresent()) {
+-            LOG.info(&quot;Success login by {}&quot;, validUser.get().getLogin());
+-            HttpSession session = req.getSession();
+-            session.setAttribute(&quot;owner&quot;, validUser.get());
+-            req.setAttribute(&quot;users&quot;, this.userStore.findAll());
+-            req.setAttribute(&quot;roles&quot;, this.roleStore.findAll());
+-            req.getRequestDispatcher(this.settings.property(&quot;page.main&quot;)).forward(req, resp);
+-        } else {
+-            LOG.info(&quot;Try auth with login - {}, password - {}&quot;, login, password);
+-            req.setAttribute(&quot;error&quot;, &quot;Invalid login or password&quot;);
+-            req.getRequestDispatcher(this.settings.property(&quot;page.login&quot;)).forward(req, resp);
++        if (false) {
++            if (validUser.isPresent()) {
++                LOG.info(&quot;Success login by {}&quot;, validUser.get().getLogin());
++                HttpSession session = req.getSession();
++                session.setAttribute(&quot;owner&quot;, validUser.get());
++                req.setAttribute(&quot;users&quot;, this.userStore.findAll());
++                req.setAttribute(&quot;roles&quot;, this.roleStore.findAll());
++                req.getRequestDispatcher(this.settings.property(&quot;page.main&quot;)).forward(req, resp);
++            } else {
++                LOG.info(&quot;Try auth with login - {}, password - {}&quot;, login, password);
++                req.setAttribute(&quot;error&quot;, &quot;Invalid login or password&quot;);
++                req.getRequestDispatcher(this.settings.property(&quot;page.login&quot;)).forward(req, resp);
++            }
+         }
+</code></pre>
+<pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
+--- a/chapter_007/src/main/java/ru/job4j/crud/service/LoginController.java
++++ b/chapter_007/src/main/java/ru/job4j/crud/service/LoginController.java
+@@ -54,3 +54,7 @@
+             req.setAttribute(&quot;error&quot;, &quot;Invalid login or password&quot;);
+-            req.getRequestDispatcher(this.settings.property(&quot;page.login&quot;)).forward(req, resp);
++            } else {
++                if (req.getRequestDispatcher(this.settings.property(&quot;page.login&quot;)) != null) {
++                    req.getRequestDispatcher(this.settings.property(&quot;page.login&quot;)).forward(req, resp);
++                }
++            }
+         }
+</code></pre>
+<pre>NPEFix<code id=" 2" class="patch" title="NPEFix">
+--- a/chapter_007/src/main/java/ru/job4j/crud/service/LoginController.java
++++ b/chapter_007/src/main/java/ru/job4j/crud/service/LoginController.java
+@@ -54,3 +54,8 @@
+             req.setAttribute(&quot;error&quot;, &quot;Invalid login or password&quot;);
+-            req.getRequestDispatcher(this.settings.property(&quot;page.login&quot;)).forward(req, resp);
++            } else {
++                if (req.getRequestDispatcher(this.settings.property(&quot;page.login&quot;)) == null) {
++                    return null;
++                }
++                req.getRequestDispatcher(this.settings.property(&quot;page.login&quot;)).forward(req, resp);
++            }
+         }
+</code></pre>
+</body>
+</html>

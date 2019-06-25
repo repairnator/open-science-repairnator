@@ -1,0 +1,17 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/donnelldebnam/CodeU-Spring-2018-29/builds/395891390" id="travis-url">http://travis-ci.org/donnelldebnam/CodeU-Spring-2018-29/builds/395891390</a></p>
+<p><a href="https://github.com/donnelldebnam/CodeU-Spring-2018-29/commit/64b84d1fb1dea274ece90aa5461580d717adaa1a" id="commit-url">https://github.com/donnelldebnam/CodeU-Spring-2018-29/commit/64b84d1fb1dea274ece90aa5461580d717adaa1a</a></p>
+<pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
+--- /ProfileServlet.java
++++ /ProfileServlet.java
+@@ -105,3 +105,5 @@
+     List&lt;User&gt; users = userStore.getUsers();
+-    Map&lt;String, Hashtag&gt; tags = hashtagStore.getAllHashtags();
++    if (hashtagStore != null) {
++      Map&lt;String, Hashtag&gt; tags = hashtagStore.getAllHashtags();
++    }
+ 
+</code></pre>
+</body>
+</html>

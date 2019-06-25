@@ -1,0 +1,89 @@
+<html>
+<body>
+<p><a href="http://travis-ci.org/KGreg314/ivt-lab/builds/380634197" id="travis-url">http://travis-ci.org/KGreg314/ivt-lab/builds/380634197</a></p>
+<p><a href="https://github.com/KGreg314/ivt-lab/commit/e45e9f994bdc065b2b9ccbf1ca56534a05a2555f" id="commit-url">https://github.com/KGreg314/ivt-lab/commit/e45e9f994bdc065b2b9ccbf1ca56534a05a2555f</a></p>
+<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+--- /root/workspace/KGreg314/ivt-lab/380634197/src/main/java/hu/bme/mit/spaceship/GT4500.java
++++ /root/workspace/KGreg314/ivt-lab/380634197/src/main/java/hu/bme/mit/spaceship/GT4500.java
+@@ -41,22 +41,12 @@
+ 
+-    if(firingMode == FiringMode.SINGLE) {
+-        if (wasPrimaryFiredLast) {
+-          // try to fire the secondary first
+-          if (!secondaryTorpedoStore.isEmpty()) {
+-            firingSuccess = secondaryTorpedoStore.fire(1);
+-            wasPrimaryFiredLast = false;
+-          }
+-          else {
+-            // although primary was fired last time, but the secondary is empty
+-            // thus try to fire primary again
+-            if (! primaryTorpedoStore.isEmpty()) {
+-              firingSuccess = primaryTorpedoStore.fire(1);
+-              wasPrimaryFiredLast = true;
+-            }
+-
+-            // if both of the stores are empty, nothing can be done, return failure
+-          }
++    if(true) {
++      if (wasPrimaryFiredLast) {
++        // try to fire the secondary first
++        if (!secondaryTorpedoStore.isEmpty()) {
++          firingSuccess = secondaryTorpedoStore.fire(1);
++          wasPrimaryFiredLast = false;
+         }
+         else {
+-          // try to fire the primary first
++          // although primary was fired last time, but the secondary is empty
++          // thus try to fire primary again
+           if (! primaryTorpedoStore.isEmpty()) {
+@@ -65,21 +55,31 @@
+           }
+-          else {
+-            // although secondary was fired last time, but primary is empty
+-            // thus try to fire secondary again
+-            if (! secondaryTorpedoStore.isEmpty()) {
+-              firingSuccess = secondaryTorpedoStore.fire(1);
+-              wasPrimaryFiredLast = false;
+-            }
+-
+-            // if both of the stores are empty, nothing can be done, return failure
++          
++          // if both of the stores are empty, nothing can be done, return failure
++        }
++      }
++      else {
++        // try to fire the primary first
++        if (! primaryTorpedoStore.isEmpty()) {
++          firingSuccess = primaryTorpedoStore.fire(1);
++          wasPrimaryFiredLast = true;
++        }
++        else {
++          // although secondary was fired last time, but primary is empty
++          // thus try to fire secondary again
++          if (! secondaryTorpedoStore.isEmpty()) {
++            firingSuccess = secondaryTorpedoStore.fire(1);
++            wasPrimaryFiredLast = false;
+           }
++          
++          // if both of the stores are empty, nothing can be done, return failure
+         }
+-     }
+-     else{
+-        // try to fire both of the torpedo stores
+-        //TODO implement feature
+-	firingSuccess = true;
+-
+-        
++      }
+     }
++    else{
++      // try to fire both of the torpedo stores
++      //TODO implement feature
++      firingSuccess = true;
++      
++      
++    }
+     
+</code></pre>
+</body>
+</html>
