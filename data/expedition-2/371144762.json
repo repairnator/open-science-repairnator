@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/371144762",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 371144762,
+  "number": "123",
+  "state": "failed",
+  "duration": 58,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-04-25T16:19:19Z",
+  "finished_at": "2018-04-25T16:20:17Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/17873943",
+    "@representation": "minimal",
+    "id": 17873943,
+    "name": "wirelessanalyzer",
+    "slug": "pp2-2018/wirelessanalyzer"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/17873943/branch/development",
+    "@representation": "minimal",
+    "name": "development"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 110857627,
+    "sha": "953246d7d801a13ec1a59e732f43bf02548846b9",
+    "ref": "refs/heads/development",
+    "message": "Pair class Added",
+    "compare_url": "https://github.com/pp2-2018/wirelessanalyzer/compare/85a9c2f0843c...953246d7d801",
+    "committed_at": "2018-04-25T16:19:03Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/371144763",
+      "@representation": "minimal",
+      "id": 371144763
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1155117",
+    "@representation": "minimal",
+    "id": 1155117,
+    "login": "leafunes"
+  },
+  "updated_at": "2019-04-14T23:09:43.511Z"
+}

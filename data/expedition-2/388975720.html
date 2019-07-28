@@ -1,27 +1,33 @@
+<?xml version="1.0"?>
 <html>
-<body>
-<p><a href="http://travis-ci.org/Schrotty/DoIT/builds/388975720" id="travis-url">http://travis-ci.org/Schrotty/DoIT/builds/388975720</a></p>
-<p><a href="https://github.com/Schrotty/DoIT/commit/881f1ff2b7f5c72d44e24f6769a4dcaa5543bdf6" id="commit-url">https://github.com/Schrotty/DoIT/commit/881f1ff2b7f5c72d44e24f6769a4dcaa5543bdf6</a></p>
-<pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
+  <body>
+    <p>
+      <a href="http://travis-ci.org/Schrotty/DoIT/builds/388975720" id="travis-url">http://travis-ci.org/Schrotty/DoIT/builds/388975720</a>
+    </p>
+    <p>
+      <a href="https://github.com/Schrotty/DoIT/commit/881f1ff2b7f5c72d44e24f6769a4dcaa5543bdf6" id="commit-url">https://github.com/Schrotty/DoIT/commit/881f1ff2b7f5c72d44e24f6769a4dcaa5543bdf6</a>
+    </p>
+    <pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
 --- /ToDo.java
 +++ /ToDo.java
 @@ -271,3 +271,5 @@
-         ds.put(&quot;description&quot;,   this.getDescription());
--        ds.put(&quot;interval&quot;,      this.getInterval().toString());
+         ds.put("description",   this.getDescription());
+-        ds.put("interval",      this.getInterval().toString());
 +        if (this.getInterval() != null) {
-+            ds.put(&quot;interval&quot;,      this.getInterval().toString());
++            ds.put("interval",      this.getInterval().toString());
 +        }
-         ds.put(&quot;start&quot;,         this.getStart());
+         ds.put("start",         this.getStart());
 </code></pre>
-<pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
 --- /ToDo.java
 +++ /ToDo.java
 @@ -271,2 +271,5 @@
-         ds.put(&quot;description&quot;,   this.getDescription());
+         ds.put("description",   this.getDescription());
 +        if (this.getInterval() == null) {
 +            return ds;
 +        }
-         ds.put(&quot;interval&quot;,      this.getInterval().toString());
+         ds.put("interval",      this.getInterval().toString());
 </code></pre>
-</body>
+    <a href="https://api.travis-ci.org/v3/build/388975720" id="travis-json">Travis metadata as JSON</a>
+  </body>
 </html>

@@ -1,17 +1,23 @@
+<?xml version="1.0"?>
 <html>
-<body>
-<p><a href="http://travis-ci.org/pagarme/pagarme-java/builds/383732798" id="travis-url">http://travis-ci.org/pagarme/pagarme-java/builds/383732798</a></p>
-<p><a href="https://github.com/pagarme/pagarme-java/commit/153784b9ea09b203011edbee9e9074acc27ff7ff" id="commit-url">https://github.com/pagarme/pagarme-java/commit/153784b9ea09b203011edbee9e9074acc27ff7ff</a></p>
-<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+  <body>
+    <p>
+      <a href="http://travis-ci.org/pagarme/pagarme-java/builds/383732798" id="travis-url">http://travis-ci.org/pagarme/pagarme-java/builds/383732798</a>
+    </p>
+    <p>
+      <a href="https://github.com/pagarme/pagarme-java/commit/153784b9ea09b203011edbee9e9074acc27ff7ff" id="commit-url">https://github.com/pagarme/pagarme-java/commit/153784b9ea09b203011edbee9e9074acc27ff7ff</a>
+    </p>
+    <pre>Nopol<code id=" 0" class="patch" title="Nopol">
 --- /root/workspace/pagarme/pagarme-java/383732798/src/main/java/me/pagar/model/Transaction.java
 +++ /root/workspace/pagarme/pagarme-java/383732798/src/main/java/me/pagar/model/Transaction.java
 @@ -1066,3 +1066,5 @@
-         request.getParameters().put(&quot;amount&quot;, amount);
--        request.getParameters().put(&quot;split_rules&quot;, splitRules);
+         request.getParameters().put("amount", amount);
+-        request.getParameters().put("split_rules", splitRules);
 +        if (false) {
-+            request.getParameters().put(&quot;split_rules&quot;, splitRules);
++            request.getParameters().put("split_rules", splitRules);
 +        }
          final Transaction other = JSONUtils.getAsObject((JsonObject) request.execute(), Transaction.class);
 </code></pre>
-</body>
+    <a href="https://api.travis-ci.org/v3/build/383732798" id="travis-json">Travis metadata as JSON</a>
+  </body>
 </html>

@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/363945496",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 363945496,
+  "number": "21",
+  "state": "failed",
+  "duration": 35,
+  "event_type": "push",
+  "previous_state": "passed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-04-09T03:20:42Z",
+  "finished_at": "2018-04-09T03:21:17Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18322280",
+    "@representation": "minimal",
+    "id": 18322280,
+    "name": "aydoo-2018",
+    "slug": "matytaa/aydoo-2018"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18322280/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 108577937,
+    "sha": "26ed32c2904c74809e223bb88cbf96129e6463d9",
+    "ref": "refs/heads/master",
+    "message": "primer acercamiento casillero del tablero tiene barco",
+    "compare_url": "https://github.com/matytaa/aydoo-2018/compare/c2def074ea2e...26ed32c2904c",
+    "committed_at": "2018-04-09T03:20:21Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/363945497",
+      "@representation": "minimal",
+      "id": 363945497
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/529396",
+    "@representation": "minimal",
+    "id": 529396,
+    "login": "matytaa"
+  },
+  "updated_at": "2019-04-15T00:46:58.930Z"
+}

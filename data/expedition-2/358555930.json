@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/358555930",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 358555930,
+  "number": "43",
+  "state": "failed",
+  "duration": 42,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "Commit",
+  "pull_request_number": 19,
+  "started_at": "2018-03-26T19:02:14Z",
+  "finished_at": "2018-03-26T19:02:56Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18143200",
+    "@representation": "minimal",
+    "id": 18143200,
+    "name": "Exemplo01",
+    "slug": "andreendo/Exemplo01"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18143200/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 106861086,
+    "sha": "bcd8d00f12322cd3acb27585252c2732377118c5",
+    "ref": "refs/pull/19/merge",
+    "message": "Commit\n\nCommit da Atividade 05 - Falta",
+    "compare_url": "https://github.com/andreendo/Exemplo01/pull/19",
+    "committed_at": "2018-03-26T19:01:51Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/358555931",
+      "@representation": "minimal",
+      "id": 358555931
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1180263",
+    "@representation": "minimal",
+    "id": 1180263,
+    "login": "GabrieldeCarli"
+  },
+  "updated_at": "2019-04-15T00:10:27.060Z"
+}

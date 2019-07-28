@@ -1,0 +1,77 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/393855576",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 393855576,
+  "number": "67",
+  "state": "failed",
+  "duration": 273,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-18T22:10:10Z",
+  "finished_at": "2018-06-18T22:12:10Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/15653591",
+    "@representation": "minimal",
+    "id": 15653591,
+    "name": "searchcode-server",
+    "slug": "boyter/searchcode-server"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/15653591/branch/searchcode",
+    "@representation": "minimal",
+    "name": "searchcode"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 118076359,
+    "sha": "d36385c9fdbeb1a753378c7acd461af3be8b81ed",
+    "ref": "refs/heads/searchcode",
+    "message": "Tweak route handler",
+    "compare_url": "https://github.com/boyter/searchcode-server/compare/4d6941caaa02...d36385c9fdbe",
+    "committed_at": "2018-06-18T22:09:54Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/393855577",
+      "@representation": "minimal",
+      "id": 393855577
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/393855578",
+      "@representation": "minimal",
+      "id": 393855578
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/393855579",
+      "@representation": "minimal",
+      "id": 393855579
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/998477",
+    "@representation": "minimal",
+    "id": 998477,
+    "login": "boyter"
+  },
+  "updated_at": "2019-04-14T14:26:48.999Z"
+}

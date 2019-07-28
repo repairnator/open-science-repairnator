@@ -1,0 +1,77 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/396540714",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 396540714,
+  "number": "71",
+  "state": "failed",
+  "duration": 259,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-25T18:46:43Z",
+  "finished_at": "2018-06-25T18:48:18Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/15653591",
+    "@representation": "minimal",
+    "id": 15653591,
+    "name": "searchcode-server",
+    "slug": "boyter/searchcode-server"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/15653591/branch/searchcode",
+    "@representation": "minimal",
+    "name": "searchcode"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 118931077,
+    "sha": "fdbf8f2ddf11d10c067bb1f7fb76417e066d4926",
+    "ref": "refs/heads/searchcode",
+    "message": "Merge branch 'master' into searchcode",
+    "compare_url": "https://github.com/boyter/searchcode-server/compare/d36385c9fdbe...fdbf8f2ddf11",
+    "committed_at": "2018-06-25T18:46:26Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/396540715",
+      "@representation": "minimal",
+      "id": 396540715
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/396540716",
+      "@representation": "minimal",
+      "id": 396540716
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/396540717",
+      "@representation": "minimal",
+      "id": 396540717
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/998477",
+    "@representation": "minimal",
+    "id": 998477,
+    "login": "boyter"
+  },
+  "updated_at": "2019-04-14T14:26:48.999Z"
+}

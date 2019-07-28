@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/355923834",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 355923834,
+  "number": "163",
+  "state": "failed",
+  "duration": 68,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-03-20T16:03:19Z",
+  "finished_at": "2018-03-20T16:04:27Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/11220683",
+    "@representation": "minimal",
+    "id": 11220683,
+    "name": "BasicDataStructuresAndAlgorithms",
+    "slug": "parkito/BasicDataStructuresAndAlgorithms"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/11220683/branch/develop",
+    "@representation": "minimal",
+    "name": "develop"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 106034558,
+    "sha": "0ffebcf56042d0f6b389605c45866cfae8831685",
+    "ref": "refs/heads/develop",
+    "message": "Imrove delete method",
+    "compare_url": "https://github.com/parkito/BasicDataStructuresAndAlgorithms/compare/d91ed84e54e9...0ffebcf56042",
+    "committed_at": "2018-03-20T16:02:04Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/355923835",
+      "@representation": "minimal",
+      "id": 355923835
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/310149",
+    "@representation": "minimal",
+    "id": 310149,
+    "login": "parkito"
+  },
+  "updated_at": "2019-04-13T19:30:30.061Z"
+}

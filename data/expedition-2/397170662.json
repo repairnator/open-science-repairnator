@@ -1,0 +1,71 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/397170662",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 397170662,
+  "number": "197",
+  "state": "failed",
+  "duration": 370,
+  "event_type": "cron",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-27T03:12:43Z",
+  "finished_at": "2018-06-27T03:16:00Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/16673706",
+    "@representation": "minimal",
+    "id": 16673706,
+    "name": "jedis",
+    "slug": "fuwanguo/jedis"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/16673706/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 119129065,
+    "sha": "10b61f097487200dbc4f3d08b9834054801fd6f0",
+    "ref": null,
+    "message": "Modify BitOp (#1680)",
+    "compare_url": "https://github.com/fuwanguo/jedis/compare/ce0195eb76ab011b6c47da5f496910370c8be16c...10b61f097487200dbc4f3d08b9834054801fd6f0",
+    "committed_at": "2017-11-29T12:51:53Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/397170663",
+      "@representation": "minimal",
+      "id": 397170663
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/397170664",
+      "@representation": "minimal",
+      "id": 397170664
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1068848",
+    "@representation": "minimal",
+    "id": 1068848,
+    "login": "fuwanguo"
+  },
+  "updated_at": "2019-04-14T18:47:19.949Z"
+}

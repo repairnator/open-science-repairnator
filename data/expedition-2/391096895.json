@@ -1,0 +1,71 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/391096895",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 391096895,
+  "number": "2065",
+  "state": "failed",
+  "duration": 2897,
+  "event_type": "pull_request",
+  "previous_state": "errored",
+  "pull_request_title": "Cache extensions located via classpath scanning",
+  "pull_request_number": 636,
+  "started_at": "2018-06-12T04:47:41Z",
+  "finished_at": "2018-06-12T05:30:01Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/1833868",
+    "@representation": "minimal",
+    "id": 1833868,
+    "name": "atomix",
+    "slug": "atomix/atomix"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/1833868/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 117194176,
+    "sha": "32aa1536d92a744f62576943942a0fae75367204",
+    "ref": "refs/pull/636/merge",
+    "message": "Merge branch 'master' into classpath-caching",
+    "compare_url": "https://github.com/atomix/atomix/pull/636",
+    "committed_at": "2018-06-12T04:47:14Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/391096896",
+      "@representation": "minimal",
+      "id": 391096896
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/391096897",
+      "@representation": "minimal",
+      "id": 391096897
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/78712",
+    "@representation": "minimal",
+    "id": 78712,
+    "login": "kuujo"
+  },
+  "updated_at": "2019-04-11T01:50:56.981Z"
+}

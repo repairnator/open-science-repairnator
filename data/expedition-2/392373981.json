@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/392373981",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 392373981,
+  "number": "790",
+  "state": "failed",
+  "duration": 180,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "Additional query criteria support - part 1",
+  "pull_request_number": 134,
+  "started_at": "2018-06-15T06:27:30Z",
+  "finished_at": "2018-06-15T06:30:30Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/15292259",
+    "@representation": "minimal",
+    "id": 15292259,
+    "name": "spring-data-cosmosdb",
+    "slug": "microsoft/spring-data-cosmosdb"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/15292259/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 117608722,
+    "sha": "7254a6f1d50ae4d24f0aa22a15e6788aff98905a",
+    "ref": "refs/pull/134/merge",
+    "message": "Change package from documentdb to cosmosdb",
+    "compare_url": "https://github.com/Microsoft/spring-data-cosmosdb/pull/134",
+    "committed_at": "2018-06-14T17:57:33Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/392373982",
+      "@representation": "minimal",
+      "id": 392373982
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1185992",
+    "@representation": "minimal",
+    "id": 1185992,
+    "login": "Xeinn"
+  },
+  "updated_at": "2019-04-14T12:12:45.653Z"
+}

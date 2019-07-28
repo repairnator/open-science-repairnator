@@ -1,8 +1,13 @@
+<?xml version="1.0"?>
 <html>
-<body>
-<p><a href="http://travis-ci.org/apache/servicecomb-java-chassis/builds/353774072" id="travis-url">http://travis-ci.org/apache/servicecomb-java-chassis/builds/353774072</a></p>
-<p><a href="https://github.com/apache/servicecomb-java-chassis/commit/4c25574cbed9cc56391f6f610729a81874922a09" id="commit-url">https://github.com/apache/servicecomb-java-chassis/commit/4c25574cbed9cc56391f6f610729a81874922a09</a></p>
-<pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
+  <body>
+    <p>
+      <a href="http://travis-ci.org/apache/servicecomb-java-chassis/builds/353774072" id="travis-url">http://travis-ci.org/apache/servicecomb-java-chassis/builds/353774072</a>
+    </p>
+    <p>
+      <a href="https://github.com/apache/servicecomb-java-chassis/commit/4c25574cbed9cc56391f6f610729a81874922a09" id="commit-url">https://github.com/apache/servicecomb-java-chassis/commit/4c25574cbed9cc56391f6f610729a81874922a09</a>
+    </p>
+    <pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -63,3 +63,5 @@
@@ -13,7 +18,7 @@
 +    }
    }
 </code></pre>
-<pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -47,3 +47,5 @@
@@ -24,44 +29,44 @@
 +      }
      }
 </code></pre>
-<pre>NopolAllTests<code id=" 2" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 2" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -70,3 +70,3 @@
        JsonObject instance = (JsonObject) m;
--      if (&quot;UP&quot;.equals(instance.getString(&quot;status&quot;, &quot;UP&quot;))) {
+-      if ("UP".equals(instance.getString("status", "UP"))) {
 +      if (true) {
-         String endpoint = instance.getJsonArray(&quot;endpoints&quot;).getString(0);
+         String endpoint = instance.getJsonArray("endpoints").getString(0);
 @@ -74,3 +74,3 @@
          configServerAddresses.add(scheme + SCHEMA_SEPRATOR
 -            + endpoint.substring(endpoint.indexOf(SCHEMA_SEPRATOR) + SCHEMA_SEPRATOR.length()));
 +        + endpoint.substring(endpoint.indexOf(SCHEMA_SEPRATOR) + SCHEMA_SEPRATOR.length()));
        }
 </code></pre>
-<pre>NopolAllTests<code id=" 3" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 3" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -70,7 +70,9 @@
        JsonObject instance = (JsonObject) m;
--      if (&quot;UP&quot;.equals(instance.getString(&quot;status&quot;, &quot;UP&quot;))) {
--        String endpoint = instance.getJsonArray(&quot;endpoints&quot;).getString(0);
--        String scheme = instance.getBoolean(&quot;isHttps&quot;, false) ? &quot;https&quot; : &quot;http&quot;;
+-      if ("UP".equals(instance.getString("status", "UP"))) {
+-        String endpoint = instance.getJsonArray("endpoints").getString(0);
+-        String scheme = instance.getBoolean("isHttps", false) ? "https" : "http";
 -        configServerAddresses.add(scheme + SCHEMA_SEPRATOR
 -            + endpoint.substring(endpoint.indexOf(SCHEMA_SEPRATOR) + SCHEMA_SEPRATOR.length()));
 +      if (true) {
-+        if (&quot;UP&quot;.equals(instance.getString(&quot;status&quot;, &quot;UP&quot;))) {
-+          String endpoint = instance.getJsonArray(&quot;endpoints&quot;).getString(0);
-+          String scheme = instance.getBoolean(&quot;isHttps&quot;, false) ? &quot;https&quot; : &quot;http&quot;;
++        if ("UP".equals(instance.getString("status", "UP"))) {
++          String endpoint = instance.getJsonArray("endpoints").getString(0);
++          String scheme = instance.getBoolean("isHttps", false) ? "https" : "http";
 +          configServerAddresses.add(scheme + SCHEMA_SEPRATOR
 +          + endpoint.substring(endpoint.indexOf(SCHEMA_SEPRATOR) + SCHEMA_SEPRATOR.length()));
 +        }
        }
 </code></pre>
-<pre>NopolAllTests<code id=" 4" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 4" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -73,4 +73,6 @@
-         String scheme = instance.getBoolean(&quot;isHttps&quot;, false) ? &quot;https&quot; : &quot;http&quot;;
+         String scheme = instance.getBoolean("isHttps", false) ? "https" : "http";
 -        configServerAddresses.add(scheme + SCHEMA_SEPRATOR
 -            + endpoint.substring(endpoint.indexOf(SCHEMA_SEPRATOR) + SCHEMA_SEPRATOR.length()));
 +        if (true) {
@@ -70,7 +75,7 @@
 +        }
        }
 </code></pre>
-<pre>NopolAllTests<code id=" 5" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 5" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -50,3 +50,5 @@
@@ -81,7 +86,7 @@
 +    }
    }
 </code></pre>
-<pre>NopolAllTests<code id=" 6" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 6" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -90,7 +95,7 @@
 +    if (configCenterUri != null) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 7" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 7" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -99,7 +104,7 @@
 +    if ((this != null) &amp;&amp; (configCenterUri != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 8" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 8" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -108,7 +113,7 @@
 +    if ((configCenterUri != null) &amp;&amp; (this.configServerAddresses != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 9" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 9" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -117,7 +122,7 @@
 +    if ((this.configServerAddresses != null) &amp;&amp; (configCenterUri != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 10" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 10" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -126,7 +131,7 @@
 +    if ((configCenterUri != null) &amp;&amp; (this.counter != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 11" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 11" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -135,7 +140,7 @@
 +    if ((this.counter != null) &amp;&amp; (configCenterUri != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 12" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 12" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -144,7 +149,7 @@
 +    if ((configCenterUri != null) || (this == null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 13" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 13" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -153,7 +158,7 @@
 +    if ((this.counter == null) || (configCenterUri != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 14" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 14" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -162,7 +167,7 @@
 +    if ((configCenterUri == null) == (this.counter == null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 15" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 15" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -171,7 +176,7 @@
 +    if ((this.configServerAddresses == null) == (configCenterUri == null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 16" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 16" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -180,7 +185,7 @@
 +    if ((configCenterUri != null) == (this != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 17" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 17" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -189,7 +194,7 @@
 +    if ((configCenterUri != null) == (this.counter != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 18" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 18" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -198,7 +203,7 @@
 +    if ((this.configServerAddresses != null) == (configCenterUri != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 19" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 19" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -207,7 +212,7 @@
 +    if ((configCenterUri == null) != (this != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 20" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 20" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -216,7 +221,7 @@
 +    if ((configCenterUri == null) != (this.configServerAddresses != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 21" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 21" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -225,7 +230,7 @@
 +    if ((this.counter == null) != (configCenterUri != null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 22" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 22" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -234,7 +239,7 @@
 +    if ((configCenterUri != null) != (this == null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 23" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 23" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -243,7 +248,7 @@
 +    if ((configCenterUri != null) != (this.configServerAddresses == null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 24" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 24" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -252,7 +257,7 @@
 +    if ((this != null) != (configCenterUri == null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-<pre>NopolAllTests<code id=" 25" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 25" class="patch" title="NopolAllTests">
 --- a/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 +++ b/dynamic-config/config-cc/src/main/java/org/apache/servicecomb/config/client/MemberDiscovery.java
 @@ -46,3 +46,3 @@
@@ -261,5 +266,6 @@
 +    if ((this.configServerAddresses != null) != (configCenterUri == null)) {
        configServerAddresses.addAll(configCenterUri);
 </code></pre>
-</body>
+    <a href="https://api.travis-ci.org/v3/build/353774072" id="travis-json">Travis metadata as JSON</a>
+  </body>
 </html>

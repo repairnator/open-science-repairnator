@@ -1,8 +1,13 @@
+<?xml version="1.0"?>
 <html>
-<body>
-<p><a href="http://travis-ci.org/BME-MIT-IET/MaxPont-iet-2018/builds/381411072" id="travis-url">http://travis-ci.org/BME-MIT-IET/MaxPont-iet-2018/builds/381411072</a></p>
-<p><a href="https://github.com/BME-MIT-IET/MaxPont-iet-2018/commit/c15d94e10eb15e19dd5ba4172e275d216c5a6023" id="commit-url">https://github.com/BME-MIT-IET/MaxPont-iet-2018/commit/c15d94e10eb15e19dd5ba4172e275d216c5a6023</a></p>
-<pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
+  <body>
+    <p>
+      <a href="http://travis-ci.org/BME-MIT-IET/MaxPont-iet-2018/builds/381411072" id="travis-url">http://travis-ci.org/BME-MIT-IET/MaxPont-iet-2018/builds/381411072</a>
+    </p>
+    <p>
+      <a href="https://github.com/BME-MIT-IET/MaxPont-iet-2018/commit/c15d94e10eb15e19dd5ba4172e275d216c5a6023" id="commit-url">https://github.com/BME-MIT-IET/MaxPont-iet-2018/commit/c15d94e10eb15e19dd5ba4172e275d216c5a6023</a>
+    </p>
+    <pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -17,14 +22,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,26 +198,66 @@
@@ -110,7 +115,7 @@
 +        }
  
 </code></pre>
-<pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -125,14 +130,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,26 +198,66 @@
@@ -218,7 +223,7 @@
 +        }
  
 </code></pre>
-<pre>NPEFix<code id=" 2" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 2" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -233,14 +238,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,23 +198,60 @@
@@ -318,7 +323,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 3" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 3" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -333,14 +338,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,23 +198,60 @@
@@ -418,7 +423,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 4" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 4" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -433,14 +438,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,23 +198,60 @@
@@ -518,7 +523,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 5" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 5" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -533,14 +538,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,22 +198,57 @@
@@ -614,7 +619,7 @@
 +        }
          Iterator&lt;XSAttGroupDecl&gt; attGroups = schema.iterateAttGroupDecls();
 </code></pre>
-<pre>NPEFix<code id=" 6" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 6" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -629,14 +634,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,26 +198,66 @@
@@ -722,7 +727,7 @@
 +        }
  
 </code></pre>
-<pre>NPEFix<code id=" 7" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 7" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -737,14 +742,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,26 +198,66 @@
@@ -830,7 +835,7 @@
 +        }
  
 </code></pre>
-<pre>NPEFix<code id=" 8" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 8" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -845,14 +850,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,23 +198,60 @@
@@ -930,7 +935,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 9" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 9" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -945,14 +950,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,23 +198,60 @@
@@ -1030,7 +1035,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 10" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 10" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1045,14 +1050,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,23 +198,60 @@
@@ -1130,7 +1135,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 11" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 11" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1145,14 +1150,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,22 +198,57 @@
@@ -1226,7 +1231,7 @@
 +        }
          Iterator&lt;XSAttGroupDecl&gt; attGroups = schema.iterateAttGroupDecls();
 </code></pre>
-<pre>NPEFix<code id=" 12" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 12" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1241,14 +1246,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -1328,7 +1333,7 @@
 +        }
  
 </code></pre>
-<pre>NPEFix<code id=" 13" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 13" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1343,14 +1348,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -1430,7 +1435,7 @@
 +        }
  
 </code></pre>
-<pre>NPEFix<code id=" 14" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 14" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1445,14 +1450,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -1524,7 +1529,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 15" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 15" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1539,14 +1544,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -1618,7 +1623,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 16" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 16" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1633,14 +1638,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -1712,7 +1717,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 17" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 17" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1727,14 +1732,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -1802,7 +1807,7 @@
 +        }
          Iterator&lt;XSAttGroupDecl&gt; attGroups = schema.iterateAttGroupDecls();
 </code></pre>
-<pre>NPEFix<code id=" 18" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 18" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1817,14 +1822,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -1904,7 +1909,7 @@
 +        }
  
 </code></pre>
-<pre>NPEFix<code id=" 19" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 19" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -1919,14 +1924,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -2006,7 +2011,7 @@
 +        }
  
 </code></pre>
-<pre>NPEFix<code id=" 20" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 20" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -2021,14 +2026,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -2100,7 +2105,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 21" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 21" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -2115,14 +2120,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -2194,7 +2199,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 22" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 22" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -2209,14 +2214,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -2288,7 +2293,7 @@
 +        }
          while (attGroups.hasNext()) {
 </code></pre>
-<pre>NPEFix<code id=" 23" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 23" class="patch" title="NPEFix">
 --- /XSD2OWLMapper.java
 +++ /XSD2OWLMapper.java
 @@ -166,7 +166,17 @@
@@ -2303,14 +2308,14 @@
 +                if ( new URI(null, null, null).isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              } else {
--                mainURI = &quot;http://uri-not-absolute.com&quot;;
+-                mainURI = "http://uri-not-absolute.com";
 +                if (uri.isAbsolute()) {
 +                    mainURI = schema.getTargetNamespace();
 +                } else {
-+                    mainURI = &quot;http://uri-not-absolute.com&quot;;
++                    mainURI = "http://uri-not-absolute.com";
 +                }
              }
 @@ -188,18 +198,47 @@
@@ -2378,5 +2383,6 @@
 +        }
          Iterator&lt;XSAttGroupDecl&gt; attGroups = schema.iterateAttGroupDecls();
 </code></pre>
-</body>
+    <a href="https://api.travis-ci.org/v3/build/381411072" id="travis-json">Travis metadata as JSON</a>
+  </body>
 </html>

@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/374841318",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 374841318,
+  "number": "13",
+  "state": "failed",
+  "duration": 57,
+  "event_type": "pull_request",
+  "previous_state": "failed",
+  "pull_request_title": "refactor",
+  "pull_request_number": 3,
+  "started_at": "2018-05-04T11:25:08Z",
+  "finished_at": "2018-05-04T11:26:05Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18801877",
+    "@representation": "minimal",
+    "id": 18801877,
+    "name": "ivt-lab",
+    "slug": "zoltanhorvath/ivt-lab"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18801877/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 112033929,
+    "sha": "bb3c426f3a3b4629f91d780d89ed71be42f89060",
+    "ref": "refs/pull/3/merge",
+    "message": "removed TODO comment",
+    "compare_url": "https://github.com/zoltanhorvath/ivt-lab/pull/3",
+    "committed_at": "2018-05-04T11:24:36Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/374841319",
+      "@representation": "minimal",
+      "id": 374841319
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1145484",
+    "@representation": "minimal",
+    "id": 1145484,
+    "login": "zoltanhorvath"
+  },
+  "updated_at": "2019-04-15T02:35:46.911Z"
+}

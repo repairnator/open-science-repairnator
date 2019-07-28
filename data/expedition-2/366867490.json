@@ -1,0 +1,71 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/366867490",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 366867490,
+  "number": "1135",
+  "state": "failed",
+  "duration": 170,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-04-15T20:40:37Z",
+  "finished_at": "2018-04-15T20:42:29Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/17148231",
+    "@representation": "minimal",
+    "id": 17148231,
+    "name": "AutomatedCar",
+    "slug": "SzFMV2018-Tavasz/AutomatedCar"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/17148231/branch/Team3_utsav",
+    "@representation": "minimal",
+    "name": "Team3_utsav"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 109495939,
+    "sha": "098a20cc3d522fe5b2446b33336dda08de20d563",
+    "ref": "refs/heads/Team3_utsav",
+    "message": "check",
+    "compare_url": "https://github.com/SzFMV2018-Tavasz/AutomatedCar/compare/a082e7079ad0...098a20cc3d52",
+    "committed_at": "2018-04-15T18:56:15Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/366867491",
+      "@representation": "minimal",
+      "id": 366867491
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/366867492",
+      "@representation": "minimal",
+      "id": 366867492
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1144708",
+    "@representation": "minimal",
+    "id": 1144708,
+    "login": "Gabo250"
+  },
+  "updated_at": "2019-04-14T20:29:47.166Z"
+}

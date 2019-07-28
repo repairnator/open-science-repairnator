@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/348887356",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 348887356,
+  "number": "70",
+  "state": "failed",
+  "duration": 68,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-03-04T11:05:17Z",
+  "finished_at": "2018-03-04T11:06:25Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/16661353",
+    "@representation": "minimal",
+    "id": 16661353,
+    "name": "pkukharenka",
+    "slug": "pkukharenka/pkukharenka"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/16661353/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 103817993,
+    "sha": "c0d1205f5b1fd3df30765cf7d3bb4f27079fe764",
+    "ref": "refs/heads/master",
+    "message": "1. Произвести автоматическое тестирование всех сервлетов. [#2518]",
+    "compare_url": "https://github.com/pkukharenka/pkukharenka/compare/1492c4365558...c0d1205f5b1f",
+    "committed_at": "2018-03-04T10:51:25Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/348887357",
+      "@representation": "minimal",
+      "id": 348887357
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1068059",
+    "@representation": "minimal",
+    "id": 1068059,
+    "login": "pkukharenka"
+  },
+  "updated_at": "2019-04-14T18:44:46.476Z"
+}

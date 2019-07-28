@@ -1,0 +1,83 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/396136362",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 396136362,
+  "number": "489",
+  "state": "failed",
+  "duration": 377,
+  "event_type": "cron",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-24T19:12:01Z",
+  "finished_at": "2018-06-24T19:12:35Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/15224175",
+    "@representation": "minimal",
+    "id": 15224175,
+    "name": "jdcallgraph",
+    "slug": "dkarv/jdcallgraph"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/15224175/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 118798629,
+    "sha": "527c3968a3fee2258c8c660271a2e62d81a29a39",
+    "ref": null,
+    "message": "disable runs on openjdk8 because it does not work in travis",
+    "compare_url": "https://github.com/dkarv/jdcallgraph/compare/d7273ef175d8cbac4186a14884e5d6c6e5dcd3f2...527c3968a3fee2258c8c660271a2e62d81a29a39",
+    "committed_at": "2018-06-13T21:29:00Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/396136363",
+      "@representation": "minimal",
+      "id": 396136363
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/396136364",
+      "@representation": "minimal",
+      "id": 396136364
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/396136365",
+      "@representation": "minimal",
+      "id": 396136365
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/396136366",
+      "@representation": "minimal",
+      "id": 396136366
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/232066",
+    "@representation": "minimal",
+    "id": 232066,
+    "login": "dkarv"
+  },
+  "updated_at": "2019-04-14T11:55:30.684Z"
+}

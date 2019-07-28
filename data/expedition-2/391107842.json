@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/391107842",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 391107842,
+  "number": "783",
+  "state": "passed",
+  "duration": 219,
+  "event_type": "push",
+  "previous_state": "passed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-12T05:57:40Z",
+  "finished_at": "2018-06-12T06:01:19Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/15292259",
+    "@representation": "minimal",
+    "id": 15292259,
+    "name": "spring-data-cosmosdb",
+    "slug": "microsoft/spring-data-cosmosdb"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/15292259/branch/remove-unused-code",
+    "@representation": "minimal",
+    "name": "remove-unused-code"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 117197769,
+    "sha": "7eb8d889fab71a52a65c1cdf8a7dcb32a03b7a49",
+    "ref": "refs/heads/remove-unused-code",
+    "message": "Merge branch 'master' into remove-unused-code",
+    "compare_url": "https://github.com/Microsoft/spring-data-cosmosdb/compare/830fea95b113...7eb8d889fab7",
+    "committed_at": "2018-06-12T05:43:48Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/391107843",
+      "@representation": "minimal",
+      "id": 391107843
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/289511",
+    "@representation": "minimal",
+    "id": 289511,
+    "login": "Incarnation-p-lee"
+  },
+  "updated_at": "2019-04-14T12:12:45.653Z"
+}

@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/379480151",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 379480151,
+  "number": "38",
+  "state": "failed",
+  "duration": 57,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "Spring configuration",
+  "pull_request_number": 3,
+  "started_at": "2018-05-15T23:44:16Z",
+  "finished_at": "2018-05-15T23:45:13Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18200927",
+    "@representation": "minimal",
+    "id": 18200927,
+    "name": "desApp-Grupo-A-012018",
+    "slug": "zolezzi/desApp-Grupo-A-012018"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18200927/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 113476474,
+    "sha": "f103898112b683e66892140481cc0a8fbc8da8f1",
+    "ref": "refs/pull/3/merge",
+    "message": "fix mapping conflicts with spring",
+    "compare_url": "https://github.com/zolezzi/desApp-Grupo-A-012018/pull/3",
+    "committed_at": "2018-05-15T23:43:07Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/379480152",
+      "@representation": "minimal",
+      "id": 379480152
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/332138",
+    "@representation": "minimal",
+    "id": 332138,
+    "login": "zolezzi"
+  },
+  "updated_at": "2019-04-15T00:22:30.588Z"
+}

@@ -1,0 +1,106 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/388971144",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 388971144,
+  "number": "86",
+  "state": "failed",
+  "duration": 105,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "Import export to do",
+  "pull_request_number": 25,
+  "started_at": "2018-06-06T21:02:06Z",
+  "finished_at": "2018-06-06T21:05:00Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18676338",
+    "@representation": "minimal",
+    "id": 18676338,
+    "name": "DoIT",
+    "slug": "Schrotty/DoIT"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18676338/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 116509275,
+    "sha": "a2093c62627a666c7bb6b434c72f239d0dba5d95",
+    "ref": "refs/pull/25/merge",
+    "message": "Hopefully fixed test for serialize()\n\nMy test suite isn't working on this machine, hope you don't mind me abusing travis.",
+    "compare_url": "https://github.com/Schrotty/DoIT/pull/25",
+    "committed_at": "2018-06-06T21:00:52Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/388971145",
+      "@representation": "minimal",
+      "id": 388971145
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/388971146",
+      "@representation": "minimal",
+      "id": 388971146
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/388971147",
+      "@representation": "minimal",
+      "id": 388971147
+    }
+  ],
+  "stages": [
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 2324439,
+      "number": 3,
+      "name": "Deploy",
+      "state": "canceled",
+      "started_at": null,
+      "finished_at": "2018-06-06T21:05:00Z"
+    },
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 2324438,
+      "number": 2,
+      "name": "Test",
+      "state": "failed",
+      "started_at": "2018-06-06T21:03:59Z",
+      "finished_at": "2018-06-06T21:05:00Z"
+    },
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 2324437,
+      "number": 1,
+      "name": "Compile",
+      "state": "passed",
+      "started_at": "2018-06-06T21:02:06Z",
+      "finished_at": "2018-06-06T21:02:50Z"
+    }
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/145534",
+    "@representation": "minimal",
+    "id": 145534,
+    "login": "IZEDx"
+  },
+  "updated_at": "2019-04-15T01:57:50.913Z"
+}

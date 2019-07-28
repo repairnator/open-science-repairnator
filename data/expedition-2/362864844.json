@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/362864844",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 362864844,
+  "number": "396",
+  "state": "failed",
+  "duration": 89,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-04-05T22:22:42Z",
+  "finished_at": "2018-04-05T22:24:11Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/15406287",
+    "@representation": "minimal",
+    "id": 15406287,
+    "name": "JPL-CUSeniorProjects",
+    "slug": "elbonian/JPL-CUSeniorProjects"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/15406287/branch/LatLongFix",
+    "@representation": "minimal",
+    "name": "LatLongFix"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 108243320,
+    "sha": "5d39483ef3525801ca6ef38ffa52bd55cc0b11cc",
+    "ref": "refs/heads/LatLongFix",
+    "message": "fixed merge",
+    "compare_url": "https://github.com/RossBlassingame/JPL-CUSeniorProjects/compare/ae71cfa01245...5d39483ef352",
+    "committed_at": "2018-04-05T22:22:19Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/362864845",
+      "@representation": "minimal",
+      "id": 362864845
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1038220",
+    "@representation": "minimal",
+    "id": 1038220,
+    "login": "chandlersamuels"
+  },
+  "updated_at": "2019-04-14T12:42:20.341Z"
+}

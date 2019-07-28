@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/374663722",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 374663722,
+  "number": "181",
+  "state": "failed",
+  "duration": 95,
+  "event_type": "push",
+  "previous_state": "errored",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-05-03T23:50:31Z",
+  "finished_at": "2018-05-03T23:52:06Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/17983499",
+    "@representation": "minimal",
+    "id": 17983499,
+    "name": "codeu_project_2018",
+    "slug": "codeu-2018-team31/codeu_project_2018"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/17983499/branch/add-profile-to-profile-servlet",
+    "@representation": "minimal",
+    "name": "add-profile-to-profile-servlet"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 111979454,
+    "sha": "589e406bb5039e6af9291460601a57ac7a77cddb",
+    "ref": "refs/heads/add-profile-to-profile-servlet",
+    "message": "Resolves more merge conflicts",
+    "compare_url": "https://github.com/codeu-2018-team31/codeu_project_2018/compare/e62eebcf1625...589e406bb503",
+    "committed_at": "2018-05-03T23:49:59Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/374663723",
+      "@representation": "minimal",
+      "id": 374663723
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1162108",
+    "@representation": "minimal",
+    "id": 1162108,
+    "login": "joycezhao2"
+  },
+  "updated_at": "2019-04-14T23:31:50.900Z"
+}

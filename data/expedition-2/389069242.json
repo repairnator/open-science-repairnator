@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/389069242",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 389069242,
+  "number": "3105",
+  "state": "failed",
+  "duration": 413,
+  "event_type": "pull_request",
+  "previous_state": "failed",
+  "pull_request_title": "Implemented Word of Command (incomplete, buggy)",
+  "pull_request_number": 4993,
+  "started_at": "2018-06-07T03:38:09Z",
+  "finished_at": "2018-06-07T03:45:02Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/4615627",
+    "@representation": "minimal",
+    "id": 4615627,
+    "name": "mage",
+    "slug": "magefree/mage"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/4615627/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 116540054,
+    "sha": "27c17334dd3d719587d69d2ffee927c2f198be54",
+    "ref": "refs/pull/4993/merge",
+    "message": " Implemented castability check for Word of Command",
+    "compare_url": "https://github.com/magefree/mage/pull/4993",
+    "committed_at": "2018-06-07T03:37:22Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/389069243",
+      "@representation": "minimal",
+      "id": 389069243
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/969902",
+    "@representation": "minimal",
+    "id": 969902,
+    "login": "Zzooouhh"
+  },
+  "updated_at": "2019-04-11T22:54:33.811Z"
+}

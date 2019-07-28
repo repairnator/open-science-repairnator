@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/382484026",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 382484026,
+  "number": "165",
+  "state": "failed",
+  "duration": 35,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-05-23T03:51:07Z",
+  "finished_at": "2018-05-23T03:51:42Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18186856",
+    "@representation": "minimal",
+    "id": 18186856,
+    "name": "re",
+    "slug": "MatiasDurbano/re"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18186856/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 114419347,
+    "sha": "03c248492f89d3d5d8e22d3e367de3613efccfe4",
+    "ref": "refs/heads/master",
+    "message": "properties pack",
+    "compare_url": "https://github.com/MatiasDurbano/re/compare/2ac32f587ce2...03c248492f89",
+    "committed_at": "2018-05-23T03:50:52Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/382484027",
+      "@representation": "minimal",
+      "id": 382484027
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1208606",
+    "@representation": "minimal",
+    "id": 1208606,
+    "login": "JonatanDiaz"
+  },
+  "updated_at": "2019-04-15T00:19:44.352Z"
+}

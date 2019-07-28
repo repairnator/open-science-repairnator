@@ -1,0 +1,90 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/353774072",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 353774072,
+  "number": "2063",
+  "state": "failed",
+  "duration": 539,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "SCB-373 bugfix: if locateOperation error, invocation will be null, if…",
+  "pull_request_number": 605,
+  "started_at": "2018-03-15T11:31:23Z",
+  "finished_at": "2018-03-15T11:40:22Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/13515429",
+    "@representation": "minimal",
+    "id": 13515429,
+    "name": "servicecomb-java-chassis",
+    "slug": "apache/servicecomb-java-chassis"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/13515429/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 105356038,
+    "sha": "4c25574cbed9cc56391f6f610729a81874922a09",
+    "ref": "refs/pull/605/merge",
+    "message": "SCB-373 bugfix: if locateOperation error, invocation will be null, if response, will cause NullPointException",
+    "compare_url": "https://github.com/apache/incubator-servicecomb-java-chassis/pull/605",
+    "committed_at": "2018-03-15T11:10:11Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/353774073",
+      "@representation": "minimal",
+      "id": 353774073
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/353774074",
+      "@representation": "minimal",
+      "id": 353774074
+    }
+  ],
+  "stages": [
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 1512883,
+      "number": 2,
+      "name": "Deploy on",
+      "state": "canceled",
+      "started_at": null,
+      "finished_at": "2018-03-15T11:40:22Z"
+    },
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 1512882,
+      "number": 1,
+      "name": "Compilation and installation",
+      "state": "failed",
+      "started_at": "2018-03-15T11:31:23Z",
+      "finished_at": "2018-03-15T11:40:22Z"
+    }
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/956301",
+    "@representation": "minimal",
+    "id": 956301,
+    "login": "jeho0815"
+  },
+  "updated_at": "2019-04-14T05:00:12.990Z"
+}

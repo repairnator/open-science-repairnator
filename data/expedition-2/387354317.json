@@ -1,0 +1,77 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/387354317",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 387354317,
+  "number": "2229",
+  "state": "failed",
+  "duration": 525,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-03T10:04:58Z",
+  "finished_at": "2018-06-03T10:09:01Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/706548",
+    "@representation": "minimal",
+    "id": 706548,
+    "name": "jedis",
+    "slug": "xetorthio/jedis"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/706548/branch/2.10",
+    "@representation": "minimal",
+    "name": "2.10"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 116002403,
+    "sha": "700f8a5d4990e242baee2d173a930ac5de82a23e",
+    "ref": "refs/heads/2.10",
+    "message": "assertEquals param order and other changes (#1729)\n\n- assertEquals usages are changed to have expected value first and actual one later.\n- In HostAndPortTest, assertArrayEquals is used instead of converting array to list.\n- Added/modified tests in JedisClusterTest.testRedisHashtag(), JedisClusterTest.testClusterKeySlot() and\n- assertArrayEquals is used in case of byte array operations instead of converting to string.\n- Other changes, only in tests.",
+    "compare_url": "https://github.com/xetorthio/jedis/compare/bd1ef6dfe684...700f8a5d4990",
+    "committed_at": "2018-06-03T09:50:46Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/387354319",
+      "@representation": "minimal",
+      "id": 387354319
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/387354320",
+      "@representation": "minimal",
+      "id": 387354320
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/387354321",
+      "@representation": "minimal",
+      "id": 387354321
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/939658",
+    "@representation": "minimal",
+    "id": 939658,
+    "login": "sazzad16"
+  },
+  "updated_at": "2019-04-10T15:34:40.110Z"
+}

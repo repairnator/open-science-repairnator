@@ -1,0 +1,106 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/388975711",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 388975711,
+  "number": "87",
+  "state": "failed",
+  "duration": 98,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-06T21:12:36Z",
+  "finished_at": "2018-06-06T21:14:18Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18676338",
+    "@representation": "minimal",
+    "id": 18676338,
+    "name": "DoIT",
+    "slug": "Schrotty/DoIT"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18676338/branch/importExportToDo",
+    "@representation": "minimal",
+    "name": "importExportToDo"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 116510695,
+    "sha": "9ed9d6afa46deb2c2e1fb97973ab595a975fc1dc",
+    "ref": "refs/heads/importExportToDo",
+    "message": "#14 Last test with Travis, else I will setup JUnit",
+    "compare_url": "https://github.com/Schrotty/DoIT/compare/e331887d441b...9ed9d6afa46d",
+    "committed_at": "2018-06-06T21:12:13Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/388975712",
+      "@representation": "minimal",
+      "id": 388975712
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/388975713",
+      "@representation": "minimal",
+      "id": 388975713
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/388975714",
+      "@representation": "minimal",
+      "id": 388975714
+    }
+  ],
+  "stages": [
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 2324583,
+      "number": 3,
+      "name": "Deploy",
+      "state": "canceled",
+      "started_at": null,
+      "finished_at": "2018-06-06T21:14:18Z"
+    },
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 2324582,
+      "number": 2,
+      "name": "Test",
+      "state": "failed",
+      "started_at": "2018-06-06T21:13:13Z",
+      "finished_at": "2018-06-06T21:14:18Z"
+    },
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 2324581,
+      "number": 1,
+      "name": "Compile",
+      "state": "passed",
+      "started_at": "2018-06-06T21:12:36Z",
+      "finished_at": "2018-06-06T21:13:09Z"
+    }
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/145534",
+    "@representation": "minimal",
+    "id": 145534,
+    "login": "IZEDx"
+  },
+  "updated_at": "2019-04-15T01:57:50.913Z"
+}

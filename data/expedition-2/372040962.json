@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/372040962",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 372040962,
+  "number": "128",
+  "state": "failed",
+  "duration": 47,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-04-27T13:45:48Z",
+  "finished_at": "2018-04-27T13:46:35Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18186856",
+    "@representation": "minimal",
+    "id": 18186856,
+    "name": "re",
+    "slug": "MatiasDurbano/re"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18186856/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 111141171,
+    "sha": "dbacfa912b4a355302f309ab56a4279baea36921",
+    "ref": "refs/heads/master",
+    "message": "Politica cache",
+    "compare_url": "https://github.com/MatiasDurbano/re/compare/506d228fbdc7...dbacfa912b4a",
+    "committed_at": "2018-04-27T13:45:41Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/372040963",
+      "@representation": "minimal",
+      "id": 372040963
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1173923",
+    "@representation": "minimal",
+    "id": 1173923,
+    "login": "maxiPompilio"
+  },
+  "updated_at": "2019-04-15T00:19:44.352Z"
+}

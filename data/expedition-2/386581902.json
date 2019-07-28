@@ -1,0 +1,300 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/386581902",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 386581902,
+  "number": "7667",
+  "state": "failed",
+  "duration": 316,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "Kaibranch",
+  "pull_request_number": 276,
+  "started_at": "2018-06-01T09:49:27Z",
+  "finished_at": "2018-06-01T09:54:43Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/5547194",
+    "@representation": "minimal",
+    "id": 5547194,
+    "name": "matsim",
+    "slug": "matsim-org/matsim"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/5547194/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 115750456,
+    "sha": "6cde6f7082a2ba99483d26a40e562a165eae9cb1",
+    "ref": "refs/pull/276/merge",
+    "message": "Merge branch 'master' into kaibranch",
+    "compare_url": "https://github.com/matsim-org/matsim/pull/276",
+    "committed_at": "2018-06-01T09:48:29Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581903",
+      "@representation": "minimal",
+      "id": 386581903
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581904",
+      "@representation": "minimal",
+      "id": 386581904
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581905",
+      "@representation": "minimal",
+      "id": 386581905
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581906",
+      "@representation": "minimal",
+      "id": 386581906
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581907",
+      "@representation": "minimal",
+      "id": 386581907
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581908",
+      "@representation": "minimal",
+      "id": 386581908
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581909",
+      "@representation": "minimal",
+      "id": 386581909
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581910",
+      "@representation": "minimal",
+      "id": 386581910
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581911",
+      "@representation": "minimal",
+      "id": 386581911
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581912",
+      "@representation": "minimal",
+      "id": 386581912
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581914",
+      "@representation": "minimal",
+      "id": 386581914
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581916",
+      "@representation": "minimal",
+      "id": 386581916
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581917",
+      "@representation": "minimal",
+      "id": 386581917
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581918",
+      "@representation": "minimal",
+      "id": 386581918
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581919",
+      "@representation": "minimal",
+      "id": 386581919
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581920",
+      "@representation": "minimal",
+      "id": 386581920
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581921",
+      "@representation": "minimal",
+      "id": 386581921
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581922",
+      "@representation": "minimal",
+      "id": 386581922
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581923",
+      "@representation": "minimal",
+      "id": 386581923
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581924",
+      "@representation": "minimal",
+      "id": 386581924
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581925",
+      "@representation": "minimal",
+      "id": 386581925
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581926",
+      "@representation": "minimal",
+      "id": 386581926
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581927",
+      "@representation": "minimal",
+      "id": 386581927
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581928",
+      "@representation": "minimal",
+      "id": 386581928
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581929",
+      "@representation": "minimal",
+      "id": 386581929
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581930",
+      "@representation": "minimal",
+      "id": 386581930
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581931",
+      "@representation": "minimal",
+      "id": 386581931
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581932",
+      "@representation": "minimal",
+      "id": 386581932
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581933",
+      "@representation": "minimal",
+      "id": 386581933
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581934",
+      "@representation": "minimal",
+      "id": 386581934
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581935",
+      "@representation": "minimal",
+      "id": 386581935
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581936",
+      "@representation": "minimal",
+      "id": 386581936
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581937",
+      "@representation": "minimal",
+      "id": 386581937
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581939",
+      "@representation": "minimal",
+      "id": 386581939
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581941",
+      "@representation": "minimal",
+      "id": 386581941
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581944",
+      "@representation": "minimal",
+      "id": 386581944
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/386581947",
+      "@representation": "minimal",
+      "id": 386581947
+    }
+  ],
+  "stages": [
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 2263313,
+      "number": 2,
+      "name": "Test",
+      "state": "canceled",
+      "started_at": null,
+      "finished_at": "2018-06-01T09:54:43Z"
+    },
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 2263312,
+      "number": 1,
+      "name": "Package",
+      "state": "failed",
+      "started_at": "2018-06-01T09:49:27Z",
+      "finished_at": "2018-06-01T09:54:43Z"
+    }
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/241592",
+    "@representation": "minimal",
+    "id": 241592,
+    "login": "kainagel"
+  },
+  "updated_at": "2019-04-12T05:22:33.468Z"
+}

@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/376812142",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 376812142,
+  "number": "403",
+  "state": "failed",
+  "duration": 380,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-05-09T12:32:34Z",
+  "finished_at": "2018-05-09T12:38:54Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/8548379",
+    "@representation": "minimal",
+    "id": 8548379,
+    "name": "DramaNLP",
+    "slug": "quadrama/DramaNLP"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/8548379/branch/develop",
+    "@representation": "minimal",
+    "name": "develop"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 112644676,
+    "sha": "e2f8b23e5a4d328f8cb64e13b16f03a8cfc5e567",
+    "ref": "refs/heads/develop",
+    "message": "printing out id",
+    "compare_url": "https://github.com/quadrama/DramaNLP/compare/4b970f999058...e2f8b23e5a4d",
+    "committed_at": "2018-05-09T12:32:23Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/376812143",
+      "@representation": "minimal",
+      "id": 376812143
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/333195",
+    "@representation": "minimal",
+    "id": 333195,
+    "login": "nilsreiter"
+  },
+  "updated_at": "2019-04-13T04:18:04.718Z"
+}

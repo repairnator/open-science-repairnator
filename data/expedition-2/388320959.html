@@ -1,39 +1,45 @@
+<?xml version="1.0"?>
 <html>
-<body>
-<p><a href="http://travis-ci.org/TAI-EPAM/jdi-cucumber-test-generator/builds/388320959" id="travis-url">http://travis-ci.org/TAI-EPAM/jdi-cucumber-test-generator/builds/388320959</a></p>
-<p><a href="https://github.com/TAI-EPAM/jdi-cucumber-test-generator/commit/9c8f7f222840d43fda83bb87e5a0ec9fc2c2d3d0" id="commit-url">https://github.com/TAI-EPAM/jdi-cucumber-test-generator/commit/9c8f7f222840d43fda83bb87e5a0ec9fc2c2d3d0</a></p>
-<pre>Nopol<code id=" 0" class="patch" title="Nopol">
+  <body>
+    <p>
+      <a href="http://travis-ci.org/TAI-EPAM/jdi-cucumber-test-generator/builds/388320959" id="travis-url">http://travis-ci.org/TAI-EPAM/jdi-cucumber-test-generator/builds/388320959</a>
+    </p>
+    <p>
+      <a href="https://github.com/TAI-EPAM/jdi-cucumber-test-generator/commit/9c8f7f222840d43fda83bb87e5a0ec9fc2c2d3d0" id="commit-url">https://github.com/TAI-EPAM/jdi-cucumber-test-generator/commit/9c8f7f222840d43fda83bb87e5a0ec9fc2c2d3d0</a>
+    </p>
+    <pre>Nopol<code id=" 0" class="patch" title="Nopol">
 --- /root/workspace/TAI-EPAM/jdi-cucumber-test-generator/388320959/bdd-generator/src/main/java/com/epam/test_generator/services/AdminService.java
 +++ /root/workspace/TAI-EPAM/jdi-cucumber-test-generator/388320959/bdd-generator/src/main/java/com/epam/test_generator/services/AdminService.java
 @@ -41,3 +41,5 @@
          if (roleForChange.equals(ADMIN_NAME)) {
--            throw new BadRoleException(&quot;Prohibited to set admin role&quot;);
+-            throw new BadRoleException("Prohibited to set admin role");
 +            if (false) {
-+                throw new BadRoleException(&quot;Prohibited to set admin role&quot;);
++                throw new BadRoleException("Prohibited to set admin role");
 +            }
          }
 </code></pre>
-<pre>Nopol<code id=" 1" class="patch" title="Nopol">
+    <pre>Nopol<code id=" 1" class="patch" title="Nopol">
 --- /root/workspace/TAI-EPAM/jdi-cucumber-test-generator/388320959/bdd-generator/src/main/java/com/epam/test_generator/services/AdminService.java
 +++ /root/workspace/TAI-EPAM/jdi-cucumber-test-generator/388320959/bdd-generator/src/main/java/com/epam/test_generator/services/AdminService.java
 @@ -40,3 +40,3 @@
          }
 -        if (roleForChange.equals(ADMIN_NAME)) {
 +        if (false) {
-             throw new BadRoleException(&quot;Prohibited to set admin role&quot;);
+             throw new BadRoleException("Prohibited to set admin role");
 </code></pre>
-<pre>Nopol<code id=" 2" class="patch" title="Nopol">
+    <pre>Nopol<code id=" 2" class="patch" title="Nopol">
 --- /root/workspace/TAI-EPAM/jdi-cucumber-test-generator/388320959/bdd-generator/src/main/java/com/epam/test_generator/services/AdminService.java
 +++ /root/workspace/TAI-EPAM/jdi-cucumber-test-generator/388320959/bdd-generator/src/main/java/com/epam/test_generator/services/AdminService.java
 @@ -40,4 +40,6 @@
          }
 -        if (roleForChange.equals(ADMIN_NAME)) {
--            throw new BadRoleException(&quot;Prohibited to set admin role&quot;);
+-            throw new BadRoleException("Prohibited to set admin role");
 +        if (false) {
 +            if (roleForChange.equals(ADMIN_NAME)) {
-+                throw new BadRoleException(&quot;Prohibited to set admin role&quot;);
++                throw new BadRoleException("Prohibited to set admin role");
 +            }
          }
 </code></pre>
-</body>
+    <a href="https://api.travis-ci.org/v3/build/388320959" id="travis-json">Travis metadata as JSON</a>
+  </body>
 </html>

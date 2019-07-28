@@ -1,0 +1,71 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/369854684",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 369854684,
+  "number": "116",
+  "state": "failed",
+  "duration": 145,
+  "event_type": "push",
+  "previous_state": "passed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-04-22T20:52:24Z",
+  "finished_at": "2018-04-22T20:53:47Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/14861745",
+    "@representation": "minimal",
+    "id": 14861745,
+    "name": "dummymaker",
+    "slug": "GoodforGod/dummymaker"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/14861745/branch/feature%2Fexporters",
+    "@representation": "minimal",
+    "name": "feature/exporters"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 110447921,
+    "sha": "6f4ec09ea758ff8b7a114713774832ac7dcabf89",
+    "ref": "refs/heads/feature/exporters",
+    "message": "Complex Generators a successor of generate factory\nComplex Gen fully integrated\nScanners and factories improvements\nRefactoring and code cleaning\nBasic Cast Utils major improvements\nAuto Gen and streaming factoring in progress",
+    "compare_url": "https://github.com/GoodforGod/dummymaker/compare/26cfd4d97a20...6f4ec09ea758",
+    "committed_at": "2018-04-22T20:51:33Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/369854686",
+      "@representation": "minimal",
+      "id": 369854686
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/369854688",
+      "@representation": "minimal",
+      "id": 369854688
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/947997",
+    "@representation": "minimal",
+    "id": 947997,
+    "login": "GoodforGod"
+  },
+  "updated_at": "2019-04-14T10:22:05.401Z"
+}

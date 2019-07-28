@@ -1,0 +1,77 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/398573996",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 398573996,
+  "number": "390",
+  "state": "passed",
+  "duration": 236,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "dh002",
+  "pull_request_number": 54,
+  "started_at": "2018-06-30T13:10:59Z",
+  "finished_at": "2018-06-30T13:12:04Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/16351766",
+    "@representation": "minimal",
+    "id": 16351766,
+    "name": "owl",
+    "slug": "idsc-frazzoli/owl"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/16351766/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 119567450,
+    "sha": "1a0c0ab7e86d6958bb2eed75773e2ffb4dea16b5",
+    "ref": "refs/pull/54/merge",
+    "message": "r2 vector entity demo",
+    "compare_url": "https://github.com/idsc-frazzoli/owl/pull/54",
+    "committed_at": "2018-06-30T12:41:28Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/398573997",
+      "@representation": "minimal",
+      "id": 398573997
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/398573998",
+      "@representation": "minimal",
+      "id": 398573998
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/398573999",
+      "@representation": "minimal",
+      "id": 398573999
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/790728",
+    "@representation": "minimal",
+    "id": 790728,
+    "login": "datahaki"
+  },
+  "updated_at": "2019-04-14T17:31:46.765Z"
+}

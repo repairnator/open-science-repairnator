@@ -1,0 +1,77 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/387360034",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 387360034,
+  "number": "2232",
+  "state": "failed",
+  "duration": 728,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-03T10:25:19Z",
+  "finished_at": "2018-06-03T10:30:19Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/706548",
+    "@representation": "minimal",
+    "id": 706548,
+    "name": "jedis",
+    "slug": "xetorthio/jedis"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/706548/branch/2.10",
+    "@representation": "minimal",
+    "name": "2.10"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 116004018,
+    "sha": "061da3d9a513699b5c386eb771e8968c2d3db233",
+    "ref": "refs/heads/2.10",
+    "message": "Remove unwatch() from Jedis.resetState() (#1731)\n\n* Remove unwatch() from Jedis.resetState()\n\nBecause Client.resetState() will be doing anyway.\n\n* Cleanup response of unwatch within resetState",
+    "compare_url": "https://github.com/xetorthio/jedis/compare/700f8a5d4990...061da3d9a513",
+    "committed_at": "2018-06-03T10:14:17Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/387360035",
+      "@representation": "minimal",
+      "id": 387360035
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/387360036",
+      "@representation": "minimal",
+      "id": 387360036
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/387360037",
+      "@representation": "minimal",
+      "id": 387360037
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/939658",
+    "@representation": "minimal",
+    "id": 939658,
+    "login": "sazzad16"
+  },
+  "updated_at": "2019-04-10T15:34:40.110Z"
+}

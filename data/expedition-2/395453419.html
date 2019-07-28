@@ -1,68 +1,73 @@
+<?xml version="1.0"?>
 <html>
-<body>
-<p><a href="http://travis-ci.org/B3Partners/playbase-service/builds/395453419" id="travis-url">http://travis-ci.org/B3Partners/playbase-service/builds/395453419</a></p>
-<p><a href="https://github.com/B3Partners/playbase-service/commit/2aabdf4f9087cf45f7902e3fda3fb359c6178a76" id="commit-url">https://github.com/B3Partners/playbase-service/commit/2aabdf4f9087cf45f7902e3fda3fb359c6178a76</a></p>
-<pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
+  <body>
+    <p>
+      <a href="http://travis-ci.org/B3Partners/playbase-service/builds/395453419" id="travis-url">http://travis-ci.org/B3Partners/playbase-service/builds/395453419</a>
+    </p>
+    <p>
+      <a href="https://github.com/B3Partners/playbase-service/commit/2aabdf4f9087cf45f7902e3fda3fb359c6178a76" id="commit-url">https://github.com/B3Partners/playbase-service/commit/2aabdf4f9087cf45f7902e3fda3fb359c6178a76</a>
+    </p>
+    <pre>NPEFix<code id=" 0" class="patch" title="NPEFix">
 --- /PlayadvisorExporter.java
 +++ /PlayadvisorExporter.java
 @@ -82,3 +82,8 @@
      public String pushLocation(JSONObject location, Integer id, Project job) throws IOException {
--        String url = job.getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
+-        String url = job.getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        String url;
 +        if (job == null) {
-+            url = new Project().getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
++            url = new Project().getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        } else {
-+            url = job.getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
++            url = job.getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        }
          HttpClient httpClient = HttpClientBuilder.create().build();
 @@ -88,2 +93,5 @@
-         request.addHeader(&quot;content-type&quot;, &quot;application/json&quot;);
+         request.addHeader("content-type", "application/json");
 +        if (job == null) {
 +            return null;
 +        }
-         request.addHeader(&quot;Authorization&quot;, &quot;Basic &quot; + job.getAuthkey());
+         request.addHeader("Authorization", "Basic " + job.getAuthkey());
 </code></pre>
-<pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 1" class="patch" title="NPEFix">
 --- /PlayadvisorExporter.java
 +++ /PlayadvisorExporter.java
 @@ -82,3 +82,8 @@
      public String pushLocation(JSONObject location, Integer id, Project job) throws IOException {
--        String url = job.getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
+-        String url = job.getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        String url;
 +        if (job == null) {
-+            url = new Project().getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
++            url = new Project().getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        } else {
-+            url = job.getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
++            url = job.getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        }
          HttpClient httpClient = HttpClientBuilder.create().build();
 @@ -88,2 +93,5 @@
-         request.addHeader(&quot;content-type&quot;, &quot;application/json&quot;);
+         request.addHeader("content-type", "application/json");
 +        if (job == null) {
 +            return url;
 +        }
-         request.addHeader(&quot;Authorization&quot;, &quot;Basic &quot; + job.getAuthkey());
+         request.addHeader("Authorization", "Basic " + job.getAuthkey());
 </code></pre>
-<pre>NPEFix<code id=" 2" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 2" class="patch" title="NPEFix">
 --- /PlayadvisorExporter.java
 +++ /PlayadvisorExporter.java
 @@ -82,3 +82,8 @@
      public String pushLocation(JSONObject location, Integer id, Project job) throws IOException {
--        String url = job.getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
+-        String url = job.getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        String url;
 +        if (job == null) {
-+            url = new Project().getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
++            url = new Project().getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        } else {
-+            url = job.getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
++            url = job.getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 +        }
          HttpClient httpClient = HttpClientBuilder.create().build();
 @@ -88,2 +93,5 @@
-         request.addHeader(&quot;content-type&quot;, &quot;application/json&quot;);
+         request.addHeader("content-type", "application/json");
 +        if (job == null) {
 +            return new String();
 +        }
-         request.addHeader(&quot;Authorization&quot;, &quot;Basic &quot; + job.getAuthkey());
+         request.addHeader("Authorization", "Basic " + job.getAuthkey());
 </code></pre>
-<pre>NPEFix<code id=" 3" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 3" class="patch" title="NPEFix">
 --- /PlayadvisorExporter.java
 +++ /PlayadvisorExporter.java
 @@ -82,2 +82,5 @@
@@ -70,9 +75,9 @@
 +        if (job == null) {
 +            return null;
 +        }
-         String url = job.getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
+         String url = job.getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 </code></pre>
-<pre>NPEFix<code id=" 4" class="patch" title="NPEFix">
+    <pre>NPEFix<code id=" 4" class="patch" title="NPEFix">
 --- /PlayadvisorExporter.java
 +++ /PlayadvisorExporter.java
 @@ -82,2 +82,5 @@
@@ -80,7 +85,8 @@
 +        if (job == null) {
 +            return new String();
 +        }
-         String url = job.getBaseurl() + &quot;/wp-json/b3p/v1/playbase/&quot; + id;
+         String url = job.getBaseurl() + "/wp-json/b3p/v1/playbase/" + id;
 </code></pre>
-</body>
+    <a href="https://api.travis-ci.org/v3/build/395453419" id="travis-json">Travis metadata as JSON</a>
+  </body>
 </html>

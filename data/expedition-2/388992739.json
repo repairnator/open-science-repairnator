@@ -1,0 +1,77 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/388992739",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 388992739,
+  "number": "60",
+  "state": "failed",
+  "duration": 204,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-06T21:57:57Z",
+  "finished_at": "2018-06-06T21:59:37Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/15653591",
+    "@representation": "minimal",
+    "id": 15653591,
+    "name": "searchcode-server",
+    "slug": "boyter/searchcode-server"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/15653591/branch/searchcode",
+    "@representation": "minimal",
+    "name": "searchcode"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 116516071,
+    "sha": "e80f815f4826a221f83ac5bc4dae1300f79eddd1",
+    "ref": "refs/heads/searchcode",
+    "message": "Add logic to add language names in",
+    "compare_url": "https://github.com/boyter/searchcode-server/compare/7bf4c8c14720...e80f815f4826",
+    "committed_at": "2018-06-06T21:57:39Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/388992740",
+      "@representation": "minimal",
+      "id": 388992740
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/388992741",
+      "@representation": "minimal",
+      "id": 388992741
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/388992742",
+      "@representation": "minimal",
+      "id": 388992742
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/998477",
+    "@representation": "minimal",
+    "id": 998477,
+    "login": "boyter"
+  },
+  "updated_at": "2019-04-14T14:26:48.999Z"
+}

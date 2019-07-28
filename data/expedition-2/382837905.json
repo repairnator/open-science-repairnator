@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/382837905",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 382837905,
+  "number": "8635",
+  "state": "failed",
+  "duration": 162,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "3583 dv cannot parse do is that don't have a separator in authority/prefix",
+  "pull_request_number": 4651,
+  "started_at": "2018-05-23T19:13:38Z",
+  "finished_at": "2018-05-23T19:16:20Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/2258639",
+    "@representation": "minimal",
+    "id": 2258639,
+    "name": "dataverse",
+    "slug": "IQSS/dataverse"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/2258639/branch/develop",
+    "@representation": "minimal",
+    "name": "develop"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 114531788,
+    "sha": "e998f927f8fa221b1f909ff2251f0c9ad4edbe4a",
+    "ref": "refs/pull/4651/merge",
+    "message": "integrating/removing duplicate code...",
+    "compare_url": "https://github.com/IQSS/dataverse/pull/4651",
+    "committed_at": "2018-05-23T19:12:56Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/382837906",
+      "@representation": "minimal",
+      "id": 382837906
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1164137",
+    "@representation": "minimal",
+    "id": 1164137,
+    "login": "qqmyers"
+  },
+  "updated_at": "2019-04-11T05:51:14.258Z"
+}

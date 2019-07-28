@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/393799154",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 393799154,
+  "number": "10",
+  "state": "failed",
+  "duration": 55,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "Fix FixedLengthWithOffsetInputFormat record key",
+  "pull_request_number": 4,
+  "started_at": "2018-06-18T19:53:55Z",
+  "finished_at": "2018-06-18T19:54:50Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/19529031",
+    "@representation": "minimal",
+    "id": 19529031,
+    "name": "hadoop-io-extensions",
+    "slug": "Project-ODE/hadoop-io-extensions"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/19529031/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 118059958,
+    "sha": "be92ff5ba1a4c036a24b472791378352920d2102",
+    "ref": "refs/pull/4/merge",
+    "message": "Fix FixedLengthWithOffsetInputFormat record key\n\nThis patch adds the possibility to choose whether the record-key\nprovided by the FixedLengthWithOffsetRecordReader starts at offset\n(case by default, meaning that first record of a file has key = 0, even if it is read\nat offset position in file), or if it start at beginning of file\n(meaning first record of a file has key = offset).",
+    "compare_url": "https://github.com/Project-ODE/hadoop-io-extensions/pull/4",
+    "committed_at": "2018-06-18T19:50:09Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/393799155",
+      "@representation": "minimal",
+      "id": 393799155
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/731308",
+    "@representation": "minimal",
+    "id": 731308,
+    "login": "jobar"
+  },
+  "updated_at": "2019-04-15T05:21:45.513Z"
+}

@@ -1,0 +1,71 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/396906675",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 396906675,
+  "number": "139",
+  "state": "failed",
+  "duration": 499,
+  "event_type": "push",
+  "previous_state": "errored",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-26T14:09:55Z",
+  "finished_at": "2018-06-26T14:15:46Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/15207514",
+    "@representation": "minimal",
+    "id": 15207514,
+    "name": "playbase-service",
+    "slug": "B3Partners/playbase-service"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/15207514/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 119047498,
+    "sha": "d63ff5fc01defcd9897034748425dc50d4eb254c",
+    "ref": "refs/heads/master",
+    "message": "Pushing images to playadvisor works",
+    "compare_url": "https://github.com/B3Partners/playbase-service/compare/2f8289fa093b...d63ff5fc01de",
+    "committed_at": "2018-06-26T14:09:09Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/396906676",
+      "@representation": "minimal",
+      "id": 396906676
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/396906677",
+      "@representation": "minimal",
+      "id": 396906677
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/117148",
+    "@representation": "minimal",
+    "id": 117148,
+    "login": "mtoonen"
+  },
+  "updated_at": "2019-04-14T11:51:43.047Z"
+}

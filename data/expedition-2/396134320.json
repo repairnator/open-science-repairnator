@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/396134320",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 396134320,
+  "number": "72",
+  "state": "failed",
+  "duration": 58,
+  "event_type": "push",
+  "previous_state": "failed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-06-24T18:52:33Z",
+  "finished_at": "2018-06-24T18:53:31Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/19176776",
+    "@representation": "minimal",
+    "id": 19176776,
+    "name": "CodeU-Summer-2018",
+    "slug": "codeu-su2018-team3/CodeU-Summer-2018"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/19176776/branch/activityfeed",
+    "@representation": "minimal",
+    "name": "activityfeed"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 118797957,
+    "sha": "888f189daec62fa791774f39cd870639e6db28fa",
+    "ref": "refs/heads/activityfeed",
+    "message": "Minor corrected to `testEquals` in  `ActivityTest`",
+    "compare_url": "https://github.com/codeu-su2018-team3/CodeU-Summer-2018/compare/1a9e9b923363...888f189daec6",
+    "committed_at": "2018-06-24T18:37:48Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/396134321",
+      "@representation": "minimal",
+      "id": 396134321
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/1241732",
+    "@representation": "minimal",
+    "id": 1241732,
+    "login": "hunterriffic"
+  },
+  "updated_at": "2019-04-15T03:48:18.218Z"
+}

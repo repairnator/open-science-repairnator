@@ -1,8 +1,13 @@
+<?xml version="1.0"?>
 <html>
-<body>
-<p><a href="http://travis-ci.org/quadrama/DramaNLP/builds/376812142" id="travis-url">http://travis-ci.org/quadrama/DramaNLP/builds/376812142</a></p>
-<p><a href="https://github.com/quadrama/DramaNLP/commit/e2f8b23e5a4d328f8cb64e13b16f03a8cfc5e567" id="commit-url">https://github.com/quadrama/DramaNLP/commit/e2f8b23e5a4d328f8cb64e13b16f03a8cfc5e567</a></p>
-<pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
+  <body>
+    <p>
+      <a href="http://travis-ci.org/quadrama/DramaNLP/builds/376812142" id="travis-url">http://travis-ci.org/quadrama/DramaNLP/builds/376812142</a>
+    </p>
+    <p>
+      <a href="https://github.com/quadrama/DramaNLP/commit/e2f8b23e5a4d328f8cb64e13b16f03a8cfc5e567" id="commit-url">https://github.com/quadrama/DramaNLP/commit/e2f8b23e5a4d328f8cb64e13b16f03a8cfc5e567</a>
+    </p>
+    <pre>NopolAllTests<code id=" 0" class="patch" title="NopolAllTests">
 --- a/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
 +++ b/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
 @@ -125,3 +125,5 @@
@@ -13,7 +18,7 @@
 +				}
  			} finally {
 </code></pre>
-<pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 1" class="patch" title="NopolAllTests">
 --- a/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
 +++ b/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
 @@ -112,18 +112,20 @@
@@ -23,7 +28,7 @@
 -				List&lt;CSVRecord&gt; records = r.getRecords();
 -				for (CSVRecord rec : records) {
 -					String s = rec.get(0);
--					if (s.startsWith(&quot;/&quot;)) {
+-					if (s.startsWith("/")) {
 -						urls.add(new File(s).toURI().toURL());
 -					} else {
 -						urls.add(new URL(s));
@@ -33,26 +38,26 @@
 +					List&lt;CSVRecord&gt; records = r.getRecords();
 +					for (CSVRecord rec : records) {
 +						String s = rec.get(0);
-+						if (s.startsWith(&quot;/&quot;)) {
++						if (s.startsWith("/")) {
 +							urls.add(new File(s).toURI().toURL());
 +						} else {
 +							urls.add(new URL(s));
 +						}
  					}
-+					getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
++					getLogger().log(Level.FINE, "Found " + urls.size() + " URLs.");
 +				} catch (Exception e) {
 +					throw new ResourceInitializationException(e);
 +				} finally {
 +					IOUtils.closeQuietly(r);
  				}
--				getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
+-				getLogger().log(Level.FINE, "Found " + urls.size() + " URLs.");
 -			} catch (Exception e) {
 -				throw new ResourceInitializationException(e);
 -			} finally {
 -				IOUtils.closeQuietly(r);
  			}
 </code></pre>
-<pre>NopolAllTests<code id=" 2" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 2" class="patch" title="NopolAllTests">
 --- a/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
 +++ b/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
 @@ -82,48 +82,50 @@
@@ -63,7 +68,7 @@
 -
 -				@Override
 -				public boolean accept(File dir, String name) {
--					return name.endsWith(&quot;.xml&quot;) || name.endsWith(&quot;.tei&quot;);
+-					return name.endsWith(".xml") || name.endsWith(".tei");
 +		if (false) {
 +			if (inputFile.isDirectory()) {
 +				File inputDir = inputFile;
@@ -71,7 +76,7 @@
 +					
 +					@Override
 +					public boolean accept(File dir, String name) {
-+						return name.endsWith(&quot;.xml&quot;) || name.endsWith(&quot;.tei&quot;);
++						return name.endsWith(".xml") || name.endsWith(".tei");
 +					}
 +					
 +				});
@@ -93,11 +98,11 @@
 -				throw new ResourceInitializationException(e);
 -
 -			}
--		} else if (input.endsWith(&quot;.xml&quot;) || input.endsWith(&quot;.tei&quot;) || input.startsWith(&quot;http&quot;)) {
+-		} else if (input.endsWith(".xml") || input.endsWith(".tei") || input.startsWith("http")) {
 -			try {
 -				urls.add(new URL(input));
 -			} catch (MalformedURLException e) {
-+			} else if (input.endsWith(&quot;.xml&quot;) || input.endsWith(&quot;.tei&quot;) || input.startsWith(&quot;http&quot;)) {
++			} else if (input.endsWith(".xml") || input.endsWith(".tei") || input.startsWith("http")) {
  				try {
 -					urls.add(inputFile.toURI().toURL());
 -				} catch (MalformedURLException e1) {
@@ -118,7 +123,7 @@
 -				List&lt;CSVRecord&gt; records = r.getRecords();
 -				for (CSVRecord rec : records) {
 -					String s = rec.get(0);
--					if (s.startsWith(&quot;/&quot;)) {
+-					if (s.startsWith("/")) {
 -						urls.add(new File(s).toURI().toURL());
 -					} else {
 -						urls.add(new URL(s));
@@ -129,31 +134,31 @@
 +					List&lt;CSVRecord&gt; records = r.getRecords();
 +					for (CSVRecord rec : records) {
 +						String s = rec.get(0);
-+						if (s.startsWith(&quot;/&quot;)) {
++						if (s.startsWith("/")) {
 +							urls.add(new File(s).toURI().toURL());
 +						} else {
 +							urls.add(new URL(s));
 +						}
  					}
-+					getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
++					getLogger().log(Level.FINE, "Found " + urls.size() + " URLs.");
 +				} catch (Exception e) {
 +					throw new ResourceInitializationException(e);
 +				} finally {
 +					IOUtils.closeQuietly(r);
  				}
--				getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
+-				getLogger().log(Level.FINE, "Found " + urls.size() + " URLs.");
 -			} catch (Exception e) {
 -				throw new ResourceInitializationException(e);
 -			} finally {
 -				IOUtils.closeQuietly(r);
  			}
 </code></pre>
-<pre>NopolAllTests<code id=" 3" class="patch" title="NopolAllTests">
+    <pre>NopolAllTests<code id=" 3" class="patch" title="NopolAllTests">
 --- a/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
 +++ b/de.unistuttgart.ims.drama.io.core/src/main/java/de/unistuttgart/quadrama/io/core/AbstractDramaUrlReader.java
 @@ -100,30 +100,34 @@
  			}
--		} else if (input.endsWith(&quot;.xml&quot;) || input.endsWith(&quot;.tei&quot;) || input.startsWith(&quot;http&quot;)) {
+-		} else if (input.endsWith(".xml") || input.endsWith(".tei") || input.startsWith("http")) {
 -			try {
 -				urls.add(new URL(input));
 -			} catch (MalformedURLException e) {
@@ -170,12 +175,12 @@
 -				List&lt;CSVRecord&gt; records = r.getRecords();
 -				for (CSVRecord rec : records) {
 -					String s = rec.get(0);
--					if (s.startsWith(&quot;/&quot;)) {
+-					if (s.startsWith("/")) {
 -						urls.add(new File(s).toURI().toURL());
 -					} else {
 -						urls.add(new URL(s));
 +			if (false) {
-+				if (input.endsWith(&quot;.xml&quot;) || input.endsWith(&quot;.tei&quot;) || input.startsWith(&quot;http&quot;)) {
++				if (input.endsWith(".xml") || input.endsWith(".tei") || input.startsWith("http")) {
 +					try {
 +						urls.add(new URL(input));
 +					} catch (MalformedURLException e) {
@@ -192,25 +197,26 @@
 +						List&lt;CSVRecord&gt; records = r.getRecords();
 +						for (CSVRecord rec : records) {
 +							String s = rec.get(0);
-+							if (s.startsWith(&quot;/&quot;)) {
++							if (s.startsWith("/")) {
 +								urls.add(new File(s).toURI().toURL());
 +							} else {
 +								urls.add(new URL(s));
 +							}
 +						}
-+						getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
++						getLogger().log(Level.FINE, "Found " + urls.size() + " URLs.");
 +					} catch (Exception e) {
 +						throw new ResourceInitializationException(e);
 +					} finally {
 +						IOUtils.closeQuietly(r);
 +					}
  				}
--				getLogger().log(Level.FINE, &quot;Found &quot; + urls.size() + &quot; URLs.&quot;);
+-				getLogger().log(Level.FINE, "Found " + urls.size() + " URLs.");
 -			} catch (Exception e) {
 -				throw new ResourceInitializationException(e);
 -			} finally {
 -				IOUtils.closeQuietly(r);
  			}
 </code></pre>
-</body>
+    <a href="https://api.travis-ci.org/v3/build/376812142" id="travis-json">Travis metadata as JSON</a>
+  </body>
 </html>

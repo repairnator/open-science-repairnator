@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/361311603",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 361311603,
+  "number": "75",
+  "state": "failed",
+  "duration": 51,
+  "event_type": "push",
+  "previous_state": "passed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2018-04-02T19:09:52Z",
+  "finished_at": "2018-04-02T19:10:43Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/17685773",
+    "@representation": "minimal",
+    "id": 17685773,
+    "name": "mined-in",
+    "slug": "tverdokhlebd/mined-in"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/17685773/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 107760571,
+    "sha": "6f06a985e67b098560b17f12abe280941e174e73",
+    "ref": "refs/heads/master",
+    "message": "Implemented caching accounts on two minutes.",
+    "compare_url": "https://github.com/tverdokhlebd/MinedIn/compare/8ee20523e9f0...6f06a985e67b",
+    "committed_at": "2018-04-02T20:09:19Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/361311604",
+      "@representation": "minimal",
+      "id": 361311604
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/946892",
+    "@representation": "minimal",
+    "id": 946892,
+    "login": "tverdokhlebd"
+  },
+  "updated_at": "2019-04-14T22:30:13.668Z"
+}

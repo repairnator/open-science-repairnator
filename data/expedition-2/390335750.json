@@ -1,0 +1,65 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/390335750",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "restart": false,
+    "cancel": false
+  },
+  "id": 390335750,
+  "number": "13",
+  "state": "failed",
+  "duration": 70,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "add test coverage",
+  "pull_request_number": 1,
+  "started_at": "2018-06-10T08:31:43Z",
+  "finished_at": "2018-06-10T08:32:53Z",
+  "private": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/18760331",
+    "@representation": "minimal",
+    "id": 18760331,
+    "name": "java-hazelcast",
+    "slug": "opentracing-contrib/java-hazelcast"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/18760331/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 116945014,
+    "sha": "59309bd7c3d4c141062471a0c2b7bef14972798a",
+    "ref": "refs/pull/1/merge",
+    "message": "upgrade hazelcast to 3.10.2\n\nSigned-off-by: Sergei Malafeev <sergeymalafeev@gmail.com>",
+    "compare_url": "https://github.com/opentracing-contrib/java-hazelcast/pull/1",
+    "committed_at": "2018-06-10T08:29:03Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/390335751",
+      "@representation": "minimal",
+      "id": 390335751
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/542635",
+    "@representation": "minimal",
+    "id": 542635,
+    "login": "malafeev"
+  },
+  "updated_at": "2019-04-15T02:24:53.837Z"
+}
