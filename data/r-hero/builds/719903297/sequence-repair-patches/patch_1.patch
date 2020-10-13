@@ -1,0 +1,11 @@
+--- a/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java
++++ b/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java
+@@ -156,7 +156,7 @@
+     }
+ 
+     private void calibMagnometer() {
+-        drone.getCalibrateCompass().startCompassCalibration();
++        drone.getCalibrateCompass();
+     }
+ 
+     private void sendHB() {

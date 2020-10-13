@@ -1,0 +1,11 @@
+--- a/vertx-web-client/src/main/java/io/vertx/ext/web/client/impl/HttpRequestImpl.java
++++ b/vertx-web-client/src/main/java/io/vertx/ext/web/client/impl/HttpRequestImpl.java
+@@ -274,7 +274,7 @@
+ 
+   @Override
+   public HttpRequest<T> multipartMixed(boolean allow) {
+-    multipartMixed = allow;
++    multipartMixed=multipartMixed;
+     return this;
+   }
+ 

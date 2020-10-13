@@ -1,0 +1,11 @@
+--- a/vertx-web-client/src/main/java/io/vertx/ext/web/client/impl/MultipartFormUpload.java
++++ b/vertx-web-client/src/main/java/io/vertx/ext/web/client/impl/MultipartFormUpload.java
+@@ -131,7 +131,7 @@
+     while (!ended) {
+       if (encoder.isChunked()) {
+         try {
+-          HttpContent chunk = encoder.readChunk(ALLOC);
++          final HttpContent chunk=encoder.readChunk(MultipartFormUpload.ALLOC);
+           ByteBuf content = chunk.content();
+           Buffer buff = Buffer.buffer(content);
+           boolean writable = pending.write(buff);

@@ -1,0 +1,2 @@
+--- a/artemis-server/src/main/java/org/apache/activemq/artemis/core/remoting/impl/invm/InVMRegistry.java
++++ b/artemis-server/src/main/java/org/apache/activemq/artemis/core/remoting/impl/invm/InVMRegistry.java

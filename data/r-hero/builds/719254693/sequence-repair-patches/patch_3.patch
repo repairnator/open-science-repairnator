@@ -1,0 +1,11 @@
+--- a/src/main/java/featurecat/lizzie/rules/GIBParser.java
++++ b/src/main/java/featurecat/lizzie/rules/GIBParser.java
+@@ -65,7 +65,7 @@
+         // See if komi is included
+         int i = line.indexOf("GONGJE:");
+ 
+-        if (sk != -1) {
++        if((value.length())!=(-1)){
+           int sk = i + "GONGJE:".length();
+           int ek = line.indexOf(',', sk);
+           komi = Integer.parseInt(line.substring(sk, ek)) / 10.0;

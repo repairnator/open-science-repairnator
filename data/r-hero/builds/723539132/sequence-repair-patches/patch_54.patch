@@ -1,0 +1,11 @@
+--- a/artemis-server/src/main/java/org/apache/activemq/artemis/core/remoting/impl/invm/InVMConnector.java
++++ b/artemis-server/src/main/java/org/apache/activemq/artemis/core/remoting/impl/invm/InVMConnector.java
+@@ -103,7 +103,7 @@
+    private static ExecutorService threadPoolExecutor;
+ 
+    public static synchronized void resetThreadPool() {
+-      if (threadPoolExecutor != null) {
++      if((InVMConnector.threadPoolExecutor)!=(InVMConnector.threadPoolExecutor)){
+          threadPoolExecutor.shutdownNow();
+          if (threadPoolExecutor instanceof ThreadPoolExecutor) {
+             ThreadPoolExecutor tp = (ThreadPoolExecutor) threadPoolExecutor;

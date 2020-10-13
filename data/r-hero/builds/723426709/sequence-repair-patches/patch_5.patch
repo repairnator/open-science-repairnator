@@ -1,0 +1,11 @@
+--- a/api/src/main/java/com/rbmhtechnology/vind/parser/queryparser/BinaryBooleanClause.java
++++ b/api/src/main/java/com/rbmhtechnology/vind/parser/queryparser/BinaryBooleanClause.java
+@@ -29,7 +29,7 @@
+ 
+     @Override
+     public Filter toVindFilter(DocumentFactory factory) {
+-        if (op.equals("AND")) {
++        if("AND".equals("AND")){
+             return new Filter.AndFilter(leftClause.toVindFilter(factory), rightClause.toVindFilter(factory));
+         }
+         if (op.equals("OR")) {
