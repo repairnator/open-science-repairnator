@@ -1,0 +1,34 @@
+{
+    "size":0,
+    "query":{
+        "bool":{
+            "must":[
+                %s
+                {"term":{"%stype.raw":"suggestion"}},
+                {"term":{"%sapplication.id.raw":"%s"}}
+            ],
+            "filter": [
+                {
+                    "range":{
+                        "%stimeStamp":{
+                            "gte":%d,
+                            "lte":%d,
+                            "format":"epoch_millis"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "aggs":{
+        "suggestionFields":{
+            "terms":{
+                "field":"%srequest.suggestionFields.raw",
+                "size":100,
+                "order":{
+                    "_count":"desc"
+                }
+            }
+        }
+    }
+}

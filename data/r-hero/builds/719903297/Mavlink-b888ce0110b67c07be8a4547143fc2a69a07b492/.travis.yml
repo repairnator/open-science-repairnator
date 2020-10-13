@@ -1,0 +1,37 @@
+language: java
+dist: trusty
+sudo: false
+install: true
+
+jdk:
+  - oraclejdk8
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+
+script:
+  - rm -rf $HOME/.m2/repository
+  - mvn clean package -B -V
+
+after_success:
+  - sh set_tags.sh
+
+#deploy:
+#  provider: releases
+#  api_key:
+#    secure: TsuKAxdrLzSn45VXLFFR9hnC3cXYGlzH7clMib20uKNSF7BZSwCtKQLJ0b/nTEqyWmv5uNFX59LKx8qAeRLPVoBFzOsfsc4a7CMpzjJdjU6XniHrzdl2ZGj3BNLZjGQBHmh/1A4SWxMHdbTe1pLQdDzmZOeVcZnpTt79ls+FNB54N2koVyTHMrZCrev+2aRQkRgEGb+l32FIjNHks2QJn+9bDOmxt+BMexL0hZrgByHBV7IPnAZjnn/P9nTn1it194PRQ5nsxjFyDlRjq72M/aXZu8ZZ80CGhPNcnYV2oalkgV+IXeqGgzIBv55TQO4WG8qUe/Ar2XC8fsE5pt5tLF3av7HxYBNMI8eX3kbOm+3UKqbOhPzBCmgWBKxwoYe5ZCi7/1ZnP32CwxvNoW8jqfuV6cLE8rS26s3LrrUcEa0pG+m/Ix4U/7Jrl9zL2pLVVnlYJRjeOz0Z3Fv8jAB48QNRJvDkPIhKNHD1RC6pNIWB7X4ojtlxaueZhKg+4OChOoc32C9p0tx4OIZ4KpISu1N99Ojz7OTuO43PRaFa9KB6EbQet6MslXYE/x56BLr96bRmUsw+Z2lHv7pqGlciriGFLvV8JYUOcn6BNZNpml915CKM0xVrnkADxr1PYqaZ/Z+cqQTIWB9pavBoqdrgkhPSBtYu6AmRfwABH6ZZFsA=
+#  file: "target/Console-*.zip"
+#  file_glob: "true"
+#  skip_cleanup: true
+#  on:
+#    branch: master
+#    repo: Fameing/DroneGCS
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+
+notifications:
+  email: true

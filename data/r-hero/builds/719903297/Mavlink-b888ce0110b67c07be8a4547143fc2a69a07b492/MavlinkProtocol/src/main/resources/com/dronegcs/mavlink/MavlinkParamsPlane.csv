@@ -1,0 +1,348 @@
+Name,Possible Value,Unit,Range,Description
+THR_PASS_STAB,0.0,2,-100 100,Throttle passthru in stabilize
+THR_FAILSAFE,1.0,2,,0:Disable 1:Enable
+GPS_SBAS_MODE,2.0,2,,0:Disabled 1:Enable 2:NoChange
+FORMAT_VERSION,13.0,4,1 255,Eeprom format version number
+SYSID_SW_TYPE,0.0,2,,Unknown
+SYSID_THISMAV,1.0,4,1 255,MAVLink system ID of this vehicle
+SYSID_MYGCS,255.0,4,1 255,Ground station MAVLink system ID
+SERIAL0_PROTOCOL,1.0,2,,1:MAVlink1 2:MAVlink2  And muchmore  (Reboot requeired)
+SERIAL0_BAUD,115.0,6,,0:1200 2:2400 4:4800 9:9600: 19:19200 38:38400 57: 57600 111:111100 115: 115200 256:256000 460:460800 500:500000 921: 921600 1500:1500000
+SERIAL1_PROTOCOL,1.0,2,,1:MAVlink1 2:MAVlink2  And muchmore  (Reboot requeired)
+SERIAL1_BAUD,57.0,6,,0:1200 2:2400 4:4800 9:9600: 19:19200 38:38400 57: 57600 111:111100 115: 115200 256:256000 460:460800 500:500000 921: 921600 1500:1500000
+SERIAL2_PROTOCOL,1.0,2,,1:MAVlink1 2:MAVlink2  And much more  (Reboot requeired)
+SERIAL2_BAUD,57.0,6,,0:1200 2:2400 4:4800 9:9600: 19:19200 38:38400 57: 57600 111:111100 115: 115200 256:256000 460:460800 500:500000 921: 921600 1500:1500000
+SERIAL3_PROTOCOL,5.0,2,,1:MAVlink1 2:MAVlink2  And much more  (Reboot requeired)
+SERIAL3_BAUD,38.0,6,,0:1200 2:2400 4:4800 9:9600: 19:19200 38:38400 57: 57600 111:111100 115: 115200 256:256000 460:460800 500:500000 921: 921600 1500:1500000
+SERIAL4_PROTOCOL,5.0,2,,1:MAVlink1 2:MAVlink2  And much more  (Reboot requeired)
+SERIAL4_BAUD,38.0,6,,0:1200 2:2400 4:4800 9:9600: 19:19200 38:38400 57: 57600 111:111100 115: 115200 256:256000 460:460800 500:500000 921: 921600 1500:1500000
+AUTOTUNE_LEVEL,6.0,2,43475,Autotune level
+TELEM_DELAY,0.0,2,0 30,Telemetry startup delay
+GCS_PID_MASK,0.0,4,,0:Roll 1:Pitch 2:Yaw 3:Steering 4:Landing
+KFF_RDDRMIX,0.5,9,0 1,Rudder Mix (Increment 0.01)
+KFF_THR2PTCH,0.0,9,0 1,Throttle to Pitch Mix (Increment 0.01)
+STAB_PITCH_DOWN,2.0,9,0 15,Low throttle pitch down trim (Increment 0.01)
+GLIDE_SLOPE_MIN,15.0,4,0 1000,Glide slope minimum (Increment 1 meters)
+GLIDE_SLOPE_THR,5.0,9,0 100,Glide slope threshold (Increment 1 meters)
+STICK_MIXING,1.0,2,,0:Disabled 1:FBWMixing 2:DirectMixing
+SKIP_GYRO_CAL,0.0,2,,Unknown
+AUTO_FBW_STEER,0.0,2,,"Use FBWA steering in AUTO, 0:Disabled 42:Enabled"
+TKOFF_THR_MINSPD,0.0,9,0 30,Takeoff throttle min speed (Increment 0.1 m/s)
+TKOFF_THR_MINACC,0.0,9,0 30,Takeoff throttle min acceleration (Increment 0.1 m/s^2)
+TKOFF_THR_DELAY,2.0,2,0 127,Takeoff throttle delay (Increment 1 deciseconds)
+TKOFF_TDRAG_ELEV,0.0,2,,FBWA taildragger channel
+TKOFF_TDRAG_SPD1,0.0,9,0 30,Takeoff tail dragger speed1  (Increment 0.1 m/s)
+TKOFF_ROTATE_SPD,0.0,9,0 30,Takeoff rotate speed (Increment 0.1 m/s)
+TKOFF_THR_SLEW,0.0,2,-1 127,Takeoff throttle slew rate (Increment 1)
+TKOFF_FLAP_PCNT,0.0,2,0 100,Takeoff flap percentage
+FBWA_TDRAG_CHAN,0.0,2,,FBWA taildragger channel
+LEVEL_ROLL_LIMIT,5.0,2,0 45,Level flight roll limit (Increment 1 degrees)
+LAND_PITCH_CD,0.0,4,,Landing Pitch
+LAND_FLARE_ALT,3.0,9,,Landing flare altitude (Increment 0.1 degrees)
+LAND_FLARE_SEC,2.0,9,,Landing flare time (Increment 0.1 degrees)
+LAND_DISARMDELAY,20.0,2,0 127,Landing disarm delay (Increment 1 seconds)
+NAV_CONTROLLER,1.0,2,0: Default 1:L1Controller,Navigation controller selection
+ALT_MIX,1.0,9,,Not Yet
+ALT_CTRL_ALG,0.0,2,0:Automatic,Altitude control algorithm
+ALT_OFFSET,0.0,4,-32767 32767,Altitude offset (Increment 1 meters)
+WP_RADIUS,90.0,4,1 32767,Waypoint Radius (Increment 1 meters)
+WP_MAX_RADIUS,0.0,4,0 32767,Waypoint Maximum Radius (Increment 1 meters)
+WP_LOITER_RAD,60.0,4,-32767 32767,Waypoint Loiter Radius
+FENCE_ACTION,0.0,2,0:None 1:GuidedMode 2:ReportOnly 3:GuidedModeThrPass 4:RTL_Mode,Action on geofence breach
+FENCE_TOTAL,0.0,2,,Fence Total
+FENCE_CHANNEL,0.0,2,,Fence Channel
+FENCE_MINALT,0.0,4,0 32767,Fence Minimum Altitude (Increment 1 meters)
+FENCE_MAXALT,0.0,4,0 32767,Fence Maximum Altitude (Increment 1 meters)
+FENCE_RETALT,0.0,4,0 32767,Fence Return Altitude (Increment 1 meters)
+FENCE_AUTOENABLE,0.0,2,0:NoAutoEnable 1:AutoEnable 2:AutoEnableDisableFloorOnly 3:EnableWhenArmed,Fence automatic enable
+FENCE_RET_RALLY,0.0,2,0:FenceReturnPoint 1:NearestRallyPoint,Fence Return to Rally
+STALL_PREVENTION,1.0,2,0:Disabled 1:Enabled,Enable stall prevention
+ARSPD_FBW_MIN,9.0,4,5 100,Minimum Airspeed (Increment 1 m/s)
+ARSPD_FBW_MAX,22.0,4,5 100,Maximum Airspeed (Increment 1 m/s)
+FBWB_ELEV_REV,0.0,2,0:Disabled 1:Enabled,Fly By Wire elevator reverse
+FBWB_CLIMB_RATE,2.0,2,1 10,Fly By Wire B altitude change rate (Increment 0.1 m/s)
+THR_MIN,0.0,2,-100 100,Minimum Throttle (Increment 1 precent)
+THR_MAX,75.0,2,0 100,Maximum Throttle (Increment 1 precent)
+TKOFF_THR_MAX,0.0,2,0 100,Maximum Throttle for takeoff (Increment 1 precent)
+THR_SLEWRATE,100.0,2,0 127,Throttle slew rate
+FLAP_SLEWRATE,75.0,2,0 100,Flap slew rate
+THR_SUPP_MAN,0.0,2,,Not Yet
+THR_FAILSAFE,1.0,2,,Not Yet
+THR_FS_VALUE,950.0,4,,Not Yet
+TRIM_THROTTLE,45.0,2,,Not Yet
+THROTTLE_NUDGE,1.0,2,,Not Yet
+FS_SHORT_ACTN,0.0,2,,Not Yet
+FS_SHORT_TIMEOUT,1.5,9,,Not Yet
+FS_LONG_ACTN,0.0,2,,Not Yet
+FS_LONG_TIMEOUT,5.0,9,,Not Yet
+FS_BATT_VOLTAGE,0.0,9,,Not Yet
+FS_BATT_MAH,0.0,9,,Not Yet
+FS_GCS_ENABL,0.0,2,,Not Yet
+FLTMODE_CH,8.0,2,,Not Yet
+FLTMODE1,11.0,2,,Not Yet
+FLTMODE2,11.0,2,,Not Yet
+FLTMODE3,5.0,2,,Not Yet
+FLTMODE4,5.0,2,,Not Yet
+FLTMODE5,0.0,2,,Not Yet
+FLTMODE6,0.0,2,,Not Yet
+INITIAL_MODE,0.0,2,,Not Yet
+LIM_ROLL_CD,4500.0,4,,Not Yet
+LIM_PITCH_MAX,2000.0,4,,Not Yet
+LIM_PITCH_MIN,-2500.0,4,,Not Yet
+ACRO_ROLL_RATE,180.0,4,,Not Yet
+ACRO_PITCH_RATE,180.0,4,,Not Yet
+ACRO_LOCKING,0.0,2,,Not Yet
+GROUND_STEER_ALT,0.0,9,,Not Yet
+GROUND_STEER_DPS,90.0,4,,Not Yet
+TRIM_AUTO,0.0,2,,Not Yet
+ELEVON_MIXING,0.0,2,,Not Yet
+ELEVON_REVERSE,0.0,2,,Not Yet
+ELEVON_CH1_REV,0.0,2,,Not Yet
+ELEVON_CH2_REV,0.0,2,,Not Yet
+VTAIL_OUTPUT,0.0,2,,Not Yet
+ELEVON_OUTPUT,0.0,2,,Not Yet
+MIXING_GAIN,0.5,9,,Not Yet
+RUDDER_ONLY,0.0,2,,Not Yet
+SYS_NUM_RESETS,13.0,4,,Not Yet
+LOG_BITMASK,16254.0,6,,Not Yet
+RST_SWITCH_CH,0.0,2,,Not Yet
+RST_MISSION_CH,0.0,2,,Not Yet
+TRIM_ARSPD_CM,1200.0,6,,Not Yet
+SCALING_SPEED,15.0,9,,Not Yet
+MIN_GNDSPD_CM,0.0,6,,Not Yet
+TRIM_PITCH_CD,0.0,4,,Not Yet
+ALT_HOLD_RTL,10000.0,6,,Not Yet
+ALT_HOLD_FBWCM,0.0,4,,Not Yet
+MAG_ENABLE,1.0,2,,Not Yet
+FLAP_IN_CHANNEL,0.0,2,,Not Yet
+FLAPERON_OUTPUT,0.0,2,,Not Yet
+FLAP_1_PERCNT,0.0,2,,Not Yet
+FLAP_1_SPEED,0.0,2,,Not Yet
+FLAP_2_PERCNT,0.0,2,,Not Yet
+FLAP_2_SPEED,0.0,2,,Not Yet
+LAND_FLAP_PERCNT,0.0,2,,Not Yet
+RSSI_PIN,-1.0,2,,Not Yet
+RSSI_RANGE,5.0,9,,Not Yet
+INVERTEDFLT_CH,0.0,2,,Not Yet
+HIL_SERVOS,0.0,2,,Not Yet
+HIL_ERR_LIMIT,5.0,9,,Not Yet
+RTL_AUTOLAND,0.0,2,,Not Yet
+TRIM_RC_AT_START,0.0,2,,Not Yet
+GND_ABS_PRESS,50705.5625,9,,Not Yet
+GND_TEMP,25.0,9,,Not Yet
+GND_ALT_OFFSET,0.0,2,,Not Yet
+GPS_TYPE,1.0,2,,Not Yet
+GPS_NAVFILTER,8.0,2,,Not Yet
+GPS_SBAS_MODE,2.0,2,,Not Yet
+GPS_MIN_ELEV,-100.0,2,,Not Yet
+GPS_GNSS_MODE,0.0,2,,Not Yet
+CAM_TRIGG_TYPE,0.0,2,,Not Yet
+CAM_DURATION,10.0,2,,Not Yet
+CAM_SERVO_ON,1300.0,4,,Not Yet
+CAM_SERVO_OFF,1100.0,4,,Not Yet
+CAM_TRIGG_DIST,0.0,9,,Not Yet
+ARMING_REQUIRE,1.0,2,,Not Yet
+ARMING_CHECK,1.0,4,,Not Yet
+ARMING_RUDDER,1.0,2,,Not Yet
+RELAY_PIN,13.0,2,,Not Yet
+RELAY_PIN2,-1.0,2,,Not Yet
+RELAY_PIN3,-1.0,2,,Not Yet
+RELAY_PIN4,-1.0,2,,Not Yet
+RELAY_DEFAULT,0.0,2,,Not Yet
+RNGFND_LANDING,0.0,2,,Not Yet
+RC1_MIN,1100.0,4,,Not Yet
+RC1_TRIM,1500.0,4,,Not Yet
+RC1_MAX,1900.0,4,,Not Yet
+RC1_REV,1.0,2,,Not Yet
+RC1_DZ,30.0,4,,Not Yet
+RC2_MIN,1100.0,4,,Not Yet
+RC2_TRIM,1500.0,4,,Not Yet
+RC2_MAX,1900.0,4,,Not Yet
+RC2_REV,1.0,2,,Not Yet
+RC2_DZ,30.0,4,,Not Yet
+RC3_MIN,1100.0,4,,Not Yet
+RC3_TRIM,1100.0,4,,Not Yet
+RC3_MAX,1900.0,4,,Not Yet
+RC3_REV,1.0,2,,Not Yet
+RC3_DZ,30.0,4,,Not Yet
+RC4_MIN,1100.0,4,,Not Yet
+RC4_TRIM,1500.0,4,,Not Yet
+RC4_MAX,1900.0,4,,Not Yet
+RC4_REV,1.0,2,,Not Yet
+RC4_DZ,30.0,4,,Not Yet
+RC5_MIN,1100.0,4,,Not Yet
+RC5_TRIM,1500.0,4,,Not Yet
+RC5_MAX,1900.0,4,,Not Yet
+RC5_REV,1.0,2,,Not Yet
+RC5_DZ,0.0,4,,Not Yet
+RC5_FUNCTION,0.0,2,,Not Yet
+RC6_MIN,1100.0,4,,Not Yet
+RC6_TRIM,1500.0,4,,Not Yet
+RC6_MAX,1900.0,4,,Not Yet
+RC6_REV,1.0,2,,Not Yet
+RC6_DZ,0.0,4,,Not Yet
+RC6_FUNCTION,0.0,2,,Not Yet
+RC7_MIN,1100.0,4,,Not Yet
+RC7_TRIM,1500.0,4,,Not Yet
+RC7_MAX,1900.0,4,,Not Yet
+RC7_REV,1.0,2,,Not Yet
+RC7_DZ,0.0,4,,Not Yet
+RC7_FUNCTION,0.0,2,,Not Yet
+RC8_MIN,1100.0,4,,Not Yet
+RC8_TRIM,1500.0,4,,Not Yet
+RC8_MAX,1900.0,4,,Not Yet
+RC8_REV,1.0,2,,Not Yet
+RC8_DZ,0.0,4,,Not Yet
+RC8_FUNCTION,0.0,2,,Not Yet
+RC10_MIN,1100.0,4,,Not Yet
+RC10_TRIM,1500.0,4,,Not Yet
+RC10_MAX,1900.0,4,,Not Yet
+RC10_REV,1.0,2,,Not Yet
+RC10_DZ,0.0,4,,Not Yet
+RC10_FUNCTION,0.0,2,,Not Yet
+RC11_MIN,1100.0,4,,Not Yet
+RC11_TRIM,1500.0,4,,Not Yet
+RC11_MAX,1900.0,4,,Not Yet
+RC11_REV,1.0,2,,Not Yet
+RC11_DZ,0.0,4,,Not Yet
+RC11_FUNCTION,0.0,2,,Not Yet
+RLL2SRV_TCONST,0.5,9,,Not Yet
+RLL2SRV_P,0.4000000059604645,9,,Not Yet
+RLL2SRV_D,0.019999999552965164,9,,Not Yet
+RLL2SRV_I,0.03999999910593033,9,,Not Yet
+RLL2SRV_RMAX,0.0,4,,Not Yet
+RLL2SRV_IMAX,3000.0,4,,Not Yet
+RLL2SRV_FF,0.0,9,,Not Yet
+PTCH2SRV_TCONST,0.5,9,,Not Yet
+PTCH2SRV_P,0.4000000059604645,9,,Not Yet
+PTCH2SRV_D,0.019999999552965164,9,,Not Yet
+PTCH2SRV_I,0.03999999910593033,9,,Not Yet
+PTCH2SRV_RMAX_UP,0.0,4,,Not Yet
+PTCH2SRV_RMAX_DN,0.0,4,,Not Yet
+PTCH2SRV_RLL,1.0,9,,Not Yet
+PTCH2SRV_IMAX,3000.0,4,,Not Yet
+PTCH2SRV_FF,0.0,9,,Not Yet
+YAW2SRV_SLIP,0.0,9,,Not Yet
+YAW2SRV_INT,0.0,9,,Not Yet
+YAW2SRV_DAMP,0.0,9,,Not Yet
+YAW2SRV_RLL,1.0,9,,Not Yet
+YAW2SRV_IMAX,1500.0,4,,Not Yet
+STEER2SRV_TCONST,0.75,9,,Not Yet
+STEER2SRV_P,1.7999999523162842,9,,Not Yet
+STEER2SRV_I,0.20000000298023224,9,,Not Yet
+STEER2SRV_D,0.004999999888241291,9,,Not Yet
+STEER2SRV_IMAX,1500.0,4,,Not Yet
+STEER2SRV_MINSPD,1.0,9,,Not Yet
+STEER2SRV_FF,0.0,9,,Not Yet
+COMPASS_OFS_X,0.0,9,,Not Yet
+COMPASS_OFS_Y,0.0,9,,Not Yet
+COMPASS_OFS_Z,0.0,9,,Not Yet
+COMPASS_DEC,0.06944434344768524,9,,Not Yet
+COMPASS_LEARN,1.0,2,,Not Yet
+COMPASS_USE,1.0,2,,Not Yet
+COMPASS_AUTODEC,1.0,2,,Not Yet
+COMPASS_MOTCT,0.0,2,,Not Yet
+COMPASS_MOT_X,0.0,9,,Not Yet
+COMPASS_MOT_Y,0.0,9,,Not Yet
+COMPASS_MOT_Z,0.0,9,,Not Yet
+COMPASS_ORIENT,0.0,2,,Not Yet
+COMPASS_EXTERNAL,0.0,2,,Not Yet
+SCHED_DEBUG,0.0,2,,Not Yet
+RCMAP_ROLL,1.0,2,,Not Yet
+RCMAP_PITCH,2.0,2,,Not Yet
+RCMAP_THROTTLE,3.0,2,,Not Yet
+RCMAP_YAW,4.0,2,,Not Yet
+SR0_RAW_SENS,1.0,4,,Not Yet
+SR0_EXT_STAT,1.0,4,,Not Yet
+SR0_RC_CHAN,1.0,4,,Not Yet
+SR0_RAW_CTRL,1.0,4,,Not Yet
+SR0_POSITION,1.0,4,,Not Yet
+SR0_EXTRA1,10.0,4,,Not Yet
+SR0_EXTRA2,10.0,4,,Not Yet
+SR0_EXTRA3,1.0,4,,Not Yet
+SR0_PARAMS,10.0,4,,Not Yet
+SR1_RAW_SENS,1.0,4,,Not Yet
+SR1_EXT_STAT,1.0,4,,Not Yet
+SR1_RC_CHAN,1.0,4,,Not Yet
+SR1_RAW_CTRL,1.0,4,,Not Yet
+SR1_POSITION,1.0,4,,Not Yet
+SR1_EXTRA1,1.0,4,,Not Yet
+SR1_EXTRA2,1.0,4,,Not Yet
+SR1_EXTRA3,1.0,4,,Not Yet
+SR1_PARAMS,10.0,4,,Not Yet
+INS_PRODUCT_ID,88.0,4,,Not Yet
+INS_GYROFFS_X,1.8091734091285616E-4,9,,Not Yet
+INS_GYROFFS_Y,-0.07671958953142166,9,,Not Yet
+INS_GYROFFS_Z,0.03334466367959976,9,,Not Yet
+INS_ACCSCAL_X,1.0,9,,Not Yet
+INS_ACCSCAL_Y,1.0,9,,Not Yet
+INS_ACCSCAL_Z,1.0,9,,Not Yet
+INS_ACCOFFS_X,0.0,9,,Not Yet
+INS_ACCOFFS_Y,0.0,9,,Not Yet
+INS_ACCOFFS_Z,0.0,9,,Not Yet
+INS_GYRO_FILTER,20.0,2,,Not Yet
+INS_ACCEL_FILTER,20.0,2,,Not Yet
+INS_USE,1.0,2,,Not Yet
+AHRS_GPS_GAIN,1.0,9,,Not Yet
+AHRS_GPS_USE,1.0,2,,Not Yet
+AHRS_YAW_P,0.20000000298023224,9,,Not Yet
+AHRS_RP_P,0.20000000298023224,9,,Not Yet
+AHRS_WIND_MAX,0.0,2,,Not Yet
+AHRS_TRIM_X,0.0,9,,Not Yet
+AHRS_TRIM_Y,0.0,9,,Not Yet
+AHRS_TRIM_Z,0.0,9,,Not Yet
+AHRS_ORIENTATION,0.0,2,,Not Yet
+AHRS_COMP_BETA,0.10000000149011612,9,,Not Yet
+AHRS_GPS_MINSATS,6.0,2,,Not Yet
+ARSPD_ENABLE,1.0,2,,Not Yet
+ARSPD_USE,0.0,2,,Not Yet
+ARSPD_OFFSET,860.6829223632812,9,,Not Yet
+ARSPD_RATIO,1.9936000108718872,9,,Not Yet
+ARSPD_PIN,0.0,2,,Not Yet
+ARSPD_AUTOCAL,0.0,2,,Not Yet
+ARSPD_TUBE_ORDER,2.0,2,,Not Yet
+ARSPD_SKIP_CAL,0.0,2,,Not Yet
+NAVL1_PERIOD,20.0,9,,Not Yet
+NAVL1_DAMPING,0.75,9,,Not Yet
+TECS_CLMB_MAX,5.0,9,,Not Yet
+TECS_SINK_MIN,2.0,9,,Not Yet
+TECS_TIME_CONST,5.0,9,,Not Yet
+TECS_THR_DAMP,0.5,9,,Not Yet
+TECS_INTEG_GAIN,0.10000000149011612,9,,Not Yet
+TECS_VERT_ACC,7.0,9,,Not Yet
+TECS_HGT_OMEGA,3.0,9,,Not Yet
+TECS_SPD_OMEGA,2.0,9,,Not Yet
+TECS_RLL2THR,10.0,9,,Not Yet
+TECS_SPDWEIGHT,1.0,9,,Not Yet
+TECS_PTCH_DAMP,0.0,9,,Not Yet
+TECS_SINK_MAX,5.0,9,,Not Yet
+TECS_LAND_ARSPD,-1.0,9,,Not Yet
+TECS_LAND_THR,-1.0,9,,Not Yet
+TECS_LAND_SPDWGT,1.0,9,,Not Yet
+TECS_PITCH_MAX,0.0,2,,Not Yet
+TECS_PITCH_MIN,0.0,2,,Not Yet
+TECS_LAND_SINK,0.25,9,,Not Yet
+TECS_LAND_TCONST,2.0,9,,Not Yet
+TECS_LAND_DAMP,0.5,9,,Not Yet
+TECS_LAND_PMAX,10.0,2,,Not Yet
+BATT_MONITOR,0.0,2,,Not Yet
+BATT_VOLT_PIN,13.0,2,,Not Yet
+BATT_CURR_PIN,12.0,2,,Not Yet
+BATT_VOLT_MULT,10.100000381469727,9,,Not Yet
+BATT_AMP_PERVOLT,17.0,9,,Not Yet
+BATT_AMP_OFFSET,0.0,9,,Not Yet
+BATT_CAPACITY,3300.0,6,,Not Yet
+BATT2_MONITOR,0.0,2,,Not Yet
+BATT2_VOLT_PIN,13.0,2,,Not Yet
+BATT2_CURR_PIN,12.0,2,,Not Yet
+BATT2_VOLT_MULT,10.100000381469727,9,,Not Yet
+BATT2_AMP_PERVOL,17.0,9,,Not Yet
+BATT2_AMP_OFFSET,0.0,9,,Not Yet
+BATT2_CAPACITY,3300.0,6,,Not Yet
+BRD_SERIAL_NUM,0.0,4,,Not Yet
+MIS_TOTAL,,0 32766,,The number of mission mission items that has been loaded by the ground station. Do not change this manually.
+MIS_RESTART,0,2,,0:Resume Mission 1:Restart Mission,Controls mission starting point when entering Auto mode (either restart from beginning of mission or resume from last command run)
+RALLY_TOTAL,0.0,2,,Not Yet
+RALLY_LIMIT_KM,5.0,9,,Not Yet
+RALLY_INCL_HOME,0.0,2,,Not Yet
+COMPASS_DEC,0.06944434344768524,Radians,-3.142 3.142,An angle to compensate between the true north and magnetic north

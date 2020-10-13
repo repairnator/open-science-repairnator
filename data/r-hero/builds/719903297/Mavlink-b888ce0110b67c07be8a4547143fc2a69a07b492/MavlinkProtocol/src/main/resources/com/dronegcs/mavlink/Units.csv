@@ -1,0 +1,11 @@
+Value,Field Name,Description
+1,MAV_PARAM_TYPE_UINT8,8-bit unsigned integer
+2,MAV_PARAM_TYPE_INT8,8-bit signed integer
+3,MAV_PARAM_TYPE_UINT16,16-bit unsigned integer
+4,MAV_PARAM_TYPE_INT16,16-bit signed integer
+5,MAV_PARAM_TYPE_UINT32,32-bit unsigned integer
+6,MAV_PARAM_TYPE_INT32,32-bit signed integer
+7,MAV_PARAM_TYPE_UINT64,64-bit unsigned integer
+8,MAV_PARAM_TYPE_INT64,64-bit signed integer
+9,MAV_PARAM_TYPE_REAL32,32-bit floating-point
+10,MAV_PARAM_TYPE_REAL64,64-bit floating-point

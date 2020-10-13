@@ -1,0 +1,39 @@
+{
+    "size":0,
+    "query":{
+        "bool":{
+            "must":[
+                %s
+                {"term":{"%stype.raw":"fulltext"}},
+                {"term":{"%sapplication.id.raw":"%s"}},
+                {"match":{"%sprocess.final":"true"}}
+            ],
+            "must_not":{
+                "match":{"%sprocess.skip":"true"}
+             },
+            "filter": [
+                {
+                    "range":{
+                        "%stimeStamp":{
+                            "gte":%d,
+                            "lte":%d,
+                            "format":"epoch_millis"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "aggs":{
+        "days":{
+            "date_histogram" : {
+                "field" : "%stimeStamp",
+                "interval": "day",
+                "format" : "dd-MM-yyyy",
+                "order":{
+                    "_count":"desc"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "size":0,
+    "query":{
+        "bool":{
+            "must":[
+                %s
+                {"term":{"%stype.raw":"fulltext"}},
+                {"term":{"%sapplication.id.raw":"%s"}},
+                {"match":{"%sprocess.final":"true"}}
+            ],
+            "must_not":{
+                "match":{"%sprocess.skip":"true"}
+             },
+            "filter": [
+                {
+                    "range":{
+                        "%stimeStamp":{
+                            "gte":%d,
+                            "lte":%d,
+                            "format":"epoch_millis"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "aggs":{
+        "facets":{
+            "terms":{
+                "field":"%srequest.facets.field.raw",
+                "size":100,
+                "order":{
+                    "_count":"desc"
+                }
+            }
+        }
+    }
+}
