@@ -1,0 +1,76 @@
+{
+    "@type": "job",
+    "@href": "/v3/job/731168758",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false,
+      "debug": false,
+      "delete_log": false
+    },
+    "id": 731168758,
+    "allow_failure": null,
+    "number": "834.1",
+    "state": "passed",
+    "started_at": "2020-09-29T04:46:06Z",
+    "finished_at": "2020-09-29T04:50:34Z",
+    "build": {
+      "@type": "build",
+      "@href": "/v3/build/731168757",
+      "@representation": "minimal",
+      "id": 731168757,
+      "number": "834",
+      "state": "failed",
+      "duration": 654,
+      "event_type": "pull_request",
+      "previous_state": "passed",
+      "pull_request_title": "Bump liquibase-core from 3.10.2 to 4.1.0",
+      "pull_request_number": 277,
+      "started_at": "2020-09-29T04:46:06Z",
+      "finished_at": "2020-09-29T04:55:40Z",
+      "private": false,
+      "priority": false
+    },
+    "queue": "builds.gce",
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/10347385",
+      "@representation": "minimal",
+      "id": 10347385,
+      "name": "FROST-Server",
+      "slug": "FraunhoferIOSB/FROST-Server"
+    },
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 225875511,
+      "sha": "76022711d1e5d80cb8fbfdf0f070881308af1942",
+      "ref": "refs/pull/277/merge",
+      "message": "Bump liquibase-core from 3.10.2 to 4.1.0\n\nBumps [liquibase-core](https://github.com/liquibase/liquibase) from 3.10.2 to 4.1.0.\n- [Release notes](https://github.com/liquibase/liquibase/releases)\n- [Changelog](https://github.com/liquibase/liquibase/blob/master/changelog.txt)\n- [Commits](https://github.com/liquibase/liquibase/compare/v3.10.2...v4.1.0)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>",
+      "compare_url": "https://github.com/FraunhoferIOSB/FROST-Server/pull/277",
+      "committed_at": "2020-09-29T04:45:43Z"
+    },
+    "owner": {
+      "@type": "organization",
+      "@href": "/v3/org/191609",
+      "@representation": "minimal",
+      "id": 191609,
+      "login": "FraunhoferIOSB",
+      "vcs_type": "GithubOrganization"
+    },
+    "stage": {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 17113606,
+      "number": 1,
+      "name": "compile",
+      "state": "passed",
+      "started_at": "2020-09-29T04:46:06Z",
+      "finished_at": "2020-09-29T04:50:34Z"
+    },
+    "created_at": "2020-09-29T04:45:48.633Z",
+    "updated_at": "2020-09-29T04:50:34.323Z",
+    "private": false
+  }

@@ -1,0 +1,67 @@
+{
+    "@type": "job",
+    "@href": "/v3/job/721491570",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false,
+      "debug": false,
+      "delete_log": false
+    },
+    "id": 721491570,
+    "allow_failure": null,
+    "number": "5.1",
+    "state": "failed",
+    "started_at": "2020-08-26T21:30:44Z",
+    "finished_at": "2020-08-26T21:31:28Z",
+    "build": {
+      "@type": "build",
+      "@href": "/v3/build/721491569",
+      "@representation": "minimal",
+      "id": 721491569,
+      "number": "5",
+      "state": "failed",
+      "duration": 44,
+      "event_type": "push",
+      "previous_state": "failed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2020-08-26T21:30:44Z",
+      "finished_at": "2020-08-26T21:31:28Z",
+      "private": false,
+      "priority": false
+    },
+    "queue": "builds.gce",
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/29583085",
+      "@representation": "minimal",
+      "id": 29583085,
+      "name": "gattie-823-bescoto98",
+      "slug": "Revassess/gattie-823-bescoto98"
+    },
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 222396701,
+      "sha": "d5f0de06ac22264002d1b8529b25797c469af8fa",
+      "ref": "refs/heads/tiers3456",
+      "message": "i'm TRYING but nothing works",
+      "compare_url": "https://github.com/Revassess/gattie-823-bescoto98/compare/ba12d2019830...d5f0de06ac22",
+      "committed_at": "2020-08-26T21:30:14Z"
+    },
+    "owner": {
+      "@type": "organization",
+      "@href": "/v3/org/331039",
+      "@representation": "minimal",
+      "id": 331039,
+      "login": "Revassess",
+      "vcs_type": "GithubOrganization"
+    },
+    "stage": null,
+    "created_at": "2020-08-26T21:30:26.752Z",
+    "updated_at": "2020-08-26T21:31:28.758Z",
+    "private": false
+  }

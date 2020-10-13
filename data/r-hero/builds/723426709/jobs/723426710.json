@@ -1,0 +1,76 @@
+{
+    "@type": "job",
+    "@href": "/v3/job/723426710",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false,
+      "debug": false,
+      "delete_log": false
+    },
+    "id": 723426710,
+    "allow_failure": null,
+    "number": "789.1",
+    "state": "failed",
+    "started_at": "2020-09-02T12:38:31Z",
+    "finished_at": "2020-09-02T12:40:02Z",
+    "build": {
+      "@type": "build",
+      "@href": "/v3/build/723426709",
+      "@representation": "minimal",
+      "id": 723426709,
+      "number": "789",
+      "state": "failed",
+      "duration": 91,
+      "event_type": "push",
+      "previous_state": "passed",
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2020-09-02T12:38:31Z",
+      "finished_at": "2020-09-02T12:40:02Z",
+      "private": false,
+      "priority": false
+    },
+    "queue": "builds.gce",
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/15439206",
+      "@representation": "minimal",
+      "id": 15439206,
+      "name": "vind",
+      "slug": "RBMHTechnology/vind"
+    },
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 223081818,
+      "sha": "48944f38b10a739a620b1900720d87fca5ff06b2",
+      "ref": "refs/heads/#152-Advanvcesd_fulltext_search",
+      "message": "#152: Added query parser result transformation to vind model",
+      "compare_url": "https://github.com/RBMHTechnology/vind/compare/11023df02d66...48944f38b10a",
+      "committed_at": "2020-09-02T12:37:58Z"
+    },
+    "owner": {
+      "@type": "organization",
+      "@href": "/v3/org/111079",
+      "@representation": "minimal",
+      "id": 111079,
+      "login": "RBMHTechnology",
+      "vcs_type": "GithubOrganization"
+    },
+    "stage": {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 16765751,
+      "number": 1,
+      "name": "test",
+      "state": "failed",
+      "started_at": "2020-09-02T12:38:31Z",
+      "finished_at": "2020-09-02T12:40:02Z"
+    },
+    "created_at": "2020-09-02T12:38:06.419Z",
+    "updated_at": "2020-09-02T12:40:02.472Z",
+    "private": false
+  }
