@@ -2,7 +2,7 @@
 
 ## Content of the repository
 
-## SequnceR Patches Categorization
+## SequenceR Patches Categorization
 
 ### Summary
 
