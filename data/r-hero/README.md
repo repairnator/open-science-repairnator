@@ -1,4 +1,16 @@
-# R-Hero Builds & Patches Analysis
+# R-Hero - Builds & Patches Analysis
+
+# Content of the repository
+
+# SequnceR Patches Categorization
+
+## Summary
+
+|                           | Change in a method call | Change in if-condition | Change in return expression | Change in assignments | Empty | Try removal |
+|---------------------------|:-----------------------:|:----------------------:|:---------------------------:|:---------------------:|:-----:|:-----------:|
+| **# Number of Patches**   | 25                      | 24                     | 19                          | 12                    | 10    | 1           |
+
+## Details
 
 |Build ID  |Project                    |Patch ID|Category                                                                                                    |
 |----------|---------------------------|--------|------------------------------------------------------------------------------------------------------------|
@@ -93,3 +105,5 @@
 |[721436099](https://travis-ci.org/github/vlingo/vlingo-common/builds/721436099) |vlingo                     |1       |return expression changed (argument changed from false to true)                                             |
 |[733093459](https://travis-ci.org/github/miso-lims/miso-lims/builds/733093459) |miso-lims                  |1       |method call changed (arguments are swapped)                                                                 |
 |          |                           |2       |method call changed (second argument is also used as the first one)                                         |
+
+## 
