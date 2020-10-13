@@ -1,0 +1,97 @@
+{
+    "@type": "build",
+    "@href": "/v3/build/733093459",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false
+    },
+    "id": 733093459,
+    "number": "9448",
+    "state": "failed",
+    "duration": 8869,
+    "event_type": "push",
+    "previous_state": null,
+    "pull_request_title": null,
+    "pull_request_number": null,
+    "started_at": "2020-10-05T20:13:06Z",
+    "finished_at": "2020-10-05T21:15:19Z",
+    "private": false,
+    "priority": false,
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/1274712",
+      "@representation": "minimal",
+      "id": 1274712,
+      "name": "miso-lims",
+      "slug": "miso-lims/miso-lims"
+    },
+    "branch": {
+      "@type": "branch",
+      "@href": "/v3/repo/1274712/branch/GLT-3356_dashiMetrics",
+      "@representation": "minimal",
+      "name": "GLT-3356_dashiMetrics"
+    },
+    "tag": null,
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 226571492,
+      "sha": "e6c9ac08ed3c4ff9cfc8621542e4551bef84ea81",
+      "ref": "refs/heads/GLT-3356_dashiMetrics",
+      "message": "GLT-3356: added Dashi run-library metrics integration page",
+      "compare_url": "https://github.com/miso-lims/miso-lims/commit/e6c9ac08ed3c",
+      "committed_at": "2020-10-05T20:11:41Z"
+    },
+    "jobs": [
+      {
+        "@type": "job",
+        "@href": "/v3/job/733093460",
+        "@representation": "minimal",
+        "id": 733093460
+      },
+      {
+        "@type": "job",
+        "@href": "/v3/job/733093462",
+        "@representation": "minimal",
+        "id": 733093462
+      },
+      {
+        "@type": "job",
+        "@href": "/v3/job/733093463",
+        "@representation": "minimal",
+        "id": 733093463
+      },
+      {
+        "@type": "job",
+        "@href": "/v3/job/733093464",
+        "@representation": "minimal",
+        "id": 733093464
+      },
+      {
+        "@type": "job",
+        "@href": "/v3/job/733093465",
+        "@representation": "minimal",
+        "id": 733093465
+      },
+      {
+        "@type": "job",
+        "@href": "/v3/job/733093466",
+        "@representation": "minimal",
+        "id": 733093466
+      }
+    ],
+    "stages": [
+  
+    ],
+    "created_by": {
+      "@type": "user",
+      "@href": "/v3/user/697001",
+      "@representation": "minimal",
+      "id": 697001,
+      "login": "djcooke"
+    },
+    "updated_at": "2020-10-05T21:15:19.677Z"
+  }

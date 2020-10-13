@@ -1,0 +1,104 @@
+{
+    "@type": "build",
+    "@href": "/v3/build/723371918",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false
+    },
+    "id": 723371918,
+    "number": "1286",
+    "state": "failed",
+    "duration": 1192,
+    "event_type": "push",
+    "previous_state": "passed",
+    "pull_request_title": null,
+    "pull_request_number": null,
+    "started_at": "2020-09-02T10:02:08Z",
+    "finished_at": "2020-09-02T10:17:25Z",
+    "private": false,
+    "priority": false,
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/3381474",
+      "@representation": "minimal",
+      "id": 3381474,
+      "name": "vertx-web",
+      "slug": "vert-x3/vertx-web"
+    },
+    "branch": {
+      "@type": "branch",
+      "@href": "/v3/repo/3381474/branch/master",
+      "@representation": "minimal",
+      "name": "master"
+    },
+    "tag": null,
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 223062493,
+      "sha": "7958ad0ed315962e8d524a11892f20619faebe7a",
+      "ref": "refs/heads/master",
+      "message": "Releasing 4.0.0-SNAPSHOT",
+      "compare_url": "https://github.com/vert-x3/vertx-web/compare/fc3180488906...7958ad0ed315",
+      "committed_at": "2020-09-02T08:34:30Z"
+    },
+    "jobs": [
+      {
+        "@type": "job",
+        "@href": "/v3/job/723371919",
+        "@representation": "minimal",
+        "id": 723371919
+      },
+      {
+        "@type": "job",
+        "@href": "/v3/job/723371920",
+        "@representation": "minimal",
+        "id": 723371920
+      },
+      {
+        "@type": "job",
+        "@href": "/v3/job/723371921",
+        "@representation": "minimal",
+        "id": 723371921
+      },
+      {
+        "@type": "job",
+        "@href": "/v3/job/723371922",
+        "@representation": "minimal",
+        "id": 723371922
+      }
+    ],
+    "stages": [
+      {
+        "@type": "stage",
+        "@representation": "minimal",
+        "id": 16762898,
+        "number": 1,
+        "name": "test",
+        "state": "failed",
+        "started_at": "2020-09-02T10:02:08Z",
+        "finished_at": "2020-09-02T10:17:25Z"
+      },
+      {
+        "@type": "stage",
+        "@representation": "minimal",
+        "id": 16762899,
+        "number": 2,
+        "name": "deploy",
+        "state": "canceled",
+        "started_at": null,
+        "finished_at": "2020-09-02T10:17:25Z"
+      }
+    ],
+    "created_by": {
+      "@type": "user",
+      "@href": "/v3/user/154814",
+      "@representation": "minimal",
+      "id": 154814,
+      "login": "vietj"
+    },
+    "updated_at": "2020-09-02T10:17:25.787Z"
+  }

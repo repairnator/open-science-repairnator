@@ -1,0 +1,67 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/719254693",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "cancel": false,
+    "restart": false,
+    "prioritize": false
+  },
+  "id": 719254693,
+  "number": "534",
+  "state": "failed",
+  "duration": 161,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "Fix parsing GAMEINFOMAIN when GONGJE is missing",
+  "pull_request_number": 749,
+  "started_at": "2020-08-19T12:03:27Z",
+  "finished_at": "2020-08-19T12:06:08Z",
+  "private": false,
+  "priority": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/21328836",
+    "@representation": "minimal",
+    "id": 21328836,
+    "name": "lizzie",
+    "slug": "featurecat/lizzie"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/21328836/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 221608248,
+    "sha": "9ac2d0be3aee4c506eb7dc67bf6f3c078c9ed1db",
+    "ref": "refs/pull/749/merge",
+    "message": "Fix parsing GAMEINFOMAIN when GONGJE is missing",
+    "compare_url": "https://github.com/featurecat/lizzie/pull/749",
+    "committed_at": "2020-08-19T11:59:59Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/719254694",
+      "@representation": "minimal",
+      "id": 719254694
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/211305",
+    "@representation": "minimal",
+    "id": 211305,
+    "login": "komu"
+  },
+  "updated_at": "2020-08-19T12:06:08.694Z"
+}

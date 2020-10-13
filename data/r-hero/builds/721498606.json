@@ -1,0 +1,67 @@
+{
+    "@type": "build",
+    "@href": "/v3/build/721498606",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false
+    },
+    "id": 721498606,
+    "number": "4",
+    "state": "failed",
+    "duration": 38,
+    "event_type": "push",
+    "previous_state": "failed",
+    "pull_request_title": null,
+    "pull_request_number": null,
+    "started_at": "2020-08-26T21:53:12Z",
+    "finished_at": "2020-08-26T21:53:50Z",
+    "private": false,
+    "priority": false,
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/29583105",
+      "@representation": "minimal",
+      "id": 29583105,
+      "name": "gattie-823-Tanisi90",
+      "slug": "Revassess/gattie-823-Tanisi90"
+    },
+    "branch": {
+      "@type": "branch",
+      "@href": "/v3/repo/29583105/branch/tier1",
+      "@representation": "minimal",
+      "name": "tier1"
+    },
+    "tag": null,
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 222399085,
+      "sha": "2ef7b6cdf71dfdd7f1e40758c3527f4ac9f7e6aa",
+      "ref": "refs/heads/tier1",
+      "message": "so lost",
+      "compare_url": "https://github.com/Revassess/gattie-823-Tanisi90/compare/c829ede95be9...2ef7b6cdf71d",
+      "committed_at": "2020-08-26T21:52:42Z"
+    },
+    "jobs": [
+      {
+        "@type": "job",
+        "@href": "/v3/job/721498607",
+        "@representation": "minimal",
+        "id": 721498607
+      }
+    ],
+    "stages": [
+  
+    ],
+    "created_by": {
+      "@type": "user",
+      "@href": "/v3/user/2224647",
+      "@representation": "minimal",
+      "id": 2224647,
+      "login": "Tanisi90"
+    },
+    "updated_at": "2020-08-26T21:53:50.922Z"
+  }

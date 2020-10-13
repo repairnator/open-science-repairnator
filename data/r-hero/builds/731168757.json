@@ -1,0 +1,126 @@
+{
+  "@type": "build",
+  "@href": "/v3/build/731168757",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "cancel": false,
+    "restart": false,
+    "prioritize": false
+  },
+  "id": 731168757,
+  "number": "834",
+  "state": "failed",
+  "duration": 654,
+  "event_type": "pull_request",
+  "previous_state": "passed",
+  "pull_request_title": "Bump liquibase-core from 3.10.2 to 4.1.0",
+  "pull_request_number": 277,
+  "started_at": "2020-09-29T04:46:06Z",
+  "finished_at": "2020-09-29T04:55:40Z",
+  "private": false,
+  "priority": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/10347385",
+    "@representation": "minimal",
+    "id": 10347385,
+    "name": "FROST-Server",
+    "slug": "FraunhoferIOSB/FROST-Server"
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/v3/repo/10347385/branch/master",
+    "@representation": "minimal",
+    "name": "master"
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 225875511,
+    "sha": "76022711d1e5d80cb8fbfdf0f070881308af1942",
+    "ref": "refs/pull/277/merge",
+    "message": "Bump liquibase-core from 3.10.2 to 4.1.0\n\nBumps [liquibase-core](https://github.com/liquibase/liquibase) from 3.10.2 to 4.1.0.\n- [Release notes](https://github.com/liquibase/liquibase/releases)\n- [Changelog](https://github.com/liquibase/liquibase/blob/master/changelog.txt)\n- [Commits](https://github.com/liquibase/liquibase/compare/v3.10.2...v4.1.0)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>",
+    "compare_url": "https://github.com/FraunhoferIOSB/FROST-Server/pull/277",
+    "committed_at": "2020-09-29T04:45:43Z"
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/v3/job/731168758",
+      "@representation": "minimal",
+      "id": 731168758
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/731168759",
+      "@representation": "minimal",
+      "id": 731168759
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/731168760",
+      "@representation": "minimal",
+      "id": 731168760
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/731168761",
+      "@representation": "minimal",
+      "id": 731168761
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/731168762",
+      "@representation": "minimal",
+      "id": 731168762
+    },
+    {
+      "@type": "job",
+      "@href": "/v3/job/731168763",
+      "@representation": "minimal",
+      "id": 731168763
+    }
+  ],
+  "stages": [
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 17113608,
+      "number": 3,
+      "name": "deploy",
+      "state": "canceled",
+      "started_at": null,
+      "finished_at": "2020-09-29T04:55:40Z"
+    },
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 17113607,
+      "number": 2,
+      "name": "test",
+      "state": "failed",
+      "started_at": "2020-09-29T04:50:52Z",
+      "finished_at": "2020-09-29T04:55:40Z"
+    },
+    {
+      "@type": "stage",
+      "@representation": "minimal",
+      "id": 17113606,
+      "number": 1,
+      "name": "compile",
+      "state": "passed",
+      "started_at": "2020-09-29T04:46:06Z",
+      "finished_at": "2020-09-29T04:50:34Z"
+    }
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/v3/user/863369",
+    "@representation": "minimal",
+    "id": 863369,
+    "login": "dependabot[bot]"
+  },
+  "updated_at": "2020-09-29T04:55:42.030Z"
+}

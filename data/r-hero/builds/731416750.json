@@ -1,0 +1,67 @@
+{
+    "@type": "build",
+    "@href": "/v3/build/731416750",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false
+    },
+    "id": 731416750,
+    "number": "4",
+    "state": "failed",
+    "duration": 36,
+    "event_type": "push",
+    "previous_state": "passed",
+    "pull_request_title": null,
+    "pull_request_number": null,
+    "started_at": "2020-09-29T21:29:53Z",
+    "finished_at": "2020-09-29T21:30:29Z",
+    "private": false,
+    "priority": false,
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/29844655",
+      "@representation": "minimal",
+      "id": 29844655,
+      "name": "calculator",
+      "slug": "danielcalencar/calculator"
+    },
+    "branch": {
+      "@type": "branch",
+      "@href": "/v3/repo/29844655/branch/master",
+      "@representation": "minimal",
+      "name": "master"
+    },
+    "tag": null,
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 225965498,
+      "sha": "b442041ed67e5d7a844d7b042a8628418d52c61f",
+      "ref": "refs/heads/master",
+      "message": "introducing bug",
+      "compare_url": "https://github.com/danielcalencar/calculator/compare/b4d8cc0c52e7...b442041ed67e",
+      "committed_at": "2020-09-29T21:29:20Z"
+    },
+    "jobs": [
+      {
+        "@type": "job",
+        "@href": "/v3/job/731416751",
+        "@representation": "minimal",
+        "id": 731416751
+      }
+    ],
+    "stages": [
+  
+    ],
+    "created_by": {
+      "@type": "user",
+      "@href": "/v3/user/176866",
+      "@representation": "minimal",
+      "id": 176866,
+      "login": "danielcalencar"
+    },
+    "updated_at": "2020-09-29T21:30:29.859Z"
+  }
