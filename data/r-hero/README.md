@@ -1,16 +1,16 @@
 # R-Hero - Builds & Patches Analysis
 
-# Content of the repository
+## Content of the repository
 
-# SequnceR Patches Categorization
+## SequnceR Patches Categorization
 
-## Summary
+### Summary
 
 |                           | Change in a method call | Change in if-condition | Change in return expression | Change in assignments | Empty | Try removal |
 |---------------------------|:-----------------------:|:----------------------:|:---------------------------:|:---------------------:|:-----:|:-----------:|
-| **# Number of Patches**   | 25                      | 24                     | 19                          | 12                    | 10    | 1           |
+| **Number of Patches**     | 25                      | 24                     | 19                          | 12                    | 10    | 1           |
 
-## Details
+### Details
 
 |Build ID  |Project                    |Patch ID|Category                                                                                                    |
 |----------|---------------------------|--------|------------------------------------------------------------------------------------------------------------|
