@@ -14,7 +14,7 @@
 
 |Build ID  |Project                    |Patch ID|Category                                                                                                    |One line human fix|Correct|
 |------------|---------------------------|--------|------------------------------------------------------------------------------------------------------------|------------------|-------|
-|*723539132* |*clebertsuconic*           |        |                                                                                                            |                  |       |
+|**723539132** |**clebertsuconic**          |        |                                                                                                            |                  |       |
 |            |                           |1       |update return expression to static method invocation                                                        |                  |       |
 |            |                           |2       |update return expression to static field                                                                    |                  |       |
 |            |                           |3       |update return expression to new array of strings                                                            |                  |       |
@@ -71,7 +71,7 @@
 |            |                           |54      |if condition changed, right operand changed to the same thing as the left operand                           |                  |       |
 |            |                           |55      |if condition changed. same expression, left operand changed from a field read to call a method of that field|                  |       |
 |            |                           |56      |if condition changed. same expression, same expression "&&" with itself                                     |                  |       |
-|*719254693* |*featurecat*                 |        |                                                                                                            |Fix               |       |
+|**719254693** |**featurecat**                |        |                                                                                                            |Fix               |       |
 |            |                           |1       |if condition changed, left operand changed from a variable to a new variable                                |                  |       |
 |            |                           |2       |if condition changed, left operand changed from a variable to a method call. Operator changed from != to >  |                  |       |
 |            |                           |3       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
@@ -81,14 +81,14 @@
 |            |                           |7       |if condition changed, left operand changed from a variable to a new variable                                |                  |  Yes  |
 |            |                           |8       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
 |            |                           |9       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
-|*724421582* |*java-group-blr*             |        |                                                                                                            |                  |       |
+|**724421582** |**java-group-blr**             |        |                                                                                                            |                  |       |
 |            |                           |1       |if condition changed, operator changed from == to !=                                                        |                  |       |
 |            |                           |2       |if condition changed, operator changed from == to !=                                                        |                  |       |
 |            |                           |3       |return expression changed, same variable is used in the new expression                                      |                  |       |
-|*663865418* |*Luki42*                     |        |                                                                                                            |No fix yet        |       |
+|**663865418** |**Luki42**                     |        |                                                                                                            |No fix yet        |       |
 |            |                           |1       |assignment replaced with a new assignment (right hand is changed from method call to "1")                   |                  |       |
 |            |                           |2       |assignment replaced with a new assignment (right hand is changed from method call to a new method call)     |                  |       |
-|*723426709* |*RBMHTechnology*             |        |                                                                                                            |                  |       |
+|**723426709** |**RBMHTechnology**             |        |                                                                                                            |                  |       |
 |            |                           |1       |if condition changed (a lot!)                                                                               |                  |       |
 |            |                           |2       |if condition changed (a lot!)                                                                               |                  |       |
 |            |                           |3       |if condition changed (argument of a function is changed from a constant to a variable previously used)      |                  |       |
@@ -96,13 +96,13 @@
 |            |                           |5       |if condition changed (same method, object changed)                                                          |                  |       |
 |            |                           |6       |return expression changed (a lot!)                                                                          |                  |       |
 |            |                           |7       |return expression changed (same object and arguments, method changed)                                       |                  |       |
-|*721491569* |*gattie-823-bescoto98_topush*|        |                                                                                                            |Fix               |       |
+|**721491569** |**gattie-823-bescoto98_topush**|        |                                                                                                            |Fix               |       |
 |            |                           |1       |try removed                                                                                                 |                  |       |
-|*721498606* |*gattie-823-Tanisi90*        |        |                                                                                                            |No fix yet        |       |
+|**721498606** |**gattie-823-Tanisi90**        |        |                                                                                                            |No fix yet        |       |
 |            |                           |1       |assignemnt changed (same thing, "this" removed")                                                            |                  |       |
 |            |*taljmars*                   |        |                                                                                                            |                  |       |
 |            |                           |1       |method call replaced with a new method call (a call is added to the end of expression)                      |                  |       |
-|*723371918* |*vert-x3*                    |        |                                                                                                            |                  |       |
+|**723371918** |**vert-x3**                    |        |                                                                                                            |                  |       |
 |            |                           |1       |assignment changed. Right hand changed to the same thing as the left one                                    |                  |       |
 |            |                           |2       |assignment changed. Left hand changed to the same thing as the right one                                    |                  |       |
 |            |                           |3       |empty                                                                                                       |                  |       |
@@ -112,8 +112,8 @@
 |            |                           |7       |if condition changed. "&&" with a variable added                                                            |                  |       |
 |            |                           |8       |if condition changed. expression "&&" with itself                                                           |                  |       |
 |            |                           |        |                                                                                                            |                  |       |
-|*721436099* |*vlingo*                     |        |                                                                                                            |No fix yet        |       |
+|**721436099** |**vlingo**                     |        |                                                                                                            |No fix yet        |       |
 |            |                           |1       |return expression changed (argument changed from false to true)                                             |                  |       |
-|*733093459* |*miso-lims*                  |        |                                                                                                            |No fix yet        |       |
+|**733093459** |**miso-lims**                  |        |                                                                                                            |No fix yet        |       |
 |            |                           |1       |method call changed (arguments are swapped)                                                                 |                  |       |
 |            |                           |2       |method call changed (second argument is also used as the first one)                                         |                  |       |
