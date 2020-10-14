@@ -14,8 +14,7 @@
 
 |Build ID  |Project                    |Patch ID|Category                                                                                                    |One line human fix|Correct|
 |------------|---------------------------|--------|------------------------------------------------------------------------------------------------------------|------------------|-------|
-|*[723539132]*(https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132
-) |*clebertsuconic*           |        |                                                                                                            |                  |       |
+|*723539132* |*clebertsuconic*           |        |                                                                                                            |                  |       |
 |            |                           |1       |update return expression to static method invocation                                                        |                  |       |
 |            |                           |2       |update return expression to static field                                                                    |                  |       |
 |            |                           |3       |update return expression to new array of strings                                                            |                  |       |
