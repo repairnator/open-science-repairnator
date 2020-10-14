@@ -111,7 +111,6 @@
 |            |                           |6       |if condition changed. not equal to null && before the old condition                                         |                  |       |
 |            |                           |7       |if condition changed. "&&" with a variable added                                                            |                  |       |
 |            |                           |8       |if condition changed. expression "&&" with itself                                                           |                  |       |
-|            |                           |        |                                                                                                            |                  |       |
 |[**721436099**](https://travis-ci.org/github/vlingo/vlingo-common/builds/721436099) |**vlingo**                     |        |                                                                                                            |No fix yet        |       |
 |            |                           |1       |return expression changed (argument changed from false to true)                                             |                  |       |
 |[**733093459**](https://travis-ci.org/github/miso-lims/miso-lims/builds/733093459) |**miso-lims**                  |        |                                                                                                            |No fix yet        |       |
