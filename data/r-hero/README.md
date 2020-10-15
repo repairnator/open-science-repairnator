@@ -1,7 +1,5 @@
 # R-Hero - Builds & Patches Analysis
 
-## Content of the repository
-
 ## SequenceR Patches Categorization
 
 ### Summary
