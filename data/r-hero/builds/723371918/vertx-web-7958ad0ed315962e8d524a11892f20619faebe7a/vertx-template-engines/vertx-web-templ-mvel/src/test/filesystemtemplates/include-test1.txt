@@ -1,1 +1,0 @@
-Request path is @{context.getString("path")}

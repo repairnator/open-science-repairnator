@@ -1,3 +1,0 @@
-{% block title %}Title{% endblock %}
-{% block content %}Content{% endblock %}
-{% block footer %}Footer - {{ foo }}{% endblock %}

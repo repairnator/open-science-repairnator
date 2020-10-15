@@ -1,2 +1,0 @@
-<!-- #set(String foo, String bar) -->
-Hello ${foo} and ${bar}
