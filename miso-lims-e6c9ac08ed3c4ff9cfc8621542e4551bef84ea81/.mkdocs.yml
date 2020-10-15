@@ -1,0 +1,64 @@
+site_name: MISO LIMS Documentation
+site_url: http://miso-lims.github.io
+site_description: MISO LIMS Documentation
+site_author: Genome Sequence Informatics, Ontario Institute for Cancer Research
+site_favicon: images/favicon.ico
+repo_url: https://github.com/miso-lims/miso-lims
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - bash
+  logo: images/miso.png
+
+nav:
+  - About: index.md
+  - Getting Started:
+    - Building and Deploying: admin/installation-guide.md
+    - Docker Compose Installation: admin/compose-installation-guide.md
+    - Baremetal Installation: admin/baremetal-installation-guide.md
+    - Site Configuration: admin/site-configuration.md
+  - Walkthroughs: https://miso-lims.github.io/walkthroughs/
+  - User Manual:
+    - Introduction: user_manual/index.md
+    - 1. Site Configuration: user_manual/site_configuration.md
+    - 2. General Navigation: user_manual/general_navigation.md
+    - 3. Barcode Label Printers: user_manual/barcode_label_printers.md
+    - 4. Users and Groups: user_manual/users_and_groups.md
+    - 5. Type Data: user_manual/type_data.md
+    - 6. Projects: user_manual/projects.md
+    - 7. Samples: user_manual/samples.md
+    - 8. Libraries: user_manual/libraries.md
+    - 9. Library Aliquots: user_manual/library_aliquots.md
+    - 10. Worksets: user_manual/worksets.md
+    - 11. Pool Orders: user_manual/pool_orders.md
+    - 12. Pools: user_manual/pools.md
+    - 13. Sequencing Orders: user_manual/sequencing_orders.md
+    - 14. Freezers and Rooms: user_manual/freezers_and_rooms.md
+    - 15. Boxes: user_manual/boxes.md
+    - 16. Transfers: user_manual/transfers.md
+    - 17. Sequencing Containers: user_manual/sequencing_containers.md
+    - 18. Instruments: user_manual/instruments.md
+    - 19. Workstations: user_manual/workstations.md
+    - 20. Sequencer Runs: user_manual/sequencer_runs.md
+    - 21. Arrays : user_manual/arrays.md
+    - 22. Array Runs: user_manual/array_runs.md
+    - 23. QCs: user_manual/qcs.md
+    - 24. Notes: user_manual/notes.md
+    - 25. Attachments: user_manual/attachments.md
+    - 26. Deletions: user_manual/deletions.md
+    - 27. Workflows: user_manual/workflows.md
+    - 28. European Nucleotide Archive Support: user_manual/european_nucleotide_archive_support.md
+    - 29. Home Screen Widgets: user_manual/home_screen_widgets.md
+    - 30. Other MISO Tools: user_manual/other_miso_tools.md
+    - 31. Related Software: user_manual/related_software.md
+  - Developer Guide: developers-manual.md
+  - Index Checker: index-checker.md
+
+extra_css:
+    - css/numbering.css
+    - css/extra.css
+
+copyright: Copyright &copy; 2020 <a href="https://oicr-gsi.github.io/">Genome Sequence Informatics</a>, <a href="http://oicr.on.ca">Ontario Institute for Cancer Research</a>
