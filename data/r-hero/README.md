@@ -12,9 +12,9 @@
 
 ### Details
 
-|Build ID  |Project                    |Patch ID|Category                                                                                                    |One line human fix|Correct|
+|Build ID  |Project                    |Patch ID|Category                                                                                                    |Correct|One line developer fix|
 |------------|---------------------------|--------|------------------------------------------------------------------------------------------------------------|------------------|-------|
-|[**723539132**](https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132) |**clebertsuconic**          |        |                                                                                                            |                  |       |
+|[**723539132**](https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132) |**clebertsuconic**          |        |                                                                                                            |                  |  No     |
 |            |                           |1       |update return expression to static method invocation                                                        |                  |       |
 |            |                           |2       |update return expression to static field                                                                    |                  |       |
 |            |                           |3       |update return expression to new array of strings                                                            |                  |       |
@@ -71,24 +71,24 @@
 |            |                           |54      |if condition changed, right operand changed to the same thing as the left operand                           |                  |       |
 |            |                           |55      |if condition changed. same expression, left operand changed from a field read to call a method of that field|                  |       |
 |            |                           |56      |if condition changed. same expression, same expression "&&" with itself                                     |                  |       |
-|[**719254693**](https://travis-ci.org/github/featurecat/lizzie/builds/719254693) |**featurecat**                |        |                                                                                                            |[Fix](builds/719254693/developer-fix.patch)               |       |
+|[**719254693**](https://travis-ci.org/github/featurecat/lizzie/builds/719254693) |**featurecat**                |        |                                                                                                            |               |    [Fix](builds/719254693/developer-fix.patch)   |
 |            |                           |1       |if condition changed, left operand changed from a variable to a new variable                                |                  |       |
 |            |                           |2       |if condition changed, left operand changed from a variable to a method call. Operator changed from != to >  |                  |       |
 |            |                           |3       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
 |            |                           |4       |if condition changed, left operand changed from a variable to a new variable                                |                  |       |
 |            |                           |5       |if condition changed, left operand changed from a variable to "-1"                                          |                  |       |
 |            |                           |6       |if condition changed, left operand changed from a variable to "-1". Operator also changed                   |                  |       |
-|            |                           |7       |if condition changed, left operand changed from a variable to a new variable                                |                  |  Yes  |
+|            |                           |7       |if condition changed, left operand changed from a variable to a new variable                                |               Yes   |    |
 |            |                           |8       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
 |            |                           |9       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
-|[**724421582**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421582) |**java-group-blr**             |        |                                                                                                            |                  |       |
+|[**724421582**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421582) |**java-group-blr**             |        |                                                                                                            |                  | No      |
 |            |                           |1       |if condition changed, operator changed from == to !=                                                        |                  |       |
 |            |                           |2       |if condition changed, operator changed from == to !=                                                        |                  |       |
 |            |                           |3       |return expression changed, same variable is used in the new expression                                      |                  |       |
-|[**663865418**](https://travis-ci.org/github/Luki42/felix-4960/builds/663865418) |**Luki42**                     |        |                                                                                                            |No fix yet        |       |
+|[**663865418**](https://travis-ci.org/github/Luki42/felix-4960/builds/663865418) |**Luki42**                     |        |                                                                                                            |       | No fix yet       |
 |            |                           |1       |assignment replaced with a new assignment (right hand is changed from method call to "1")                   |                  |       |
 |            |                           |2       |assignment replaced with a new assignment (right hand is changed from method call to a new method call)     |                  |       |
-|[**723426709**](https://travis-ci.org/github/RBMHTechnology/vind/builds/723426709) |**RBMHTechnology**             |        |                                                                                                            |                  |       |
+|[**723426709**](https://travis-ci.org/github/RBMHTechnology/vind/builds/723426709) |**RBMHTechnology**             |        |                                                                                                            |                  |  No     |
 |            |                           |1       |if condition changed (a lot!)                                                                               |                  |       |
 |            |                           |2       |if condition changed (a lot!)                                                                               |                  |       |
 |            |                           |3       |if condition changed (argument of a function is changed from a constant to a variable previously used)      |                  |       |
@@ -96,13 +96,13 @@
 |            |                           |5       |if condition changed (same method, object changed)                                                          |                  |       |
 |            |                           |6       |return expression changed (a lot!)                                                                          |                  |       |
 |            |                           |7       |return expression changed (same object and arguments, method changed)                                       |                  |       |
-|[**721491569**](https://travis-ci.org/github/Revassess/gattie-823-bescoto98/builds/721491569) |**gattie-823-bescoto98_topush**|        |                                                                                                            |[Fix](builds/721491569/developer-fix.patch)               |       |
+|[**721491569**](https://travis-ci.org/github/Revassess/gattie-823-bescoto98/builds/721491569) |**gattie-823-bescoto98_topush**|        |                                                                                                            |               | [Fix](builds/721491569/developer-fix.patch)      |
 |            |                           |1       |try removed                                                                                                 |                  |       |
-|[**721498606**](https://travis-ci.org/github/Revassess/gattie-823-Tanisi90/builds/721498606) |**gattie-823-Tanisi90**        |        |                                                                                                            |No fix yet        |       |
+|[**721498606**](https://travis-ci.org/github/Revassess/gattie-823-Tanisi90/builds/721498606) |**gattie-823-Tanisi90**        |        |                                                                                                            |        |   No fix yet    |
 |            |                           |1       |assignemnt changed (same thing, "this" removed")                                                            |                  |       |
-| [**719903297**](https://travis-ci.org/github/taljmars/Mavlink/builds/719903297)           |**taljmars**                |        |                                                                                                            |                  |       |
+| [**719903297**](https://travis-ci.org/github/taljmars/Mavlink/builds/719903297)           |**taljmars**                |        |                                                                                                            |                  |  No     |
 |            |                           |1       |method call replaced with a new method call (a call is added to the end of expression)                      |                  |       |
-|[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                    |        |                                                                                                            |                  |       |
+|[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                    |        |                                                                                                            |                  |   No    |
 |            |                           |1       |assignment changed. Right hand changed to the same thing as the left one                                    |                  |       |
 |            |                           |2       |assignment changed. Left hand changed to the same thing as the right one                                    |                  |       |
 |            |                           |3       |empty                                                                                                       |                  |       |
@@ -111,8 +111,8 @@
 |            |                           |6       |if condition changed. not equal to null && before the old condition                                         |                  |       |
 |            |                           |7       |if condition changed. "&&" with a variable added                                                            |                  |       |
 |            |                           |8       |if condition changed. expression "&&" with itself                                                           |                  |       |
-|[**721436099**](https://travis-ci.org/github/vlingo/vlingo-common/builds/721436099) |**vlingo**                     |        |                                                                                                            |No fix yet        |       |
+|[**721436099**](https://travis-ci.org/github/vlingo/vlingo-common/builds/721436099) |**vlingo**                     |        |                                                                                                            |        | No fix yet      |
 |            |                           |1       |return expression changed (argument changed from false to true)                                             |                  |       |
-|[**733093459**](https://travis-ci.org/github/miso-lims/miso-lims/builds/733093459) |**miso-lims**                  |        |                                                                                                            |No fix yet        |       |
+|[**733093459**](https://travis-ci.org/github/miso-lims/miso-lims/builds/733093459) |**miso-lims**                  |        |                                                                                                            |        |   No fix yet    |
 |            |                           |1       |method call changed (arguments are swapped)                                                                 |                  |       |
 |            |                           |2       |method call changed (second argument is also used as the first one)                                         |                  |       |
