@@ -71,7 +71,7 @@
 |            |                           |54      |if condition changed, right operand changed to the same thing as the left operand                           |                  |       |
 |            |                           |55      |if condition changed. same expression, left operand changed from a field read to call a method of that field|                  |       |
 |            |                           |56      |if condition changed. same expression, same expression "&&" with itself                                     |                  |       |
-|[**719254693**](https://travis-ci.org/github/featurecat/lizzie/builds/719254693) |**featurecat**                |        |                                                                                                            |Fix               |       |
+|[**719254693**](https://travis-ci.org/github/featurecat/lizzie/builds/719254693) |**featurecat**                |        |                                                                                                            |[Fix](data/r-hero/builds/719254693/developer-fix.patch)               |       |
 |            |                           |1       |if condition changed, left operand changed from a variable to a new variable                                |                  |       |
 |            |                           |2       |if condition changed, left operand changed from a variable to a method call. Operator changed from != to >  |                  |       |
 |            |                           |3       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
