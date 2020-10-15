@@ -1,8 +1,0 @@
-{% extends "./parts/parent.peb" %}
-
-{% block title %}Hello.{% endblock %}
-
-{% block content %}
-Hi {{ bar }}.
-{% include "./parts/include.peb" %}
-{% endblock %}
