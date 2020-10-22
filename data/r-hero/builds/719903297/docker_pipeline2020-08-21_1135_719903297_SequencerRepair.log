@@ -1,0 +1,720 @@
+13:35:13.577 [main] INFO  f.i.s.repairnator.pipeline.Launcher - PIPELINE VERSION: 3.3-SNAPSHOT-2020-08-12 10:48
+13:35:13.890 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The pipeline will try to repair the following build id: 719903297
+13:35:13.890 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Initialize file serializer engines.
+13:35:13.891 [main] INFO  f.i.s.repairnator.pipeline.Launcher - MongoDB won't be used for serialization.
+13:35:13.891 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The email notifier engine won't be used.
+13:35:13.929 [main] WARN  f.i.s.r.pipeline.NoopListener - NOOP MODE
+13:35:13.930 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Start by getting the build (buildId: 719903297) with the following config: RepairnatorConfig{runId='null', launcherMode=SEQUENCER_REPAIR, inputPath='null', outputPath='/var/log', mongodbHost='null', mongodbName='repairnator', smtpServer='null', smtpPort='25', smtpTLS='false', smtpUsername='null', smtpPassword='', notifyTo=[], notifyEndProcess=false, push=false, pushRemoteRepo='null', fork=false, lookFromDate=null, lookToDate=null, buildId=719903297, z3solverPath='./z3_for_linux', workspacePath='./workspace', githubToken='8191bf9165[...]', dockerImageName='null', skipDelete=false, createOutputDir=false, logDirectory='null', nbThreads=1, globalTimeout=0, whiteList=null, blackList=null, jobSleepTime=0, buildSleepTime=0, maxInspectedBuilds=0, duration=null, humanPatch=false, repository='null', clean=true, bearsMode=BOTH, bearsDelimiter = false, repairTools=SequencerRepair, githubUserName= repairnator, githubUserEmail=noreply@github.com, pipelineMode=null, listenerMode=NOOP, activeMQUrl=tcp://localhost:61616, activeMQSubmitQueueName=null, gitUrl=null, gitBranch=master, gitCommitHash=null, noTravisRepair=false, rankPatches=null}
+13:35:14.725 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/build/719903297?include=job.config done after 744 ms
+13:35:15.601 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/repo/13648887/builds?include=job.config&limit=100&sort_by=finished_at&state=passed&branch.name=master done after 842 ms
+13:35:16.475 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4241 Reset hour: 12:53:30
+13:35:16.715 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd
+13:35:16.716 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd
+13:35:16.716 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+13:35:16.716 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP 1/17: CloneRepository
+13:35:16.716 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+13:35:16.716 [main] DEBUG f.i.s.r.process.step.CloneRepository - Cloning repository taljmars/Mavlink in the following directory: ./workspace/taljmars/Mavlink
+13:35:18.447 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP STATUS: [ CloneRepository : SUCCESS ]
+13:35:18.447 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP DURATION: 1s
+13:35:18.447 [main] DEBUG f.i.s.r.process.step.CloneRepository - EXECUTE NEXT STEP
+13:35:18.447 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+13:35:18.447 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP 2/17: CheckoutBuggyBuild
+13:35:18.447 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+13:35:18.447 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Checking out buggy build candidate...
+13:35:18.450 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Get commit b888ce0110b67c07be8a4547143fc2a69a07b492 for repo taljmars/Mavlink
+13:35:18.500 [main] INFO  f.i.s.r.process.git.GitHelper - Init git submodules.
+13:35:18.527 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP STATUS: [ CheckoutBuggyBuild : SUCCESS ]
+13:35:18.527 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP DURATION: 0s
+13:35:18.527 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - EXECUTE NEXT STEP
+13:35:18.528 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+13:35:18.528 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP 3/17: BuildProject
+13:35:18.528 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+13:35:18.528 [main] DEBUG f.i.s.r.process.step.BuildProject - Building project by installing artifacts with maven (skip test execution)...
+13:35:38.567 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:35:38.568 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,36] method startCompassCalibration in class com.dronegcs.mavlink.is.drone.calibration.CalibrateCompass cannot be applied to given types;
+13:35:38.571 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:35:38.571 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,36] method startCompassCalibration in class com.dronegcs.mavlink.is.drone.calibration.CalibrateCompass cannot be applied to given types;
+13:35:38.571 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   required: int
+13:35:38.571 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   found: no arguments
+13:35:38.571 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   reason: actual and formal argument lists differ in length
+13:35:38.571 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:35:38.578 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:38.579 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:35:38.579 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:38.579 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:35:38.579 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:35:38.579 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:38.579 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:35:38.579 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:35:39.534 [main] ERROR f.i.s.r.process.step.BuildProject - Repository taljmars/Mavlink cannot be built.
+13:35:39.535 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP STATUS: [ BuildProject : FAILURE ( NOTBUILDABLE ) ]
+13:35:39.535 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP DURATION: 21s
+13:35:39.536 [main] DEBUG f.i.s.r.process.step.BuildProject - EXECUTE NEXT STEP
+13:35:39.536 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+13:35:39.536 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP 12/17: BranchingStep
+13:35:39.536 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+13:35:39.536 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP STATUS: [ BranchingStep : SUCCESS ]
+13:35:39.536 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP DURATION: 0s
+13:35:39.536 [main] DEBUG f.i.s.r.process.step.BranchingStep - EXECUTE NEXT STEP
+13:35:39.536 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+13:35:39.537 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP 11/17: SequencerRepair
+13:35:39.537 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+13:35:39.537 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Start SequencerRepair
+13:35:40.472 [pool-4-thread-1] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: 6f98bb9a10b904867cb67d36f7db140976ec11bba9e1b16bd1c0a0be1fb922da
+13:35:45.048 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdOut: 
+sequencer-predict.sh start
+Input parameter:
+BUGGY_FILE_PATH = /tmp/MavlinkTester.java
+BUGGY_LINE = 159
+BEAM_SIZE = 50
+OUTPUT = /out
+
+Creating temporary working folder
+
+Abstracting the source file
+
+Tokenizing the abstraction
+
+Truncate the abstraction to 1000 tokens
+
+Generating predictions
+
+Post process predictions
+
+Creating output directory /out
+
+Generating patches
+
+Generating diffs
+
+Cleaning tmp folder
+
+Found 39 patches for MavlinkTester.java stored in /out
+sequencer-predict.sh done
+
+
+13:35:45.048 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdErr: 
+[2020-08-21 11:35:43,861 INFO] Translating shard 0.
+/usr/local/lib/python3.6/site-packages/torchtext-0.4.0-py3.6.egg/torchtext/data/field.py:359: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+/pytorch/aten/src/ATen/native/BinaryOps.cpp:66: UserWarning: Integer division of tensors using div or / is deprecated, and in a future release div will perform true division as in Python 3. Use true_divide or floor_divide (// in Python) instead.
+[2020-08-21 11:35:44,057 INFO] PRED AVG SCORE: -0.1318, PRED PPL: 1.1409
+
+13:35:47.192 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:35:47.192 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:35:47.196 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:35:47.197 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:35:47.197 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:35:47.209 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:47.209 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:35:47.209 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:47.209 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:35:47.209 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:35:47.209 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:47.209 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:35:47.209 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:35:50.165 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:35:50.165 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:35:50.168 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:35:50.168 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:35:50.168 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:35:50.178 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:50.178 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:35:50.178 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:50.178 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:35:50.178 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:35:50.179 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:50.179 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:35:50.179 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:35:52.402 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:35:52.402 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:35:52.406 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:35:52.406 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:35:52.406 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method drone(com.dronegcs.mavlink.is.drone.Drone)
+13:35:52.406 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:35:52.406 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:35:52.412 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:52.412 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:35:52.412 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:52.412 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:35:52.412 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:35:52.413 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:52.413 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:35:52.413 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:35:55.619 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:35:55.619 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:35:55.624 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:35:55.624 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:35:55.624 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method drone()
+13:35:55.624 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: variable drone of type com.dronegcs.mavlink.is.drone.Drone
+13:35:55.624 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:35:55.632 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:55.633 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:35:55.633 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:55.633 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:35:55.633 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:35:55.634 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:55.634 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:35:55.634 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:35:58.565 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:35:58.565 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:35:58.570 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:35:58.570 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:35:58.570 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method startCompassCalibration()
+13:35:58.570 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: variable drone of type com.dronegcs.mavlink.is.drone.Drone
+13:35:58.570 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:35:58.580 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:58.580 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:35:58.580 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:58.580 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:35:58.580 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:35:58.580 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:35:58.580 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:35:58.580 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:01.784 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:01.784 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: boolean cannot be converted to int
+13:36:01.787 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:01.787 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: boolean cannot be converted to int
+13:36:01.787 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:01.794 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:01.794 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:01.794 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:01.794 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:01.794 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:01.794 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:01.794 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:01.794 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:04.959 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:04.960 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,36] cannot find symbol
+13:36:04.962 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:04.963 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,36] cannot find symbol
+13:36:04.963 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method calibMagnometer()
+13:36:04.963 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.mavlink.is.drone.calibration.CalibrateCompass
+13:36:04.963 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:04.970 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:04.970 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:04.970 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:04.970 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:04.970 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:04.970 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:04.970 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:04.970 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:07.922 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:07.922 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,36] method startCompassCalibration in class com.dronegcs.mavlink.is.drone.calibration.CalibrateCompass cannot be applied to given types;
+13:36:07.927 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:07.927 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,36] method startCompassCalibration in class com.dronegcs.mavlink.is.drone.calibration.CalibrateCompass cannot be applied to given types;
+13:36:07.928 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   required: int
+13:36:07.928 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   found: no arguments
+13:36:07.928 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   reason: actual and formal argument lists differ in length
+13:36:07.928 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:07.940 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:07.941 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:07.941 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:07.941 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:07.946 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:07.946 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:07.946 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:07.946 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:10.846 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:10.846 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:10.851 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:10.851 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:10.851 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable takeoff
+13:36:10.851 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:10.851 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:10.860 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:10.860 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:10.860 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:10.860 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:10.860 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:10.860 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:10.860 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:10.860 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:13.163 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:13.164 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:36:13.168 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:13.168 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:36:13.168 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:13.179 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:13.179 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:13.179 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:13.179 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:13.179 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:13.179 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:13.179 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:13.179 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:16.275 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:16.276 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:16.279 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:16.279 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:16.279 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable disconnect
+13:36:16.279 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:16.279 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:16.287 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:16.287 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:16.287 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:16.287 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:16.287 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:16.287 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:16.287 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:16.287 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:19.613 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:19.613 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:36:19.617 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:19.617 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:36:19.617 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:19.624 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:19.624 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:19.625 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:19.625 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:19.625 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:19.625 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:19.625 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:19.625 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:22.354 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:22.355 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:22.358 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:22.358 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:22.358 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable push
+13:36:22.358 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:22.358 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:22.364 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:22.364 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:22.364 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:22.364 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:22.364 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:22.364 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:22.364 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:22.364 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:25.564 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:25.565 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:36:25.568 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:25.568 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:36:25.568 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method calibMagnometer()
+13:36:25.569 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: variable drone of type com.dronegcs.mavlink.is.drone.Drone
+13:36:25.569 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:25.576 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:25.577 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:25.577 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:25.577 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:25.577 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:25.577 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:25.577 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:25.577 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:28.892 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:28.893 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:36:28.896 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:28.896 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:36:28.896 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:28.901 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:28.902 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:28.902 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:28.902 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:28.902 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:28.902 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:28.902 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:28.902 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:31.587 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:31.587 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:36:31.591 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:31.591 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:36:31.591 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method calibMagnometer()
+13:36:31.591 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: variable drone of type com.dronegcs.mavlink.is.drone.Drone
+13:36:31.591 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:31.597 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:31.597 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:31.597 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:31.597 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:31.597 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:31.597 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:31.597 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:31.597 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:34.720 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:34.720 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:34.723 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:34.723 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:34.723 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method drone()
+13:36:34.723 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:34.723 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:34.729 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:34.729 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:34.729 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:34.729 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:34.729 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:34.729 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:34.729 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:34.729 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:38.018 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:38.018 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,36] cannot find symbol
+13:36:38.021 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:38.021 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,36] cannot find symbol
+13:36:38.021 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method getCalibrateCompass()
+13:36:38.021 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.mavlink.is.drone.calibration.CalibrateCompass
+13:36:38.021 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:38.027 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:38.027 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:38.027 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:38.027 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:38.027 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:38.027 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:38.027 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:38.027 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:41.033 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:41.033 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:41.037 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:41.038 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:41.038 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sync
+13:36:41.038 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:41.038 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:41.046 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:41.046 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:41.046 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:41.046 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:41.046 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:41.046 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:41.046 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:41.046 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:43.911 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:43.911 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:43.915 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:43.915 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:43.915 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable hb
+13:36:43.915 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:43.915 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:43.922 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:43.922 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:43.922 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:43.922 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:43.922 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:43.922 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:43.922 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:43.923 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:46.941 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:46.942 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:46.945 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:46.945 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:46.945 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable connect
+13:36:46.945 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:46.945 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:46.953 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:46.954 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:46.954 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:46.954 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:46.954 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:46.954 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:46.954 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:46.954 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:50.371 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:50.371 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:50.374 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:50.374 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:50.374 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable exit
+13:36:50.374 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:50.374 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:50.382 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:50.383 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:50.383 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:50.383 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:50.383 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:50.383 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:50.383 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:50.383 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:53.138 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:53.139 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:36:53.142 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:53.142 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:36:53.142 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:53.150 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:53.151 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:53.151 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:53.151 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:53.151 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:53.151 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:53.151 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:53.151 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:56.373 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:56.373 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:56.376 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:56.376 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:56.376 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable setver
+13:36:56.376 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:56.377 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:56.386 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:56.387 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:56.387 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:56.387 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:56.387 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:56.387 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:56.387 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:56.387 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:36:59.644 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:36:59.645 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:59.648 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:36:59.648 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:36:59.648 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable rcfree
+13:36:59.648 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:36:59.648 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:36:59.657 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:59.657 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:36:59.657 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:59.657 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:36:59.658 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:36:59.658 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:36:59.658 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:36:59.658 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:02.564 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:02.564 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:02.568 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:02.568 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:02.568 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable disarm
+13:37:02.568 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:02.568 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:02.580 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:02.580 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:02.580 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:02.580 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:02.580 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:02.580 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:02.580 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:02.580 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:05.455 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:05.456 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:05.458 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:05.459 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:05.459 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable land
+13:37:05.459 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:05.459 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:05.467 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:05.467 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:05.467 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:05.467 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:05.467 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:05.467 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:05.467 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:05.467 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:08.700 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:08.700 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:37:08.704 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:08.704 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,61] incompatible types: java.lang.String cannot be converted to int
+13:37:08.705 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:08.712 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:08.712 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:08.712 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:08.712 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:08.712 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:08.712 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:08.712 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:08.712 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:11.696 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:11.696 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:11.700 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:11.700 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:11.700 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable ping
+13:37:11.700 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:11.700 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:11.710 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:11.711 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:11.711 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:11.711 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:11.711 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:11.711 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:11.711 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:11.711 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:14.572 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:14.572 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] method getCalibrateCompass in interface com.dronegcs.mavlink.is.drone.Drone cannot be applied to given types;
+13:37:14.576 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:14.577 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] method getCalibrateCompass in interface com.dronegcs.mavlink.is.drone.Drone cannot be applied to given types;
+13:37:14.577 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   required: no arguments
+13:37:14.577 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   found: com.generic_tools.environment.Environment
+13:37:14.577 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   reason: actual and formal argument lists differ in length
+13:37:14.577 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:14.586 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:14.586 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:14.586 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:14.586 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:14.586 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:14.586 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:14.586 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:14.587 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:17.720 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:17.720 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:17.723 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:17.723 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:17.723 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable calib
+13:37:17.723 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:17.723 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:17.730 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:17.730 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:17.730 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:17.730 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:17.730 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:17.730 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:17.730 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:17.730 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:20.961 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:20.961 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:20.964 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:20.964 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:20.964 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable ver
+13:37:20.964 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:20.964 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:20.972 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:20.972 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:20.972 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:20.973 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:20.973 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:20.973 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:20.973 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:20.973 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:24.144 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:24.144 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:24.147 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:24.148 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:24.148 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method drone()
+13:37:24.148 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:24.148 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:24.157 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:24.157 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:24.157 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:24.157 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:24.157 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:24.157 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:24.157 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:24.157 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:26.937 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:26.938 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:26.942 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:26.943 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:26.943 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method drone(com.dronegcs.mavlink.is.drone.Drone)
+13:37:26.944 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:26.944 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:26.961 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:26.961 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:26.961 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:26.961 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:26.962 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:26.962 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:26.962 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:26.962 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:30.034 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:30.034 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:30.038 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:30.038 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:30.038 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable arm
+13:37:30.038 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:30.038 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:30.047 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:30.047 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:30.047 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:30.047 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:30.048 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:30.048 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:30.048 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:30.048 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:36.327 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:36.327 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:37:36.331 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:36.332 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,14] cannot find symbol
+13:37:36.332 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method startCompassCalibration()
+13:37:36.332 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: variable drone of type com.dronegcs.mavlink.is.drone.Drone
+13:37:36.332 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:36.338 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:36.338 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:36.338 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:36.339 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:36.339 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:36.339 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:36.339 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:36.339 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:39.250 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:39.251 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:39.253 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:39.254 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:39.254 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable rc
+13:37:39.254 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:39.254 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:39.267 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:39.267 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:39.267 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:39.267 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:39.267 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:39.267 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:39.267 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:39.267 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:42.387 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+13:37:42.387 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:42.390 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Tester: Compilation failure
+13:37:42.390 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/taljmars/Mavlink/Tester/src/main/java/com/dronegcs/tester/MavlinkTester.java:[159,9] cannot find symbol
+13:37:42.390 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method drone()
+13:37:42.390 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.dronegcs.tester.MavlinkTester
+13:37:42.390 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+13:37:42.397 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:42.397 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+13:37:42.398 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:42.398 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+13:37:42.398 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+13:37:42.398 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+13:37:42.398 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] After correcting the problems, you can resume the build with the command
+13:37:42.398 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   mvn <goals> -rf :Tester
+13:37:43.325 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - The repository won't be forked.
+13:37:43.331 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP STATUS: [ SequencerRepair : SUCCESS ]
+13:37:43.331 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP DURATION: 123s
+13:37:43.331 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - EXECUTE NEXT STEP
+13:37:43.331 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+13:37:43.331 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP 4/17: InitRepoToPush
+13:37:43.331 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+13:37:43.332 [main] INFO  f.i.s.r.p.step.push.InitRepoToPush - Repairnator is configured NOT to push. Step bypassed.
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP STATUS: [ InitRepoToPush : SKIPPED ]
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP DURATION: 0s
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - EXECUTE NEXT STEP
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP 13/17: CommitPatch
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+13:37:43.332 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Repairnator is configured NOT to push. Step bypassed.
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP STATUS: [ CommitPatch : SKIPPED ]
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP DURATION: 0s
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - EXECUTE NEXT STEP
+13:37:43.332 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - FINAL STEPS SKIPPED: The reproduction of the bug failed.
+13:37:43.332 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Serialize all data for build: 719903297
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository......................................SUCCESS [   1 s ]
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild...................................SUCCESS [   0 s ]
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................FAILURE [  21 s ]
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush.......................................SKIPPED          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair......................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair......................................SUCCESS [ 123 s ]
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep........................................SUCCESS [   0 s ]
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch..........................................SKIPPED          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules.......................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile....................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd.....................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd.......................................NOT RUN          
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: PATCHED
+13:37:43.426 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+13:37:43.426 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Inspector is finished. The process will exit now.
