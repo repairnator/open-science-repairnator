@@ -1,0 +1,17 @@
+***************
+*** 59,65 ****
+  
+     @Override
+     public List<AmqpInterceptor> filterInterceptors(List<BaseInterceptor> interceptors) {
+-       return internalFilterInterceptors(AmqpInterceptor.class, interceptors);
+     }
+  
+     @Override
+--- 59,65 ----
+  
+     @Override
+     public List<AmqpInterceptor> filterInterceptors(List<BaseInterceptor> interceptors) {
++       return internalFilterInterceptors(AmqpInterceptor.class,null);
+     }
+  
+     @Override
