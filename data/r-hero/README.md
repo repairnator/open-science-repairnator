@@ -17,13 +17,13 @@ For each of these failing builds, there is a specific branch containing the sour
 
 |                           | Change in a method call | Change in if-condition | Change in return expression | Change in assignments | Empty | Try removal |
 |---------------------------|:-----------------------:|:----------------------:|:---------------------------:|:---------------------:|:-----:|:-----------:|
-| **Number of Patches**     | 25                      | 24                     | 19                          | 12                    | 10    | 1           |
+| **Number of Patches**     | 25                      | 26                     | 21                          | 12                    | 10    | 1           |
 
 ### Details
 
-|Build ID  |Project                    |Patch ID|Category                                                                                                    |Correct|One line developer fix|
-|------------|---------------------------|--------|------------------------------------------------------------------------------------------------------------|------------------|-------|
-|[**723539132**](https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132) |**clebertsuconic**          |        |                                                                                                            |                  |  No     |
+|Build ID    |Project                    |Patch ID|Category                                                                                                    |Correct           |One line developer fix| Tracis CI Failure |
+|------------|---------------------------|--------|------------------------------------------------------------------------------------------------------------|------------------|----------------------|-------------------|
+|[**723539132**](https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132) |**clebertsuconic**          | |                                                                                                                      |                                                 |  No              |              Checkstyle error|
 |            |                           |1       |update return expression to static method invocation                                                        |                  |       |
 |            |                           |2       |update return expression to static field                                                                    |                  |       |
 |            |                           |3       |update return expression to new array of strings                                                            |                  |       |
@@ -31,7 +31,7 @@ For each of these failing builds, there is a specific branch containing the sour
 |            |                           |5       |empty                                                                                                       |                  |       |
 |            |                           |6       |update return expression to method call                                                                     |                  |       |
 |            |                           |7       |update return expression to null                                                                            |                  |       |
-|            |                           |8       |replace a method call with a new method call                                                                |                  |       |
+|            |                           |8       |replace a method call with a new method call                                     c                           |                  |       |
 |            |                           |9       |empty                                                                                                       |                  |       |
 |            |                           |10      |replace a method call with a new method call                                                                |                  |       |
 |            |                           |11      |replace a method call with a new method call (same method of a different object)                            |                  |       |
@@ -59,11 +59,11 @@ For each of these failing builds, there is a specific branch containing the sour
 |            |                           |33      |replace a method call with a new method call (everything the same, "this" added)                            |                  |       |
 |            |                           |34      |assignment replaced with a new assignment (right hand object changed to null)                               |                  |       |
 |            |                           |35      |empty                                                                                                       |                  |       |
-|            |                           |36      |assignemt replaced with a new assignment (right hand object cast to the same thing)                         |                  |       |
-|            |                           |37      |assignemt replaced with a new assignment (a method of the same right hand is called)                        |                  |       |
+|            |                           |36      |assignmet replaced with a new assignment (right hand object cast to the same thing)                         |                  |       |
+|            |                           |37      |assignment replaced with a new assignment (a method of the same right hand is called)                        |                  |       |
 |            |                           |38      |replace an assignment with a method call (same object used for the method call)                             |                  |       |
-|            |                           |39      |assignemt replaced with a new assignment (everything the same, "this" removed)                              |                  |       |
-|            |                           |40      |assignemt replaced with a new assignment (everything the same, "this" added)                                |                  |       |
+|            |                           |39      |assignment replaced with a new assignment (everything the same, "this" removed)                              |                  |       |
+|            |                           |40      |assignment replaced with a new assignment (everything the same, "this" added)                                |                  |       |
 |            |                           |41      |return expression replaced with null                                                                        |                  |       |
 |            |                           |42      |empty                                                                                                       |                  |       |
 |            |                           |43      |return expression replaced with the same method call, the argument is changed to null                       |                  |       |
@@ -80,7 +80,7 @@ For each of these failing builds, there is a specific branch containing the sour
 |            |                           |54      |if condition changed, right operand changed to the same thing as the left operand                           |                  |       |
 |            |                           |55      |if condition changed. same expression, left operand changed from a field read to call a method of that field|                  |       |
 |            |                           |56      |if condition changed. same expression, same expression "&&" with itself                                     |                  |       |
-|[**719254693**](https://travis-ci.org/github/featurecat/lizzie/builds/719254693) |**featurecat**                |        |                                                                                                            |               |    [Fix](builds/719254693/developer-fix.patch)   |
+|[**719254693**](https://travis-ci.org/github/featurecat/lizzie/builds/719254693) |**featurecat**                |        |                                                                                                            |               |    [Fix](builds/719254693/developer-fix.patch)   | Compilation error |
 |            |                           |1       |if condition changed, left operand changed from a variable to a new variable                                |                  |       |
 |            |                           |2       |if condition changed, left operand changed from a variable to a method call. Operator changed from != to >  |                  |       |
 |            |                           |3       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
@@ -90,14 +90,19 @@ For each of these failing builds, there is a specific branch containing the sour
 |            |                           |7       |if condition changed, left operand changed from a variable to a new variable                                |               Yes   |    |
 |            |                           |8       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
 |            |                           |9       |if condition changed, left operand changed from a variable to a method call.                                |                  |       |
-|[**724421582**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421582) |**java-group-blr**             |        |                                                                                                            |                  | No      |
+|[**724421582**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421582) |**java-group-blr**             |        |                                                                                                            |                  | No      | Test failure |
 |            |                           |1       |if condition changed, operator changed from == to !=                                                        |                  |       |
 |            |                           |2       |if condition changed, operator changed from == to !=                                                        |                  |       |
-|            |                           |3       |return expression changed, same variable is used in the new expression                                      |                  |       |
-|[**663865418**](https://travis-ci.org/github/Luki42/felix-4960/builds/663865418) |**Luki42**                     |        |                                                                                                            |       | No fix yet       |
+|[**724421125**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421125) | **java-group-blr**  | | | | No | Test failure | 
+|            |                           |0       |if condition changed, operator changed from == to !=, right hand changed to 0                                                        |                  |       |
+|            |                           |1       |if condition changed, same variable used in the new condition                                               |                  |       |
+|[**724317611**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724317611)| **java-group-blr**   | | | | No | Test failure | 
+|            |                           |0       |return expression changed, same variable is used in the new expression                                      |                  |                  |       |
+|            |                           |1       |return expression changed, '>' changed to '!='                                                         |                  |       |
+|[**663865418**](https://travis-ci.org/github/Luki42/felix-4960/builds/663865418) |**Luki42**                     |        |                                                                                                            |       | No fix yet       | Test error |
 |            |                           |1       |assignment replaced with a new assignment (right hand is changed from method call to "1")                   |                  |       |
 |            |                           |2       |assignment replaced with a new assignment (right hand is changed from method call to a new method call)     |                  |       |
-|[**723426709**](https://travis-ci.org/github/RBMHTechnology/vind/builds/723426709) |**RBMHTechnology**             |        |                                                                                                            |                  |  No     |
+|[**723426709**](https://travis-ci.org/github/RBMHTechnology/vind/builds/723426709) |**RBMHTechnology**             |        |                                                                                                            |                  |  No     | Test
 |            |                           |1       |if condition changed (a lot!)                                                                               |                  |       |
 |            |                           |2       |if condition changed (a lot!)                                                                               |                  |       |
 |            |                           |3       |if condition changed (argument of a function is changed from a constant to a variable previously used)      |                  |       |
@@ -105,13 +110,13 @@ For each of these failing builds, there is a specific branch containing the sour
 |            |                           |5       |if condition changed (same method, object changed)                                                          |                  |       |
 |            |                           |6       |return expression changed (a lot!)                                                                          |                  |       |
 |            |                           |7       |return expression changed (same object and arguments, method changed)                                       |                  |       |
-|[**721491569**](https://travis-ci.org/github/Revassess/gattie-823-bescoto98/builds/721491569) |**gattie-823-bescoto98_topush**|        |                                                                                                            |               | [Fix](builds/721491569/developer-fix.patch)      |
+|[**721491569**](https://travis-ci.org/github/Revassess/gattie-823-bescoto98/builds/721491569) |**gattie-823-bescoto98_topush**|        |                                                                                                            |               | [Fix](builds/721491569/developer-fix.patch)      | Other |
 |            |                           |1       |try removed                                                                                                 |                  |       |
-|[**721498606**](https://travis-ci.org/github/Revassess/gattie-823-Tanisi90/builds/721498606) |**gattie-823-Tanisi90**        |        |                                                                                                            |        |   No fix yet    |
-|            |                           |1       |assignemnt changed (same thing, "this" removed")                                                            |                  |       |
-| [**719903297**](https://travis-ci.org/github/taljmars/Mavlink/builds/719903297)           |**taljmars**                |        |                                                                                                            |                  |  No     |
+|[**721498606**](https://travis-ci.org/github/Revassess/gattie-823-Tanisi90/builds/721498606) |**gattie-823-Tanisi90**        |        |                                                                                                            |        |   No fix yet    | Other |
+|            |                           |1       |assignment changed (same thing, "this" removed")                                                            |                  |       |
+| [**719903297**](https://travis-ci.org/github/taljmars/Mavlink/builds/719903297)           |**taljmars**                |        |                                                                                                            |                  |  No     | Compilation error |
 |            |                           |1       |method call replaced with a new method call (a call is added to the end of expression)                      |                  |       |
-|[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                    |        |                                                                                                            |                  |   No    |
+|[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                    |        |                                                                                                            |                  |   No    | Test error |
 |            |                           |1       |assignment changed. Right hand changed to the same thing as the left one                                    |                  |       |
 |            |                           |2       |assignment changed. Left hand changed to the same thing as the right one                                    |                  |       |
 |            |                           |3       |empty                                                                                                       |                  |       |
@@ -120,8 +125,8 @@ For each of these failing builds, there is a specific branch containing the sour
 |            |                           |6       |if condition changed. not equal to null && before the old condition                                         |                  |       |
 |            |                           |7       |if condition changed. "&&" with a variable added                                                            |                  |       |
 |            |                           |8       |if condition changed. expression "&&" with itself                                                           |                  |       |
-|[**721436099**](https://travis-ci.org/github/vlingo/vlingo-common/builds/721436099) |**vlingo**                     |        |                                                                                                            |        | No fix yet      |
+|[**721436099**](https://travis-ci.org/github/vlingo/vlingo-common/builds/721436099) |**vlingo**                     |        |                                                                                                            |        | No fix yet      | Test failure |
 |            |                           |1       |return expression changed (argument changed from false to true)                                             |                  |       |
-|[**733093459**](https://travis-ci.org/github/miso-lims/miso-lims/builds/733093459) |**miso-lims**                  |        |                                                                                                            |        |   No fix yet    |
+|[**733093459**](https://travis-ci.org/github/miso-lims/miso-lims/builds/733093459) |**miso-lims**                  |        |                                                                                                            |        |   No fix yet    | Test error |
 |            |                           |1       |method call changed (arguments are swapped)                                                                 |                  |       |
 |            |                           |2       |method call changed (second argument is also used as the first one)                                         |                  |       |
