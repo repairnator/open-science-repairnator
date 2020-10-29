@@ -1,0 +1,761 @@
+23:53:55.231 [main] INFO  f.i.s.repairnator.pipeline.Launcher - PIPELINE VERSION: 3.3-SNAPSHOT-2020-08-21 15:56
+23:53:55.502 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The pipeline will try to repair the following build id: 721498606
+23:53:55.503 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Initialize file serializer engines.
+23:53:55.504 [main] INFO  f.i.s.repairnator.pipeline.Launcher - MongoDB won't be used for serialization.
+23:53:55.504 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The email notifier engine will be used.
+23:53:55.545 [main] WARN  f.i.s.r.pipeline.NoopListener - NOOP MODE
+23:53:55.546 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Start by getting the build (buildId: 721498606) with the following config: RepairnatorConfig{runId='null', launcherMode=SEQUENCER_REPAIR, inputPath='null', outputPath='/var/log', mongodbHost='null', mongodbName='repairnator', smtpServer='smtp.kth.se', smtpPort='587', smtpTLS='true', smtpUsername='javierro', smtpPassword='*****', notifyTo=[javierron90@gmail.com], notifyEndProcess=false, push=false, pushRemoteRepo='null', fork=true, lookFromDate=null, lookToDate=null, buildId=721498606, z3solverPath='./z3_for_linux', workspacePath='./workspace', githubToken='8191bf9165[...]', dockerImageName='null', skipDelete=false, createOutputDir=false, logDirectory='null', nbThreads=1, globalTimeout=0, whiteList=null, blackList=null, jobSleepTime=0, buildSleepTime=0, maxInspectedBuilds=0, duration=null, humanPatch=false, repository='null', clean=true, bearsMode=BOTH, bearsDelimiter = false, repairTools=SequencerRepair, githubUserName= repairnator, githubUserEmail=noreply@github.com, pipelineMode=null, listenerMode=NOOP, activeMQUrl=tcp://localhost:61616, activeMQSubmitQueueName=null, gitUrl=null, gitBranch=master, gitCommitHash=null, noTravisRepair=false, rankPatches=null}
+23:53:56.345 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/build/721498606?include=job.config done after 750 ms
+23:53:56.511 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/repo/29583105/builds?include=job.config&limit=100&sort_by=finished_at&state=passed&branch.name=tier1 done after 133 ms
+23:53:57.118 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4865 Reset hour: 13:01:21
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+23:53:57.470 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile
+23:53:57.471 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd
+23:53:57.473 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd
+23:53:57.473 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+23:53:57.473 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP 1/17: CloneRepository
+23:53:57.473 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+23:53:57.473 [main] DEBUG f.i.s.r.process.step.CloneRepository - Cloning repository Revassess/gattie-823-Tanisi90 in the following directory: ./workspace/Revassess/gattie-823-Tanisi90
+23:53:59.647 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP STATUS: [ CloneRepository : SUCCESS ]
+23:53:59.647 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP DURATION: 2s
+23:53:59.648 [main] DEBUG f.i.s.r.process.step.CloneRepository - EXECUTE NEXT STEP
+23:53:59.648 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+23:53:59.648 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP 2/17: CheckoutBuggyBuild
+23:53:59.648 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+23:53:59.648 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Checking out buggy build candidate...
+23:53:59.650 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Get commit 2ef7b6cdf71dfdd7f1e40758c3527f4ac9f7e6aa for repo Revassess/gattie-823-Tanisi90
+23:53:59.663 [main] INFO  f.i.s.r.process.git.GitHelper - Init git submodules.
+23:53:59.702 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP STATUS: [ CheckoutBuggyBuild : SUCCESS ]
+23:53:59.702 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP DURATION: 0s
+23:53:59.703 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - EXECUTE NEXT STEP
+23:53:59.703 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+23:53:59.703 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP 3/17: BuildProject
+23:53:59.703 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+23:53:59.703 [main] DEBUG f.i.s.r.process.step.BuildProject - Building project by installing artifacts with maven (skip test execution)...
+23:53:59.705 [main] INFO  f.i.s.r.process.step.BuildProject - The pom.xml file is not at the root of the repository. Start to search it in folders...
+23:53:59.706 [main] INFO  f.i.s.r.process.step.BuildProject - A pom.xml was found in the following directory: ./workspace/Revassess/gattie-823-Tanisi90/Revassess
+23:54:03.659 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:03.660 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:03.660 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:03.661 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:03.662 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:03.662 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:03.662 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:03.662 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:03.665 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:03.666 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:03.666 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:03.666 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:03.666 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:04.711 [main] ERROR f.i.s.r.process.step.BuildProject - Repository Revassess/gattie-823-Tanisi90 cannot be built.
+23:54:04.712 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP STATUS: [ BuildProject : FAILURE ( NOTBUILDABLE ) ]
+23:54:04.712 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP DURATION: 5s
+23:54:04.712 [main] DEBUG f.i.s.r.process.step.BuildProject - EXECUTE NEXT STEP
+23:54:04.712 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+23:54:04.713 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP 12/17: BranchingStep
+23:54:04.713 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+23:54:04.713 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP STATUS: [ BranchingStep : SUCCESS ]
+23:54:04.713 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP DURATION: 0s
+23:54:04.713 [main] DEBUG f.i.s.r.process.step.BranchingStep - EXECUTE NEXT STEP
+23:54:04.713 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+23:54:04.713 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP 11/17: SequencerRepair
+23:54:04.714 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+23:54:04.714 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Start SequencerRepair
+23:54:05.586 [pool-4-thread-1] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: 68b41f135364415dc90fc154f58e4ecb2d619cdd3abeb6ce38a0867b8aba9e06
+23:54:09.556 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdOut: 
+sequencer-predict.sh start
+Input parameter:
+BUGGY_FILE_PATH = /tmp/NumberSumLength.java
+BUGGY_LINE = 95
+BEAM_SIZE = 50
+OUTPUT = /out
+
+Creating temporary working folder
+
+Abstracting the source file
+
+Tokenizing the abstraction
+
+Truncate the abstraction to 1000 tokens
+
+Generating predictions
+
+Post process predictions
+
+Creating output directory /out
+
+Generating patches
+
+Generating diffs
+
+Cleaning tmp folder
+
+Found 45 patches for NumberSumLength.java stored in /out
+sequencer-predict.sh done
+
+
+23:54:09.556 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdErr: 
+[2020-08-26 21:54:08,512 INFO] Translating shard 0.
+/usr/local/lib/python3.6/site-packages/torchtext-0.4.0-py3.6.egg/torchtext/data/field.py:359: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+/pytorch/aten/src/ATen/native/BinaryOps.cpp:66: UserWarning: Integer division of tensors using div or / is deprecated, and in a future release div will perform true division as in Python 3. Use true_divide or floor_divide (// in Python) instead.
+[2020-08-26 21:54:08,604 INFO] PRED AVG SCORE: -0.0809, PRED PPL: 1.0843
+
+23:54:09.619 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - The pom.xml file is not at the root of the repository. Start to search it in folders...
+23:54:09.620 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - A pom.xml was found in the following directory: ./workspace/Revassess/gattie-823-Tanisi90/Revassess
+23:54:11.145 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:11.145 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:11.146 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:11.146 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,29] long cannot be dereferenced
+23:54:11.148 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:11.148 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:11.148 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:11.148 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:11.149 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,29] long cannot be dereferenced
+23:54:11.149 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:11.154 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:11.154 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:11.154 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:11.154 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:11.155 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:13.275 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:13.276 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] cannot find symbol
+23:54:13.278 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:54:13.279 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] cannot find symbol
+23:54:13.279 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable checkNumberPowerLength
+23:54:13.279 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.tier1.NumberSumLength
+23:54:13.279 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:13.285 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:13.286 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:13.286 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:13.286 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:13.286 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:15.296 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:15.297 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable role cannot be referenced from a static context
+23:54:15.297 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,22] incompatible types: long cannot be converted to java.lang.String
+23:54:15.299 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:15.299 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable role cannot be referenced from a static context
+23:54:15.299 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,22] incompatible types: long cannot be converted to java.lang.String
+23:54:15.300 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:15.305 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:15.305 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:15.305 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:15.305 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:15.306 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:17.392 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:17.392 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:17.392 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:17.395 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:17.395 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:17.395 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:17.395 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:17.395 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:17.401 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:17.402 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:17.402 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:17.402 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:17.402 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:19.379 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:19.379 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:19.379 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] incompatible types: long cannot be converted to java.lang.String
+23:54:19.382 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:19.382 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:19.382 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] incompatible types: long cannot be converted to java.lang.String
+23:54:19.382 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:19.388 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:19.388 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:19.388 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:19.388 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:19.388 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:21.334 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:21.335 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:21.335 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:21.337 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:21.337 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:21.337 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:21.338 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:21.338 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:21.343 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:21.343 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:21.343 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:21.343 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:21.344 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:23.313 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:23.314 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,24] incompatible types: long cannot be converted to boolean
+23:54:23.316 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:54:23.316 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,24] incompatible types: long cannot be converted to boolean
+23:54:23.316 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:23.322 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:23.322 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:23.322 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:23.323 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:23.323 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:25.396 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:25.396 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:25.397 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:25.399 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:25.399 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:25.399 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:25.399 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable getFirstName
+23:54:25.399 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:25.405 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:25.405 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:25.405 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:25.405 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:25.405 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:27.538 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:27.538 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:27.538 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:27.538 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable id cannot be referenced from a static context
+23:54:27.541 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:27.541 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:27.541 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:27.542 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:27.542 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable id cannot be referenced from a static context
+23:54:27.542 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:27.603 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:27.604 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:27.604 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:27.604 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:27.604 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:29.554 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:29.555 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:29.555 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:29.557 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:29.558 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:29.558 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:29.558 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:29.558 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:29.564 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:29.564 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:29.564 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:29.564 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:29.564 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:31.578 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:31.579 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:31.579 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:31.581 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:31.581 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:31.581 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:31.582 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable resolvedType
+23:54:31.582 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:31.588 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:31.588 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:31.588 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:31.588 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:31.589 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:33.551 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:33.551 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] illegal start of expression
+23:54:33.553 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:54:33.553 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] illegal start of expression
+23:54:33.553 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:33.560 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:33.560 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:33.560 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:33.560 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:33.560 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:35.845 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:35.845 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable super cannot be referenced from a static context
+23:54:35.845 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,22] cannot find symbol
+23:54:35.848 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:35.848 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable super cannot be referenced from a static context
+23:54:35.848 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,22] cannot find symbol
+23:54:35.848 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: method checkNumberPowerLength(long)
+23:54:35.848 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:35.854 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:35.854 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:35.854 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:35.854 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:35.854 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:37.759 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:37.759 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:37.759 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:37.762 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:37.762 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:37.762 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:37.762 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable getLastName
+23:54:37.762 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:37.768 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:37.768 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:37.768 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:37.768 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:37.768 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:39.748 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:39.748 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:39.748 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:39.749 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,27] cannot find symbol
+23:54:39.749 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] cannot find symbol
+23:54:39.751 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,27] cannot find symbol
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   class num
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.tier1.NumberSumLength
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] cannot find symbol
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable checkNumberPowerLength
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.tier1.NumberSumLength
+23:54:39.752 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:39.758 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:39.758 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:39.758 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:39.758 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:39.758 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:41.904 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:41.905 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] not a statement
+23:54:41.909 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:54:41.910 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] not a statement
+23:54:41.910 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:41.921 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:41.921 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:41.921 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:41.921 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:41.921 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:43.941 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:43.942 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:43.942 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:43.942 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable role cannot be referenced from a static context
+23:54:43.945 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:43.945 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:43.945 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:43.945 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:43.945 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable role cannot be referenced from a static context
+23:54:43.945 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:43.951 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:43.951 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:43.951 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:43.951 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:43.952 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:45.795 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:45.796 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,30] ')' expected
+23:54:45.799 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:54:45.799 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,30] ')' expected
+23:54:45.799 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:45.808 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:45.808 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:45.808 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:45.808 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:45.808 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:48.011 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:48.011 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:48.011 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:48.011 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] incomparable types: long and <nulltype>
+23:54:48.014 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:48.014 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:48.014 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:48.014 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:48.014 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] incomparable types: long and <nulltype>
+23:54:48.014 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:48.023 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:48.023 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:48.023 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:48.023 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:48.023 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:49.953 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:49.953 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:49.953 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:49.953 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] cannot find symbol
+23:54:49.956 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:49.956 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:49.956 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:49.956 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:49.956 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] cannot find symbol
+23:54:49.956 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method num(long)
+23:54:49.956 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.tier1.NumberSumLength
+23:54:49.957 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:49.962 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:49.962 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:49.962 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:49.962 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:49.962 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:51.906 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:51.906 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] not a statement
+23:54:51.908 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:54:51.908 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] not a statement
+23:54:51.908 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:51.916 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:51.916 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:51.916 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:51.916 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:51.916 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:54.159 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:54.159 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:54.159 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:54.163 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:54.163 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:54.163 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:54.163 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable getRole
+23:54:54.163 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:54.169 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:54.169 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:54.169 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:54.169 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:54.169 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:56.240 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:56.241 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] cannot find symbol
+23:54:56.243 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:54:56.243 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] cannot find symbol
+23:54:56.243 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method num(long)
+23:54:56.243 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.tier1.NumberSumLength
+23:54:56.243 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:56.249 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:56.249 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:56.250 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:56.250 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:56.250 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:54:58.145 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:54:58.145 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:58.145 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:58.145 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable password cannot be referenced from a static context
+23:54:58.148 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:54:58.148 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:54:58.148 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:54:58.148 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:54:58.148 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable password cannot be referenced from a static context
+23:54:58.148 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:54:58.154 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:58.154 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:54:58.154 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:54:58.154 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:54:58.154 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:00.146 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:00.147 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] not a statement
+23:55:00.152 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:55:00.153 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] not a statement
+23:55:00.154 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:00.159 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:00.159 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:00.159 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:00.159 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:00.159 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:02.390 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:02.390 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:02.390 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:02.393 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:02.393 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:02.393 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:02.393 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable getUsername
+23:55:02.393 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:02.399 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:02.399 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:02.399 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:02.400 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:02.400 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:04.441 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:04.441 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:04.441 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:04.444 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:04.444 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:04.445 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:04.445 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:04.445 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:04.451 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:04.451 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:04.451 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:04.451 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:04.451 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:06.384 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:06.385 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:06.385 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:06.385 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable firstName cannot be referenced from a static context
+23:55:06.388 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:06.388 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:06.389 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:06.389 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:06.389 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable firstName cannot be referenced from a static context
+23:55:06.389 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:06.396 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:06.396 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:06.396 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:06.396 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:06.397 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:08.264 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:08.265 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] not a statement
+23:55:08.267 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:55:08.267 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] not a statement
+23:55:08.267 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:08.273 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:08.273 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:08.273 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:08.274 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:08.274 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:10.428 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:10.428 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:10.428 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:10.428 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable lastName cannot be referenced from a static context
+23:55:10.431 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:10.431 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:10.431 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:10.431 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:10.432 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable lastName cannot be referenced from a static context
+23:55:10.432 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:10.437 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:10.437 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:10.437 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:10.437 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:10.437 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:12.470 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:12.471 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:12.471 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:12.471 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable this cannot be referenced from a static context
+23:55:12.471 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,30] cannot find symbol
+23:55:12.474 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:12.474 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:12.474 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:12.474 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:12.474 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable this cannot be referenced from a static context
+23:55:12.474 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,30] cannot find symbol
+23:55:12.474 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:12.474 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:12.480 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:12.480 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:12.480 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:12.480 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:12.480 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:14.764 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:14.764 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:14.764 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:14.767 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:14.767 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:14.767 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:14.767 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable getPassword
+23:55:14.767 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:14.773 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:14.773 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:14.773 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:14.773 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:14.773 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:16.829 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:16.829 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:16.830 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,32] incompatible types: long cannot be converted to java.lang.String
+23:55:16.833 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:16.833 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:16.834 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,32] incompatible types: long cannot be converted to java.lang.String
+23:55:16.834 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:16.839 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:16.839 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:16.839 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:16.839 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:16.840 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:18.864 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:18.864 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:18.864 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:18.866 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:18.867 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:18.867 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:18.867 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:18.867 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:18.873 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:18.873 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:18.873 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:18.873 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:18.873 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:20.769 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:20.770 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,34] '[' expected
+23:55:20.770 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,39] ']' expected
+23:55:20.772 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:20.772 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,34] '[' expected
+23:55:20.772 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,39] ']' expected
+23:55:20.772 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:20.778 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:20.778 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:20.778 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:20.778 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:20.779 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:22.787 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:22.787 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,29] ';' expected
+23:55:22.789 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:55:22.789 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,29] ';' expected
+23:55:22.789 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:22.795 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:22.796 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:22.796 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:22.796 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:22.796 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:25.017 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:25.017 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:25.017 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:25.020 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:25.020 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:25.020 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:25.020 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:25.020 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:25.027 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:25.027 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:25.027 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:25.027 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:25.027 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:27.104 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:27.104 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:27.104 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] incompatible types: long cannot be converted to java.lang.String
+23:55:27.107 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:27.107 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:27.107 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] incompatible types: long cannot be converted to java.lang.String
+23:55:27.107 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:27.113 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:27.113 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:27.113 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:27.113 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:27.113 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:29.148 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:29.149 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:29.149 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:29.149 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] cannot find symbol
+23:55:29.152 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:29.152 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:29.152 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:29.152 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:29.153 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] cannot find symbol
+23:55:29.153 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method num()
+23:55:29.153 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.tier1.NumberSumLength
+23:55:29.153 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:29.161 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:29.162 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:29.162 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:29.162 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:29.162 [Thread-122] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:31.104 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:31.104 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:31.105 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:31.105 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] cannot find symbol
+23:55:31.107 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:31.107 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:31.108 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:31.108 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:31.108 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] cannot find symbol
+23:55:31.108 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable getRole
+23:55:31.108 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.tier1.NumberSumLength
+23:55:31.108 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:31.113 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:31.113 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:31.114 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:31.114 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:31.114 [Thread-125] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:33.163 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:33.164 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:33.164 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:33.165 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] no suitable constructor found for String(long)
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] no suitable constructor found for String(long)
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     constructor java.lang.String.String(java.lang.String) is not applicable
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]       (argument mismatch; long cannot be converted to java.lang.String)
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     constructor java.lang.String.String(char[]) is not applicable
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]       (argument mismatch; long cannot be converted to char[])
+23:55:33.168 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     constructor java.lang.String.String(byte[]) is not applicable
+23:55:33.169 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]       (argument mismatch; long cannot be converted to byte[])
+23:55:33.169 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     constructor java.lang.String.String(java.lang.StringBuffer) is not applicable
+23:55:33.169 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]       (argument mismatch; long cannot be converted to java.lang.StringBuffer)
+23:55:33.169 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     constructor java.lang.String.String(java.lang.StringBuilder) is not applicable
+23:55:33.169 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]       (argument mismatch; long cannot be converted to java.lang.StringBuilder)
+23:55:33.169 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:33.177 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:33.177 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:33.177 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:33.177 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:33.177 [Thread-128] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:38.346 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:38.346 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:38.346 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,27] incompatible types: long cannot be converted to java.lang.String
+23:55:38.348 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:38.349 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:38.349 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,27] incompatible types: long cannot be converted to java.lang.String
+23:55:38.349 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:38.354 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:38.355 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:38.355 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:38.355 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:38.355 [Thread-134] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:40.246 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:40.246 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:40.246 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:40.246 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable username cannot be referenced from a static context
+23:55:40.249 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:40.249 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:40.249 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,21] cannot find symbol
+23:55:40.249 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol: variable num
+23:55:40.249 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,26] non-static variable username cannot be referenced from a static context
+23:55:40.249 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:40.255 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:40.255 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:40.255 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:40.255 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:40.255 [Thread-137] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:42.328 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:55:42.328 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:42.328 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] incompatible types: long cannot be converted to java.lang.String
+23:55:42.331 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:55:42.331 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,17] non-static variable this cannot be referenced from a static context
+23:55:42.331 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-Tanisi90/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java:[95,31] incompatible types: long cannot be converted to java.lang.String
+23:55:42.331 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:55:42.337 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:42.337 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:55:42.337 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:55:42.337 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:55:42.337 [Thread-140] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:55:42.923 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - The repository won't be forked.
+23:55:43.342 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Fork the repository: Revassess/gattie-823-Tanisi90
+23:55:43.572 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4771 Reset hour: 13:01:21
+23:55:43.713 [main] INFO  f.i.s.r.process.git.GitHelper - Step SequencerRepair - GitHub rate limit: Limit: 5000 - Remaining: 4771 - Reset hour: 13:01:21
+23:55:45.781 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Obtain the following fork URL: https://api.github.com/repos/javierron/gattie-823-Tanisi90
+23:55:46.059 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP STATUS: [ SequencerRepair : SUCCESS ]
+23:55:46.060 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP DURATION: 101s
+23:55:46.060 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - EXECUTE NEXT STEP
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP 4/17: InitRepoToPush
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+23:55:46.060 [main] INFO  f.i.s.r.p.step.push.InitRepoToPush - Repairnator is configured NOT to push. Step bypassed.
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP STATUS: [ InitRepoToPush : SKIPPED ]
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP DURATION: 0s
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - EXECUTE NEXT STEP
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP 13/17: CommitPatch
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+23:55:46.060 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Repairnator is configured NOT to push. Step bypassed.
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP STATUS: [ CommitPatch : SKIPPED ]
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP DURATION: 0s
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - EXECUTE NEXT STEP
+23:55:46.060 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - FINAL STEPS SKIPPED: The reproduction of the bug failed.
+23:55:46.060 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Serialize all data for build: 721498606
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository......................................SUCCESS [   2 s ]
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild...................................SUCCESS [   0 s ]
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................FAILURE [   5 s ]
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush.......................................SKIPPED          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair......................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair......................................SUCCESS [ 101 s ]
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep........................................SUCCESS [   0 s ]
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch..........................................SKIPPED          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules.......................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile....................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd.....................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd.......................................NOT RUN          
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: PATCHED
+23:55:46.103 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:55:46.104 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Inspector is finished. The process will exit now.

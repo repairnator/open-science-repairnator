@@ -1,0 +1,2 @@
+--- a/vertx-web-client/src/main/java/io/vertx/ext/web/client/impl/HttpRequestImpl.java
++++ b/vertx-web-client/src/main/java/io/vertx/ext/web/client/impl/HttpRequestImpl.java

@@ -1,0 +1,76 @@
+{
+  "@type": "job",
+  "@href": "/v3/job/723371920",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "cancel": false,
+    "restart": false,
+    "prioritize": false,
+    "debug": false,
+    "delete_log": false
+  },
+  "id": 723371920,
+  "allow_failure": null,
+  "number": "1286.2",
+  "state": "failed",
+  "started_at": "2020-09-02T10:02:40Z",
+  "finished_at": "2020-09-02T10:17:25Z",
+  "build": {
+    "@type": "build",
+    "@href": "/v3/build/723371918",
+    "@representation": "minimal",
+    "id": 723371918,
+    "number": "1286",
+    "state": "failed",
+    "duration": 1192,
+    "event_type": "push",
+    "previous_state": "passed",
+    "pull_request_title": null,
+    "pull_request_number": null,
+    "started_at": "2020-09-02T10:02:08Z",
+    "finished_at": "2020-09-02T10:17:25Z",
+    "private": false,
+    "priority": false
+  },
+  "queue": "builds.gce",
+  "repository": {
+    "@type": "repository",
+    "@href": "/v3/repo/3381474",
+    "@representation": "minimal",
+    "id": 3381474,
+    "name": "vertx-web",
+    "slug": "vert-x3/vertx-web"
+  },
+  "commit": {
+    "@type": "commit",
+    "@representation": "minimal",
+    "id": 223062493,
+    "sha": "7958ad0ed315962e8d524a11892f20619faebe7a",
+    "ref": "refs/heads/master",
+    "message": "Releasing 4.0.0-SNAPSHOT",
+    "compare_url": "https://github.com/vert-x3/vertx-web/compare/fc3180488906...7958ad0ed315",
+    "committed_at": "2020-09-02T08:34:30Z"
+  },
+  "owner": {
+    "@type": "organization",
+    "@href": "/v3/org/91111",
+    "@representation": "minimal",
+    "id": 91111,
+    "login": "vert-x3",
+    "vcs_type": "GithubOrganization"
+  },
+  "stage": {
+    "@type": "stage",
+    "@representation": "minimal",
+    "id": 16762898,
+    "number": 1,
+    "name": "test",
+    "state": "failed",
+    "started_at": "2020-09-02T10:02:08Z",
+    "finished_at": "2020-09-02T10:17:25Z"
+  },
+  "created_at": "2020-09-02T08:39:23.805Z",
+  "updated_at": "2020-09-02T10:17:25.376Z",
+  "private": false
+}

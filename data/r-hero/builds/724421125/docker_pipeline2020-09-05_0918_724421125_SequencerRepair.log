@@ -1,0 +1,728 @@
+11:18:03.516 [main] INFO  f.i.s.repairnator.pipeline.Launcher - PIPELINE VERSION: 3.3-SNAPSHOT-2020-08-21 15:56
+11:18:03.774 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The pipeline will try to repair the following build id: 724421125
+11:18:03.774 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Initialize file serializer engines.
+11:18:03.775 [main] INFO  f.i.s.repairnator.pipeline.Launcher - MongoDB won't be used for serialization.
+11:18:03.775 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The email notifier engine will be used.
+11:18:03.815 [main] WARN  f.i.s.r.pipeline.NoopListener - NOOP MODE
+11:18:03.816 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Start by getting the build (buildId: 724421125) with the following config: RepairnatorConfig{runId='null', launcherMode=SEQUENCER_REPAIR, inputPath='null', outputPath='/var/log', mongodbHost='null', mongodbName='repairnator', smtpServer='smtp.kth.se', smtpPort='587', smtpTLS='true', smtpUsername='javierro', smtpPassword='*****', notifyTo=[javierron90@gmail.com], notifyEndProcess=false, push=false, pushRemoteRepo='null', fork=true, lookFromDate=null, lookToDate=null, buildId=724421125, z3solverPath='./z3_for_linux', workspacePath='./workspace', githubToken='8191bf9165[...]', dockerImageName='null', skipDelete=false, createOutputDir=false, logDirectory='null', nbThreads=1, globalTimeout=0, whiteList=null, blackList=null, jobSleepTime=0, buildSleepTime=0, maxInspectedBuilds=0, duration=null, humanPatch=false, repository='null', clean=true, bearsMode=BOTH, bearsDelimiter = false, repairTools=SequencerRepair, githubUserName= repairnator, githubUserEmail=noreply@github.com, pipelineMode=null, listenerMode=NOOP, activeMQUrl=tcp://localhost:61616, activeMQSubmitQueueName=null, gitUrl=null, gitBranch=master, gitCommitHash=null, noTravisRepair=false, rankPatches=null}
+11:18:04.636 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/build/724421125?include=job.config done after 773 ms
+11:18:04.936 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/repo/29637163/builds?include=job.config&limit=100&sort_by=finished_at&state=passed&branch.name=master&event_type=pull_request done after 264 ms
+11:18:05.574 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4712 Reset hour: 13:14:59
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd
+11:18:05.916 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd
+11:18:05.917 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+11:18:05.917 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP 1/17: CloneRepository
+11:18:05.917 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+11:18:05.917 [main] DEBUG f.i.s.r.process.step.CloneRepository - Cloning repository java-group-blr/lesson03 in the following directory: ./workspace/java-group-blr/lesson03
+11:18:06.852 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP STATUS: [ CloneRepository : SUCCESS ]
+11:18:06.852 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP DURATION: 0s
+11:18:06.852 [main] DEBUG f.i.s.r.process.step.CloneRepository - EXECUTE NEXT STEP
+11:18:06.852 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+11:18:06.852 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP 2/17: CheckoutBuggyBuild
+11:18:06.853 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+11:18:06.853 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Checking out buggy build candidate...
+11:18:06.992 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4711 Reset hour: 13:14:59
+11:18:08.922 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Reproduce the PR for java-group-blr/lesson03 by fetching remote branch and merging.
+11:18:09.732 [main] DEBUG f.i.s.r.process.git.GitHelper - Step CheckoutBuggyBuild - Get the commit 5add88fb514d986283e1e2176ea5b3da8716ae2a for repo java-group-blr/lesson03
+11:18:09.750 [main] DEBUG f.i.s.r.process.git.GitHelper - Step CheckoutBuggyBuild - Do the merge with the PR commit for repo java-group-blr/lesson03
+11:18:09.758 [main] INFO  f.i.s.r.process.git.GitHelper - Init git submodules.
+11:18:09.802 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP STATUS: [ CheckoutBuggyBuild : SUCCESS ]
+11:18:09.802 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP DURATION: 2s
+11:18:09.803 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - EXECUTE NEXT STEP
+11:18:09.803 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+11:18:09.803 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP 3/17: BuildProject
+11:18:09.803 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+11:18:09.803 [main] DEBUG f.i.s.r.process.step.BuildProject - Building project by installing artifacts with maven (skip test execution)...
+11:18:16.811 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP STATUS: [ BuildProject : SUCCESS ]
+11:18:16.811 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP DURATION: 7s
+11:18:16.811 [main] DEBUG f.i.s.r.process.step.BuildProject - EXECUTE NEXT STEP
+11:18:16.811 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+11:18:16.812 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP 12/17: BranchingStep
+11:18:16.812 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+11:18:16.812 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP STATUS: [ BranchingStep : SUCCESS ]
+11:18:16.812 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP DURATION: 0s
+11:18:16.812 [main] DEBUG f.i.s.r.process.step.BranchingStep - EXECUTE NEXT STEP
+11:18:16.812 [main] DEBUG f.i.s.r.process.step.TestProject - ----------------------------------------------------------------------
+11:18:16.812 [main] DEBUG f.i.s.r.process.step.TestProject - STEP 6/17: TestProject
+11:18:16.812 [main] DEBUG f.i.s.r.process.step.TestProject - ----------------------------------------------------------------------
+11:18:16.813 [main] DEBUG f.i.s.r.process.step.TestProject - Launching tests with maven...
+11:18:18.749 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:18:18.750 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:18.750 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:18:18.750 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:18.760 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:18.760 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:18.760 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:18.761 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:18.761 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:19.814 [main] DEBUG f.i.s.r.process.step.TestProject - STEP STATUS: [ TestProject : SUCCESS ]
+11:18:19.814 [main] DEBUG f.i.s.r.process.step.TestProject - STEP DURATION: 3s
+11:18:19.814 [main] DEBUG f.i.s.r.process.step.TestProject - EXECUTE NEXT STEP
+11:18:19.814 [main] DEBUG f.i.s.r.p.s.g.GatherTestInformation - ----------------------------------------------------------------------
+11:18:19.815 [main] DEBUG f.i.s.r.p.s.g.GatherTestInformation - STEP 7/17: GatherTestInformation
+11:18:19.815 [main] DEBUG f.i.s.r.p.s.g.GatherTestInformation - ----------------------------------------------------------------------
+11:18:19.815 [main] DEBUG f.i.s.r.p.s.g.GatherTestInformation - Gathering test information from surefire reports...
+11:18:19.815 [main] DEBUG f.i.s.r.p.s.g.GatherTestInformation - Contract: BuildShouldFail
+11:18:19.860 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - Get the following failing module path: /root/workspace/java-group-blr/lesson03
+11:18:19.861 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation - ---Test results---
+11:18:19.862 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Total tests: 6
+11:18:19.862 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests run: 6
+11:18:19.862 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Tests passing: 5
+11:18:19.862 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Failures: 1
+11:18:19.862 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Errors: 0
+11:18:19.862 [main] INFO  f.i.s.r.p.s.g.GatherTestInformation -    Skipped: 0
+11:18:19.862 [main] DEBUG f.i.s.r.p.s.g.GatherTestInformation - STEP STATUS: [ GatherTestInformation : SUCCESS ]
+11:18:19.862 [main] DEBUG f.i.s.r.p.s.g.GatherTestInformation - STEP DURATION: 0s
+11:18:19.862 [main] DEBUG f.i.s.r.p.s.g.GatherTestInformation - EXECUTE NEXT STEP
+11:18:19.862 [main] DEBUG f.i.s.r.p.s.paths.ComputeClasspath - ----------------------------------------------------------------------
+11:18:19.862 [main] DEBUG f.i.s.r.p.s.paths.ComputeClasspath - STEP 8/17: ComputeClasspath
+11:18:19.862 [main] DEBUG f.i.s.r.p.s.paths.ComputeClasspath - ----------------------------------------------------------------------
+11:18:19.862 [main] DEBUG f.i.s.r.p.s.paths.ComputeClasspath - Computing classpath from incriminated module...
+11:18:23.864 [main] DEBUG f.i.s.r.p.s.paths.ComputeClasspath - STEP STATUS: [ ComputeClasspath : SUCCESS ]
+11:18:23.865 [main] DEBUG f.i.s.r.p.s.paths.ComputeClasspath - STEP DURATION: 4s
+11:18:23.865 [main] DEBUG f.i.s.r.p.s.paths.ComputeClasspath - EXECUTE NEXT STEP
+11:18:23.865 [main] DEBUG f.i.s.r.p.s.paths.ComputeSourceDir - ----------------------------------------------------------------------
+11:18:23.865 [main] DEBUG f.i.s.r.p.s.paths.ComputeSourceDir - STEP 9/17: ComputeSourceDir
+11:18:23.865 [main] DEBUG f.i.s.r.p.s.paths.ComputeSourceDir - ----------------------------------------------------------------------
+11:18:23.865 [main] DEBUG f.i.s.r.p.s.paths.ComputeSourceDir - Computing the source directory ...
+11:18:23.866 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - 1 source dir was found:
+11:18:23.866 [main] INFO  f.i.s.r.p.s.paths.ComputeSourceDir - /root/workspace/java-group-blr/lesson03/src/main/java
+11:18:23.866 [main] DEBUG f.i.s.r.p.s.paths.ComputeSourceDir - STEP STATUS: [ ComputeSourceDir : SUCCESS ]
+11:18:23.866 [main] DEBUG f.i.s.r.p.s.paths.ComputeSourceDir - STEP DURATION: 0s
+11:18:23.866 [main] DEBUG f.i.s.r.p.s.paths.ComputeSourceDir - EXECUTE NEXT STEP
+11:18:23.866 [main] DEBUG f.i.s.r.p.step.paths.ComputeTestDir - ----------------------------------------------------------------------
+11:18:23.866 [main] DEBUG f.i.s.r.p.step.paths.ComputeTestDir - STEP 10/17: ComputeTestDir
+11:18:23.867 [main] DEBUG f.i.s.r.p.step.paths.ComputeTestDir - ----------------------------------------------------------------------
+11:18:23.867 [main] DEBUG f.i.s.r.p.step.paths.ComputeTestDir - Computing the test directory ...
+11:18:23.929 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - 1 test dir was found:
+11:18:23.929 [main] INFO  f.i.s.r.p.step.paths.ComputeTestDir - /root/workspace/java-group-blr/lesson03/src/test/java
+11:18:23.933 [main] DEBUG f.i.s.r.p.step.paths.ComputeTestDir - STEP STATUS: [ ComputeTestDir : SUCCESS ]
+11:18:23.934 [main] DEBUG f.i.s.r.p.step.paths.ComputeTestDir - STEP DURATION: 0s
+11:18:23.934 [main] DEBUG f.i.s.r.p.step.paths.ComputeTestDir - EXECUTE NEXT STEP
+11:18:23.934 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+11:18:23.934 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP 5/17: SequencerRepair
+11:18:23.934 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+11:18:23.934 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Start SequencerRepair
+11:18:35.166 [main] INFO  spoon.Launcher - Running in NOCLASSPATH mode (doc: http://spoon.gforge.inria.fr/launcher.html).
+11:18:35.177 [main] INFO  spoon.Launcher - Running in NOCLASSPATH mode (doc: http://spoon.gforge.inria.fr/launcher.html).
+11:18:35.189 [main] INFO  spoon.Launcher - Running in NOCLASSPATH mode (doc: http://spoon.gforge.inria.fr/launcher.html).
+11:18:35.190 [main] INFO  spoon.Launcher - Running in NOCLASSPATH mode (doc: http://spoon.gforge.inria.fr/launcher.html).
+11:18:35.192 [main] INFO  spoon.Launcher - Running in NOCLASSPATH mode (doc: http://spoon.gforge.inria.fr/launcher.html).
+11:18:35.193 [main] INFO  spoon.Launcher - Running in NOCLASSPATH mode (doc: http://spoon.gforge.inria.fr/launcher.html).
+11:18:35.997 [pool-4-thread-1] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: 5f01d439751a5ebffe481536793acd144c4dd310110cadbd50cd815903ab8a8a
+11:18:35.997 [pool-4-thread-3] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: 7d7834c4c4103446d6c4e030fff345d61082886e7c6e41dfa60c42abccf12d8d
+11:18:35.997 [pool-4-thread-2] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: 0e03fec8c34872e280b3c231f9a3c73ab25961d2e9e0ff2e1a946c0698b2dc20
+11:18:38.093 [pool-4-thread-2] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdOut: 
+sequencer-predict.sh start
+Input parameter:
+BUGGY_FILE_PATH = /tmp/Checker.java
+BUGGY_LINE = 14
+BEAM_SIZE = 50
+OUTPUT = /out
+
+Creating temporary working folder
+
+Abstracting the source file
+
+Tokenizing the abstraction
+Tokenization failed
+
+11:18:38.093 [pool-4-thread-2] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdErr: 
+Count not find buggy line ('// ONLY FOR TOKENIZATION, BUGGY LINE BELOW' missing)
+
+11:18:38.137 [pool-4-thread-3] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdOut: 
+sequencer-predict.sh start
+Input parameter:
+BUGGY_FILE_PATH = /tmp/Checker.java
+BUGGY_LINE = 15
+BEAM_SIZE = 50
+OUTPUT = /out
+
+Creating temporary working folder
+
+Abstracting the source file
+
+Tokenizing the abstraction
+Tokenization failed
+
+11:18:38.138 [pool-4-thread-3] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdErr: 
+Count not find buggy line ('// ONLY FOR TOKENIZATION, BUGGY LINE BELOW' missing)
+
+11:18:40.000 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdOut: 
+sequencer-predict.sh start
+Input parameter:
+BUGGY_FILE_PATH = /tmp/Checker.java
+BUGGY_LINE = 13
+BEAM_SIZE = 50
+OUTPUT = /out
+
+Creating temporary working folder
+
+Abstracting the source file
+
+Tokenizing the abstraction
+
+Truncate the abstraction to 1000 tokens
+
+Generating predictions
+
+Post process predictions
+
+Creating output directory /out
+
+Generating patches
+
+Generating diffs
+
+Cleaning tmp folder
+
+Found 50 patches for Checker.java stored in /out
+sequencer-predict.sh done
+
+
+11:18:40.000 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdErr: 
+[2020-09-05 09:18:38,998 INFO] Translating shard 0.
+/usr/local/lib/python3.6/site-packages/torchtext-0.4.0-py3.6.egg/torchtext/data/field.py:359: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+/pytorch/aten/src/ATen/native/BinaryOps.cpp:66: UserWarning: Integer division of tensors using div or / is deprecated, and in a future release div will perform true division as in Python 3. Use true_divide or floor_divide (// in Python) instead.
+[2020-09-05 09:18:39,071 INFO] PRED AVG SCORE: -0.2510, PRED PPL: 1.2853
+
+11:18:41.995 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:18:41.995 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:41.995 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:18:41.995 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:42.007 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:42.008 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:42.008 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:42.008 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:42.008 [Thread-15] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:43.983 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:18:43.984 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:43.984 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:18:43.984 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:43.994 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:43.995 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:43.995 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:43.995 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:43.995 [Thread-18] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:46.067 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:18:46.068 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:46.068 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:18:46.068 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:46.082 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:46.082 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:46.082 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:46.082 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:46.083 [Thread-21] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:48.150 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:18:48.150 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:48.150 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:18:48.150 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:48.167 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:48.167 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:48.167 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:48.167 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:48.167 [Thread-24] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:50.174 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:18:50.175 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:50.175 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:18:50.175 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:50.187 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:50.187 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:50.187 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:50.187 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:50.187 [Thread-27] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:52.248 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:18:52.248 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:52.248 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:18:52.248 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:52.259 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:52.260 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:52.260 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:52.260 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:52.260 [Thread-30] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:53.976 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+11:18:53.977 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,15] incompatible types: int cannot be converted to boolean
+11:18:53.979 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project untitled: Compilation failure
+11:18:53.979 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,15] incompatible types: int cannot be converted to boolean
+11:18:53.980 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:53.986 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:53.987 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:53.987 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:53.987 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:53.987 [Thread-33] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:56.361 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:18:56.361 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:56.361 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:18:56.361 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:56.372 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:56.373 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:56.373 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:56.373 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:56.373 [Thread-36] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:18:58.058 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+11:18:58.059 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,14] cannot find symbol
+11:18:58.061 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project untitled: Compilation failure
+11:18:58.061 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,14] cannot find symbol
+11:18:58.061 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method num()
+11:18:58.061 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.company.util.Checker
+11:18:58.061 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:18:58.067 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:58.068 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:18:58.068 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:18:58.068 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:18:58.068 [Thread-39] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:00.537 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:00.537 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:00.537 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:00.537 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:00.552 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:00.552 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:00.552 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:00.552 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:00.552 [Thread-42] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:02.292 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:02.293 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:02.293 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:02.293 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:02.305 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:02.306 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:02.306 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:02.306 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:02.306 [Thread-45] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:04.742 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:04.742 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:04.742 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:04.742 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:04.755 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:04.755 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:04.755 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:04.755 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:04.755 [Thread-48] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:06.421 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:06.422 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:06.422 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:06.422 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:06.434 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:06.434 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:06.434 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:06.434 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:06.434 [Thread-51] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:08.422 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+11:19:08.423 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,29] cannot find symbol
+11:19:08.425 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project untitled: Compilation failure
+11:19:08.425 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,29] cannot find symbol
+11:19:08.425 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method num()
+11:19:08.425 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.company.util.Checker
+11:19:08.425 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:08.431 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:08.431 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:08.431 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:08.431 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:08.431 [Thread-54] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:11.036 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:11.036 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:11.036 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:11.037 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:11.051 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:11.051 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:11.051 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:11.051 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:11.051 [Thread-57] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:14.013 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:14.013 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:14.013 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:14.013 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:14.027 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:14.027 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:14.027 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:14.027 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:14.027 [Thread-60] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:16.096 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:16.096 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:16.096 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:16.096 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:16.108 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:16.108 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:16.108 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:16.108 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:16.109 [Thread-63] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:17.727 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+11:19:17.727 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,15] incompatible types: int cannot be converted to boolean
+11:19:17.729 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project untitled: Compilation failure
+11:19:17.730 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,15] incompatible types: int cannot be converted to boolean
+11:19:17.730 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:17.735 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:17.735 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:17.735 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:17.735 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:17.736 [Thread-66] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:20.128 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:20.128 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:20.128 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:20.128 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:20.139 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:20.139 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:20.140 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:20.140 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:20.140 [Thread-69] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:22.165 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:22.166 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:22.166 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:22.166 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:22.178 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:22.178 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:22.178 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:22.178 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:22.178 [Thread-72] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:24.274 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:24.274 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:24.274 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:24.274 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:24.286 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:24.287 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:24.287 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:24.287 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:24.287 [Thread-75] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:26.320 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:26.320 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:26.320 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:26.320 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:26.330 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:26.330 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:26.331 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:26.331 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:26.331 [Thread-78] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:28.315 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:28.315 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:28.316 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:28.316 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:28.329 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:28.329 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:28.330 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:28.330 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:28.330 [Thread-81] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:30.100 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+11:19:30.100 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,12] cannot find symbol
+11:19:30.102 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project untitled: Compilation failure
+11:19:30.103 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,12] cannot find symbol
+11:19:30.103 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method num()
+11:19:30.103 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.company.util.Checker
+11:19:30.103 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:30.109 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:30.109 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:30.109 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:30.109 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:30.109 [Thread-84] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:32.583 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:32.583 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:32.583 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:32.583 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:32.595 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:32.595 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:32.595 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:32.595 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:32.595 [Thread-87] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:34.375 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:34.375 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:34.375 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:34.375 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:34.387 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:34.388 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:34.388 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:34.388 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:34.388 [Thread-90] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:36.693 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:36.694 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:36.694 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:36.694 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:36.706 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:36.706 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:36.706 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:36.706 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:36.706 [Thread-93] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:38.414 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:38.415 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:38.415 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:38.415 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:38.426 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:38.426 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:38.426 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:38.426 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:38.426 [Thread-96] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:40.804 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:40.804 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:40.804 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:40.804 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:40.815 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:40.815 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:40.815 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:40.815 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:40.816 [Thread-99] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:42.864 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:42.864 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:42.864 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:42.864 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:42.876 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:42.876 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:42.876 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:42.877 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:42.877 [Thread-102] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:44.949 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:44.949 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:44.949 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:44.950 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:44.962 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:44.963 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:44.963 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:44.963 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:44.963 [Thread-105] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:47.014 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:47.015 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:47.015 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:47.015 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:47.023 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:47.023 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:47.023 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:47.023 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:47.023 [Thread-108] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:49.099 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:49.099 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:49.099 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:49.099 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:49.112 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:49.112 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:49.113 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:49.113 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:49.113 [Thread-111] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:51.146 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:51.147 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:51.147 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:51.147 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:51.160 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:51.160 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:51.160 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:51.160 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:51.160 [Thread-114] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:53.181 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:53.181 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:53.181 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:53.181 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:53.194 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:53.194 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:53.194 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:53.194 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:53.194 [Thread-117] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:55.289 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:55.289 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:55.289 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:55.289 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:55.302 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:55.303 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:55.303 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:55.303 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:55.303 [Thread-120] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:19:57.282 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:19:57.283 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:57.283 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:19:57.283 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:19:57.295 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:57.295 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:19:57.295 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:19:57.295 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:19:57.295 [Thread-123] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:03.148 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+11:20:03.149 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,12] incompatible types: int cannot be converted to boolean
+11:20:03.151 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project untitled: Compilation failure
+11:20:03.151 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/java-group-blr/lesson03/src/main/java/com/company/util/Checker.java:[13,12] incompatible types: int cannot be converted to boolean
+11:20:03.151 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:03.157 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:03.157 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:03.157 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:03.157 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:03.157 [Thread-132] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:05.600 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:05.600 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:05.600 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:05.600 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:05.612 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:05.612 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:05.612 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:05.612 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:05.612 [Thread-135] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:07.252 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:07.253 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:07.253 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:07.253 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:07.265 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:07.265 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:07.265 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:07.265 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:07.265 [Thread-138] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:09.759 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:09.759 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:09.759 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:09.759 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:09.771 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:09.771 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:09.771 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:09.771 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:09.771 [Thread-141] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:11.487 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:11.487 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:11.487 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:11.487 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:11.504 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:11.504 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:11.504 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:11.504 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:11.504 [Thread-144] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:13.800 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:13.801 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:13.801 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:13.801 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:13.812 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:13.812 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:13.812 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:13.812 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:13.813 [Thread-147] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:15.938 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:15.938 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:15.938 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:15.938 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:15.951 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:15.951 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:15.951 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:15.951 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:15.951 [Thread-150] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:17.947 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:17.947 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:17.947 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:17.947 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:17.962 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:17.962 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:17.962 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:17.962 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:17.962 [Thread-153] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:20.057 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:20.058 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:20.058 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:20.058 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:20.070 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:20.071 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:20.071 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:20.071 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:20.071 [Thread-156] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:22.128 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:22.128 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:22.128 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:22.128 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:22.139 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:22.139 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:22.139 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:22.139 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:22.140 [Thread-159] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:24.088 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project untitled: There are test failures.
+11:20:24.088 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:24.088 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Please refer to /root/workspace/java-group-blr/lesson03/target/surefire-reports for the individual test results.
+11:20:24.088 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+11:20:24.096 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:24.096 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+11:20:24.096 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+11:20:24.096 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+11:20:24.096 [Thread-162] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+11:20:24.353 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - The repository won't be forked.
+11:20:24.588 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4672 Reset hour: 13:14:59
+11:20:26.280 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Fork the repository: java-group-blr/lesson03
+11:20:26.423 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4667 Reset hour: 13:14:59
+11:20:26.661 [main] INFO  f.i.s.r.process.git.GitHelper - Step SequencerRepair - GitHub rate limit: Limit: 5000 - Remaining: 4666 - Reset hour: 13:14:59
+11:20:27.870 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Obtain the following fork URL: https://api.github.com/repos/javierron/lesson03
+11:20:28.019 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4662 Reset hour: 13:14:59
+11:20:29.561 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP STATUS: [ SequencerRepair : SUCCESS ]
+11:20:29.562 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP DURATION: 125s
+11:20:29.562 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - EXECUTE NEXT STEP
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP 4/17: InitRepoToPush
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+11:20:29.562 [main] INFO  f.i.s.r.p.step.push.InitRepoToPush - Repairnator is configured NOT to push. Step bypassed.
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP STATUS: [ InitRepoToPush : SKIPPED ]
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP DURATION: 0s
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - EXECUTE NEXT STEP
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP 13/17: CommitPatch
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+11:20:29.562 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Repairnator is configured NOT to push. Step bypassed.
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP STATUS: [ CommitPatch : SKIPPED ]
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP DURATION: 0s
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - EXECUTE NEXT STEP
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.paths.ComputeModules - ----------------------------------------------------------------------
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.paths.ComputeModules - STEP 14/17: ComputeModules
+11:20:29.562 [main] DEBUG f.i.s.r.p.step.paths.ComputeModules - ----------------------------------------------------------------------
+11:20:29.563 [main] DEBUG f.i.s.r.p.step.paths.ComputeModules - Computing project modules...
+11:20:29.568 [main] DEBUG f.i.s.r.p.step.paths.ComputeModules - STEP STATUS: [ ComputeModules : SUCCESS ]
+11:20:29.568 [main] DEBUG f.i.s.r.p.step.paths.ComputeModules - STEP DURATION: 0s
+11:20:29.568 [main] DEBUG f.i.s.r.p.step.paths.ComputeModules - EXECUTE NEXT STEP
+11:20:29.568 [main] DEBUG f.i.s.r.p.step.WritePropertyFile - ----------------------------------------------------------------------
+11:20:29.568 [main] DEBUG f.i.s.r.p.step.WritePropertyFile - STEP 15/17: WritePropertyFile
+11:20:29.568 [main] DEBUG f.i.s.r.p.step.WritePropertyFile - ----------------------------------------------------------------------
+11:20:29.568 [main] DEBUG f.i.s.r.p.step.WritePropertyFile - Writing file with properties...
+11:20:29.580 [main] DEBUG f.i.s.r.p.step.WritePropertyFile - STEP STATUS: [ WritePropertyFile : SUCCESS ]
+11:20:29.580 [main] DEBUG f.i.s.r.p.step.WritePropertyFile - STEP DURATION: 0s
+11:20:29.580 [main] DEBUG f.i.s.r.p.step.WritePropertyFile - EXECUTE NEXT STEP
+11:20:29.580 [main] DEBUG f.i.s.r.p.step.push.CommitProcessEnd - ----------------------------------------------------------------------
+11:20:29.580 [main] DEBUG f.i.s.r.p.step.push.CommitProcessEnd - STEP 16/17: CommitProcessEnd
+11:20:29.580 [main] DEBUG f.i.s.r.p.step.push.CommitProcessEnd - ----------------------------------------------------------------------
+11:20:29.580 [main] INFO  f.i.s.r.p.step.push.CommitProcessEnd - Repairnator is configured NOT to push. Step bypassed.
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.CommitProcessEnd - STEP STATUS: [ CommitProcessEnd : SKIPPED ]
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.CommitProcessEnd - STEP DURATION: 0s
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.CommitProcessEnd - EXECUTE NEXT STEP
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.PushProcessEnd - ----------------------------------------------------------------------
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.PushProcessEnd - STEP 17/17: PushProcessEnd
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.PushProcessEnd - ----------------------------------------------------------------------
+11:20:29.581 [main] INFO  f.i.s.r.p.step.push.PushProcessEnd - Repairnator is configured NOT to push. Step bypassed.
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.PushProcessEnd - STEP STATUS: [ PushProcessEnd : SKIPPED ]
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.PushProcessEnd - STEP DURATION: 0s
+11:20:29.581 [main] DEBUG f.i.s.r.p.step.push.PushProcessEnd - EXECUTE NEXT STEP
+11:20:29.581 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Serialize all data for build: 724421125
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository......................................SUCCESS [   0 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild...................................SUCCESS [   2 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................SUCCESS [   7 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush.......................................SKIPPED          
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair......................................SUCCESS [ 125 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................SUCCESS [   3 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................SUCCESS [   0 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................SUCCESS [   4 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................SUCCESS [   0 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................SUCCESS [   0 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair......................................NOT RUN          
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep........................................SUCCESS [   0 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch..........................................SKIPPED          
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules.......................................SUCCESS [   0 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile....................................SUCCESS [   0 s ]
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd.....................................SKIPPED          
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd.......................................SKIPPED          
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: PATCHED
+11:20:29.647 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+11:20:29.647 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Inspector is finished. The process will exit now.

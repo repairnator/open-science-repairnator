@@ -1,0 +1,67 @@
+{
+    "@type": "job",
+    "@href": "/v3/job/724317612",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false,
+      "debug": false,
+      "delete_log": false
+    },
+    "id": 724317612,
+    "allow_failure": null,
+    "number": "35.1",
+    "state": "failed",
+    "started_at": "2020-09-04T21:50:17Z",
+    "finished_at": "2020-09-04T21:50:53Z",
+    "build": {
+      "@type": "build",
+      "@href": "/v3/build/724317611",
+      "@representation": "minimal",
+      "id": 724317611,
+      "number": "35",
+      "state": "failed",
+      "duration": 36,
+      "event_type": "pull_request",
+      "previous_state": "failed",
+      "pull_request_title": "Lia Kalinovskaya",
+      "pull_request_number": 9,
+      "started_at": "2020-09-04T21:50:17Z",
+      "finished_at": "2020-09-04T21:50:53Z",
+      "private": false,
+      "priority": false
+    },
+    "queue": "builds.gce",
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/29637163",
+      "@representation": "minimal",
+      "id": 29637163,
+      "name": "lesson03",
+      "slug": "java-group-blr/lesson03"
+    },
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 223410135,
+      "sha": "f704814733d3474572c93adc8ea5a6730e505095",
+      "ref": "refs/pull/9/merge",
+      "message": "Lia Kalinovskaya",
+      "compare_url": "https://github.com/java-group-blr/lesson03/pull/9",
+      "committed_at": "2020-09-04T21:49:17Z"
+    },
+    "owner": {
+      "@type": "organization",
+      "@href": "/v3/org/332209",
+      "@representation": "minimal",
+      "id": 332209,
+      "login": "java-group-blr",
+      "vcs_type": "GithubOrganization"
+    },
+    "stage": null,
+    "created_at": "2020-09-04T21:50:00.389Z",
+    "updated_at": "2020-09-04T21:50:53.841Z",
+    "private": false
+  }

@@ -1,0 +1,11 @@
+--- a/miso-service/src/main/java/uk/ac/bbsrc/tgac/miso/service/impl/DefaultSampleService.java
++++ b/miso-service/src/main/java/uk/ac/bbsrc/tgac/miso/service/impl/DefaultSampleService.java
+@@ -765,7 +765,7 @@
+     LimsUtils.updateParentVolume(sample, managed, changeUser);
+     updateParentSlides(sample, managed, changeUser);
+     loadChildEntities(sample);
+-    validateChange(sample, managed);
++    validateChange(managed,managed);
+     applyChanges(managed, sample);
+     if (isDetailedSample(managed)) {
+       DetailedSample detailedUpdated = (DetailedSample) managed;

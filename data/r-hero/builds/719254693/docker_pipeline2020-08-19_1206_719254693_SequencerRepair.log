@@ -1,0 +1,608 @@
+14:06:21.944 [main] INFO  f.i.s.repairnator.pipeline.Launcher - PIPELINE VERSION: 3.3-SNAPSHOT-2020-08-12 10:48
+14:06:22.411 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The pipeline will try to repair the following build id: 719254693
+14:06:22.412 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Initialize file serializer engines.
+14:06:22.412 [main] INFO  f.i.s.repairnator.pipeline.Launcher - MongoDB won't be used for serialization.
+14:06:22.412 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The email notifier engine won't be used.
+14:06:22.476 [main] WARN  f.i.s.r.pipeline.NoopListener - NOOP MODE
+14:06:22.477 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Start by getting the build (buildId: 719254693) with the following config: RepairnatorConfig{runId='null', launcherMode=SEQUENCER_REPAIR, inputPath='null', outputPath='/var/log', mongodbHost='null', mongodbName='repairnator', smtpServer='null', smtpPort='25', smtpTLS='false', smtpUsername='null', smtpPassword='', notifyTo=[], notifyEndProcess=false, push=false, pushRemoteRepo='null', fork=false, lookFromDate=null, lookToDate=null, buildId=719254693, z3solverPath='./z3_for_linux', workspacePath='./workspace', githubToken='8191bf9165[...]', dockerImageName='null', skipDelete=false, createOutputDir=false, logDirectory='null', nbThreads=1, globalTimeout=0, whiteList=null, blackList=null, jobSleepTime=0, buildSleepTime=0, maxInspectedBuilds=0, duration=null, humanPatch=false, repository='null', clean=true, bearsMode=BOTH, bearsDelimiter = false, repairTools=SequencerRepair, githubUserName= repairnator, githubUserEmail=noreply@github.com, pipelineMode=null, listenerMode=NOOP, activeMQUrl=tcp://localhost:61616, activeMQSubmitQueueName=null, gitUrl=null, gitBranch=master, gitCommitHash=null, noTravisRepair=false, rankPatches=null}
+14:06:23.274 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/build/719254693?include=job.config done after 727 ms
+14:06:24.566 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/repo/21328836/builds?include=job.config&limit=100&sort_by=finished_at&state=passed&branch.name=master&event_type=pull_request done after 1258 ms
+14:06:25.943 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/repo/21328836/builds?branch.name=master&event_type=pull_request&include=job.config&limit=100&offset=100&sort_by=finished_at&state=passed done after 1062 ms
+14:06:26.586 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/repo/21328836/builds?branch.name=master&event_type=pull_request&include=job.config&limit=100&offset=200&sort_by=finished_at&state=passed done after 457 ms
+14:06:27.602 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4238 Reset hour: 12:50:39
+14:06:27.853 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules
+14:06:27.854 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile
+14:06:27.855 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd
+14:06:27.855 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd
+14:06:27.855 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+14:06:27.855 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP 1/17: CloneRepository
+14:06:27.855 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+14:06:27.855 [main] DEBUG f.i.s.r.process.step.CloneRepository - Cloning repository featurecat/lizzie in the following directory: ./workspace/featurecat/lizzie
+14:06:44.922 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP STATUS: [ CloneRepository : SUCCESS ]
+14:06:44.923 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP DURATION: 17s
+14:06:44.923 [main] DEBUG f.i.s.r.process.step.CloneRepository - EXECUTE NEXT STEP
+14:06:44.923 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+14:06:44.923 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP 2/17: CheckoutBuggyBuild
+14:06:44.923 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+14:06:44.923 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Checking out buggy build candidate...
+14:06:45.137 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4233 Reset hour: 12:50:39
+14:06:47.308 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Reproduce the PR for featurecat/lizzie by fetching remote branch and merging.
+14:06:48.699 [main] DEBUG f.i.s.r.process.git.GitHelper - Step CheckoutBuggyBuild - Get the commit 76a00cd542ca6761368a787a0a0717379d342b34 for repo featurecat/lizzie
+14:06:48.767 [main] DEBUG f.i.s.r.process.git.GitHelper - Step CheckoutBuggyBuild - Do the merge with the PR commit for repo featurecat/lizzie
+14:06:48.774 [main] INFO  f.i.s.r.process.git.GitHelper - Init git submodules.
+14:06:48.861 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP STATUS: [ CheckoutBuggyBuild : SUCCESS ]
+14:06:48.861 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP DURATION: 3s
+14:06:48.861 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - EXECUTE NEXT STEP
+14:06:48.861 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+14:06:48.861 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP 3/17: BuildProject
+14:06:48.861 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+14:06:48.861 [main] DEBUG f.i.s.r.process.step.BuildProject - Building project by installing artifacts with maven (skip test execution)...
+14:07:01.930 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:07:01.930 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] cannot find symbol
+14:07:01.932 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:07:01.932 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] cannot find symbol
+14:07:01.932 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:07:01.932 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:07:01.932 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:07:01.936 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:07:01.936 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:07:01.936 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:07:01.936 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:07:01.936 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:07:02.877 [main] ERROR f.i.s.r.process.step.BuildProject - Repository featurecat/lizzie cannot be built.
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP STATUS: [ BuildProject : FAILURE ( NOTBUILDABLE ) ]
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP DURATION: 14s
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BuildProject - EXECUTE NEXT STEP
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP 12/17: BranchingStep
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP STATUS: [ BranchingStep : SUCCESS ]
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP DURATION: 0s
+14:07:02.878 [main] DEBUG f.i.s.r.process.step.BranchingStep - EXECUTE NEXT STEP
+14:07:02.878 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+14:07:02.878 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP 11/17: SequencerRepair
+14:07:02.878 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+14:07:02.878 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Start SequencerRepair
+14:07:03.859 [pool-4-thread-1] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: 5108ee9857ebc534f6af7735462baf818611487aa934a52781e3a854dd167421
+14:08:32.318 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdOut: 
+sequencer-predict.sh start
+Input parameter:
+BUGGY_FILE_PATH = /tmp/GIBParser.java
+BUGGY_LINE = 68
+BEAM_SIZE = 50
+OUTPUT = /out
+
+Creating temporary working folder
+
+Abstracting the source file
+
+Tokenizing the abstraction
+
+Truncate the abstraction to 1000 tokens
+
+Generating predictions
+
+Post process predictions
+
+Creating output directory /out
+
+Generating patches
+
+Generating diffs
+
+Cleaning tmp folder
+
+Found 38 patches for GIBParser.java stored in /out
+sequencer-predict.sh done
+
+
+14:08:32.319 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdErr: 
+[2020-08-19 12:07:07,619 INFO] Translating shard 0.
+/usr/local/lib/python3.6/site-packages/torchtext-0.4.0-py3.6.egg/torchtext/data/field.py:359: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+/pytorch/aten/src/ATen/native/BinaryOps.cpp:66: UserWarning: Integer division of tensors using div or / is deprecated, and in a future release div will perform true division as in Python 3. Use true_divide or floor_divide (// in Python) instead.
+[2020-08-19 12:08:31,079 INFO] PRED AVG SCORE: -0.1309, PRED PPL: 1.1399
+
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:08:44.589 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:08:44.622 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:08:44.622 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:08:44.622 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:08:44.622 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:08:44.623 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:08:51.613 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:08:51.613 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,24] incomparable types: java.lang.String and int
+14:08:51.617 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:08:51.617 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,24] incomparable types: java.lang.String and int
+14:08:51.617 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:08:51.625 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:08:51.625 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:08:51.625 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:08:51.625 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:08:51.625 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:08:57.082 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:08:57.083 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,15] cannot find symbol
+14:08:57.083 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] illegal start of type
+14:08:57.086 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:08:57.087 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,15] cannot find symbol
+14:08:57.087 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:08:57.087 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:08:57.087 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] illegal start of type
+14:08:57.087 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:08:57.095 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:08:57.095 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:08:57.095 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:08:57.095 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:08:57.095 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:09:21.717 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:09:21.718 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,27] incomparable types: java.lang.String and int
+14:09:21.721 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:09:21.721 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,27] incomparable types: java.lang.String and int
+14:09:21.721 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:09:21.729 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:21.729 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:09:21.729 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:21.730 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:09:21.730 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:09:27.105 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:09:27.105 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:09:27.105 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:09:27.108 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:09:27.109 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:09:27.109 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:09:27.109 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:09:27.109 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:09:27.109 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:09:27.116 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:27.116 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:09:27.117 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:27.117 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:09:27.117 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:09:33.554 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:09:33.555 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] cannot find symbol
+14:09:33.564 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:09:33.564 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] cannot find symbol
+14:09:33.564 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:09:33.564 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:09:33.564 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:09:33.569 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:33.569 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:09:33.569 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:33.569 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:09:33.569 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:09:46.799 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:09:46.801 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] unclosed string literal
+14:09:46.802 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[69,15] variable declaration not allowed here
+14:09:46.802 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,25] <identifier> expected
+14:09:46.803 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,30] <identifier> expected
+14:09:46.804 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,28] <identifier> expected
+14:09:46.805 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,40] <identifier> expected
+14:09:46.805 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,53] <identifier> expected
+14:09:46.805 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,5] illegal start of type
+14:09:46.805 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,37] <identifier> expected
+14:09:46.806 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,38] ';' expected
+14:09:46.806 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,39] illegal start of type
+14:09:46.806 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,40] <identifier> expected
+14:09:46.806 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,42] ';' expected
+14:09:46.806 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,12] illegal start of type
+14:09:46.806 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,17] <identifier> expected
+14:09:46.807 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,18] ';' expected
+14:09:46.810 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:09:46.810 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] unclosed string literal
+14:09:46.810 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[69,15] variable declaration not allowed here
+14:09:46.810 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,25] <identifier> expected
+14:09:46.810 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,30] <identifier> expected
+14:09:46.811 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,28] <identifier> expected
+14:09:46.811 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,40] <identifier> expected
+14:09:46.811 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,53] <identifier> expected
+14:09:46.811 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,5] illegal start of type
+14:09:46.811 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,37] <identifier> expected
+14:09:46.811 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,38] ';' expected
+14:09:46.812 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,39] illegal start of type
+14:09:46.812 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,40] <identifier> expected
+14:09:46.812 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,42] ';' expected
+14:09:46.812 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,12] illegal start of type
+14:09:46.812 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,17] <identifier> expected
+14:09:46.812 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,18] ';' expected
+14:09:46.812 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:09:46.819 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:46.819 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:09:46.819 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:46.819 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:09:46.819 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:09:56.934 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:09:56.935 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] unclosed string literal
+14:09:56.936 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,16] ';' expected
+14:09:56.937 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,25] <identifier> expected
+14:09:56.938 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,30] <identifier> expected
+14:09:56.939 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,28] <identifier> expected
+14:09:56.940 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,40] <identifier> expected
+14:09:56.940 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,53] <identifier> expected
+14:09:56.940 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,5] illegal start of type
+14:09:56.941 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,37] <identifier> expected
+14:09:56.941 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,38] ';' expected
+14:09:56.942 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,39] illegal start of type
+14:09:56.943 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,40] <identifier> expected
+14:09:56.944 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,42] ';' expected
+14:09:56.945 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,12] illegal start of type
+14:09:56.946 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,17] <identifier> expected
+14:09:56.946 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,18] ';' expected
+14:09:56.950 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:09:56.951 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] unclosed string literal
+14:09:56.951 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,16] ';' expected
+14:09:56.952 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,25] <identifier> expected
+14:09:56.952 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,30] <identifier> expected
+14:09:56.952 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,28] <identifier> expected
+14:09:56.952 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,40] <identifier> expected
+14:09:56.953 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,53] <identifier> expected
+14:09:56.954 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,5] illegal start of type
+14:09:56.955 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,37] <identifier> expected
+14:09:56.956 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,38] ';' expected
+14:09:56.957 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,39] illegal start of type
+14:09:56.958 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,40] <identifier> expected
+14:09:56.959 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,42] ';' expected
+14:09:56.959 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,12] illegal start of type
+14:09:56.960 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,17] <identifier> expected
+14:09:56.960 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,18] ';' expected
+14:09:56.960 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:09:56.989 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:56.989 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:09:56.989 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:09:56.989 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:09:56.989 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:10:09.914 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:10:09.915 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:10:09.915 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:10:09.915 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,22] bad operand type java.lang.String for unary operator '---'
+14:10:09.922 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:10:09.923 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:10:09.923 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:10:09.923 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:10:09.924 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:10:09.924 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,22] bad operand type java.lang.String for unary operator '---'
+14:10:09.924 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:10:09.939 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:10:09.940 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:10:09.940 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:10:09.940 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:10:09.941 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:10:34.600 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:10:34.605 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:10:34.608 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:10:34.611 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:10:34.611 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:10:34.611 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:10:34.612 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:10:34.612 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:10:34.612 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:10:34.641 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:10:34.641 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:10:34.641 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:10:34.641 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:10:34.642 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:10:46.041 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:10:46.041 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:10:46.042 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:10:46.044 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:10:46.044 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:10:46.044 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:10:46.044 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:10:46.044 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:10:46.044 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:10:46.049 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:10:46.049 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:10:46.050 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:10:46.050 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:10:46.050 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:11:01.431 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:11:01.432 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,20] incomparable types: java.lang.String and int
+14:11:01.441 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:11:01.441 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,20] incomparable types: java.lang.String and int
+14:11:01.441 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:11:01.441 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:01.441 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:11:01.441 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:01.441 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:11:01.441 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:11:07.690 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:11:07.690 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,25] incomparable types: java.lang.String and int
+14:11:07.693 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:11:07.693 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,25] incomparable types: java.lang.String and int
+14:11:07.693 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:11:07.700 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:07.700 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:11:07.701 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:07.701 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:11:07.701 [Thread-59] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:11:18.490 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:11:18.491 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,27] incomparable types: java.lang.String and int
+14:11:18.494 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:11:18.494 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,27] incomparable types: java.lang.String and int
+14:11:18.494 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:11:18.517 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:18.517 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:11:18.517 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:18.517 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:11:18.517 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:11:25.501 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:11:25.502 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:11:25.502 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:11:25.505 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:11:25.505 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:11:25.505 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:11:25.505 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:11:25.506 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:11:25.506 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:11:25.513 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:25.513 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:11:25.513 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:25.513 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:11:25.513 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:11:34.767 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:11:34.774 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:34.774 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:11:34.774 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:34.774 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:11:34.774 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:11:54.974 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:11:54.976 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,15] cannot find symbol
+14:11:54.977 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] illegal start of type
+14:11:54.990 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:11:54.991 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,15] cannot find symbol
+14:11:54.991 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:11:54.992 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:11:54.993 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] illegal start of type
+14:11:54.993 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:11:55.008 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:55.009 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:11:55.009 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:11:55.009 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:11:55.009 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:12:08.934 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:12:08.934 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] bad operand type java.lang.String for unary operator '---'
+14:12:08.943 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:12:08.943 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] bad operand type java.lang.String for unary operator '---'
+14:12:08.943 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:12:08.953 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:12:08.953 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:12:08.953 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:12:08.953 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:12:08.953 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:12:41.057 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:12:41.058 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,51] incomparable types: boolean and int
+14:12:41.061 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:12:41.061 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,51] incomparable types: boolean and int
+14:12:41.061 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:12:41.068 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:12:41.068 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:12:41.068 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:12:41.068 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:12:41.069 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:12:46.038 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:12:46.039 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:12:46.041 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:12:46.041 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:12:46.041 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:12:46.041 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:12:46.041 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:12:46.047 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:12:46.047 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:12:46.047 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:12:46.047 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:12:46.047 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:12:57.124 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:12:57.125 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] incompatible types: double cannot be converted to boolean
+14:12:57.125 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:12:57.125 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] incompatible types: double cannot be converted to boolean
+14:12:57.125 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:12:57.129 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:12:57.129 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:12:57.129 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:12:57.134 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:12:57.134 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:13:03.161 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:13:03.162 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] incompatible types: int cannot be converted to boolean
+14:13:03.165 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:13:03.165 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] incompatible types: int cannot be converted to boolean
+14:13:03.165 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:13:03.172 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:03.172 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:13:03.172 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:03.172 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:13:03.172 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:13:13.545 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:13:13.546 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:13:13.547 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:13:13.552 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:13:13.553 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:13:13.553 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:13:13.554 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:13:13.554 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:13:13.554 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:13:13.578 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:13.579 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:13:13.579 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:13.580 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:13:13.580 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:13:27.011 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:13:27.015 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,15] cannot find symbol
+14:13:27.015 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] illegal start of type
+14:13:27.020 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:13:27.021 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,15] cannot find symbol
+14:13:27.021 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:13:27.021 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:13:27.021 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] illegal start of type
+14:13:27.021 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:13:27.029 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:27.029 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:13:27.029 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:27.029 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:13:27.029 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:13:40.028 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:13:40.028 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,15] int cannot be dereferenced
+14:13:40.034 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure
+14:13:40.035 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,15] int cannot be dereferenced
+14:13:40.035 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:13:40.077 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:40.078 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:13:40.078 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:40.078 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:13:40.078 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:13:53.889 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:13:53.889 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:13:53.889 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:13:53.894 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:13:53.894 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:13:53.894 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:13:53.894 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:13:53.894 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:13:53.894 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:13:53.910 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:53.910 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:13:53.910 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:13:53.910 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:13:53.910 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:14:03.466 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:14:03.466 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] cannot find symbol
+14:14:03.466 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,12] illegal start of type
+14:14:03.468 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:14:03.468 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] cannot find symbol
+14:14:03.468 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:14:03.468 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:14:03.468 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,12] illegal start of type
+14:14:03.468 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:14:03.474 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:14:03.474 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:14:03.474 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:14:03.474 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:14:03.474 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:14:07.272 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:14:07.273 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] unclosed string literal
+14:14:07.273 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[69,15] variable declaration not allowed here
+14:14:07.274 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,25] <identifier> expected
+14:14:07.274 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,30] <identifier> expected
+14:14:07.274 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,28] <identifier> expected
+14:14:07.274 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,40] <identifier> expected
+14:14:07.274 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,53] <identifier> expected
+14:14:07.274 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,5] illegal start of type
+14:14:07.274 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,37] <identifier> expected
+14:14:07.275 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,38] ';' expected
+14:14:07.275 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,39] illegal start of type
+14:14:07.275 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,40] <identifier> expected
+14:14:07.275 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,42] ';' expected
+14:14:07.275 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,12] illegal start of type
+14:14:07.275 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,17] <identifier> expected
+14:14:07.276 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,18] ';' expected
+14:14:07.278 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:14:07.278 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] unclosed string literal
+14:14:07.279 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[69,15] variable declaration not allowed here
+14:14:07.279 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,25] <identifier> expected
+14:14:07.279 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[102,30] <identifier> expected
+14:14:07.279 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,28] <identifier> expected
+14:14:07.279 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,40] <identifier> expected
+14:14:07.279 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[103,53] <identifier> expected
+14:14:07.280 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,5] illegal start of type
+14:14:07.281 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,37] <identifier> expected
+14:14:07.281 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,38] ';' expected
+14:14:07.281 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,39] illegal start of type
+14:14:07.281 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,40] <identifier> expected
+14:14:07.282 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[105,42] ';' expected
+14:14:07.282 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,12] illegal start of type
+14:14:07.283 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,17] <identifier> expected
+14:14:07.283 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[107,18] ';' expected
+14:14:07.283 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:14:07.297 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:14:07.297 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:14:07.297 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:14:07.297 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:14:07.297 [Thread-116] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:14:21.252 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+14:14:21.253 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:14:21.263 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:14:21.263 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.7.0:compile (default-compile) on project lizzie: Compilation failure: Compilation failure: 
+14:14:21.264 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,14] cannot find symbol
+14:14:21.264 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable sk
+14:14:21.264 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class featurecat.lizzie.rules.GIBParser
+14:14:21.264 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/featurecat/lizzie/src/main/java/featurecat/lizzie/rules/GIBParser.java:[68,13] illegal start of type
+14:14:21.264 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+14:14:21.272 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:14:21.272 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+14:14:21.272 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+14:14:21.272 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+14:14:21.272 [Thread-119] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+14:14:22.331 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - The repository won't be forked.
+14:14:22.549 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 3908 Reset hour: 12:50:39
+14:14:24.100 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP STATUS: [ SequencerRepair : SUCCESS ]
+14:14:24.100 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP DURATION: 441s
+14:14:24.101 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - EXECUTE NEXT STEP
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP 4/17: InitRepoToPush
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+14:14:24.101 [main] INFO  f.i.s.r.p.step.push.InitRepoToPush - Repairnator is configured NOT to push. Step bypassed.
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP STATUS: [ InitRepoToPush : SKIPPED ]
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP DURATION: 0s
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - EXECUTE NEXT STEP
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP 13/17: CommitPatch
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+14:14:24.101 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Repairnator is configured NOT to push. Step bypassed.
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP STATUS: [ CommitPatch : SKIPPED ]
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP DURATION: 0s
+14:14:24.101 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - EXECUTE NEXT STEP
+14:14:24.102 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - FINAL STEPS SKIPPED: The reproduction of the bug failed.
+14:14:24.102 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Serialize all data for build: 719254693
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository......................................SUCCESS [  17 s ]
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild...................................SUCCESS [   3 s ]
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject.........................................FAILURE [  14 s ]
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush.......................................SKIPPED          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair......................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject..........................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath.....................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir.....................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir.......................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair......................................SUCCESS [ 441 s ]
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep........................................SUCCESS [   0 s ]
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch..........................................SKIPPED          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules.......................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile....................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd.....................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd.......................................NOT RUN          
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: PATCHED
+14:14:24.186 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+14:14:24.186 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Inspector is finished. The process will exit now.

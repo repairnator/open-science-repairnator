@@ -1,0 +1,67 @@
+{
+    "@type": "job",
+    "@href": "/v3/job/719254694",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false,
+      "debug": false,
+      "delete_log": false
+    },
+    "id": 719254694,
+    "allow_failure": null,
+    "number": "534.1",
+    "state": "failed",
+    "started_at": "2020-08-19T12:03:27Z",
+    "finished_at": "2020-08-19T12:06:08Z",
+    "build": {
+      "@type": "build",
+      "@href": "/v3/build/719254693",
+      "@representation": "minimal",
+      "id": 719254693,
+      "number": "534",
+      "state": "failed",
+      "duration": 161,
+      "event_type": "pull_request",
+      "previous_state": "passed",
+      "pull_request_title": "Fix parsing GAMEINFOMAIN when GONGJE is missing",
+      "pull_request_number": 749,
+      "started_at": "2020-08-19T12:03:27Z",
+      "finished_at": "2020-08-19T12:06:08Z",
+      "private": false,
+      "priority": false
+    },
+    "queue": "builds.macstadium6",
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/21328836",
+      "@representation": "minimal",
+      "id": 21328836,
+      "name": "lizzie",
+      "slug": "featurecat/lizzie"
+    },
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 221608248,
+      "sha": "9ac2d0be3aee4c506eb7dc67bf6f3c078c9ed1db",
+      "ref": "refs/pull/749/merge",
+      "message": "Fix parsing GAMEINFOMAIN when GONGJE is missing",
+      "compare_url": "https://github.com/featurecat/lizzie/pull/749",
+      "committed_at": "2020-08-19T11:59:59Z"
+    },
+    "owner": {
+      "@type": "user",
+      "@href": "/v3/user/529622",
+      "@representation": "minimal",
+      "id": 529622,
+      "login": "featurecat",
+      "vcs_type": "GithubUser"
+    },
+    "stage": null,
+    "created_at": "2020-08-19T12:02:14.549Z",
+    "updated_at": "2020-08-19T12:06:08.684Z",
+    "private": false
+  }

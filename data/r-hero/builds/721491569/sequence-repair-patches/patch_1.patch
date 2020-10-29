@@ -1,0 +1,11 @@
+--- a/Revassess/src/main/java/com/revature/dao/UserRepository.java
++++ b/Revassess/src/main/java/com/revature/dao/UserRepository.java
+@@ -15,7 +15,7 @@
+ 
+ 	@Override
+ 	public Set<Object> findAll() {
+-		try(ConnectionUtil conn = ConnectionUtil.getInstance()){
++		{
+ 			
+ 		}
+ 		return null;

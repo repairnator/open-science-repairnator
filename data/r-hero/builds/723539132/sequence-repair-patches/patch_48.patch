@@ -1,0 +1,10 @@
+--- a/artemis-server/src/main/java/org/apache/activemq/artemis/core/remoting/impl/invm/InVMRegistry.java
++++ b/artemis-server/src/main/java/org/apache/activemq/artemis/core/remoting/impl/invm/InVMRegistry.java
+@@ -48,6 +48,6 @@
+    }
+ 
+    public int size() {
+-      return acceptors.size();
++      return(acceptors.size())+(acceptors.size());
+    }
+ }

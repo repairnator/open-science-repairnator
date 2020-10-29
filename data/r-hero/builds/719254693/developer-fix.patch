@@ -1,0 +1,17 @@
+From 89896fe129e98c82ccf677fbb7e74522b703fb9a Mon Sep 17 00:00:00 2001
+From: Juha Komulainen <komu@iki.fi>
+Date: Wed, 19 Aug 2020 14:59:59 +0300
+
+
+---
+ src/main/java/featurecat/lizzie/rules/GIBParser.java | 7 ++++---
+ 1 file changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/main/java/featurecat/lizzie/rules/GIBParser.java b/src/main/java/featurecat/lizzie/rules/GIBParser.java
+index 1c1b97d6..8f832d77 100644
+--- a/src/main/java/featurecat/lizzie/rules/GIBParser.java
++++ b/src/main/java/featurecat/lizzie/rules/GIBParser.java
+@@ -63,10 +63,11 @@ private static boolean parse(String value) {
+     
+-   if (sk != -1) {
++   if (i != -1) {

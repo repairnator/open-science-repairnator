@@ -1,0 +1,680 @@
+23:31:38.545 [main] INFO  f.i.s.repairnator.pipeline.Launcher - PIPELINE VERSION: 3.3-SNAPSHOT-2020-08-21 15:56
+23:31:38.857 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The pipeline will try to repair the following build id: 721491569
+23:31:38.857 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Initialize file serializer engines.
+23:31:38.858 [main] INFO  f.i.s.repairnator.pipeline.Launcher - MongoDB won't be used for serialization.
+23:31:38.858 [main] INFO  f.i.s.repairnator.pipeline.Launcher - The email notifier engine will be used.
+23:31:38.902 [main] WARN  f.i.s.r.pipeline.NoopListener - NOOP MODE
+23:31:38.903 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Start by getting the build (buildId: 721491569) with the following config: RepairnatorConfig{runId='null', launcherMode=SEQUENCER_REPAIR, inputPath='null', outputPath='/var/log', mongodbHost='null', mongodbName='repairnator', smtpServer='smtp.kth.se', smtpPort='587', smtpTLS='true', smtpUsername='javierro', smtpPassword='*****', notifyTo=[javierron90@gmail.com], notifyEndProcess=false, push=false, pushRemoteRepo='null', fork=true, lookFromDate=null, lookToDate=null, buildId=721491569, z3solverPath='./z3_for_linux', workspacePath='./workspace', githubToken='8191bf9165[...]', dockerImageName='null', skipDelete=false, createOutputDir=false, logDirectory='null', nbThreads=1, globalTimeout=0, whiteList=null, blackList=null, jobSleepTime=0, buildSleepTime=0, maxInspectedBuilds=0, duration=null, humanPatch=false, repository='null', clean=true, bearsMode=BOTH, bearsDelimiter = false, repairTools=SequencerRepair, githubUserName= repairnator, githubUserEmail=noreply@github.com, pipelineMode=null, listenerMode=NOOP, activeMQUrl=tcp://localhost:61616, activeMQSubmitQueueName=null, gitUrl=null, gitBranch=master, gitCommitHash=null, noTravisRepair=false, rankPatches=null}
+23:31:39.695 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/build/721491569?include=job.config done after 741 ms
+23:31:39.860 [main] DEBUG fr.inria.jtravis.helpers.BuildHelper - Get request to :https://api.travis-ci.org/v3/repo/29583085/builds?include=job.config&limit=100&sort_by=finished_at&state=passed&branch.name=tiers3456 done after 132 ms
+23:31:40.534 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4262 Reset hour: 13:01:18
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE STEPS
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+23:31:40.878 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject
+23:31:40.880 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation
+23:31:40.880 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath
+23:31:40.880 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir
+23:31:40.880 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir
+23:31:40.881 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair
+23:31:40.881 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep
+23:31:40.881 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch
+23:31:40.881 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules
+23:31:40.881 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile
+23:31:40.881 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd
+23:31:40.881 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd
+23:31:40.881 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+23:31:40.881 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP 1/17: CloneRepository
+23:31:40.881 [main] DEBUG f.i.s.r.process.step.CloneRepository - ----------------------------------------------------------------------
+23:31:40.881 [main] DEBUG f.i.s.r.process.step.CloneRepository - Cloning repository Revassess/gattie-823-bescoto98 in the following directory: ./workspace/Revassess/gattie-823-bescoto98
+23:31:42.996 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP STATUS: [ CloneRepository : SUCCESS ]
+23:31:42.997 [main] DEBUG f.i.s.r.process.step.CloneRepository - STEP DURATION: 2s
+23:31:42.997 [main] DEBUG f.i.s.r.process.step.CloneRepository - EXECUTE NEXT STEP
+23:31:42.997 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+23:31:42.997 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP 2/17: CheckoutBuggyBuild
+23:31:42.997 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - ----------------------------------------------------------------------
+23:31:42.997 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Checking out buggy build candidate...
+23:31:42.999 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - Get commit d5f0de06ac22264002d1b8529b25797c469af8fa for repo Revassess/gattie-823-bescoto98
+23:31:43.045 [main] INFO  f.i.s.r.process.git.GitHelper - Init git submodules.
+23:31:43.077 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP STATUS: [ CheckoutBuggyBuild : SUCCESS ]
+23:31:43.078 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - STEP DURATION: 0s
+23:31:43.078 [main] DEBUG f.i.s.r.p.s.c.CheckoutBuggyBuild - EXECUTE NEXT STEP
+23:31:43.078 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+23:31:43.078 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP 3/17: BuildProject
+23:31:43.078 [main] DEBUG f.i.s.r.process.step.BuildProject - ----------------------------------------------------------------------
+23:31:43.078 [main] DEBUG f.i.s.r.process.step.BuildProject - Building project by installing artifacts with maven (skip test execution)...
+23:31:43.080 [main] INFO  f.i.s.r.process.step.BuildProject - The pom.xml file is not at the root of the repository. Start to search it in folders...
+23:31:43.080 [main] INFO  f.i.s.r.process.step.BuildProject - A pom.xml was found in the following directory: ./workspace/Revassess/gattie-823-bescoto98/Revassess
+23:31:51.420 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:31:51.421 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:31:51.423 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:31:51.423 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:31:51.423 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:31:51.423 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:31:51.430 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:31:51.430 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:31:51.430 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:31:51.430 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:31:51.430 [Thread-5] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:31:52.085 [main] ERROR f.i.s.r.process.step.BuildProject - Repository Revassess/gattie-823-bescoto98 cannot be built.
+23:31:52.086 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP STATUS: [ BuildProject : FAILURE ( NOTBUILDABLE ) ]
+23:31:52.086 [main] DEBUG f.i.s.r.process.step.BuildProject - STEP DURATION: 9s
+23:31:52.086 [main] DEBUG f.i.s.r.process.step.BuildProject - EXECUTE NEXT STEP
+23:31:52.086 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+23:31:52.086 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP 12/17: BranchingStep
+23:31:52.086 [main] DEBUG f.i.s.r.process.step.BranchingStep - ----------------------------------------------------------------------
+23:31:52.086 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP STATUS: [ BranchingStep : SUCCESS ]
+23:31:52.087 [main] DEBUG f.i.s.r.process.step.BranchingStep - STEP DURATION: 0s
+23:31:52.087 [main] DEBUG f.i.s.r.process.step.BranchingStep - EXECUTE NEXT STEP
+23:31:52.087 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+23:31:52.087 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP 11/17: SequencerRepair
+23:31:52.087 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - ----------------------------------------------------------------------
+23:31:52.087 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Start SequencerRepair
+23:31:52.960 [pool-4-thread-1] INFO  c.s.d.client.DefaultDockerClient - Starting container with Id: cf932447f2e6d88e18f667705596ce2a2ba8fab96931dedbddcdf719e08510a2
+23:31:56.668 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdOut: 
+sequencer-predict.sh start
+Input parameter:
+BUGGY_FILE_PATH = /tmp/UserRepository.java
+BUGGY_LINE = 18
+BEAM_SIZE = 50
+OUTPUT = /out
+
+Creating temporary working folder
+
+Abstracting the source file
+
+Tokenizing the abstraction
+
+Truncate the abstraction to 1000 tokens
+
+Generating predictions
+
+Post process predictions
+
+Creating output directory /out
+
+Generating patches
+
+Generating diffs
+
+Cleaning tmp folder
+
+Found 36 patches for UserRepository.java stored in /out
+sequencer-predict.sh done
+
+
+23:31:56.668 [pool-4-thread-1] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - stdErr: 
+[2020-08-26 21:31:55,684 INFO] Translating shard 0.
+/usr/local/lib/python3.6/site-packages/torchtext-0.4.0-py3.6.egg/torchtext/data/field.py:359: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+/pytorch/aten/src/ATen/native/BinaryOps.cpp:66: UserWarning: Integer division of tensors using div or / is deprecated, and in a future release div will perform true division as in Python 3. Use true_divide or floor_divide (// in Python) instead.
+[2020-08-26 21:31:55,750 INFO] PRED AVG SCORE: -0.0771, PRED PPL: 1.0802
+
+23:31:56.750 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - The pom.xml file is not at the root of the repository. Start to search it in folders...
+23:31:56.750 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - A pom.xml was found in the following directory: ./workspace/Revassess/gattie-823-bescoto98/Revassess
+23:31:58.286 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:31:58.286 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,17] not a statement
+23:31:58.286 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,21] ';' expected
+23:31:58.286 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,70] ';' expected
+23:31:58.289 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:31:58.289 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,17] not a statement
+23:31:58.289 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,21] ';' expected
+23:31:58.289 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,70] ';' expected
+23:31:58.289 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:31:58.295 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:31:58.295 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:31:58.295 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:31:58.295 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:31:58.295 [Thread-8] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:00.713 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:00.713 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] incompatible types: int cannot be converted to com.revature.config.ConnectionUtil
+23:32:00.714 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:00.716 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:00.716 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] incompatible types: int cannot be converted to com.revature.config.ConnectionUtil
+23:32:00.716 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:00.717 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:00.717 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:00.727 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:00.727 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:00.727 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:00.727 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:00.727 [Thread-11] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:02.680 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:02.681 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:02.681 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:02.683 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:02.683 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:02.683 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable findById
+23:32:02.683 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:02.683 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:02.683 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:02.684 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:02.689 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:02.690 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:02.690 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:02.690 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:02.690 [Thread-14] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:04.480 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:04.481 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] illegal start of expression
+23:32:04.481 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,44] '{' expected
+23:32:04.481 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,58] ';' expected
+23:32:04.481 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[25,31] ';' expected
+23:32:04.481 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[25,38] ';' expected
+23:32:04.481 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[31,30] ';' expected
+23:32:04.481 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[31,39] ';' expected
+23:32:04.482 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[37,34] ';' expected
+23:32:04.482 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[37,41] ';' expected
+23:32:04.482 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[42,2] reached end of file while parsing
+23:32:04.484 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:04.484 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] illegal start of expression
+23:32:04.484 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,44] '{' expected
+23:32:04.484 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,58] ';' expected
+23:32:04.485 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[25,31] ';' expected
+23:32:04.485 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[25,38] ';' expected
+23:32:04.485 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[31,30] ';' expected
+23:32:04.485 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[31,39] ';' expected
+23:32:04.485 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[37,34] ';' expected
+23:32:04.485 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[37,41] ';' expected
+23:32:04.485 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[42,2] reached end of file while parsing
+23:32:04.485 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:04.491 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:04.492 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:04.492 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:04.492 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:04.492 [Thread-17] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:06.830 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:06.830 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:06.830 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:06.832 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:06.833 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:06.833 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable deleteById
+23:32:06.833 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:06.833 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:06.833 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:06.833 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:06.839 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:06.839 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:06.839 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:06.839 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:06.840 [Thread-20] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:08.777 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:08.777 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,38] ')' expected
+23:32:08.777 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,43] illegal start of expression
+23:32:08.777 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,58] ';' expected
+23:32:08.778 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,72] ';' expected
+23:32:08.780 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:08.780 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,38] ')' expected
+23:32:08.780 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,43] illegal start of expression
+23:32:08.780 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,58] ';' expected
+23:32:08.780 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,72] ';' expected
+23:32:08.781 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:08.786 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:08.786 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:08.786 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:08.786 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:08.786 [Thread-23] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:11.146 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:11.147 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:11.149 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:32:11.149 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:11.149 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:11.149 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:11.156 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:11.156 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:11.156 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:11.156 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:11.156 [Thread-26] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:14.122 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:14.122 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:32:14.122 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:14.124 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:14.125 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:32:14.125 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method findAll()
+23:32:14.125 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.config.ConnectionUtil
+23:32:14.125 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:14.125 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:14.125 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:14.132 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:14.132 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:14.132 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:14.132 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:14.132 [Thread-29] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:15.982 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:15.983 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] incompatible types: int cannot be converted to com.revature.config.ConnectionUtil
+23:32:15.983 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:15.986 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:15.987 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] incompatible types: int cannot be converted to com.revature.config.ConnectionUtil
+23:32:15.987 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:15.987 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:15.987 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:15.996 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:15.996 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:15.996 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:15.996 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:15.996 [Thread-32] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:17.902 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:17.903 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,35] ')' expected
+23:32:17.903 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,40] illegal start of expression
+23:32:17.903 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] ';' expected
+23:32:17.903 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,69] ';' expected
+23:32:17.905 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:17.905 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,35] ')' expected
+23:32:17.905 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,40] illegal start of expression
+23:32:17.906 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] ';' expected
+23:32:17.906 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,69] ';' expected
+23:32:17.906 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:17.912 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:17.912 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:17.912 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:17.912 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:17.912 [Thread-35] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:20.153 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:20.153 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,47] cannot find symbol
+23:32:20.154 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:20.156 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:20.156 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,47] cannot find symbol
+23:32:20.156 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method getInstance()
+23:32:20.156 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class java.lang.Object
+23:32:20.156 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:20.156 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:20.156 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:20.162 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:20.162 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:20.162 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:20.162 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:20.162 [Thread-38] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:22.422 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:22.423 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:22.423 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:22.425 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:22.425 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:22.425 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable save
+23:32:22.425 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:22.425 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:22.426 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:22.426 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:22.431 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:22.432 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:22.432 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:22.432 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:22.432 [Thread-41] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:23.992 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:23.992 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,42] ')' expected
+23:32:23.992 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,47] illegal start of expression
+23:32:23.992 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,62] ';' expected
+23:32:23.993 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,76] ';' expected
+23:32:23.995 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:23.995 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,42] ')' expected
+23:32:23.995 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,47] illegal start of expression
+23:32:23.995 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,62] ';' expected
+23:32:23.995 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,76] ';' expected
+23:32:23.996 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:24.001 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:24.002 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:24.002 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:24.002 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:24.002 [Thread-44] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:26.410 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:26.410 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:26.410 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:26.412 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:26.413 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:26.413 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable findAll
+23:32:26.413 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:26.413 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:26.413 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:26.413 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:26.419 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:26.419 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:26.419 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:26.419 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:26.419 [Thread-47] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:28.434 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:28.435 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] incompatible types: int cannot be converted to com.revature.config.ConnectionUtil
+23:32:28.435 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:28.437 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:28.438 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] incompatible types: int cannot be converted to com.revature.config.ConnectionUtil
+23:32:28.438 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:28.438 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:28.438 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:28.447 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:28.447 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:28.447 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:28.447 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:28.447 [Thread-50] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:30.358 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:30.358 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,69] ')' expected
+23:32:30.360 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:32:30.360 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,69] ')' expected
+23:32:30.360 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:30.368 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:30.368 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:30.368 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:30.368 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:30.426 [Thread-53] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:32.473 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:32.473 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:32.474 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:32.476 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:32.476 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:32.476 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable save
+23:32:32.476 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:32.476 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:32.476 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:32.476 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:32.483 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:32.483 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:32.483 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:32.483 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:32.483 [Thread-56] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:39.826 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:39.827 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,42] cannot find symbol
+23:32:39.827 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] illegal start of type
+23:32:39.827 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:39.830 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:39.830 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,42] cannot find symbol
+23:32:39.830 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable ConnectionUtil
+23:32:39.831 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:39.831 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] illegal start of type
+23:32:39.831 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:39.831 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:39.831 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:39.838 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:39.839 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:39.839 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:39.839 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:39.839 [Thread-62] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:41.774 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:41.774 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:32:41.774 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:41.776 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:41.776 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:32:41.776 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method save()
+23:32:41.776 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.config.ConnectionUtil
+23:32:41.777 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:41.777 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:41.777 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:41.783 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:41.783 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:41.783 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:41.783 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:41.783 [Thread-65] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:43.724 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:43.725 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,42] incompatible types: try-with-resources not applicable to variable type
+23:32:43.727 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:32:43.727 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,42] incompatible types: try-with-resources not applicable to variable type
+23:32:43.727 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:43.727 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:43.734 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:43.735 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:43.735 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:43.735 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:43.735 [Thread-68] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:45.592 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:45.593 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,44] ')' expected
+23:32:45.593 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,49] illegal start of expression
+23:32:45.593 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,64] ';' expected
+23:32:45.593 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,78] ';' expected
+23:32:45.595 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:45.595 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,44] ')' expected
+23:32:45.595 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,49] illegal start of expression
+23:32:45.596 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,64] ';' expected
+23:32:45.596 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,78] ';' expected
+23:32:45.596 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:45.602 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:45.602 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:45.602 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:45.602 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:45.602 [Thread-71] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:47.848 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:47.848 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:47.849 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:47.851 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:47.851 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:47.851 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   variable ConnectionUtil
+23:32:47.851 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:47.851 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:47.851 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:47.851 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:47.858 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:47.859 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:47.859 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:47.859 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:47.859 [Thread-74] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:50.007 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:50.007 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:50.007 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:50.009 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:50.009 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:50.009 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method getInstance()
+23:32:50.009 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:50.010 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:50.010 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:50.010 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:50.016 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:50.016 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:50.016 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:50.016 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:50.016 [Thread-77] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:52.017 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:52.017 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:52.018 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:52.020 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:52.020 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:52.020 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method ConnectionUtil()
+23:32:52.020 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:52.020 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:52.020 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:52.020 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:52.026 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:52.026 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:52.026 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:52.026 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:52.026 [Thread-80] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:54.200 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:54.200 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:54.200 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:54.202 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:54.202 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:32:54.202 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method getInstance()
+23:32:54.203 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:32:54.203 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:54.203 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:54.203 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:54.208 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:54.209 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:54.209 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:54.209 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:54.209 [Thread-83] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:55.979 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:55.979 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,47] <identifier> expected
+23:32:55.979 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,49] '{' expected
+23:32:55.979 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,50] ';' expected
+23:32:55.981 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:55.982 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,47] <identifier> expected
+23:32:55.982 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,49] '{' expected
+23:32:55.982 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,50] ';' expected
+23:32:55.982 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:55.989 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:55.989 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:55.989 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:55.989 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:55.989 [Thread-86] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:32:58.344 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:32:58.344 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:32:58.344 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:58.346 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:32:58.347 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:32:58.347 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method ConnectionUtil()
+23:32:58.347 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.config.ConnectionUtil
+23:32:58.347 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:32:58.347 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:32:58.347 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:32:58.353 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:58.353 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:32:58.353 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:32:58.353 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:32:58.353 [Thread-89] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:00.389 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:33:00.389 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:33:00.389 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:00.391 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:33:00.392 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:33:00.392 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method getInstance()
+23:33:00.392 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: interface com.revature.dao.CrudRepository
+23:33:00.392 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:00.392 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:33:00.392 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:33:00.398 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:00.398 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:33:00.398 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:00.398 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:33:00.398 [Thread-92] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:02.388 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:33:02.389 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,23] illegal start of type
+23:33:02.389 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,26] ';' expected
+23:33:02.389 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,75] ';' expected
+23:33:02.392 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:33:02.392 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,23] illegal start of type
+23:33:02.392 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,26] ';' expected
+23:33:02.392 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,75] ';' expected
+23:33:02.392 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:33:02.398 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:02.399 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:33:02.399 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:02.399 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:33:02.399 [Thread-95] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:04.454 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:33:04.455 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:33:04.455 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:04.457 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:33:04.457 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] cannot find symbol
+23:33:04.457 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method getInstance()
+23:33:04.457 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:33:04.458 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:04.458 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:33:04.458 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:33:04.466 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:04.466 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:33:04.466 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:04.466 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:33:04.466 [Thread-98] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:06.448 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:33:06.448 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,40] = expected
+23:33:06.451 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:33:06.451 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,40] = expected
+23:33:06.451 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:33:06.457 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:06.457 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:33:06.457 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:06.457 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:33:06.458 [Thread-101] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:08.745 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:33:08.746 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:08.748 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure
+23:33:08.748 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:08.748 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:33:08.748 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:33:08.756 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:08.756 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:33:08.756 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:08.756 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:33:08.756 [Thread-104] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:10.584 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:33:10.585 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:33:10.585 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:10.587 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:33:10.587 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,55] cannot find symbol
+23:33:10.587 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   symbol:   method getInstance()
+23:33:10.587 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   location: class com.revature.dao.UserRepository
+23:33:10.588 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:10.588 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:33:10.588 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:33:10.593 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:10.593 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:33:10.593 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:10.594 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:33:10.594 [Thread-107] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:12.703 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:33:12.703 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] method save in class com.revature.dao.UserRepository cannot be applied to given types;
+23:33:12.704 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:12.706 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:33:12.706 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,41] method save in class com.revature.dao.UserRepository cannot be applied to given types;
+23:33:12.706 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   required: java.lang.Object
+23:33:12.706 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   found: no arguments
+23:33:12.706 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]   reason: actual and formal argument lists differ in length
+23:33:12.706 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] incompatible types: try-with-resources not applicable to variable type
+23:33:12.706 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR]     (com.revature.config.ConnectionUtil cannot be converted to java.lang.AutoCloseable)
+23:33:12.706 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:33:12.712 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:12.713 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:33:12.713 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:12.713 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:33:12.713 [Thread-110] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:14.550 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] COMPILATION ERROR : 
+23:33:14.551 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,21] not a statement
+23:33:14.551 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] ';' expected
+23:33:14.551 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,70] ';' expected
+23:33:14.553 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Revassess: Compilation failure: Compilation failure: 
+23:33:14.553 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,21] not a statement
+23:33:14.554 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,36] ';' expected
+23:33:14.554 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] /root/workspace/Revassess/gattie-823-bescoto98/Revassess/src/main/java/com/revature/dao/UserRepository.java:[18,70] ';' expected
+23:33:14.554 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] -> [Help 1]
+23:33:14.560 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:14.560 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+23:33:14.560 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] 
+23:33:14.560 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] For more information about the errors and possible solutions, please read the following articles:
+23:33:14.560 [Thread-113] ERROR f.i.s.r.p.m.o.MavenFilterOutputHandler - [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+23:33:15.119 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - The repository won't be forked.
+23:33:18.041 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Fork the repository: Revassess/gattie-823-bescoto98
+23:33:18.278 [main] INFO  fr.inria.jtravis.JTravis - GitHub ratelimit: Limit: 5000 Remaining: 4253 Reset hour: 13:01:18
+23:33:18.512 [main] INFO  f.i.s.r.process.git.GitHelper - Step SequencerRepair - GitHub rate limit: Limit: 5000 - Remaining: 4253 - Reset hour: 13:01:18
+23:33:20.423 [main] INFO  f.i.s.r.p.s.r.s.SequencerRepair - Obtain the following fork URL: https://api.github.com/repos/javierron/gattie-823-bescoto98
+23:33:20.689 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP STATUS: [ SequencerRepair : SUCCESS ]
+23:33:20.689 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - STEP DURATION: 88s
+23:33:20.689 [main] DEBUG f.i.s.r.p.s.r.s.SequencerRepair - EXECUTE NEXT STEP
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP 4/17: InitRepoToPush
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - ----------------------------------------------------------------------
+23:33:20.690 [main] INFO  f.i.s.r.p.step.push.InitRepoToPush - Repairnator is configured NOT to push. Step bypassed.
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP STATUS: [ InitRepoToPush : SKIPPED ]
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - STEP DURATION: 0s
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.InitRepoToPush - EXECUTE NEXT STEP
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP 13/17: CommitPatch
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - ----------------------------------------------------------------------
+23:33:20.690 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Repairnator is configured NOT to push. Step bypassed.
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP STATUS: [ CommitPatch : SKIPPED ]
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - STEP DURATION: 0s
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - EXECUTE NEXT STEP
+23:33:20.690 [main] DEBUG f.i.s.r.p.step.push.CommitPatch - FINAL STEPS SKIPPED: The reproduction of the bug failed.
+23:33:20.691 [main] INFO  f.i.s.r.p.step.push.CommitPatch - Serialize all data for build: 721491569
+23:33:20.769 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE EXECUTION SUMMARY
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - CloneRepository.......................................SUCCESS [  2 s ]
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - CheckoutBuggyBuild....................................SUCCESS [  0 s ]
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - BuildProject..........................................FAILURE [  9 s ]
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - InitRepoToPush........................................SKIPPED         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair.......................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - TestProject...........................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - GatherTestInformation.................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeClasspath......................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeSourceDir......................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeTestDir........................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - SequencerRepair.......................................SUCCESS [ 88 s ]
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - BranchingStep.........................................SUCCESS [  0 s ]
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitPatch...........................................SKIPPED         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - ComputeModules........................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - WritePropertyFile.....................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - CommitProcessEnd......................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - PushProcessEnd........................................NOT RUN         
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - PIPELINE FINDING: PATCHED
+23:33:20.770 [main] INFO  f.i.s.r.p.i.ProjectInspector - ----------------------------------------------------------------------
+23:33:20.770 [main] INFO  f.i.s.repairnator.pipeline.Launcher - Inspector is finished. The process will exit now.

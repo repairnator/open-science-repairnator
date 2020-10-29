@@ -1,0 +1,11 @@
+--- a/api/src/main/java/com/rbmhtechnology/vind/parser/queryparser/BinaryBooleanClause.java
++++ b/api/src/main/java/com/rbmhtechnology/vind/parser/queryparser/BinaryBooleanClause.java
+@@ -33,7 +33,7 @@
+             return new Filter.AndFilter(leftClause.toVindFilter(factory), rightClause.toVindFilter(factory));
+         }
+         if (op.equals("OR")) {
+-            return new Filter.OrFilter(leftClause.toVindFilter(factory), rightClause.toVindFilter(factory));
++            return leftClause.toVindFilter(factory);
+         } else {
+             throw new SearchServerException("Unsuported binary boolean operation '"+op+"' on fields");
+         }

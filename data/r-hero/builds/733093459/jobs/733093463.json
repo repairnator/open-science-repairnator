@@ -1,0 +1,67 @@
+{
+    "@type": "job",
+    "@href": "/v3/job/733093463",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false,
+      "debug": false,
+      "delete_log": false
+    },
+    "id": 733093463,
+    "allow_failure": null,
+    "number": "9448.3",
+    "state": "failed",
+    "started_at": "2020-10-05T20:13:07Z",
+    "finished_at": "2020-10-05T20:28:35Z",
+    "build": {
+      "@type": "build",
+      "@href": "/v3/build/733093459",
+      "@representation": "minimal",
+      "id": 733093459,
+      "number": "9448",
+      "state": "failed",
+      "duration": 8869,
+      "event_type": "push",
+      "previous_state": null,
+      "pull_request_title": null,
+      "pull_request_number": null,
+      "started_at": "2020-10-05T20:13:06Z",
+      "finished_at": "2020-10-05T21:15:19Z",
+      "private": false,
+      "priority": false
+    },
+    "queue": "builds.gce",
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/1274712",
+      "@representation": "minimal",
+      "id": 1274712,
+      "name": "miso-lims",
+      "slug": "miso-lims/miso-lims"
+    },
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 226571492,
+      "sha": "e6c9ac08ed3c4ff9cfc8621542e4551bef84ea81",
+      "ref": "refs/heads/GLT-3356_dashiMetrics",
+      "message": "GLT-3356: added Dashi run-library metrics integration page",
+      "compare_url": "https://github.com/miso-lims/miso-lims/commit/e6c9ac08ed3c",
+      "committed_at": "2020-10-05T20:11:41Z"
+    },
+    "owner": {
+      "@type": "organization",
+      "@href": "/v3/org/299546",
+      "@representation": "minimal",
+      "id": 299546,
+      "login": "miso-lims",
+      "vcs_type": "GithubOrganization"
+    },
+    "stage": null,
+    "created_at": "2020-10-05T20:11:54.422Z",
+    "updated_at": "2020-10-05T20:28:35.865Z",
+    "private": false
+  }

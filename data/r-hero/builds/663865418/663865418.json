@@ -1,0 +1,67 @@
+{
+    "@type": "build",
+    "@href": "/v3/build/663865418",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false
+    },
+    "id": 663865418,
+    "number": "9",
+    "state": "failed",
+    "duration": 88,
+    "event_type": "api",
+    "previous_state": "failed",
+    "pull_request_title": null,
+    "pull_request_number": null,
+    "started_at": "2020-03-18T09:51:30Z",
+    "finished_at": "2020-03-18T09:52:58Z",
+    "private": false,
+    "priority": false,
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/28188487",
+      "@representation": "minimal",
+      "id": 28188487,
+      "name": "felix-4960",
+      "slug": "Luki42/felix-4960"
+    },
+    "branch": {
+      "@type": "branch",
+      "@href": "/v3/repo/28188487/branch/master",
+      "@representation": "minimal",
+      "name": "master"
+    },
+    "tag": null,
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 202531788,
+      "sha": "6e7837ace74a1a10e1d036988b5e4ac958554a68",
+      "ref": null,
+      "message": "pom updated",
+      "compare_url": "https://github.com/Luki42/felix-4960/compare/2e90a242444662dafc29df91f694618464cd1228...6e7837ace74a1a10e1d036988b5e4ac958554a68",
+      "committed_at": "2020-03-10T12:32:41Z"
+    },
+    "jobs": [
+      {
+        "@type": "job",
+        "@href": "/v3/job/663865420",
+        "@representation": "minimal",
+        "id": 663865420
+      }
+    ],
+    "stages": [
+  
+    ],
+    "created_by": {
+      "@type": "user",
+      "@href": "/v3/user/2017428",
+      "@representation": "minimal",
+      "id": 2017428,
+      "login": "Luki42"
+    },
+    "updated_at": "2020-03-18T09:52:58.707Z"
+  }

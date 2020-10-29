@@ -1,0 +1,11 @@
+--- a/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java
++++ b/Revassess/src/main/java/com/revature/tier1/NumberSumLength.java
+@@ -92,7 +92,7 @@
+ 
+ 	public static boolean checkNumberPowerLength(long num) {
+ 		
+-		this.num = num;
++		num=num;
+ 		return false;
+ 	}
+ }

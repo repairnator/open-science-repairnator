@@ -1,0 +1,11 @@
+--- a/artemis-protocols/artemis-amqp-protocol/src/main/java/org/apache/activemq/artemis/protocol/amqp/broker/ProtonProtocolManager.java
++++ b/artemis-protocols/artemis-amqp-protocol/src/main/java/org/apache/activemq/artemis/protocol/amqp/broker/ProtonProtocolManager.java
+@@ -143,7 +143,7 @@
+ 
+    @Override
+    public void updateInterceptors(List incoming, List outgoing) {
+-      this.incomingInterceptors.clear();
++      incoming.clear();
+       this.incomingInterceptors.addAll(getFactory().filterInterceptors(incoming));
+ 
+       this.outgoingInterceptors.clear();
