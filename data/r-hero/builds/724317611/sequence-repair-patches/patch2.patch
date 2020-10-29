@@ -1,0 +1,10 @@
+--- a/src/main/java/com/company/util/Checker.java
++++ b/src/main/java/com/company/util/Checker.java
+@@ -7,6 +7,6 @@
+     }
+
+     public boolean isOdd(int number) {
+-        return(number%2>0);
++        return(number%number)&0;
+     }
+ }
