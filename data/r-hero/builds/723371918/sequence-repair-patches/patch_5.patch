@@ -1,2 +1,0 @@
---- a/vertx-web-client/src/main/java/io/vertx/ext/web/client/impl/MultipartFormUpload.java
-+++ b/vertx-web-client/src/main/java/io/vertx/ext/web/client/impl/MultipartFormUpload.java
