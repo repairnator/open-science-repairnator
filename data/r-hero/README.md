@@ -21,9 +21,9 @@ For each of these failing builds, there is a specific branch containing the sour
 
 ### Details
 
-|Build ID    |Project                    |Patch ID|Category                                                                                                    |Correct           |One line developer fix| Tracis CI Failure |
+|Build ID    |Project                    |Patch ID|Category                                                                                                    |Correct           |One line developer fix| Local Failure |
 |------------|---------------------------|--------|------------------------------------------------------------------------------------------------------------|------------------|----------------------|-------------------|
-|[**723539132**](https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132) |**clebertsuconic**          | |                                                                                                                      |                                                 |  No              |              Checkstyle error|
+|[**723539132**](https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132) |**clebertsuconic**          | |                                                                                                                      |                                                 |  No              |              Test failure and error|
 |            |                           |1       |update return expression to static method invocation                                                        |                  |       |
 |            |                           |2       |update return expression to static field                                                                    |                  |       |
 |            |                           |3       |update return expression to new array of strings                                                            |                  |       |
@@ -31,7 +31,7 @@ For each of these failing builds, there is a specific branch containing the sour
 |            |                           |5       |empty                                                                                                       |                  |       |
 |            |                           |6       |update return expression to method call                                                                     |                  |       |
 |            |                           |7       |update return expression to null                                                                            |                  |       |
-|            |                           |8       |replace a method call with a new method call                                     c                           |                  |       |
+|            |                           |8       |replace a method call with a new method call                                                                |                  |       |
 |            |                           |9       |empty                                                                                                       |                  |       |
 |            |                           |10      |replace a method call with a new method call                                                                |                  |       |
 |            |                           |11      |replace a method call with a new method call (same method of a different object)                            |                  |       |
@@ -110,13 +110,13 @@ For each of these failing builds, there is a specific branch containing the sour
 |            |                           |5       |if condition changed (same method, object changed)                                                          |                  |       |
 |            |                           |6       |return expression changed (a lot!)                                                                          |                  |       |
 |            |                           |7       |return expression changed (same object and arguments, method changed)                                       |                  |       |
-|[**721491569**](https://travis-ci.org/github/Revassess/gattie-823-bescoto98/builds/721491569) |**gattie-823-bescoto98_topush**|        |                                                                                                            |               | [Fix](builds/721491569/developer-fix.patch)      | Other |
+|[**721491569**](https://travis-ci.org/github/Revassess/gattie-823-bescoto98/builds/721491569) |**gattie-823-bescoto98_topush**|        |                                                                                                            |               | [Fix](builds/721491569/developer-fix.patch)      | Compilation error |
 |            |                           |1       |try removed                                                                                                 |                  |       |
-|[**721498606**](https://travis-ci.org/github/Revassess/gattie-823-Tanisi90/builds/721498606) |**gattie-823-Tanisi90**        |        |                                                                                                            |        |   No fix yet    | Other |
+|[**721498606**](https://travis-ci.org/github/Revassess/gattie-823-Tanisi90/builds/721498606) |**gattie-823-Tanisi90**        |        |                                                                                                            |        |   No fix yet    | Compilation error |
 |            |                           |1       |assignment changed (same thing, "this" removed")                                                            |                  |       |
 | [**719903297**](https://travis-ci.org/github/taljmars/Mavlink/builds/719903297)           |**taljmars**                |        |                                                                                                            |                  |  No     | Compilation error |
 |            |                           |1       |method call replaced with a new method call (a call is added to the end of expression)                      |                  |       |
-|[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                    |        |                                                                                                            |                  |   No    | Test error |
+|[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                    |        |                                                                                                            |                  |   No    | Test failure and error |
 |            |                           |1       |assignment changed. Right hand changed to the same thing as the left one                                    |                  |       |
 |            |                           |2       |assignment changed. Left hand changed to the same thing as the right one                                    |                  |       |
 |            |                           |3       |empty                                                                                                       |                  |       |
