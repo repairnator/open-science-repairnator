@@ -1,0 +1,18 @@
+From 4021e2f23153feef70aa5b3050f390a11aa1e49c Mon Sep 17 00:00:00 2001
+From: bescoto98 <escoto.brenda42@gmail.com>
+Date: Wed, 26 Aug 2020 14:38:34 -0700
+
+---
+ .travis.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.travis.yml b/.travis.yml
+index 9df92f8..4e38d58 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -6,4 +6,4 @@ script: ./build.sh
+ notifications:
+     email:
+     #enter your email address below
+-        - example@example.com
++        - brenda.escoto@revature.net

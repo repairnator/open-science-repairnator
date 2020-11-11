@@ -1,0 +1,11 @@
+--- a/src/main/java/org/apache/felix/framework/BundleRevisionImpl.java
++++ b/src/main/java/org/apache/felix/framework/BundleRevisionImpl.java
+@@ -516,7 +516,7 @@
+         // Special case "/" so that it returns a root URLs for
+         // each bundle class path entry...this isn't very
+         // clean or meaningful, but the Spring guys want it.
+-        final List<Content> contentPath = getContentPath();
++        final List<Content> contentPath=List();
+ 
+         if (name.equals("/"))
+         {

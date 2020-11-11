@@ -1,0 +1,67 @@
+{
+    "@type": "job",
+    "@href": "/v3/job/721436100",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "cancel": false,
+      "restart": false,
+      "prioritize": false,
+      "debug": false,
+      "delete_log": false
+    },
+    "id": 721436100,
+    "allow_failure": null,
+    "number": "399.1",
+    "state": "failed",
+    "started_at": "2020-08-26T18:04:48Z",
+    "finished_at": "2020-08-26T18:05:44Z",
+    "build": {
+      "@type": "build",
+      "@href": "/v3/build/721436099",
+      "@representation": "minimal",
+      "id": 721436099,
+      "number": "399",
+      "state": "failed",
+      "duration": 56,
+      "event_type": "pull_request",
+      "previous_state": "passed",
+      "pull_request_title": "Add more test cases to reproduce some of found issues",
+      "pull_request_number": 30,
+      "started_at": "2020-08-26T18:04:48Z",
+      "finished_at": "2020-08-26T18:05:44Z",
+      "private": false,
+      "priority": false
+    },
+    "queue": "builds.gce",
+    "repository": {
+      "@type": "repository",
+      "@href": "/v3/repo/18808486",
+      "@representation": "minimal",
+      "id": 18808486,
+      "name": "vlingo-common",
+      "slug": "vlingo/vlingo-common"
+    },
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 222378210,
+      "sha": "e4207fcb9d336088ba5b95b395888910049d0612",
+      "ref": "refs/pull/30/merge",
+      "message": "Add more test cases to reproduce some of found issues",
+      "compare_url": "https://github.com/vlingo/vlingo-common/pull/30",
+      "committed_at": "2020-08-26T18:02:30Z"
+    },
+    "owner": {
+      "@type": "organization",
+      "@href": "/v3/org/264226",
+      "@representation": "minimal",
+      "id": 264226,
+      "login": "vlingo",
+      "vcs_type": "GithubOrganization"
+    },
+    "stage": null,
+    "created_at": "2020-08-26T18:04:22.408Z",
+    "updated_at": "2020-08-26T18:05:44.570Z",
+    "private": false
+  }

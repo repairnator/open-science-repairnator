@@ -1,0 +1,11 @@
+--- a/artemis-protocols/artemis-amqp-protocol/src/main/java/org/apache/activemq/artemis/protocol/amqp/broker/ProtonProtocolManager.java
++++ b/artemis-protocols/artemis-amqp-protocol/src/main/java/org/apache/activemq/artemis/protocol/amqp/broker/ProtonProtocolManager.java
+@@ -147,7 +147,7 @@
+       this.incomingInterceptors.addAll(getFactory().filterInterceptors(incoming));
+ 
+       this.outgoingInterceptors.clear();
+-      this.outgoingInterceptors.addAll(getFactory().filterInterceptors(outgoing));
++      this.outgoingInterceptors.addAll(getFactory().filterInterceptors(incoming));
+    }
+ 
+    @Override

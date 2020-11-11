@@ -1,0 +1,11 @@
+--- a/artemis-protocols/artemis-amqp-protocol/src/main/java/org/apache/activemq/artemis/protocol/amqp/broker/ProtonProtocolManagerFactory.java
++++ b/artemis-protocols/artemis-amqp-protocol/src/main/java/org/apache/activemq/artemis/protocol/amqp/broker/ProtonProtocolManagerFactory.java
+@@ -59,7 +59,7 @@
+ 
+    @Override
+    public List<AmqpInterceptor> filterInterceptors(List<BaseInterceptor> interceptors) {
+-      return internalFilterInterceptors(AmqpInterceptor.class, interceptors);
++      return null;
+    }
+ 
+    @Override
