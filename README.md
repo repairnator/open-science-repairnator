@@ -1,7 +1,9 @@
-# Data about failing Travis builds collected in the Repairnator project
+# Experimental Data collected in the Repairnator project
+
+The code of Repairnator itself is at <https://github.com/eclipse/repairnator>.
 
 ## Folder `data/2018-ICSE-SEIP`
-This contains the data used in the paper published at ICSE-SEIP 2018 entitled ["How to Design a Program Repair Bot? Insights from the Repairnator Project"](https://hal.inria.fr/hal-01691496/document).
+This contains the data used in the paper published at ICSE-SEIP 2018 entitled ["How to Design a Program Repair Bot? Insights from the Repairnator Project"](https://hal.inria.fr/hal-01691496/document) ([doi:10.1145/3183519.3183540](https://doi.org/10.1145/3183519.3183540)).
 
 ```
 @inproceedings{repairnator,
