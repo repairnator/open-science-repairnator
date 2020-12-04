@@ -40,6 +40,14 @@ This contains the data used in the paper "Learning to Repair Programs from Zero 
 
 Link and bibtex to come
 
+## Code-removal Patches Experiment
+
+The data used in the paper "A Comprehensive Study of Code-removal Patches in Automated Program Repair" are in the following repositories:
+
+* [Builds with only one failing test case](https://github.com/repairnator/repairnator-experiments-one-failing-test-case/)
+* [Builds with only one crashing test case](https://github.com/repairnator/repairnator-experiments-one-crashing-test-case/)
+
+Link and bibtex to come
 
 ## Aknowledgement
 
