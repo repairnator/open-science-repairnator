@@ -126,6 +126,16 @@ For each of these failing builds, there is a specific branch containing the sour
 
 ### Overfitting Analysis
 
+The following table contains the details related to the manual analysis of the patches classified as overfitting by ODS.
+
+There are 5 possible classification types: 
+
+- **OVERFITTING_COMPILATION**: It is an overfittig patch that fixes the compilation error, but it works because of a weak test suite.
+- **OVERFITTING_TEST_CASE**: It is an overfittig patch that works due to a weak test suite or a buggy test case.
+- **DEGENERATED**: It is an overfitting patch that is meaningless (e.g., when the change does not have effects like in [this case](https://github.com/repairnator/open-science-repairnator/blob/master/data/2020-r-hero/builds/723371918/sequence-repair-patches/patch_2.patch)) or that works just because the project settings ignore the test failures/errors.
+- **CORRECT**: It is a correct patch that satisfies the program requirements.
+- **UNKNOWN**: It is not possible to estabish if the patch is overfitting or not.
+
 |Build ID    |Project                                                                            | Patch ID          | Overfitting Manual Analysis  |
 |------------|---------------------------|--------|-----------------------------------------------------------|
 |[**723539132**](https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132) |**clebertsuconic**  |                                                                                                                                                                
