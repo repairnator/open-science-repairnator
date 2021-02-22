@@ -129,81 +129,80 @@ For each of these failing builds, there is a specific branch containing the sour
 |Build ID    |Project                                                                            | Patch ID          | Overfitting Manual Analysis  |
 |------------|---------------------------|--------|-----------------------------------------------------------|
 |[**723539132**](https://travis-ci.org/github/clebertsuconic/activemq-artemis/builds/723539132) |**clebertsuconic**  |                                                                                                                                                                
-|            |                           |[1](builds/723539132/sequence-repair-patches/patch_1.patch)       ||                       
-|            |                           |[2](builds/723539132/sequence-repair-patches/patch_2.patch)       ||
-|            |                           |[3](builds/723539132/sequence-repair-patches/patch_3.patch)       ||
-|            |                           |[4](builds/723539132/sequence-repair-patches/patch_4.patch)       ||
-|            |                           |[6](builds/723539132/sequence-repair-patches/patch_6.patch)       ||
-|            |                           |[7](builds/723539132/sequence-repair-patches/patch_7.patch)       ||
-|            |                           |[8](builds/723539132/sequence-repair-patches/patch_8.patch)       ||
-|            |                           |[10](builds/723539132/sequence-repair-patches/patch_10.patch)     ||
-|            |                           |[11](builds/723539132/sequence-repair-patches/patch_11.patch)     || 
-|            |                           |[12](builds/723539132/sequence-repair-patches/patch_12.patch)     ||
-|            |                           |[13](builds/723539132/sequence-repair-patches/patch_13.patch)     ||
-|            |                           |[14](builds/723539132/sequence-repair-patches/patch_14.patch)     ||
-|            |                           |[16](builds/723539132/sequence-repair-patches/patch_16.patch)     ||
-|            |                           |[17](builds/723539132/sequence-repair-patches/patch_17.patch)     ||
-|            |                           |[18](builds/723539132/sequence-repair-patches/patch_18.patch)     ||
-|            |                           |[19](builds/723539132/sequence-repair-patches/patch_19.patch)     ||
-|            |                           |[20](builds/723539132/sequence-repair-patches/patch_20.patch)     ||
-|            |                           |[22](builds/723539132/sequence-repair-patches/patch_22.patch)     ||
-|            |                           |[23](builds/723539132/sequence-repair-patches/patch_23.patch)     ||
-|            |                           |[24](builds/723539132/sequence-repair-patches/patch_24.patch)     ||
-|            |                           |[25](builds/723539132/sequence-repair-patches/patch_25.patch)     ||
-|            |                           |[26](builds/723539132/sequence-repair-patches/patch_26.patch)     ||
-|            |                           |[27](builds/723539132/sequence-repair-patches/patch_27.patch)     ||
-|            |                           |[28](builds/723539132/sequence-repair-patches/patch_28.patch)     ||
-|            |                           |[29](builds/723539132/sequence-repair-patches/patch_29.patch)     ||
-|            |                           |[31](builds/723539132/sequence-repair-patches/patch_31.patch)     ||
-|            |                           |[32](builds/723539132/sequence-repair-patches/patch_32.patch)     ||
-|            |                           |[33](builds/723539132/sequence-repair-patches/patch_33.patch)     ||
-|            |                           |[34](builds/723539132/sequence-repair-patches/patch_34.patch)     ||
-|            |                           |[36](builds/723539132/sequence-repair-patches/patch_36.patch)     ||
-|            |                           |[38](builds/723539132/sequence-repair-patches/patch_38.patch)     ||
-|            |                           |[41](builds/723539132/sequence-repair-patches/patch_41.patch)     ||
-|            |                           |[46](builds/723539132/sequence-repair-patches/patch_46.patch)     ||
-|            |                           |[52](builds/723539132/sequence-repair-patches/patch_52.patch)     ||
-|            |                           |[54](builds/723539132/sequence-repair-patches/patch_54.patch)     ||
-|            |                           |[56](builds/723539132/sequence-repair-patches/patch_56.patch)     ||
+|            |                           |[1](builds/723539132/sequence-repair-patches/patch_1.patch)       |DEGENERATED|                       
+|            |                           |[2](builds/723539132/sequence-repair-patches/patch_2.patch)       |DEGENERATED|
+|            |                           |[3](builds/723539132/sequence-repair-patches/patch_3.patch)       |DEGENERATED|
+|            |                           |[4](builds/723539132/sequence-repair-patches/patch_4.patch)       |DEGENERATED|
+|            |                           |[6](builds/723539132/sequence-repair-patches/patch_6.patch)       |DEGENERATED|
+|            |                           |[7](builds/723539132/sequence-repair-patches/patch_7.patch)       |DEGENERATED|
+|            |                           |[8](builds/723539132/sequence-repair-patches/patch_8.patch)       |DEGENERATED|
+|            |                           |[10](builds/723539132/sequence-repair-patches/patch_10.patch)     |DEGENERATED|
+|            |                           |[11](builds/723539132/sequence-repair-patches/patch_11.patch)     |DEGENERATED|
+|            |                           |[12](builds/723539132/sequence-repair-patches/patch_12.patch)     |DEGENERATED|
+|            |                           |[13](builds/723539132/sequence-repair-patches/patch_13.patch)     |DEGENERATED|
+|            |                           |[14](builds/723539132/sequence-repair-patches/patch_14.patch)     |DEGENERATED|
+|            |                           |[16](builds/723539132/sequence-repair-patches/patch_16.patch)     |DEGENERATED|
+|            |                           |[17](builds/723539132/sequence-repair-patches/patch_17.patch)     |DEGENERATED|
+|            |                           |[18](builds/723539132/sequence-repair-patches/patch_18.patch)     |DEGENERATED|
+|            |                           |[19](builds/723539132/sequence-repair-patches/patch_19.patch)     |DEGENERATED|
+|            |                           |[20](builds/723539132/sequence-repair-patches/patch_20.patch)     |DEGENERATED|
+|            |                           |[22](builds/723539132/sequence-repair-patches/patch_22.patch)     |DEGENERATED|
+|            |                           |[23](builds/723539132/sequence-repair-patches/patch_23.patch)     |DEGENERATED|
+|            |                           |[24](builds/723539132/sequence-repair-patches/patch_24.patch)     |DEGENERATED|
+|            |                           |[25](builds/723539132/sequence-repair-patches/patch_25.patch)     |DEGENERATED|
+|            |                           |[26](builds/723539132/sequence-repair-patches/patch_26.patch)     |DEGENERATED|
+|            |                           |[27](builds/723539132/sequence-repair-patches/patch_27.patch)     |DEGENERATED|
+|            |                           |[28](builds/723539132/sequence-repair-patches/patch_28.patch)     |DEGENERATED|
+|            |                           |[29](builds/723539132/sequence-repair-patches/patch_29.patch)     |DEGENERATED|
+|            |                           |[31](builds/723539132/sequence-repair-patches/patch_31.patch)     |DEGENERATED|
+|            |                           |[32](builds/723539132/sequence-repair-patches/patch_32.patch)     |DEGENERATED|
+|            |                           |[33](builds/723539132/sequence-repair-patches/patch_33.patch)     |DEGENERATED|
+|            |                           |[34](builds/723539132/sequence-repair-patches/patch_34.patch)     |DEGENERATED|
+|            |                           |[36](builds/723539132/sequence-repair-patches/patch_36.patch)     |DEGENERATED|
+|            |                           |[38](builds/723539132/sequence-repair-patches/patch_38.patch)     |DEGENERATED|
+|            |                           |[41](builds/723539132/sequence-repair-patches/patch_41.patch)     |DEGENERATED|
+|            |                           |[46](builds/723539132/sequence-repair-patches/patch_46.patch)     |DEGENERATED|
+|            |                           |[52](builds/723539132/sequence-repair-patches/patch_52.patch)     |DEGENERATED|
+|            |                           |[54](builds/723539132/sequence-repair-patches/patch_54.patch)     |DEGENERATED|
+|            |                           |[56](builds/723539132/sequence-repair-patches/patch_56.patch)     |DEGENERATED|
 |[**719254693**](https://travis-ci.org/github/featurecat/lizzie/builds/719254693) |**featurecat**           ||        |                                                                                                           ||    
-|            |                           |[1](builds/719254693/sequence-repair-patches/patch_1.patch)       ||
-|            |                           |[2](builds/719254693/sequence-repair-patches/patch_2.patch)       ||
-|            |                           |[3](builds/719254693/sequence-repair-patches/patch_3.patch)       ||
-|            |                           |[4](builds/719254693/sequence-repair-patches/patch_4.patch)       ||
-|            |                           |[5](builds/719254693/sequence-repair-patches/patch_5.patch)       ||
-|            |                           |[6](builds/719254693/sequence-repair-patches/patch_6.patch)       ||
-|            |                           |[7](builds/719254693/sequence-repair-patches/patch_7.patch)       ||
-|            |                           |[8](builds/719254693/sequence-repair-patches/patch_8.patch)       ||
-|            |                           |[9](builds/719254693/sequence-repair-patches/patch_9.patch)       ||
-|[**724421582**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421582) |**java-group-blr** ||        |                                                                                                           ||                    
-|            |                           |[1](builds/724421582/sequence-repair-patches/patch_1.patch)       ||
-|            |                           |[2](builds/724421582/sequence-repair-patches/patch_2.patch)       ||
+|            |                           |[1](builds/719254693/sequence-repair-patches/patch_1.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[2](builds/719254693/sequence-repair-patches/patch_2.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[3](builds/719254693/sequence-repair-patches/patch_3.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[4](builds/719254693/sequence-repair-patches/patch_4.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[5](builds/719254693/sequence-repair-patches/patch_5.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[6](builds/719254693/sequence-repair-patches/patch_6.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[7](builds/719254693/sequence-repair-patches/patch_7.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[8](builds/719254693/sequence-repair-patches/patch_8.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[9](builds/719254693/sequence-repair-patches/patch_9.patch)       |OVERFITTING_COMPILATION|
+|[**724421582**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421582) |**java-group-blr** ||               
+|            |                           |[1](builds/724421582/sequence-repair-patches/patch_1.patch)       |CORRECT|
+|            |                           |[2](builds/724421582/sequence-repair-patches/patch_2.patch)       |CORRECT|
 |[**724421125**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421125) | **java-group-blr**  ||
-|            |                           |[0](builds/724421125/sequence-repair-patches/patch0.patch)        ||
-|            |                           |[1](builds/724421125/sequence-repair-patches/patch1.patch)        ||
+|            |                           |[0](builds/724421125/sequence-repair-patches/patch0.patch)        |CORRECT|
+|            |                           |[1](builds/724421125/sequence-repair-patches/patch1.patch)        |DEGENERATED|
 |[**724317611**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724317611)| **java-group-blr**   ||
-|            |                           |[0](builds/724317611/sequence-repair-patches/patch0.patch)       ||
-|            |                           |[1](builds/724317611/sequence-repair-patches/patch1.patch)       ||
-|                                     |  |[2](builds/724317611/sequence-repair-patches/patch2.patch) ||
-|[**663865418**](https://travis-ci.org/github/Luki42/felix-4960/builds/663865418) |**Luki42**                    ||   |                                                                                                            ||   
-|            |                           |[1](builds/663865418/sequence-repair-patches/patch_1.patch)      ||
-|            |                           |[2](builds/663865418/sequence-repair-patches/patch_2.patch)      ||
+|            |                           |[0](builds/724317611/sequence-repair-patches/patch0.patch)       |CORRECT|
+|            |                           |[1](builds/724317611/sequence-repair-patches/patch1.patch)       |CORRECT|
+|                                     |  |[2](builds/724317611/sequence-repair-patches/patch2.patch) |DEGENERATED|
+|[**663865418**](https://travis-ci.org/github/Luki42/felix-4960/builds/663865418) | **Luki42**              ||   |                                                                                                            
+|            |                           |[1](builds/663865418/sequence-repair-patches/patch_1.patch)      |UNKNOWN|
+|            |                           |[2](builds/663865418/sequence-repair-patches/patch_2.patch)      |DEGENERATED|
 |[**723426709**](https://travis-ci.org/github/RBMHTechnology/vind/builds/723426709) |**RBMHTechnology**             ||    |                                                                                                            ||              
-|            |                           |[1](builds/723426709/sequence-repair-patches/patch_1.patch)       ||
-|            |                           |[2](builds/723426709/sequence-repair-patches/patch_2.patch)       ||
-|            |                           |[3](builds/723426709/sequence-repair-patches/patch_3.patch)       ||
-|            |                           |[4](builds/723426709/sequence-repair-patches/patch_4.patch)       ||
-|            |                           |[5](builds/723426709/sequence-repair-patches/patch_5.patch)       ||
+|            |                           |[1](builds/723426709/sequence-repair-patches/patch_1.patch)       |OVERFITTING_TEST_CASE|
+|            |                           |[2](builds/723426709/sequence-repair-patches/patch_2.patch)       |OVERFITTING_TEST_CASE|
+|            |                           |[3](builds/723426709/sequence-repair-patches/patch_3.patch)       |OVERFITTING_TEST_CASE|
+|            |                           |[4](builds/723426709/sequence-repair-patches/patch_4.patch)       |OVERFITTING_TEST_CASE|
+|            |                           |[5](builds/723426709/sequence-repair-patches/patch_5.patch)       |OVERFITTING_TEST_CASE|
 |[**721491569**](https://travis-ci.org/github/Revassess/gattie-823-bescoto98/builds/721491569) |**gattie-823-bescoto98_topush**|| |                                                                                                           ||        
 |            |                           |[1](builds/721491569/sequence-repair-patches/patch_1.patch)      ||
 |[**721498606**](https://travis-ci.org/github/Revassess/gattie-823-Tanisi90/builds/721498606) |**gattie-823-Tanisi90**       ||    |                                                                                                            ||     
 |            |                           |[1](builds/721498606/sequence-repair-patches/patch_1.patch)     ||
-|            |                           |[1](builds/719903297/sequence-repair-patches/patch_1.patch)       ||
-|[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                   ||       |                                                                                                            ||          
-|            |                           |[1](builds/723371918/sequence-repair-patches/patch_1.patch)       ||
-|            |                           |[2](builds/723371918/sequence-repair-patches/patch_2.patch)        ||
-|            |                           |[4](builds/723371918/sequence-repair-patches/patch_4.patch)        ||
-|[**721436099**](https://travis-ci.org/github/vlingo/vlingo-common/builds/721436099) |**vlingo**             ||    |                                                                                                            ||      
-|            |                           |[1](builds/721436099/sequence-repair-patches/patch_1.patch)        ||
+|[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                   ||       |                                                                                                                  
+|            |                           |[1](builds/723371918/sequence-repair-patches/patch_1.patch)       |DEGENERATED|
+|            |                           |[2](builds/723371918/sequence-repair-patches/patch_2.patch)        |DEGENERATED|
+|            |                           |[4](builds/723371918/sequence-repair-patches/patch_4.patch)        |DEGENERATED|
+|[**721436099**](https://travis-ci.org/github/vlingo/vlingo-common/builds/721436099) |**vlingo**          ||                                                                                                              
+|            |                           |[1](builds/721436099/sequence-repair-patches/patch_1.patch)        |OVERFITTING_TEST_CASE|
 |[**733093459**](https://travis-ci.org/github/miso-lims/miso-lims/builds/733093459) |**miso-lims**                  ||  |                                                                                                            || 
-|            |                           |[1](builds/733093459/sequence-repair-patches/patch_1.patch)       ||
+|            |                           |[1](builds/733093459/sequence-repair-patches/patch_1.patch)       |DEGENERATED|
