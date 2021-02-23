@@ -132,7 +132,7 @@ There are 5 possible classification types:
 
 - **OVERFITTING_COMPILATION**: It is an overfitting patch that fixes the compilation error, but it is incorrect because of a weak test suite.
 - **OVERFITTING_TEST_CASE**: It is an overfitting patch for a failing test due to a weak test suite or a buggy test case.
-- **DEGENERATED**: It is an overfitting patch that is meaningless (e.g., when the change does not have effects like in [this case](https://github.com/repairnator/open-science-repairnator/blob/master/data/2020-r-hero/builds/723371918/sequence-repair-patches/patch_2.patch))  or that passed all tests due to abnormal conditions (eg the build settings ignore the test failures/errors)
+- **DEGENERATED**: It is an overfitting patch that is meaningless (e.g., when the change does not have effects like in [this case](https://github.com/repairnator/open-science-repairnator/blob/master/data/2020-r-hero/builds/723371918/sequence-repair-patches/patch_2.patch))  or that passed all tests due to abnormal conditions (e.g., the build settings ignore the test failures/errors).
 - **CORRECT**: It is a correct patch that satisfies the behavioral expectations.
 - **UNKNOWN**: It is not possible to establish whether the patch is overfitting or not, due to lack of domain knowledge.
 
