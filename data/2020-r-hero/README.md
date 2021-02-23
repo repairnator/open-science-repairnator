@@ -181,7 +181,7 @@ There are 5 possible classification types:
 |            |                           |[4](builds/719254693/sequence-repair-patches/patch_4.patch)       |OVERFITTING_COMPILATION|
 |            |                           |[5](builds/719254693/sequence-repair-patches/patch_5.patch)       |OVERFITTING_COMPILATION|
 |            |                           |[6](builds/719254693/sequence-repair-patches/patch_6.patch)       |OVERFITTING_COMPILATION|
-|            |                           |[7](builds/719254693/sequence-repair-patches/patch_7.patch)       |OVERFITTING_COMPILATION|
+|            |                           |[7](builds/719254693/sequence-repair-patches/patch_7.patch)       |CORRECT|
 |            |                           |[8](builds/719254693/sequence-repair-patches/patch_8.patch)       |OVERFITTING_COMPILATION|
 |            |                           |[9](builds/719254693/sequence-repair-patches/patch_9.patch)       |OVERFITTING_COMPILATION|
 |[**724421582**](https://travis-ci.org/github/java-group-blr/lesson03/builds/724421582) |**java-group-blr** ||               
