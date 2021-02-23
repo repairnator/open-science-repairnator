@@ -130,11 +130,11 @@ The following table contains the details related to the manual analysis of the p
 
 There are 5 possible classification types: 
 
-- **OVERFITTING_COMPILATION**: It is an overfittig patch that fixes the compilation error, but it works because of a weak test suite.
-- **OVERFITTING_TEST_CASE**: It is an overfittig patch that works due to a weak test suite or a buggy test case.
-- **DEGENERATED**: It is an overfitting patch that is meaningless (e.g., when the change does not have effects like in [this case](https://github.com/repairnator/open-science-repairnator/blob/master/data/2020-r-hero/builds/723371918/sequence-repair-patches/patch_2.patch)) or that works just because the project settings ignore the test failures/errors.
-- **CORRECT**: It is a correct patch that satisfies the program requirements.
-- **UNKNOWN**: It is not possible to estabish if the patch is overfitting or not.
+- **OVERFITTING_COMPILATION**: It is an overfitting patch that fixes the compilation error, but it is incorrect because of a weak test suite.
+- **OVERFITTING_TEST_CASE**: It is an overfitting patch for a failing test due to a weak test suite or a buggy test case.
+- **DEGENERATED**: It is an overfitting patch that is meaningless (e.g., when the change does not have effects like in [this case](https://github.com/repairnator/open-science-repairnator/blob/master/data/2020-r-hero/builds/723371918/sequence-repair-patches/patch_2.patch))  or that passed all tests due to abnormal conditions (eg the build settings ignore the test failures/errors)
+- **CORRECT**: It is a correct patch that satisfies the behavioral expectations.
+- **UNKNOWN**: It is not possible to establish whether the patch is overfitting or not, due to lack of domain knowledge.
 
 |Build ID    |Project                                                                            | Patch ID          | Overfitting Manual Analysis  |
 |------------|---------------------------|--------|-----------------------------------------------------------|
@@ -168,7 +168,6 @@ There are 5 possible classification types:
 |            |                           |[32](builds/723539132/sequence-repair-patches/patch_32.patch)     |DEGENERATED|
 |            |                           |[33](builds/723539132/sequence-repair-patches/patch_33.patch)     |DEGENERATED|
 |            |                           |[34](builds/723539132/sequence-repair-patches/patch_34.patch)     |DEGENERATED|
-|            |                           |[36](builds/723539132/sequence-repair-patches/patch_36.patch)     |DEGENERATED|
 |            |                           |[38](builds/723539132/sequence-repair-patches/patch_38.patch)     |DEGENERATED|
 |            |                           |[41](builds/723539132/sequence-repair-patches/patch_41.patch)     |DEGENERATED|
 |            |                           |[46](builds/723539132/sequence-repair-patches/patch_46.patch)     |DEGENERATED|
@@ -205,9 +204,7 @@ There are 5 possible classification types:
 |            |                           |[4](builds/723426709/sequence-repair-patches/patch_4.patch)       |OVERFITTING_TEST_CASE|
 |            |                           |[5](builds/723426709/sequence-repair-patches/patch_5.patch)       |OVERFITTING_TEST_CASE|
 |[**721491569**](https://travis-ci.org/github/Revassess/gattie-823-bescoto98/builds/721491569) |**gattie-823-bescoto98_topush**|| |                                                                                                           ||        
-|            |                           |[1](builds/721491569/sequence-repair-patches/patch_1.patch)      ||
-|[**721498606**](https://travis-ci.org/github/Revassess/gattie-823-Tanisi90/builds/721498606) |**gattie-823-Tanisi90**       ||    |                                                                                                            ||     
-|            |                           |[1](builds/721498606/sequence-repair-patches/patch_1.patch)     ||
+|            |                           |[1](builds/721491569/sequence-repair-patches/patch_1.patch)      |DEGENERATED|
 |[**723371918**](https://travis-ci.org/github/vert-x3/vertx-web/builds/723371918) |**vert-x3**                   ||       |                                                                                                                  
 |            |                           |[1](builds/723371918/sequence-repair-patches/patch_1.patch)       |DEGENERATED|
 |            |                           |[2](builds/723371918/sequence-repair-patches/patch_2.patch)        |DEGENERATED|
