@@ -1,0 +1,47 @@
+--- /src/main/java/de/unistuttgart/ims/coref/annotator/document/EntityTreeModel.java
++++ /src/main/java/de/unistuttgart/ims/coref/annotator/document/EntityTreeModel.java
+@@ -23,44 +22,0 @@
+-		switch (event) {
+-			case Add :
+-				if (a instanceof de.unistuttgart.ims.coref.annotator.api.Mention) {
+-					de.unistuttgart.ims.coref.annotator.api.Mention mention = ((de.unistuttgart.ims.coref.annotator.api.Mention) (a));
+-					de.unistuttgart.ims.coref.annotator.CATreeNode node = new de.unistuttgart.ims.coref.annotator.CATreeNode(mention, mention.getCoveredText());
+-					fsMap.put(mention, node);
+-					de.unistuttgart.ims.coref.annotator.CATreeNode entityNode = get(mention.getEntity());
+-					int ind = 0;
+-					while (ind < entityNode.getChildCount()) {
+-						de.unistuttgart.ims.coref.annotator.CATreeNode cnode = entityNode.getChildAt(ind);
+-						if ((cnode.getFeatureStructure() instanceof de.unistuttgart.ims.coref.annotator.api.Entity) || (((org.apache.uima.jcas.tcas.Annotation) (cnode.getFeatureStructure())).getBegin() > mention.getBegin()))
+-							break;
+-
+-						ind++;
+-					} 
+-					insertNodeInto(node, entityNode, ind);
+-					optResort();
+-				} else
+-					if (a instanceof de.unistuttgart.ims.coref.annotator.api.DetachedMentionPart) {
+-						de.unistuttgart.ims.coref.annotator.api.DetachedMentionPart dmp = ((de.unistuttgart.ims.coref.annotator.api.DetachedMentionPart) (a));
+-						de.unistuttgart.ims.coref.annotator.CATreeNode node = new de.unistuttgart.ims.coref.annotator.CATreeNode(dmp, dmp.getCoveredText());
+-						fsMap.put(dmp, node);
+-						de.unistuttgart.ims.coref.annotator.CATreeNode mentionNode = get(dmp.getMention());
+-						int ind = 0;
+-						while (ind < mentionNode.getChildCount()) {
+-							de.unistuttgart.ims.coref.annotator.CATreeNode cnode = mentionNode.getChildAt(ind);
+-							if ((cnode.getFeatureStructure() instanceof de.unistuttgart.ims.coref.annotator.api.Entity) || (((org.apache.uima.jcas.tcas.Annotation) (cnode.getFeatureStructure())).getBegin() > dmp.getBegin()))
+-								break;
+-
+-							ind++;
+-						} 
+-						insertNodeInto(node, mentionNode, ind);
+-					}
+-
+-				break;
+-			case Remove :
+-				removeNodeFromParent(get(a));
+-				break;
+-			case Update :
+-				nodeChanged(get(a));
+-				break;
+-			default :
+-				break;
+-		}

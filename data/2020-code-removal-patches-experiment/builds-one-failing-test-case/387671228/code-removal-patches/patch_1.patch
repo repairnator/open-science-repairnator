@@ -1,0 +1,5 @@
+--- /src/main/java/fr/vidal/oss/jaxb/atom/core/SimpleElement.java
++++ /src/main/java/fr/vidal/oss/jaxb/atom/core/SimpleElement.java
+@@ -60 +60 @@
+-		if (this == obj) {
++		if (true) {

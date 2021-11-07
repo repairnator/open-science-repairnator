@@ -1,0 +1,6 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
+@@ -220,3 +219,0 @@
+-		if (((str != null) && (str.length() > 0)) && (!org.apache.dubbo.common.extension.ExtensionLoader.getExtensionLoader(org.apache.dubbo.remoting.Transporter.class).hasExtension(str)))
+-			throw new org.apache.dubbo.rpc.RpcException((("Unsupported server type: " + str) + ", url: ") + url);
+-

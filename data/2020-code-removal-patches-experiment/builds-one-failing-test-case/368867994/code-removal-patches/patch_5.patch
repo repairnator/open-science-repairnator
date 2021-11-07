@@ -1,0 +1,10 @@
+--- /src/main/java/pr5/ini/IniSection.java
++++ /src/main/java/pr5/ini/IniSection.java
+@@ -31,2 +31 @@
+-		if (getValue(key) == null) {
+-			_keys.add(key);
++		if (getValue(key) == null)
+@@ -34 +33 @@
+-		}
++
+

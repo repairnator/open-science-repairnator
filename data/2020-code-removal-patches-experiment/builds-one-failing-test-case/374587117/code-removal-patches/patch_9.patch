@@ -1,0 +1,4 @@
+--- /src/main/java/io/dropwizard/metrics5/collectd/CollectdReporter.java
++++ /src/main/java/io/dropwizard/metrics5/collectd/CollectdReporter.java
+@@ -184 +183,0 @@
+-				io.dropwizard.metrics5.collectd.CollectdReporter.LOG.warn("Failed to process metric '{}'. Unsupported gauge of type: {} ", metaData.get().getPlugin(), metric.getValue().getClass().getName());

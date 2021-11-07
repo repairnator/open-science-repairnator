@@ -1,0 +1,4 @@
+--- /src/main/java/io/dropwizard/metrics5/collectd/PacketWriter.java
++++ /src/main/java/io/dropwizard/metrics5/collectd/PacketWriter.java
+@@ -102 +101,0 @@
+-		writeString(buffer, io.dropwizard.metrics5.collectd.PacketWriter.TYPE_PLUGIN_INSTANCE, metaData.getPluginInstance());

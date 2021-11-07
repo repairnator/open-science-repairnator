@@ -1,0 +1,5 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/LazyConnectExchangeClient.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/LazyConnectExchangeClient.java
+@@ -76 +76 @@
+-		if (requestWithWarning) {
++		if (true) {

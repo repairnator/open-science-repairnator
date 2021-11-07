@@ -1,0 +1,4 @@
+--- /src/main/java/de/unistuttgart/ims/coref/annotator/document/EntityTreeModel.java
++++ /src/main/java/de/unistuttgart/ims/coref/annotator/document/EntityTreeModel.java
+@@ -175 +174,0 @@
+-			annotationEvent(de.unistuttgart.ims.coref.annotator.CoreferenceModelListener.Event.Add, m);

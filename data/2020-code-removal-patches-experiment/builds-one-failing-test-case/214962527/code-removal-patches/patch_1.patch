@@ -1,0 +1,14 @@
+--- /src/main/java/nl/inl/blacklab/search/lucene/BLSpanOrQuery.java
++++ /src/main/java/nl/inl/blacklab/search/lucene/BLSpanOrQuery.java
+@@ -489,9 +489,9 @@
+ 	public boolean canMakeNfa() {
+ 		for (org.apache.lucene.search.spans.SpanQuery cl : getClauses()) {
+ 			nl.inl.blacklab.search.lucene.BLSpanQuery clause = ((nl.inl.blacklab.search.lucene.BLSpanQuery) (cl));
+-			if (!clause.canMakeNfa())
++			if (true) {
+ 				return false;
+-
++			}
+ 		}
+ 		return true;
+ 	}

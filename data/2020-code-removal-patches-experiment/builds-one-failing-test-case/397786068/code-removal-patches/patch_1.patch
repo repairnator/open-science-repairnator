@@ -1,0 +1,9 @@
+--- /src/main/java/de/tum/in/niedermr/ta/extensions/analysis/workflows/stackdistance/maven/AbstractSurefireTestListener.java
++++ /src/main/java/de/tum/in/niedermr/ta/extensions/analysis/workflows/stackdistance/maven/AbstractSurefireTestListener.java
+@@ -81,2 +81 @@
+-		if (m_currentTestcaseFailed) {
+-			writeCommentToResultFile("Failing test case: " + createTestcaseIdentifier(description).get());
++		if (m_currentTestcaseFailed)
+@@ -84 +83 @@
+-		}
++

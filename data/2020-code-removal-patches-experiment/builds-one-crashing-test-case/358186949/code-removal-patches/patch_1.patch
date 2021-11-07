@@ -1,0 +1,4 @@
+--- /src/main/java/com/uniovi/clasification/IncidentsClassifier.java
++++ /src/main/java/com/uniovi/clasification/IncidentsClassifier.java
+@@ -28 +27,0 @@
+-			not.setOperator(operatorService.getRandomOperator());

@@ -1,0 +1,5 @@
+--- /src/main/java/hu/bme/mit/spaceship/GT4500.java
++++ /src/main/java/hu/bme/mit/spaceship/GT4500.java
+@@ -21 +21 @@
+-		if (firingMode == hu.bme.mit.spaceship.FiringMode.SINGLE) {
++		if (true) {

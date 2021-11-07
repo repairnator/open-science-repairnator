@@ -1,0 +1,12 @@
+```diff
+--- /src/main/java/io/enmasse/k8s/api/cache/FifoQueue.java
++++ /src/main/java/io/enmasse/k8s/api/cache/FifoQueue.java
+@@ -44,7 +44,6 @@
+ 			return;
+ 		}
+ 		java.util.List<io.enmasse.k8s.api.cache.FifoQueue.Event<T>> events = new java.util.ArrayList<>();
+-		queue.drainTo(events);
+ 		java.lang.String key = null;
+ 		if (event.obj != null) {
+ 			key = keyExtractor.getKey(event.obj);
+```

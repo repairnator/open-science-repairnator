@@ -1,0 +1,24 @@
+--- /src/main/java/org/sqtf/TestClass.java
++++ /src/main/java/org/sqtf/TestClass.java
+@@ -136,21 +135,0 @@
+-			if (params != null) {
+-				java.util.List<java.lang.Object[]> testParameterList = getTestParameters(params.csvfile(), testMethod.getParameterTypes());
+-				if (testParameterList != null) {
+-					for (java.lang.Object[] objects : testParameterList) {
+-						org.sqtf.TestResult result = runTest(testMethod, instance, timeout, objects);
+-						resultCache.add(result);
+-						final org.sqtf.TestResult finalResult = result;
+-						listeners.forEach(( l) -> l.testCompleted(clazz.getSimpleName(), testMethod.getName(), finalResult.passed()));
+-					}
+-				} else {
+-					org.sqtf.TestResult result = new org.sqtf.TestResult(testMethod, new org.sqtf.InvalidTestException(""), 0);
+-					resultCache.add(result);
+-					final org.sqtf.TestResult finalResult = result;
+-					listeners.forEach(( l) -> l.testCompleted(clazz.getSimpleName(), testMethod.getName(), finalResult.passed()));
+-				}
+-			} else {
+-				org.sqtf.TestResult result = runTest(testMethod, instance, timeout);
+-				resultCache.add(result);
+-				final org.sqtf.TestResult finalResult = result;
+-				listeners.forEach(( l) -> l.testCompleted(clazz.getSimpleName(), testMethod.getName(), finalResult.passed()));
+-			}

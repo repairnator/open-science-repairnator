@@ -1,0 +1,5 @@
+--- /src/main/java/io/atomix/cluster/impl/DefaultClusterService.java
++++ /src/main/java/io/atomix/cluster/impl/DefaultClusterService.java
+@@ -94 +94 @@
+-		if (node.getState() == io.atomix.cluster.Node.State.ACTIVE) {
++		if (true) {

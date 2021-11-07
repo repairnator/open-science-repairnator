@@ -1,0 +1,9 @@
+--- /src/main/java/pr5/ini/IniSection.java
++++ /src/main/java/pr5/ini/IniSection.java
+@@ -71 +71 @@
+-		if (this == obj)
++		if (true) {
+@@ -73 +73 @@
+-
++		}
+

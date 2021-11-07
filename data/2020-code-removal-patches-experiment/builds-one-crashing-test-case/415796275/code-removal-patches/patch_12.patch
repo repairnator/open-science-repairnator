@@ -1,0 +1,5 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/ReferenceCountExchangeClient.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/ReferenceCountExchangeClient.java
+@@ -115 +115 @@
+-			if (timeout == 0) {
++			if (true) {

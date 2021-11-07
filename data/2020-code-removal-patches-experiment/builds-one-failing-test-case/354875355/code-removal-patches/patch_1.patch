@@ -1,0 +1,12 @@
+--- /src/main/java/org/apache/commons/rng/sampling/distribution/RejectionInversionZipfSampler.java
++++ /src/main/java/org/apache/commons/rng/sampling/distribution/RejectionInversionZipfSampler.java
+@@ -22,9 +22,6 @@
+ 
+ 	public RejectionInversionZipfSampler(org.apache.commons.rng.UniformRandomProvider rng, int numberOfElements, double exponent) {
+ 		super(rng);
+-		if (numberOfElements <= 0) {
+-			throw new java.lang.IllegalArgumentException("number of elements is not strictly positive: " + numberOfElements);
+-		}
+ 		if (exponent <= 0) {
+ 			throw new java.lang.IllegalArgumentException("exponent is not strictly positive: " + exponent);
+ 		}

@@ -1,0 +1,5 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboCodec.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboCodec.java
+@@ -149 +149 @@
+-			if (ret == null) {
++			if (false) {

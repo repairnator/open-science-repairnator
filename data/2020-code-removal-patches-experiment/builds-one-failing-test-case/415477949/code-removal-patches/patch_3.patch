@@ -1,0 +1,4 @@
+--- /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
++++ /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
+@@ -36 +35,0 @@
+-		log.info("Buckets to shard allocation: {}", buckets);

@@ -1,0 +1,11 @@
+--- /src/main/java/org/apache/rocketmq/client/log/ClientLogger.java
++++ /src/main/java/org/apache/rocketmq/client/log/ClientLogger.java
+@@ -76,7 +76,7 @@
+ 	}
+ 
+ 	public static org.slf4j.Logger getLog() {
+-		if (org.apache.rocketmq.client.log.ClientLogger.log == null) {
++		if (true) {
+ 			org.apache.rocketmq.client.log.ClientLogger.log = org.apache.rocketmq.client.log.ClientLogger.createLogger(org.apache.rocketmq.common.constant.LoggerName.CLIENT_LOGGER_NAME);
+ 			return org.apache.rocketmq.client.log.ClientLogger.log;
+ 		} else {

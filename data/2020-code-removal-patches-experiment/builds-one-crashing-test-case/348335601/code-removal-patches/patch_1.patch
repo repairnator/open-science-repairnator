@@ -1,0 +1,14 @@
+--- /src/main/java/uk/ac/cam/groupprojects/bravo/config/ConfigData.java
++++ /src/main/java/uk/ac/cam/groupprojects/bravo/config/ConfigData.java
+@@ -22,11 +21,0 @@
+-			for (uk.ac.cam.groupprojects.bravo.imageProcessing.ScreenBox type : uk.ac.cam.groupprojects.bravo.imageProcessing.ScreenBox.values()) {
+-				java.lang.String typeName = type.name().toLowerCase();
+-				com.google.gson.JsonObject box = boxes.getAsJsonObject(typeName);
+-				double boxWidth = box.get("width").getAsDouble();
+-				double boxHeight = box.get("height").getAsDouble();
+-				com.google.gson.JsonArray corner = box.getAsJsonArray("corner");
+-				double cornerX = corner.get(0).getAsDouble();
+-				double cornerY = corner.get(1).getAsDouble();
+-				uk.ac.cam.groupprojects.bravo.imageProcessing.BoxInfo newBox = new uk.ac.cam.groupprojects.bravo.imageProcessing.BoxInfo(type, new java.awt.geom.Point2D.Double(cornerX, cornerY), boxWidth, boxHeight);
+-				mBoxes.put(type, newBox);
+-			}

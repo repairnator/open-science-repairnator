@@ -1,0 +1,10 @@
+--- /src/main/java/agent/Application.java
++++ /src/main/java/agent/Application.java
+@@ -6,7 +6,6 @@
+ @org.springframework.context.annotation.ComponentScan({ "dbmanagement", "validator", "services", "controller", "agent" })
+ public class Application {
+ 	public static void main(java.lang.String[] args) {
+-		org.springframework.boot.SpringApplication.run(agent.Application.class, args);
+ 	}
+ }
+ 

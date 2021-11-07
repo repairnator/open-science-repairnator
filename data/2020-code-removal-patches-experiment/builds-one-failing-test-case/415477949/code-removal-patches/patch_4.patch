@@ -1,0 +1,4 @@
+--- /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
++++ /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
+@@ -41 +40,0 @@
+-		com.google.common.base.Preconditions.checkArgument((bucketId >= io.dropwizard.sharding.sharding.ShardManager.MIN_BUCKET) && (bucketId <= io.dropwizard.sharding.sharding.ShardManager.MAX_BUCKET), "Bucket id can only be in the range of [1-1000] (inclusive)");

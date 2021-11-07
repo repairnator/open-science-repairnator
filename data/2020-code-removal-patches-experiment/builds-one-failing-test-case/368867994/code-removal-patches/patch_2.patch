@@ -1,0 +1,5 @@
+--- /src/main/java/pr5/model/Vehicle.java
++++ /src/main/java/pr5/model/Vehicle.java
+@@ -48 +47,0 @@
+-		setSpeed(0);
+

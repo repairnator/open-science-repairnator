@@ -1,0 +1,4 @@
+--- /src/main/java/de/swtproject/doit/core/ToDo.java
++++ /src/main/java/de/swtproject/doit/core/ToDo.java
+@@ -120 +119,0 @@
+-		ds.put("interval", this.getInterval().toString());

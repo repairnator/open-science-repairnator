@@ -1,0 +1,4 @@
+--- /src/main/java/com/twitter/graphjet/bipartite/segment/RightNodeMetadataLeftIndexedBipartiteGraphSegment.java
++++ /src/main/java/com/twitter/graphjet/bipartite/segment/RightNodeMetadataLeftIndexedBipartiteGraphSegment.java
+@@ -18 +17,0 @@
+-				metadataMap.incrementFeatureValue(rightNodeInternalId, edgeType);

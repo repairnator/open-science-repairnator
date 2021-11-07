@@ -1,0 +1,8 @@
+--- /src/main/java/pr5/ini/IniSection.java
++++ /src/main/java/pr5/ini/IniSection.java
+@@ -31,4 +30,0 @@
+-		if (getValue(key) == null) {
+-			_keys.add(key);
+-			_comments.put(key, new java.util.ArrayList<>());
+-		}
+

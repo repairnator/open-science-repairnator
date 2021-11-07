@@ -1,0 +1,9 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
+@@ -298 +298 @@
+-			if (!client.isClosed()) {
++			if (!client.isClosed())
+@@ -300,2 +300 @@
+-				return client;
+-			} else {
++			else {

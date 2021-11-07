@@ -1,0 +1,4 @@
+--- /src/main/java/de/unistuttgart/ims/coref/annotator/document/EntityTreeModel.java
++++ /src/main/java/de/unistuttgart/ims/coref/annotator/document/EntityTreeModel.java
+@@ -17 +16,0 @@
+-		this.initialise();

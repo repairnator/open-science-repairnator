@@ -1,0 +1,4 @@
+--- /src/main/java/io/dropwizard/metrics5/collectd/CollectdReporter.java
++++ /src/main/java/io/dropwizard/metrics5/collectd/CollectdReporter.java
+@@ -161 +160,0 @@
+-			sender.disconnect();

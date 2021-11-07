@@ -1,0 +1,10 @@
+--- /src/main/java/io/enmasse/api/v1/types/APIGroupVersion.java
++++ /src/main/java/io/enmasse/api/v1/types/APIGroupVersion.java
+@@ -13,7 +13,6 @@
+ 
+ 	public APIGroupVersion(java.lang.String groupVersion, java.lang.String version) {
+ 		this.groupVersion = groupVersion;
+-		this.version = version;
+ 	}
+ 
+ 	@com.fasterxml.jackson.annotation.JsonProperty("groupVersion")

@@ -1,0 +1,6 @@
+--- /src/main/java/de/unistuttgart/ims/coref/annotator/document/EntityTreeModel.java
++++ /src/main/java/de/unistuttgart/ims/coref/annotator/document/EntityTreeModel.java
+@@ -174,3 +173,0 @@
+-		for (de.unistuttgart.ims.coref.annotator.api.Mention m : org.apache.uima.fit.util.JCasUtil.select(coreferenceModel.getJCas(), de.unistuttgart.ims.coref.annotator.api.Mention.class)) {
+-			annotationEvent(de.unistuttgart.ims.coref.annotator.CoreferenceModelListener.Event.Add, m);
+-		}

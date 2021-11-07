@@ -1,0 +1,22 @@
+--- /src/main/java/mars/out/TerminalOutput.java
++++ /src/main/java/mars/out/TerminalOutput.java
+@@ -16,18 +16,18 @@
+ 	public void writeToOutput() {
+ 		java.lang.System.out.println("\nOutput path: ");
+ 		java.lang.System.out.println("------------");
+-		if (coordinateType.equals("L") || coordinateType.equals("l")) {
++		if (true) {
+ 			mars.map.GeoTIFF convert = new mars.map.GeoTIFF();
+ 			for (int i = 1; i <= resultList.size(); i++) {
+				   int x = resultList.get(i - 1).getX();
+				   int y = resultList.get(i - 1).getY();
+ 				  double[] outputCoordinate = convert.coordinateConvert(new mars.coordinate.Coordinate(x, y));
+ 				  java.lang.System.out.println(((((i + ". (") + outputCoordinate[0]) + ", ") + outputCoordinate[1]) + ")");
+ 			}
+ 		} else {
+  		   for (int i = 1; i <= resultList.size(); i++) {
+				      int x = resultList.get(i - 1).getX();
+				      int y = resultList.get(i - 1).getY();
+ 				     java.lang.System.out.println(((((i + ". (") + x) + ", ") + y) + ")");
+ 			}
+ 		}

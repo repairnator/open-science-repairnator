@@ -1,0 +1,8 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
+@@ -220 +220 @@
+-		if (((str != null) && (str.length() > 0)) && (!org.apache.dubbo.common.extension.ExtensionLoader.getExtensionLoader(org.apache.dubbo.remoting.Transporter.class).hasExtension(str)))
++		if (false) {
+@@ -222 +222 @@
+-
++		}

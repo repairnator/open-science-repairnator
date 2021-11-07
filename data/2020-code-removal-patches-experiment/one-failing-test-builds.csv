@@ -1,0 +1,94 @@
+﻿Build id;Project;Patch ID;CP;WT;BT;RT;FT;Human patch;Details
+[322406277](https://github.com/repairnator/repairnator-experiments/tree/e762ed4f8f2035e3a8ef372c60247f4ba54168f3);pac4j;;;;;;;Revert;[Link](builds-one-failing-test-case/322406277)
+;;[1](builds-one-failing-test-case/322406277/code-removal-patches/patch_1.patch);x;;;;;;
+[365170225](https://github.com/repairnator/repairnator-experiments/tree/4285d1aef8d451abd79a53e75fac346fe0a4a42a);atomix;;;;;;;Not found;[Link](builds-one-failing-test-case/365170225)
+;;[1](builds-one-failing-test-case/365170225/code-removal-patches/patch_1.patch);;x;;;;;
+[397786068](https://github.com/repairnator/repairnator-experiments/tree/8a4c55d7c1b001ec63943c22035d39274318ce71);test-analyzer;;;;;;;Fix Test Data;[Link](builds-one-failing-test-case/397786068)
+;;[1](builds-one-failing-test-case/397786068/code-removal-patches/patch_1.patch);;x;;;;;
+[353457987](https://github.com/repairnator/repairnator-experiments/tree/974007bbb02f33621679007d8d1bc89f895e073c);enmasse;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/353457987)
+;;[1](builds-one-failing-test-case/353457987/code-removal-patches/patch_1.patch);;x;;;;;
+[368867994](https://github.com/repairnator/repairnator-experiments/tree/fdef386149ada053317edf8c130a3674eadb021f);Text-Traffic-Simulator;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/368867994)
+;;[1](builds-one-failing-test-case/368867994/code-removal-patches/patch_1.patch);;x;;;;;
+;;[2](builds-one-failing-test-case/368867994/code-removal-patches/patch_2.patch);;x;;;;;
+;;[3](builds-one-failing-test-case/368867994/code-removal-patches/patch_3.patch);;x;;;;;
+;;[4](builds-one-failing-test-case/368867994/code-removal-patches/patch_4.patch);;x;;;;;
+;;[5](builds-one-failing-test-case/368867994/code-removal-patches/patch_5.patch);;x;;;;;
+;;[6](builds-one-failing-test-case/368867994/code-removal-patches/patch_6.patch);;x;;;;;
+;;[7](builds-one-failing-test-case/368867994/code-removal-patches/patch_7.patch);;x;;;;;
+;;[8](builds-one-failing-test-case/368867994/code-removal-patches/patch_8.patch);;x;;;;;
+;;[9](builds-one-failing-test-case/368867994/code-removal-patches/patch_9.patch);;x;;;;;
+[400611810](https://github.com/repairnator/repairnator-experiments/tree/15f57d18e2f71f91282135e3fedba12351d1c9d9);HttpRequest;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/400611810)
+;;[1](builds-one-failing-test-case/400611810/code-removal-patches/patch_1.patch);;x;;;;;
+;;[2](builds-one-failing-test-case/400611810/code-removal-patches/patch_2.patch);;x;;;;;
+;;[3](builds-one-failing-test-case/400611810/code-removal-patches/patch_3.patch);;x;;;;;
+;;[4](builds-one-failing-test-case/400611810/code-removal-patches/patch_4.patch);;x;;;;;
+;;[5](builds-one-failing-test-case/400611810/code-removal-patches/patch_5.patch);;x;;;;;
+;;[6](builds-one-failing-test-case/400611810/code-removal-patches/patch_6.patch);;x;;;;;
+[249918159](https://github.com/repairnator/repairnator-experiments/tree/9a1d57c1d0e8bb356228777d5deb58590c891e8e);cron-utils;;;;;;;Change Method Impl.;[Link](builds-one-failing-test-case/249918159)
+;;[1](builds-one-failing-test-case/249918159/code-removal-patches/patch_1.patch);;x;;;;;
+[380634197](https://github.com/repairnator/repairnator-experiments/tree/e9fe224f8536176eb02c0a952f0056222e19dbf2);ivt-lab;;;;;;;Change Method Impl.;[Link](builds-one-failing-test-case/380634197)
+;;[1](builds-one-failing-test-case/380634197/code-removal-patches/patch_1.patch);;x;;;;;
+[372495757](https://github.com/repairnator/repairnator-experiments/tree/8ba2d0f3840327388c549c76122503a0c000aea8);SudokuSolver;;;;;;;Change Condition;[Link](builds-one-failing-test-case/372495757)
+;;[1](builds-one-failing-test-case/372495757/code-removal-patches/patch_1.patch);;x;;;;;
+[413754623](https://github.com/repairnator/repairnator-experiments/tree/8f80f5c65d04ad2e5804f44f40c7088c95e13234);feign;;;;;;;Not found;[Link](builds-one-failing-test-case/413754623)
+;;[1](builds-one-failing-test-case/413754623/code-removal-patches/patch_1.patch);;x;;;;;
+;;[2](builds-one-failing-test-case/413754623/code-removal-patches/patch_2.patch);;x;;;;;
+[354875355](https://github.com/repairnator/repairnator-experiments/tree/863676ac70f08a544ce9cc2d518d2c4434511969);commons-rng;;;;;;;Not found;[Link](builds-one-failing-test-case/354875355)
+;;[1](builds-one-failing-test-case/354875355/code-removal-patches/patch_1.patch);;;;x;;;
+[403087258](https://github.com/repairnator/repairnator-experiments/tree/bde6e8936b524270b41002b12a45372d4f58007c);commons-rng;;;;;;;Not found;[Link](builds-one-failing-test-case/403087258)
+;;[1](builds-one-failing-test-case/403087258/code-removal-patches/patch_1.patch);;;;x;;;
+[351075282](https://github.com/repairnator/repairnator-experiments/tree/dbf7edc5fd864ee6299068b14eff0267c9e54ff0);Software-Quality-Test-Framework;;;;;;;Fix Test Data;[Link](builds-one-failing-test-case/351075282)
+;;[1](builds-one-failing-test-case/351075282/code-removal-patches/patch_1.patch);;;;x;;;
+;;[2](builds-one-failing-test-case/351075282/code-removal-patches/patch_2.patch);;;;x;;;
+[378592651](https://github.com/repairnator/repairnator-experiments/tree/32f8c865b0f9849f77c404c0c5d23011ae9abd1e);enmasse;;;;;;;Not found;[Link](builds-one-failing-test-case/378592651)
+;;[1](builds-one-failing-test-case/378592651/code-removal-patches/patch_1.patch);;;;x;;;
+[351211949](https://github.com/repairnator/repairnator-experiments/tree/acfa5adb229636361f35e7784efb45d2f3e8368f);carnotzet;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/351211949)
+;;[1](builds-one-failing-test-case/351211949/code-removal-patches/patch_1.patch);;;x;;;;
+[408694507](https://github.com/repairnator/repairnator-experiments/tree/9f15282ffc0d72a77f786e0817a77ee28d3cdc5d);volcano-core;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/408694507)
+;;[1](builds-one-failing-test-case/408694507/code-removal-patches/patch_1.patch);;;x;;;;
+;;[2](builds-one-failing-test-case/408694507/code-removal-patches/patch_2.patch);;;x;;;;
+;;[3](builds-one-failing-test-case/408694507/code-removal-patches/patch_3.patch);;;x;;;;
+[390335750](https://github.com/repairnator/repairnator-experiments/tree/b4006d5350fe34a529a2dfe7ad43f80c6dd18979);java-hazelcast;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/390335750)
+;;[1](builds-one-failing-test-case/390335750/code-removal-patches/patch_1.patch);;;x;;;;
+;;[2](builds-one-failing-test-case/390335750/code-removal-patches/patch_2.patch);;;x;;;;
+;;[3](builds-one-failing-test-case/390335750/code-removal-patches/patch_3.patch);;;x;;;;
+;;[4](builds-one-failing-test-case/390335750/code-removal-patches/patch_4.patch);;;x;;;;
+[349620528](https://github.com/repairnator/repairnator-experiments/tree/788621757e0a09af3c33260197b01d70df20b0ed);gilded-rose;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/349620528)
+;;[1](builds-one-failing-test-case/349620528/code-removal-patches/patch_1.patch);;;x;;;;
+;;[2](builds-one-failing-test-case/349620528/code-removal-patches/patch_2.patch);;;x;;;;
+;;[3](builds-one-failing-test-case/349620528/code-removal-patches/patch_3.patch);;;x;;;;
+;;[4](builds-one-failing-test-case/349620528/code-removal-patches/patch_4.patch);;;x;;;;
+;;[5](builds-one-failing-test-case/349620528/code-removal-patches/patch_5.patch);;;x;;;;
+[363986485](https://github.com/repairnator/repairnator-experiments/tree/c0a1fa5702c5c4b58b69515fbd6072676d3679bf);dotwebstack-framework;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/363986485)
+;;[1](builds-one-failing-test-case/363986485/code-removal-patches/patch_1.patch);;;x;;;;
+[387671228](https://github.com/repairnator/repairnator-experiments/tree/78c1c451ff977e20b523caf43fafca93cd306f8b);atom-jaxb;;;;;;;Fix Test Code;[Link](builds-one-failing-test-case/387671228)
+;;[1](builds-one-failing-test-case/387671228/code-removal-patches/patch_1.patch);;;x;;;;
+[396857150](https://github.com/repairnator/repairnator-experiments/tree/e707c6f445dfaffa6b66e626a87a12474aca313e);hesperides;;;;;;;Not found;[Link](builds-one-failing-test-case/396857150)
+;;[1](builds-one-failing-test-case/396857150/code-removal-patches/patch_1.patch);;;x;;;;
+[214962527](https://github.com/repairnator/repairnator-experiments/tree/b860ff8e5b3089462270bcbdd45e301cab2954b7);BlackLab;;;;;;;Not found;[Link](builds-one-failing-test-case/214962527)
+;;[1](builds-one-failing-test-case/214962527/code-removal-patches/patch_1.patch);;;;;x;;
+[403447416](https://github.com/repairnator/repairnator-experiments/tree/85e2172d82b2e3ee3c78ea63ca75c060580e78c6);incubator-dubbo;;;;;;;No Change;[Link](builds-one-failing-test-case/403447416)
+;;[1](builds-one-failing-test-case/403447416/code-removal-patches/patch_1.patch);;;;;x;;
+[415750114](https://github.com/repairnator/repairnator-experiments/tree/5a9718c5456482e6fc7ad45e7f87673989c77a7e);incubator-dubbo;;;;;;;Revert;[Link](builds-one-failing-test-case/415750114)
+;;[1](builds-one-failing-test-case/415750114/code-removal-patches/patch_1.patch);;;;;x;;
+[374587117](https://github.com/repairnator/repairnator-experiments/tree/1596f7ae31504996ec3be2bbd4ee298af727c03e);metrics;;;;;;;No Change;[Link](builds-one-failing-test-case/374587117)
+;;[1](builds-one-failing-test-case/374587117/code-removal-patches/patch_1.patch);;;;;x;;
+;;[2](builds-one-failing-test-case/374587117/code-removal-patches/patch_2.patch);;;;;x;;
+;;[3](builds-one-failing-test-case/374587117/code-removal-patches/patch_3.patch);;;;;x;;
+;;[4](builds-one-failing-test-case/374587117/code-removal-patches/patch_4.patch);;;;;x;;
+;;[5](builds-one-failing-test-case/374587117/code-removal-patches/patch_5.patch);;;;;x;;
+;;[6](builds-one-failing-test-case/374587117/code-removal-patches/patch_6.patch);;;;;x;;
+;;[7](builds-one-failing-test-case/374587117/code-removal-patches/patch_7.patch);;;;;x;;
+;;[8](builds-one-failing-test-case/374587117/code-removal-patches/patch_8.patch);;;;;x;;
+;;[9](builds-one-failing-test-case/374587117/code-removal-patches/patch_9.patch);;;;;x;;
+[402096641](https://github.com/repairnator/repairnator-experiments/tree/9ccfacc648191e7e9400069083451da3fbbe7f66);ditto;;;;;;;No Change;[Link](builds-one-failing-test-case/402096641)
+;;[1](builds-one-failing-test-case/402096641/code-removal-patches/patch_1.patch);;;;;x;;
+[387846982](https://github.com/repairnator/repairnator-experiments/tree/fd3aa62cb08078ba0e46870d01525b8f55fcd9e6);enmasse;;;;;;;No Change;[Link](builds-one-failing-test-case/387846982)
+;;[1](builds-one-failing-test-case/387846982/code-removal-patches/patch_1.patch);;;;;x;;
+[415477949](https://github.com/repairnator/repairnator-experiments/tree/9d4a110655d93136cbfb5147364701c7ca08e0a6);dropwizard-db-sharding-bundle;;;;;;;No Change;[Link](builds-one-failing-test-case/415477949)
+;;[1](builds-one-failing-test-case/415477949/code-removal-patches/patch_1.patch);;;;;x;;
+;;[2](builds-one-failing-test-case/415477949/code-removal-patches/patch_2.patch);;;;;x;;
+;;[3](builds-one-failing-test-case/415477949/code-removal-patches/patch_3.patch);;;;;x;;
+;;[4](builds-one-failing-test-case/415477949/code-removal-patches/patch_4.patch);;;;;x;;
+;;[5](builds-one-failing-test-case/415477949/code-removal-patches/patch_5.patch);;;;;x;;
+;;[6](builds-one-failing-test-case/415477949/code-removal-patches/patch_6.patch);;;;;x;;

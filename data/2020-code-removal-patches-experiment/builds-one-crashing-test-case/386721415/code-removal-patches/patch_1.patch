@@ -1,0 +1,5 @@
+--- /src/main/java/org/dhatim/dropwizard/sentry/logging/SentryAppenderFactory.java
++++ /src/main/java/org/dhatim/dropwizard/sentry/logging/SentryAppenderFactory.java
+@@ -118 +118 @@
+-		if (!new io.sentry.dsn.Dsn(dsn).getOptions().containsKey("stacktrace.app.packages")) {
++		if (false) {

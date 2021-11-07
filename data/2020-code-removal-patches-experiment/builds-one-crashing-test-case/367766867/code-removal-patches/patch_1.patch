@@ -1,0 +1,5 @@
+--- /src/main/java/com/twitter/graphjet/bipartite/segment/RightNodeMetadataLeftIndexedBipartiteGraphSegment.java
++++ /src/main/java/com/twitter/graphjet/bipartite/segment/RightNodeMetadataLeftIndexedBipartiteGraphSegment.java
+@@ -14 +14 @@
+-		if (rightNodeMetadata != null) {
++		if (false) {

@@ -1,0 +1,9 @@
+--- /src/main/java/pr5/ini/IniSection.java
++++ /src/main/java/pr5/ini/IniSection.java
+@@ -84,5 +83,0 @@
+-		for (java.lang.String key : this.getKeys()) {
+-			if (!this.getValue(key).equals(other.getValue(key))) {
+-				return false;
+-			}
+-		}
+

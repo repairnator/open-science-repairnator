@@ -1,0 +1,4 @@
+--- /src/main/java/com/http/Request.java
++++ /src/main/java/com/http/Request.java
+@@ -295 +294,0 @@
+-		builder.setDefaultRequestConfig(globalConfig);

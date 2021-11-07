@@ -1,0 +1,4 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/LazyConnectExchangeClient.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/LazyConnectExchangeClient.java
+@@ -34 +33,0 @@
+-			org.apache.dubbo.rpc.protocol.dubbo.LazyConnectExchangeClient.logger.info("Lazy connect to " + url);

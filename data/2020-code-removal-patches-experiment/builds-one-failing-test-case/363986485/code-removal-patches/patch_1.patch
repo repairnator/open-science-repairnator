@@ -1,0 +1,10 @@
+--- /src/main/java/org/dotwebstack/framework/frontend/ld/mappers/DirectEndPointRequestMapper.java
++++ /src/main/java/org/dotwebstack/framework/frontend/ld/mappers/DirectEndPointRequestMapper.java
+@@ -44,7 +44,6 @@
+ 		java.lang.String basePath = endPoint.getStage().getFullPath();
+ 		java.lang.String absolutePath = basePath.concat(endPoint.getPathPattern());
+ 		final java.util.Optional<org.dotwebstack.framework.frontend.ld.service.Service> deleteService = java.util.Optional.ofNullable(endPoint.getDeleteService());
+-		deleteService.ifPresent(( service) -> registerTransaction(service, javax.ws.rs.HttpMethod.DELETE, absolutePath, httpConfiguration));
+ 		final java.util.Optional<org.dotwebstack.framework.frontend.ld.service.Service> postService = java.util.Optional.ofNullable(endPoint.getPostService());
+ 		postService.ifPresent(( service) -> registerTransaction(service, javax.ws.rs.HttpMethod.POST, absolutePath, httpConfiguration));
+ 		final java.util.Optional<org.dotwebstack.framework.frontend.ld.service.Service> putService = java.util.Optional.ofNullable(endPoint.getPutService());

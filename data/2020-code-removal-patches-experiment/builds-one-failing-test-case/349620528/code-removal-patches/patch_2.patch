@@ -1,0 +1,8 @@
+--- /src/main/java/fr/esiea/BackstagePassesItem.java
++++ /src/main/java/fr/esiea/BackstagePassesItem.java
+@@ -16,5 +15,0 @@
+-		if (this.sellIn < 6)
+-			if (this.quality < fr.esiea.Item.MAX_QUALITY)
+-				quality++;
+-
+-

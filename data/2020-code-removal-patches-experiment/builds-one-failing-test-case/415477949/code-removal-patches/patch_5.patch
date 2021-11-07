@@ -1,0 +1,5 @@
+--- /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
++++ /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
+@@ -43 +43 @@
+-		if (null == entry) {
++		if (false) {

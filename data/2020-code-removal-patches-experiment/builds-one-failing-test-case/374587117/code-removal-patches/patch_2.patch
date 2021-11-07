@@ -1,0 +1,5 @@
+--- /src/main/java/io/dropwizard/metrics5/collectd/Sender.java
++++ /src/main/java/io/dropwizard/metrics5/collectd/Sender.java
+@@ -37 +37 @@
+-		if (channel == null) {
++		if (false) {

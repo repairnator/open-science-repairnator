@@ -1,0 +1,10 @@
+--- /src/main/java/org/eclipse/ditto/services/concierge/batch/actors/BatchCoordinatorActor.java
++++ /src/main/java/org/eclipse/ditto/services/concierge/batch/actors/BatchCoordinatorActor.java
+@@ -74,7 +74,6 @@
+ 	@java.lang.Override
+ 	public akka.actor.AbstractActor.Receive createReceiveRecover() {
+ 		return akka.japi.pf.ReceiveBuilder.create().match(org.eclipse.ditto.signals.events.batch.BatchExecutionStarted.class, ( event) -> {
+-			batchId = event.getBatchId();
+ 			event.getCommands().forEach(( command) -> {
+ 				final java.lang.String correlationId = command.getDittoHeaders().getCorrelationId().get();
+ 				commands.put(correlationId, command);

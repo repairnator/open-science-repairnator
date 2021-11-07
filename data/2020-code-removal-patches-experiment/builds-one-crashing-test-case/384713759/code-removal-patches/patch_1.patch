@@ -1,0 +1,4 @@
+--- /src/main/java/dev/paie/entite/Cotisation.java
++++ /src/main/java/dev/paie/entite/Cotisation.java
+@@ -24 +23,0 @@
+-		this.id = id;

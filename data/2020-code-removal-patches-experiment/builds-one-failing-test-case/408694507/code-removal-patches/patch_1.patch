@@ -1,0 +1,4 @@
+--- /src/main/java/gov/usgs/volcanoes/core/data/Scnl.java
++++ /src/main/java/gov/usgs/volcanoes/core/data/Scnl.java
+@@ -83 +82,0 @@
+-			return gov.usgs.volcanoes.core.data.Scnl.parse(scnlString, " ");

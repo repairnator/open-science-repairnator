@@ -1,0 +1,5 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
+@@ -81 +81 @@
+-			if (logger.isInfoEnabled()) {
++			if (false) {

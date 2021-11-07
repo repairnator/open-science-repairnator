@@ -1,0 +1,6 @@
+--- /src/main/java/com/http/Request.java
++++ /src/main/java/com/http/Request.java
+@@ -387,3 +386,0 @@
+-			for (java.util.Map.Entry<java.lang.String, java.lang.String> entity : this.header.entrySet()) {
+-				httpGet.setHeader(entity.getKey(), entity.getValue());
+-			}

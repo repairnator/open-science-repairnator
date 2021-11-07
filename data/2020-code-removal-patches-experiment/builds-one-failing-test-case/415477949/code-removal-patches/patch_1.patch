@@ -1,0 +1,9 @@
+--- /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
++++ /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
+@@ -55,3 +55,3 @@
+-		if ((shardId >= 0) && (shardId < numShards)) {
+-			shardBlacklistingStore.blacklist(shardId);
+-			blackListedShards.refresh(shardId);
++		if (true) {
++			this.shardBlacklistingStore.blacklist(shardId);
++			this.blackListedShards.refresh(shardId);

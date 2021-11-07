@@ -1,0 +1,10 @@
+--- /src/main/java/com/codingchili/Model/FileParser.java
++++ /src/main/java/com/codingchili/Model/FileParser.java
+@@ -25 +25 @@
+-		if (file.exists()) {
++		if (true) {
+@@ -31,2 +31,2 @@
+-				this.columns = getColumnCount(sheet.getRow(offset));
+-				this.rows = getItemCount(sheet, offset);
++				this.columns = getColumnCount(this.sheet.getRow(offset));
++				this.rows = getItemCount(this.sheet, offset);

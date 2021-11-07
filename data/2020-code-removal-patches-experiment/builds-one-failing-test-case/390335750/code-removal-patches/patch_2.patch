@@ -1,0 +1,4 @@
+--- /src/main/java/io/opentracing/contrib/hazelcast/TracingEntryProcessor.java
++++ /src/main/java/io/opentracing/contrib/hazelcast/TracingEntryProcessor.java
+@@ -29 +28,0 @@
+-			return new io.opentracing.contrib.hazelcast.TracingEntryBackupProcessor<>(entryBackupProcessor, traceWithActiveSpanOnly, spanContextMap);

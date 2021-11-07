@@ -1,0 +1,6 @@
+--- /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
++++ /src/main/java/io/dropwizard/sharding/sharding/ShardManager.java
+@@ -43,3 +42,0 @@
+-		if (null == entry) {
+-			throw new java.lang.IllegalAccessError("Bucket not mapped to any shard");
+-		}

@@ -1,0 +1,4 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DecodeableRpcResult.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DecodeableRpcResult.java
+@@ -70 +69,0 @@
+-					setAttachments(((java.util.Map<java.lang.String, java.lang.String>) (in.readObject(java.util.Map.class))));

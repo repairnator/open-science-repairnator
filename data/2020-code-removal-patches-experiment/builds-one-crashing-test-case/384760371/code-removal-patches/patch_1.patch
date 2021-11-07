@@ -1,0 +1,4 @@
+--- /src/main/java/dev/paie/entite/Avantage.java
++++ /src/main/java/dev/paie/entite/Avantage.java
+@@ -49 +48,0 @@
+-		this.id = id;

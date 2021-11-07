@@ -1,0 +1,10 @@
+--- /src/main/java/com/twitter/graphjet/bipartite/segment/RightNodeMetadataLeftIndexedBipartiteGraphSegment.java
++++ /src/main/java/com/twitter/graphjet/bipartite/segment/RightNodeMetadataLeftIndexedBipartiteGraphSegment.java
+@@ -14,7 +13,0 @@
+-		if (rightNodeMetadata != null) {
+-			for (int i = 0; i < rightNodeMetadata.length; i++) {
+-				com.twitter.graphjet.hashing.IntToIntArrayMap metadataMap = readerAccessibleInfoProvider.getReaderAccessibleInfo().getRightNodesToMetadataMap(i);
+-				metadataMap.put(rightNodeInternalId, rightNodeMetadata[i]);
+-				metadataMap.incrementFeatureValue(rightNodeInternalId, edgeType);
+-			}
+-		}

@@ -1,0 +1,5 @@
+--- /src/main/java/org/apache/twill/internal/zookeeper/InMemoryZKServer.java
++++ /src/main/java/org/apache/twill/internal/zookeeper/InMemoryZKServer.java
+@@ -70 +70 @@
+-		if (java.lang.Boolean.parseBoolean(java.lang.System.getProperties().getProperty("twill.zk.server.localhost", "true"))) {
++		if (false) {

@@ -1,0 +1,5 @@
+--- /src/main/java/com/ctrip/framework/apollo/core/utils/NetUtil.java
++++ /src/main/java/com/ctrip/framework/apollo/core/utils/NetUtil.java
+@@ -24 +24 @@
+-		if (200 == status) {
++		if (true) {

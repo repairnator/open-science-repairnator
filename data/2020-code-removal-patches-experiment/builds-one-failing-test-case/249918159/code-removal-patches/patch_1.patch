@@ -1,0 +1,15 @@
+--- /src/main/java/com/cronutils/model/time/generator/BetweenDayOfWeekValueGenerator.java
++++ /src/main/java/com/cronutils/model/time/generator/BetweenDayOfWeekValueGenerator.java
+@@ -20,10 +20,9 @@
+ 		com.cronutils.model.field.expression.Between between = ((com.cronutils.model.field.expression.Between) (cronField.getExpression()));
+ 		int from = ((java.lang.Integer) (between.getFrom().getValue()));
+ 		int to = ((java.lang.Integer) (between.getTo().getValue()));
+-		while (from <= to) {
+-			dowValidValues.add(from);
++		while (from <= to)
+ 			from += 1;
+-		} 
++
+ 	}
+ 
+ 	@java.lang.Override

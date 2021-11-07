@@ -1,0 +1,36 @@
+--- /src/main/java/org/sqtf/TestClass.java
++++ /src/main/java/org/sqtf/TestClass.java
+@@ -125,33 +124,0 @@
+-		for (java.lang.reflect.Method testMethod : testMethods) {
+-			java.lang.Object instance = clazz.newInstance();
+-			org.sqtf.annotations.Test m = testMethod.getAnnotation(org.sqtf.annotations.Test.class);
+-			org.sqtf.annotations.Parameters params = testMethod.getAnnotation(org.sqtf.annotations.Parameters.class);
+-			if (((testMethod.getParameterCount() == 0) && (params != null)) || ((testMethod.getParameterCount() > 0) && (params == null))) {
+-				org.sqtf.TestResult result = new org.sqtf.TestResult(testMethod, new org.sqtf.InvalidTestException(""), 0);
+-				resultCache.add(result);
+-				listeners.forEach(( l) -> l.testCompleted(clazz.getSimpleName(), testMethod.getName(), false));
+-				continue;
+-			}
+-			int timeout = m.timeout();
+-			if (params != null) {
+-				java.util.List<java.lang.Object[]> testParameterList = getTestParameters(params.csvfile(), testMethod.getParameterTypes());
+-				if (testParameterList != null) {
+-					for (java.lang.Object[] objects : testParameterList) {
+-						org.sqtf.TestResult result = runTest(testMethod, instance, timeout, objects);
+-						resultCache.add(result);
+-						final org.sqtf.TestResult finalResult = result;
+-						listeners.forEach(( l) -> l.testCompleted(clazz.getSimpleName(), testMethod.getName(), finalResult.passed()));
+-					}
+-				} else {
+-					org.sqtf.TestResult result = new org.sqtf.TestResult(testMethod, new org.sqtf.InvalidTestException(""), 0);
+-					resultCache.add(result);
+-					final org.sqtf.TestResult finalResult = result;
+-					listeners.forEach(( l) -> l.testCompleted(clazz.getSimpleName(), testMethod.getName(), finalResult.passed()));
+-				}
+-			} else {
+-				org.sqtf.TestResult result = runTest(testMethod, instance, timeout);
+-				resultCache.add(result);
+-				final org.sqtf.TestResult finalResult = result;
+-				listeners.forEach(( l) -> l.testCompleted(clazz.getSimpleName(), testMethod.getName(), finalResult.passed()));
+-			}
+-		}

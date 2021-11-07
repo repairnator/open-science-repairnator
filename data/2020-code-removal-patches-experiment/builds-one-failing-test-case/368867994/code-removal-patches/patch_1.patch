@@ -1,0 +1,5 @@
+--- /src/main/java/pr5/ini/IniSection.java
++++ /src/main/java/pr5/ini/IniSection.java
+@@ -86 +85,0 @@
+-				return false;
+

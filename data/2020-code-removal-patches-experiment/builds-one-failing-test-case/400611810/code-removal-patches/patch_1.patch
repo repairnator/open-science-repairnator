@@ -1,0 +1,4 @@
+--- /src/main/java/com/http/Request.java
++++ /src/main/java/com/http/Request.java
+@@ -112 +111,0 @@
+-		this.header = h;

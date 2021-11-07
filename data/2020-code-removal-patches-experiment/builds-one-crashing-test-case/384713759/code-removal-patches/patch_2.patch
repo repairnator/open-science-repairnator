@@ -1,0 +1,4 @@
+--- /src/main/java/dev/paie/service/CotisationServiceJpa.java
++++ /src/main/java/dev/paie/service/CotisationServiceJpa.java
+@@ -12 +11,0 @@
+-		em.persist(nouvelleCotisation);

@@ -1,0 +1,4 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
+@@ -84 +83,0 @@
+-			invoke(channel, org.apache.dubbo.common.Constants.ON_DISCONNECT_KEY);

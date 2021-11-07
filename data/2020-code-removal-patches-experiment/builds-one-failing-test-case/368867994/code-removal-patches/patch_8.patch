@@ -1,0 +1,6 @@
+--- /src/main/java/pr5/ini/IniSection.java
++++ /src/main/java/pr5/ini/IniSection.java
+@@ -85 +85 @@
+-			if (!this.getValue(key).equals(other.getValue(key))) {
++			if (false) {
+

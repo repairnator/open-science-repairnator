@@ -1,0 +1,5 @@
+--- /src/main/java/org/mistahmilla/sudoku/solvers/NakedSubset.java
++++ /src/main/java/org/mistahmilla/sudoku/solvers/NakedSubset.java
+@@ -29 +29 @@
+-						if (count >= 2) {
++						if (true) {

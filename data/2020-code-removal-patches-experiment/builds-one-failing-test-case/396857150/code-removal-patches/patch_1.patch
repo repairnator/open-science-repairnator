@@ -1,0 +1,10 @@
+--- /src/main/java/org/hesperides/domain/templatecontainers/entities/Property.java
++++ /src/main/java/org/hesperides/domain/templatecontainers/entities/Property.java
+@@ -97,2 +97,2 @@
+-						if (isFirstWordAnAnnotation) {
+-						} else
++						if (false) {
++						} else {
+@@ -100 +100 @@
+-
++						}

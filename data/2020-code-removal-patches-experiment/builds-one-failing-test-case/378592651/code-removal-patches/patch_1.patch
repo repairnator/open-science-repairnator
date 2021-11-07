@@ -1,0 +1,11 @@
+--- /src/main/java/io/enmasse/amqp/Artemis.java
++++ /src/main/java/io/enmasse/amqp/Artemis.java
+@@ -83,7 +83,7 @@
+ 		source.setDynamic(true);
+ 		receiver.setSource(source);
+ 		receiver.openHandler(( h) -> {
+-			if (h.succeeded()) {
++			if (true) {
+ 				promise.complete(new io.enmasse.amqp.Artemis(vertx.getOrCreateContext(), connection, sender, receiver, h.result().getRemoteSource().getAddress(), replies));
+ 			} else {
+ 				if (retries > io.enmasse.amqp.Artemis.maxRetries) {

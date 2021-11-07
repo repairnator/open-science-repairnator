@@ -1,0 +1,11 @@
+--- /src/main/java/org/apache/dubbo/registry/multicast/MulticastRegistry.java
++++ /src/main/java/org/apache/dubbo/registry/multicast/MulticastRegistry.java
+@@ -145,7 +145,7 @@
+ 	}
+ 
+ 	private void receive(java.lang.String msg, java.net.InetSocketAddress remoteAddress) {
+-		if (org.apache.dubbo.registry.multicast.MulticastRegistry.logger.isInfoEnabled()) {
++		if (true) {
+ 			org.apache.dubbo.registry.multicast.MulticastRegistry.logger.info((("Receive multicast message: " + msg) + " from ") + remoteAddress);
+ 		}
+ 		if (msg.startsWith(org.apache.dubbo.common.Constants.REGISTER)) {

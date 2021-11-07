@@ -1,0 +1,5 @@
+--- /src/main/java/org/pac4j/core/profile/converter/StringConverter.java
++++ /src/main/java/org/pac4j/core/profile/converter/StringConverter.java
+@@ -9 +9 @@
+-		if (null != attribute) {
++		if (false) {

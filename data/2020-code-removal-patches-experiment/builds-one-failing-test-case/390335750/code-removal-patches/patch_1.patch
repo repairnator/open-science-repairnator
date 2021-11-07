@@ -1,0 +1,4 @@
+--- /src/main/java/io/opentracing/contrib/hazelcast/TracingEntryBackupProcessor.java
++++ /src/main/java/io/opentracing/contrib/hazelcast/TracingEntryBackupProcessor.java
+@@ -23 +22,0 @@
+-		io.opentracing.contrib.hazelcast.TracingHelper.decorateAction(() -> entryBackupProcessor.processBackup(entry), span);

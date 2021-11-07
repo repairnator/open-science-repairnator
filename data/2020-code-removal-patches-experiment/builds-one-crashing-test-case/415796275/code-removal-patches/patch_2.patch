@@ -1,0 +1,8 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/LazyConnectExchangeClient.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/LazyConnectExchangeClient.java
+@@ -30 +30 @@
+-		if (client != null)
++		if (false) {
+@@ -32 +32 @@
+-
++		}

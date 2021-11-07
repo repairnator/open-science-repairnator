@@ -1,0 +1,4 @@
+--- /src/main/java/de/swtproject/doit/core/ToDo.java
++++ /src/main/java/de/swtproject/doit/core/ToDo.java
+@@ -124 +123,0 @@
+-		ds.put("priority", this.getPriority());

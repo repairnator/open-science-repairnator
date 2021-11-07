@@ -1,0 +1,5 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/LazyConnectExchangeClient.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/LazyConnectExchangeClient.java
+@@ -33 +33 @@
+-		if (org.apache.dubbo.rpc.protocol.dubbo.LazyConnectExchangeClient.logger.isInfoEnabled()) {
++		if (true) {

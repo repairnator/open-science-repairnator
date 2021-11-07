@@ -1,0 +1,5 @@
+--- /src/main/java/org/sonar/plugins/fxcop/FxCopSensor.java
++++ /src/main/java/org/sonar/plugins/fxcop/FxCopSensor.java
+@@ -34 +34 @@
+-		if (!fxCopConf.checkProperties(context.settings())) {
++		if (true) {

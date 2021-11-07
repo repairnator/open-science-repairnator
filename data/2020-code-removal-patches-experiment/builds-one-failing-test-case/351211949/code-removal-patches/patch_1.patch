@@ -1,0 +1,4 @@
+--- /src/main/java/com/github/swissquote/carnotzet/core/runtime/DefaultCommandRunner.java
++++ /src/main/java/com/github/swissquote/carnotzet/core/runtime/DefaultCommandRunner.java
+@@ -68 +67,0 @@
+-			output = output.trim();

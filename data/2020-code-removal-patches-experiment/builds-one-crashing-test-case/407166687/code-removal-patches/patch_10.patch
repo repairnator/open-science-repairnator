@@ -1,0 +1,13 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
+@@ -183,10 +182,0 @@
+-		if (isStubSupportEvent && (!isCallbackservice)) {
+-			java.lang.String stubServiceMethods = url.getParameter(org.apache.dubbo.common.Constants.STUB_EVENT_METHODS_KEY);
+-			if ((stubServiceMethods == null) || (stubServiceMethods.length() == 0)) {
+-				if (logger.isWarnEnabled()) {
+-					logger.warn(new java.lang.IllegalStateException(("consumer [" + url.getParameter(org.apache.dubbo.common.Constants.INTERFACE_KEY)) + "], has set stubproxy support event ,but no stub methods founded."));
+-				}
+-			} else {
+-				stubServiceMethodsMap.put(url.getServiceKey(), stubServiceMethods);
+-			}
+-		}

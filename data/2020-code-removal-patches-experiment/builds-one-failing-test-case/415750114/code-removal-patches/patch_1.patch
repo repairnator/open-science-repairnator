@@ -1,0 +1,11 @@
+--- /src/main/java/org/apache/dubbo/registry/multicast/MulticastRegistry.java
++++ /src/main/java/org/apache/dubbo/registry/multicast/MulticastRegistry.java
+@@ -348,7 +348,7 @@
+ 				urls.addAll(cacheUrls);
+ 			}
+ 		}
+-		if (urls.isEmpty()) {
++		if (true) {
+ 			for (org.apache.dubbo.common.URL u : getRegistered()) {
+ 				if (org.apache.dubbo.common.utils.UrlUtils.isMatch(url, u)) {
+ 					urls.add(u);

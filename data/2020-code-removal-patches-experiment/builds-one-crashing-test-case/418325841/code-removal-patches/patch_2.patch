@@ -1,0 +1,4 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
+@@ -217 +216,0 @@
+-		url = url.addParameterIfAbsent(org.apache.dubbo.common.Constants.CHANNEL_READONLYEVENT_SENT_KEY, java.lang.Boolean.TRUE.toString());

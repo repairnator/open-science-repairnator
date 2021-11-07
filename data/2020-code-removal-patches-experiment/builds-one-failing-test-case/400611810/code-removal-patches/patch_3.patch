@@ -1,0 +1,5 @@
+--- /src/main/java/com/http/Request.java
++++ /src/main/java/com/http/Request.java
+@@ -236 +235,0 @@
+-		this.setHeader(header);
+

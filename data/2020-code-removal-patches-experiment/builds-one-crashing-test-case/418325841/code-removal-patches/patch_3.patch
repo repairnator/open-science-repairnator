@@ -1,0 +1,4 @@
+--- /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
++++ /src/main/java/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java
+@@ -218 +217,0 @@
+-		url = url.addParameterIfAbsent(org.apache.dubbo.common.Constants.HEARTBEAT_KEY, java.lang.String.valueOf(org.apache.dubbo.common.Constants.DEFAULT_HEARTBEAT));

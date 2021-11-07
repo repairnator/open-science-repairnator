@@ -1,0 +1,10 @@
+--- /src/main/java/org/imdea/vcd/queue/DependencyQueue.java
++++ /src/main/java/org/imdea/vcd/queue/DependencyQueue.java
+@@ -63,7 +63,6 @@
+ 		org.imdea.vcd.queue.DependencyQueue.Node<E> it = first;
+ 		while (it != null) {
+ 			if (e.before(it.item)) {
+-				return it;
+ 			}
+ 			it = it.next;
+ 		} 

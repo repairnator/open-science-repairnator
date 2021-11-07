@@ -1,0 +1,10 @@
+--- /src/main/java/io/vlingo/actors/plugin/mailbox/concurrentqueue/ConcurrentQueueMailbox.java
++++ /src/main/java/io/vlingo/actors/plugin/mailbox/concurrentqueue/ConcurrentQueueMailbox.java
+@@ -12,7 +12,6 @@
+ 
+ 	public void close() {
+ 		queue.clear();
+-		dispatcher.close();
+ 	}
+ 
+ 	@java.lang.Override

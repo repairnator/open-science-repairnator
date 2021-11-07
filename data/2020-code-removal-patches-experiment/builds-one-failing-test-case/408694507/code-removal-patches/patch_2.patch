@@ -1,0 +1,5 @@
+--- /src/main/java/gov/usgs/volcanoes/core/data/Scnl.java
++++ /src/main/java/gov/usgs/volcanoes/core/data/Scnl.java
+@@ -82 +82 @@
+-		if (scnlString.indexOf("$") == (-1)) {
++		if (false) {
