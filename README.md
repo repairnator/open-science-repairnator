@@ -36,16 +36,31 @@ This contains the data used in the paper [Repairnator patches programs automatic
 
 ## Folder `data/2020-r-hero`
 
-This contains the data used in the paper "Learning to Repair Programs from Zero to Hero"
+This contains the data used in the paper [A Software-Repair Robot based on Continual Learning](http://arxiv.org/pdf/2012.06824) ([doi:10.1109/ms.2021.3070743](https://doi.org/10.1109/ms.2021.3070743))
 
-Link and bibtex to come
+```bibtex
+@article{2012.06824,
+ title = {A Software-Repair Robot based on Continual Learning},
+ journal = {IEEE Software},
+ year = {2021},
+ doi = {10.1109/ms.2021.3070743},
+ author = {Benoit Baudry and Zimin Chen and Khashayar Etemadi and Han Fu and Davide Ginelli and Steve Kommrusch and Matias Martinez and Martin Monperrus and Javier Ron and He Ye and Zhongxing Yu},
+ url = {http://arxiv.org/pdf/2012.06824},
+}
+```
 
 ## Folder `data/2020-code-removal-patches-experiment`
 
-This contains the data used in the paper "A Comprehensive Study of Code-removal Patches in Automated Program Repair".
+This contains the data used in the paper [A Comprehensive Study of Code-removal Patches in Automated Program Repair](http://arxiv.org/pdf/2012.06264).
 
-Link and bibtex to come
+```bibtex
+@article{2012.06264,
+ title = {A Comprehensive Study of Code-removal Patches in Automated Program Repair},
+ author = {Davide Ginelli and Matias Martinez and Leonardo Mariani and Martin Monperrus},
+ year = {2022},
+ url = {http://arxiv.org/pdf/2012.06264},
+ journal = {Empirical Software Engineering},
+}
+```
 
-## Aknowledgement
 
-This research has been supported by InriaHub program and the Wallenberg Autonomous Systems and Software Program (WASP)
