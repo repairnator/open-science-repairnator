@@ -1,11 +1,11 @@
-# Experimental Data collected in the Repairnator project
+# Experimental Data Collected in the Repairnator Research Project
 
 The code of Repairnator itself is at <https://github.com/eclipse/repairnator>.
 
 ## Folder `data/2018-ICSE-SEIP`
 This contains the data used in the paper published at ICSE-SEIP 2018 entitled ["How to Design a Program Repair Bot? Insights from the Repairnator Project"](https://hal.inria.fr/hal-01691496/document) ([doi:10.1145/3183519.3183540](https://doi.org/10.1145/3183519.3183540)).
 
-```
+```bibtex
 @inproceedings{repairnator,
  title = {{How to Design a Program Repair Bot? Insights from the Repairnator Project}},
  author = {Urli, Simon and Yu, Zhongxing and Seinturier, Lionel and Monperrus, Martin},
@@ -19,7 +19,7 @@ This contains the data used in the paper published at ICSE-SEIP 2018 entitled ["
 
 This contains the data used in the paper [Repairnator patches programs automatically](https://ubiquity.acm.org/article.cfm?id=3349589) ([doi:10.1145/3349589](https://doi.org/10.1145/3349589)).
 
-```
+```bibtex
 @article{monperrus:hal-02267512,
  title = {Repairnator patches programs automatically},
  author = {Monperrus, Martin and Urli, Simon and Durieux, Thomas and Martinez, Martin and Baudry, Benoit and Seinturier, Lionel},
