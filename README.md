@@ -51,7 +51,7 @@ This contains the data used in the paper [A Software-Repair Robot based on Conti
 
 ## Folder `data/2020-code-removal-patches-experiment`
 
-This contains the data used in the paper [A Comprehensive Study of Code-removal Patches in Automated Program Repair](http://arxiv.org/pdf/2012.06264).
+This contains the data used in the paper [A Comprehensive Study of Code-removal Patches in Automated Program Repair](http://arxiv.org/pdf/2012.06264) (doi:[10.1007/s10664-021-10100-7](https://dx.doi.org/10.1007/s10664-021-10100-7)).
 
 ```bibtex
 @article{2012.06264,
@@ -60,6 +60,7 @@ This contains the data used in the paper [A Comprehensive Study of Code-removal 
  year = {2022},
  url = {http://arxiv.org/pdf/2012.06264},
  journal = {Empirical Software Engineering},
+ doi = {10.1007/s10664-021-10100-7}
 }
 ```
 
